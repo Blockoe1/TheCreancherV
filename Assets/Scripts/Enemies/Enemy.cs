@@ -51,5 +51,10 @@ namespace FoolsBrand.Enemies
                 onDeathEvent?.Invoke();
             }
         }
+
+        private Limb GetRandomLimb()
+        {
+            return limbs[Random.Range(0, limbs.Length)];
+        }
     }
 }

@@ -20,34 +20,24 @@ namespace FoolsBrand.Enemies
         #endregion
 
         [SerializeField] private bool isBody;
-        [SerializeField, HideIf("isBody")] private int maxHealth;
+        [SerializeField, HideIf("isBody")] private HealthStruct health;
         [SerializeField] private int defense;
         [SerializeField] private float multiplier;
         [Header("Events")]
         [SerializeField] private UnityEvent<int> onDamageEvent;
         [SerializeField] private UnityEvent onDestroyEvent;
 
-        private int health;
-        private bool isDead;
-
-        public event Action<int> HealthChangedEvent;
-
         #region Properties
-        public bool IsDead => isDead;
+        public HealthStruct Health => health;
         public string LimbName => isBody ? BODY_NAME : name;
-        public float HealthProportion => health / maxHealth;
         public int Defense => defense;
         public float Multiplier => multiplier;
-        private int Health
-        {
-            get {  return health; }
-            set
-            {
-                health = Mathf.Clamp(health + value, 0, maxHealth);
-                HealthChangedEvent?.Invoke(health);
-            }
-        }
         #endregion
+
+        public void Init()
+        {
+
+        }
 
         /// <summary>
         /// Attacks this limb, outputting the damage that is dealt to the main enemy health.
@@ -56,14 +46,18 @@ namespace FoolsBrand.Enemies
         /// <returns></returns>
         public int AttackLimb(int baseDamage)
         {
+            if (health.IsDead)
+            {
+                Debug.LogError($"Limb {LimbName} took damage while dead.");
+                return 0;
+            }
             int damage = baseDamage - defense;
 
             // Deal damage to the limb.
-            Health -= damage;
+            health.Value -= damage;
             onDamageEvent?.Invoke(damage);
-            if (Health == 0)
+            if (health.IsDead)
             {
-                isDead = true;
                 onDestroyEvent?.Invoke();
                 Destroy(gameObject);
             }

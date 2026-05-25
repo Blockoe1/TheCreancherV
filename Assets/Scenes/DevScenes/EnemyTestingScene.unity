@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 11500872}
   - component: {fileID: 11500873}
   m_Layer: 0
-  m_Name: TestEenemy
+  m_Name: TestEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -229,7 +229,7 @@ Transform:
   m_GameObject: {fileID: 11500867}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.5552, y: 0, z: -6.66548}
+  m_LocalPosition: {x: -0.66, y: 0.55, z: -2.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -252,7 +252,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0110fa8addd30048a75d795bbfb8111, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemy
-  maxHealth: 0
+  health:
+    maxHealth: 0
+  onDeathEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &11500873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,7 +270,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemy.Limb
   isBody: 1
-  maxHealth: 0
+  health:
+    maxHealth: 0
   defense: 0
   multiplier: 1
   onDamageEvent:
@@ -446,13 +451,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 349392776}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.38410738, y: -0, z: -0, w: 0.9232884}
-  m_LocalPosition: {x: 0, y: -1.4, z: -0.928}
+  m_LocalRotation: {x: 0.27386153, y: 0.6473953, z: -0.26933044, w: 0.6582859}
+  m_LocalPosition: {x: -0.9377849, y: -1.4, z: -0.005726576}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 11500871}
-  m_LocalEulerAnglesHint: {x: 45.177, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 45.177, y: 89.044, z: 0}
 --- !u!136 &349392778
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -546,7 +551,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemy.Limb
   isBody: 0
-  maxHealth: 0
+  health:
+    maxHealth: 0
   defense: 0
   multiplier: 0
   onDamageEvent:
@@ -710,13 +716,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 624124001}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.36877543, y: -0, z: -0, w: 0.9295186}
-  m_LocalPosition: {x: 0, y: 0, z: 0.96000004}
+  m_LocalRotation: {x: -0.2629298, y: 0.6517639, z: 0.25857967, w: 0.6627279}
+  m_LocalPosition: {x: 0.94995356, y: 0, z: 0.025756836}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 11500871}
-  m_LocalEulerAnglesHint: {x: -43.28, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -43.28, y: 89.044, z: 0}
 --- !u!136 &624124003
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -810,7 +816,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemy.Limb
   isBody: 0
-  maxHealth: 0
+  health:
+    maxHealth: 0
   defense: 0
   multiplier: 0
   onDamageEvent:
@@ -896,13 +903,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1408783448}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.08, z: 0}
+  m_LocalRotation: {x: -0, y: 0.70118487, z: -0, w: 0.7129796}
+  m_LocalPosition: {x: -0.009911537, y: 1.0800002, z: 0.00974679}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 11500871}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 89.044, z: 0}
 --- !u!135 &1408783450
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -994,7 +1001,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemy.Limb
   isBody: 0
-  maxHealth: 0
+  health:
+    maxHealth: 0
   defense: 0
   multiplier: 0
   onDamageEvent:
@@ -1031,13 +1039,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1586322326}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.38410738, y: -0, z: -0, w: 0.9232884}
-  m_LocalPosition: {x: 0, y: 0, z: -0.928}
+  m_LocalRotation: {x: 0.27386153, y: 0.6473953, z: -0.26933044, w: 0.6582859}
+  m_LocalPosition: {x: -0.9377849, y: 0, z: -0.005726576}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 11500871}
-  m_LocalEulerAnglesHint: {x: 45.177, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 45.177, y: 89.044, z: 0}
 --- !u!136 &1586322328
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1131,7 +1139,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemy.Limb
   isBody: 0
-  maxHealth: 0
+  health:
+    maxHealth: 0
   defense: 0
   multiplier: 0
   onDamageEvent:
@@ -1168,13 +1177,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2060557714}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.28999484, y: -0, z: -0, w: 0.95702827}
-  m_LocalPosition: {x: 0, y: -1.4, z: 0.6}
+  m_LocalRotation: {x: -0.20676026, y: 0.6710535, z: 0.20333965, w: 0.6823419}
+  m_LocalPosition: {x: 0.59000516, y: -1.4, z: 0.019753933}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 11500871}
-  m_LocalEulerAnglesHint: {x: -33.715, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -33.715, y: 89.044, z: 0}
 --- !u!136 &2060557716
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1268,7 +1277,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemy.Limb
   isBody: 0
-  maxHealth: 0
+  health:
+    maxHealth: 0
   defense: 0
   multiplier: 0
   onDamageEvent:

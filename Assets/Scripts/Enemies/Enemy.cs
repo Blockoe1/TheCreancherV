@@ -28,7 +28,7 @@ namespace FoolsBrand.Enemies
         /// </summary>
         /// <param name="damage"></param>
         /// <param name="limbIndex"></param>
-        public void AttackEnemy(int damage, int limbIndex)
+        public void Attack(int damage, int limbIndex)
         {
             int mainDamage = limbs[limbIndex].AttackLimb(damage);
 

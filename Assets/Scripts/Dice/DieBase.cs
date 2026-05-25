@@ -10,6 +10,14 @@ public class DieBase : MonoBehaviour
 
     private int dieIndex = 0;
 
+    public string DieName { get => _dieName; }
+
+    private void Start()
+    {
+        RollDie();
+        ApplyEffect();
+    }
+
     /// <summary>
     /// The actual rolling of this die
     /// </summary>
@@ -34,7 +42,7 @@ public class DieBase : MonoBehaviour
     /// <param name="damage"></param>
     public void FaceDamage(int damage)
     {
-
+        Debug.Log("Dealt " + damage.ToString() + " damage");
     }
 
     /// <summary>
@@ -43,7 +51,7 @@ public class DieBase : MonoBehaviour
     /// <param name="poison"></param>
     public void FacePoison(int poison)
     {
-
+        Debug.Log("Dealt " + poison.ToString() + " poison");
     }
 
     /// <summary>
@@ -52,14 +60,14 @@ public class DieBase : MonoBehaviour
     /// <param name="healing"></param>
     public void FaceSelfHeal(int healing)
     {
-
+        Debug.Log("Dealt " + healing.ToString() + " healing");
     }
 
     /// <summary>
-    /// 
+    /// Increase corruption on the die
     /// </summary>
     public void FaceCorruption()
     {
-
+        Debug.Log("Corrupted Die");
     }
 }

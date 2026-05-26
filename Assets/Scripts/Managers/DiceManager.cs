@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 /// <summary>
@@ -30,7 +31,7 @@ public class DiceManager : MonoBehaviour
         //TEMP
         foreach (string die in allDiceDict.Keys)
         {
-            for(int i = 0; i < Random.Range(1, 5); i++)
+            for(int i = 0; i < Random.Range(3, 50); i++)
             {
                 _drawBag.Add(die);
             }
@@ -57,6 +58,26 @@ public class DiceManager : MonoBehaviour
                     break;
                 }
             }
+        }
+
+        ShuffleDeck();
+    }
+
+    /// <summary>
+    /// Returns the dice from the discard pile and shuffles the deck
+    /// </summary>
+    public void ShuffleDeck()
+    {
+        _drawBag.AddRange(_discardBag);
+        _discardBag.Clear();
+
+        //Shuffle algo
+        int index = _drawBag.Count;
+        while (index-- > 0)
+        {
+            int swapPosition = Random.Range(0, _drawBag.Count);
+            //Interesting concept. Never seen this before so maybe it'll work?
+            (_drawBag[swapPosition], _drawBag[index]) = (_drawBag[index], _drawBag[swapPosition]);
         }
     }
 

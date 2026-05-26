@@ -10,31 +10,43 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1606482591971861990, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: m_Name
-      value: EvenDie
+      value: CorruptionDie
       objectReference: {fileID: 0}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: _dieName
-      value: Even Die
+      value: Corruption Die
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: dieFaces.Array.data[0]._rollDie.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FaceCorruption
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: dieFaces.Array.data[1]._rollDie.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FaceCorruption
       objectReference: {fileID: 0}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: dieFaces.Array.data[0]._rollDie.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: dieFaces.Array.data[1]._rollDie.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: dieFaces.Array.data[2]._rollDie.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: dieFaces.Array.data[3]._rollDie.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: dieFaces.Array.data[4]._rollDie.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 8
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: dieFaces.Array.data[5]._rollDie.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9028978447311450076, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: m_LocalPosition.x

@@ -79,6 +79,7 @@ public class DiceManager : MonoBehaviour
     /// <summary>
     /// Apply actions and discard current dice in play except reserve slot
     /// </summary>
+    [ContextMenu("End Turn")]
     public void EndTurn()
     {
         List<Action> allActions = new();
@@ -106,28 +107,40 @@ public class DiceManager : MonoBehaviour
             sortedActions[action.Type].Add(action);
         }
 
-        foreach(Action action in sortedActions[Action.ActionTypes.CORRUPTION])
+        if (sortedActions.ContainsKey(Action.ActionTypes.CORRUPTION))
         {
-            //Apply corruption to dice here
-            Debug.Log("Applied corruption to " + action.Value.ToString() + " dice.");
+            foreach (Action action in sortedActions[Action.ActionTypes.CORRUPTION])
+            {
+                //Apply corruption to dice here
+                Debug.Log("Applied corruption to " + action.Value.ToString() + " dice.");
+            }
         }
 
-        foreach (Action action in sortedActions[Action.ActionTypes.HEAL])
+        if (sortedActions.ContainsKey(Action.ActionTypes.HEAL))
         {
-            //Apply healing
-            Debug.Log("Applied " + action.Value.ToString() + " healing to self.");
+            foreach (Action action in sortedActions[Action.ActionTypes.HEAL])
+            {
+                //Apply healing
+                Debug.Log("Applied " + action.Value.ToString() + " healing to self.");
+            }
         }
 
-        foreach (Action action in sortedActions[Action.ActionTypes.ATTACK])
+        if (sortedActions.ContainsKey(Action.ActionTypes.ATTACK))
         {
-            //Apply damage
-            Debug.Log("Dealt " + action.Value.ToString() + " damage.");
+            foreach (Action action in sortedActions[Action.ActionTypes.ATTACK])
+            {
+                //Apply damage
+                Debug.Log("Dealt " + action.Value.ToString() + " damage.");
+            }
         }
 
-        foreach (Action action in sortedActions[Action.ActionTypes.POSION])
+        if (sortedActions.ContainsKey(Action.ActionTypes.POSION))
         {
-            //Apply poison
-            Debug.Log("Applied " + action.Value.ToString() + " poison.");
+            foreach (Action action in sortedActions[Action.ActionTypes.POSION])
+            {
+                //Apply poison
+                Debug.Log("Applied " + action.Value.ToString() + " poison.");
+            }
         }
 
         StartTurn();

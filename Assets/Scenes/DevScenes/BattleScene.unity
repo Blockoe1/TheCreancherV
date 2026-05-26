@@ -334,7 +334,9 @@ MonoBehaviour:
   _allDice:
   - {fileID: 4252415728962692394, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
   - {fileID: 4252415728962692394, guid: 9427f1e4bed1ae84b9c2ad95e86d1522, type: 3}
-  - {fileID: 4252415728962692394, guid: 52fa6286702a7e6478853dd7ff35d9fd, type: 3}
+  - {fileID: 4252415728962692394, guid: 7f371f746b819a245bb4289aa4cd2ece, type: 3}
+  - {fileID: 4252415728962692394, guid: c95d8592137d9ac4e86d2c4b43100f23, type: 3}
+  - {fileID: 4252415728962692394, guid: fe2f9341e3ec2de40a72c7e80773cf19, type: 3}
   _drawBag: []
   _discardBag: []
   _reservedDie: 
@@ -343,6 +345,7 @@ MonoBehaviour:
   - {fileID: 860251252}
   - {fileID: 2116074255}
   - {fileID: 592789959}
+  _reserveSlotPosition: {fileID: 0}
 --- !u!1 &860251252
 GameObject:
   m_ObjectHideFlags: 0

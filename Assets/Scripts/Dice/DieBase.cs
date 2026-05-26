@@ -43,7 +43,6 @@ public class DieBase : MonoBehaviour
     /// <param name="damage"></param>
     public void FaceDamage(int damage)
     {
-        Debug.Log("Dealt " + damage.ToString() + " damage");
         actions.Add(new(Action.ActionTypes.ATTACK, damage));
     }
 
@@ -53,7 +52,6 @@ public class DieBase : MonoBehaviour
     /// <param name="poison"></param>
     public void FacePoison(int poison)
     {
-        Debug.Log("Dealt " + poison.ToString() + " poison");
         actions.Add(new(Action.ActionTypes.POSION, poison));
     }
 
@@ -63,7 +61,6 @@ public class DieBase : MonoBehaviour
     /// <param name="healing"></param>
     public void FaceSelfHeal(int healing)
     {
-        Debug.Log("Dealt " + healing.ToString() + " healing");
         actions.Add(new(Action.ActionTypes.HEAL, healing));
     }
 
@@ -72,7 +69,6 @@ public class DieBase : MonoBehaviour
     /// </summary>
     public void FaceCorruption(int corruption)
     {
-        Debug.Log("Corrupted a Die");
         actions.Add(new(Action.ActionTypes.CORRUPTION, corruption));
     }
 }

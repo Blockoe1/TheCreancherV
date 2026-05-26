@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b264e17d8aa6d5459bc864dd3c692f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
-  _dieName: Basic Die 1-6
+  _dieName: DieBase
   dieFaces:
   - _rollDie:
       m_PersistentCalls:

@@ -21,7 +21,7 @@ public class DieBase : MonoBehaviour
     /// </summary>
     public void RollDie()
     {
-        //Don't tell anyone that I'm not going to make the game break if there are more or less faces. Don't do it.
+        //Don't tell anyone that I'm not going to make the game break if there are more or less faces. Don't do it...maybe
         dieIndex = Random.Range(0, dieFaces.Length);
     }
 

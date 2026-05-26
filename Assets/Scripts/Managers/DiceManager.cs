@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 /// <summary>
@@ -17,8 +16,10 @@ public class DiceManager : MonoBehaviour
     [SerializeField] private List<string> _discardBag;
     [SerializeField] private string _reservedDie;
     [SerializeField] private List<string> _rollingDice;
+    private List<GameObject> diceInPlay = new();
 
     [SerializeField] private List<GameObject> _diePositions;
+    [SerializeField] private GameObject _reserveSlotPosition;
 
     private Dictionary<string, GameObject[]> diceLookup = new();
 
@@ -76,6 +77,63 @@ public class DiceManager : MonoBehaviour
     }
 
     /// <summary>
+    /// Apply actions and discard current dice in play except reserve slot
+    /// </summary>
+    public void EndTurn()
+    {
+        List<Action> allActions = new();
+        foreach(GameObject dice in diceInPlay)
+        {
+            DieBase die = dice.GetComponent<DieBase>();
+            die.RollDie();
+            allActions.AddRange(die.ApplyEffect());
+            dice.SetActive(false);
+            _discardBag.Add(_rollingDice[0]);
+            _rollingDice.RemoveAt(0);
+        }
+
+        diceInPlay.Clear();
+
+        //Sort out all of the actions into their respective category
+        Dictionary<Action.ActionTypes, List<Action>> sortedActions = new();
+        foreach (Action action in allActions)
+        {
+            if (!sortedActions.ContainsKey(action.Type))
+            {
+                sortedActions.Add(action.Type, new List<Action>());
+            }
+
+            sortedActions[action.Type].Add(action);
+        }
+
+        foreach(Action action in sortedActions[Action.ActionTypes.CORRUPTION])
+        {
+            //Apply corruption to dice here
+            Debug.Log("Applied corruption to " + action.Value.ToString() + " dice.");
+        }
+
+        foreach (Action action in sortedActions[Action.ActionTypes.HEAL])
+        {
+            //Apply healing
+            Debug.Log("Applied " + action.Value.ToString() + " healing to self.");
+        }
+
+        foreach (Action action in sortedActions[Action.ActionTypes.ATTACK])
+        {
+            //Apply damage
+            Debug.Log("Dealt " + action.Value.ToString() + " damage.");
+        }
+
+        foreach (Action action in sortedActions[Action.ActionTypes.POSION])
+        {
+            //Apply poison
+            Debug.Log("Applied " + action.Value.ToString() + " poison.");
+        }
+
+        StartTurn();
+    }
+
+    /// <summary>
     /// Draws 2 dice from the die bag
     /// </summary>
     public void DrawDice()
@@ -104,6 +162,7 @@ public class DiceManager : MonoBehaviour
                     diceLookup[dice][j].transform.position = _diePositions[i].transform.position;
                     diceLookup[dice][j].transform.localScale = _diePositions[i].transform.localScale;
                     diceLookup[dice][j].SetActive(true);
+                    diceInPlay.Add(diceLookup[dice][j]);
                     break;
                 }
             }

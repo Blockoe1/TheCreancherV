@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -9,14 +10,11 @@ public class DieBase : MonoBehaviour
     [SerializeField, Tooltip("DO NOT CHANGE THE NUMBER OF FACES. The effects of each face")] private DieFace[] dieFaces = new DieFace[6];
 
     private int dieIndex = 0;
+    private bool corrupted = false;
+
+    private List<Action> actions = new();
 
     public string DieName { get => _dieName; }
-
-    private void Start()
-    {
-        RollDie();
-        ApplyEffect();
-    }
 
     /// <summary>
     /// The actual rolling of this die
@@ -30,10 +28,13 @@ public class DieBase : MonoBehaviour
     /// <summary>
     /// Applying the effect of the die to the enemy's limb
     /// </summary>
-    public void ApplyEffect(/*Target goes in here*/)
+    public List<Action> ApplyEffect()
     {
+        actions.Clear();
         //target = target;
         dieFaces[dieIndex].RollDie.Invoke();
+        //Send this information off to the gamemanager
+        return actions;
     }
 
     /// <summary>
@@ -43,6 +44,7 @@ public class DieBase : MonoBehaviour
     public void FaceDamage(int damage)
     {
         Debug.Log("Dealt " + damage.ToString() + " damage");
+        actions.Add(new(Action.ActionTypes.ATTACK, damage));
     }
 
     /// <summary>
@@ -52,6 +54,7 @@ public class DieBase : MonoBehaviour
     public void FacePoison(int poison)
     {
         Debug.Log("Dealt " + poison.ToString() + " poison");
+        actions.Add(new(Action.ActionTypes.POSION, poison));
     }
 
     /// <summary>
@@ -61,13 +64,15 @@ public class DieBase : MonoBehaviour
     public void FaceSelfHeal(int healing)
     {
         Debug.Log("Dealt " + healing.ToString() + " healing");
+        actions.Add(new(Action.ActionTypes.HEAL, healing));
     }
 
     /// <summary>
     /// Increase corruption on the die
     /// </summary>
-    public void FaceCorruption()
+    public void FaceCorruption(int corruption)
     {
-        Debug.Log("Corrupted Die");
+        Debug.Log("Corrupted a Die");
+        actions.Add(new(Action.ActionTypes.CORRUPTION, corruption));
     }
 }

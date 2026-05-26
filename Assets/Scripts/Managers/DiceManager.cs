@@ -16,6 +16,9 @@ public class DiceManager : MonoBehaviour
     [SerializeField] private List<string> _drawBag;
     [SerializeField] private List<string> _discardBag;
     [SerializeField] private string _reservedDie;
+    [SerializeField] private List<string> _rollingDice;
+
+    [SerializeField] private List<GameObject> _diePositions;
 
     private Dictionary<string, GameObject[]> diceLookup = new();
 
@@ -61,6 +64,50 @@ public class DiceManager : MonoBehaviour
         }
 
         ShuffleDeck();
+        StartTurn();
+    }
+
+    /// <summary>
+    /// Called whenever the next player turn starts
+    /// </summary>
+    public void StartTurn()
+    {
+        DrawDice();
+    }
+
+    /// <summary>
+    /// Draws 2 dice from the die bag
+    /// </summary>
+    public void DrawDice()
+    {
+        //Actually draw the dice
+        for(int i = 0; i < 2; i++)
+        {
+            if(_drawBag.Count <= 0)
+            {
+                ShuffleDeck();
+            }
+
+            _rollingDice.Add(_drawBag[0]);
+            _drawBag.RemoveAt(0);
+        }
+
+        //Now make those dice appear
+        for(int i = 0; i < _rollingDice.Count; i++)
+        {
+            string dice = _rollingDice[i].ToString();
+
+            for(int j = 0; j < diceLookup[dice].Length; j++) 
+            {
+                if (!diceLookup[dice][j].activeSelf)
+                {
+                    diceLookup[dice][j].transform.position = _diePositions[i].transform.position;
+                    diceLookup[dice][j].transform.localScale = _diePositions[i].transform.localScale;
+                    diceLookup[dice][j].SetActive(true);
+                    break;
+                }
+            }
+        }
     }
 
     /// <summary>
@@ -76,9 +123,13 @@ public class DiceManager : MonoBehaviour
         while (index-- > 0)
         {
             int swapPosition = Random.Range(0, _drawBag.Count);
-            //Interesting concept. Never seen this before so maybe it'll work?
             (_drawBag[swapPosition], _drawBag[index]) = (_drawBag[index], _drawBag[swapPosition]);
         }
+    }
+
+    public void ApplyEffects(/*Target*/)
+    {
+
     }
 
     /// <summary>

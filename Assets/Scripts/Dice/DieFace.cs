@@ -1,3 +1,5 @@
+using CustomAttributes;
+using FoolsBrand;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,10 +9,11 @@ using UnityEngine.Events;
 /// </summary>
 public class DieFace
 {
-    [SerializeField, Tooltip("Events can be found in the DieBase class")] private UnityEvent _rollDie;
+    [SerializeField] private Sprite faceSprite;
+    [SerializeReference, ClassDropdown(typeof(DiceAction))] private DiceAction[] faceActions;
 
-    /// <summary>
-    /// Actions that happen when you roll the die
-    /// </summary>
-    public UnityEvent RollDie { get => _rollDie; set => _rollDie = value; }
+    public DiceAction[] GetActions()
+    {
+        return faceActions;
+    }
 }

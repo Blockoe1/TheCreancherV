@@ -10,6 +10,7 @@ using UnityEngine;
 
 namespace FoolsBrand
 {
+    [System.Serializable]
     public class HealAction : DiceAction
     {
         public override int PriorityValue => 50;

@@ -24,7 +24,7 @@ namespace FoolsBrand.UI
 
         public override void Init(GameManager gm)
         {
-            enemyManager = gm.EnemyManager;
+            enemyManager = gm.GetManager<EnemyManager>();
         }
 
         /// <summary>

@@ -11,12 +11,8 @@ using UnityEngine;
 
 namespace FoolsBrand.UI
 {
-    public class UIManager : Manager
+    public class UIManager : HierarchyManager
     {
-        [SerializeField] private LimbUIManager limbUI;
-        public override void Init(GameManager gm)
-        {
-            limbUI.Init(gm);
-        }
+        
     }
 }

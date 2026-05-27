@@ -30,7 +30,7 @@ namespace FoolsBrand
 
         public override void Init(GameManager gm)
         {
-            enemyManager = gm.EnemyManager;
+            enemyManager = gm.GetManager<EnemyManager>();
         }
 
         public void BeginCombat()

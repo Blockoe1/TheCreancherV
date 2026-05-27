@@ -17,6 +17,78 @@ PrefabInstance:
       value: Snake's Eye
       objectReference: {fileID: 0}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: 'managedReferences[7292673129211232378]'
+      value: Assembly-CSharp FoolsBrand.PoisonAction
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: 'managedReferences[7292673129211232379]'
+      value: Assembly-CSharp FoolsBrand.PoisonAction
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: 'managedReferences[7292673129211232380]'
+      value: Assembly-CSharp FoolsBrand.PoisonAction
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: 'managedReferences[7292673129211232381]'
+      value: Assembly-CSharp FoolsBrand.PoisonAction
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: 'managedReferences[7292673129211232382]'
+      value: Assembly-CSharp FoolsBrand.PoisonAction
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: 'managedReferences[7292673129211232383]'
+      value: Assembly-CSharp FoolsBrand.PoisonAction
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232378].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232379].value
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232380].value
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232381].value
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232382].value
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232383].value
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: 'dieFaces.Array.data[0].faceActions.Array.data[0]'
+      value: 7292673129211232378
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: 'dieFaces.Array.data[1].faceActions.Array.data[0]'
+      value: 7292673129211232379
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: 'dieFaces.Array.data[2].faceActions.Array.data[0]'
+      value: 7292673129211232380
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: 'dieFaces.Array.data[3].faceActions.Array.data[0]'
+      value: 7292673129211232381
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: 'dieFaces.Array.data[4].faceActions.Array.data[0]'
+      value: 7292673129211232382
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: 'dieFaces.Array.data[5].faceActions.Array.data[0]'
+      value: 7292673129211232383
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: dieFaces.Array.data[0]._rollDie.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: FacePoison
       objectReference: {fileID: 0}

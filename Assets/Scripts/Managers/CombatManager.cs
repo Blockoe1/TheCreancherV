@@ -16,6 +16,7 @@ namespace FoolsBrand
     {
         [SerializeField] private float debugWait;
         private EnemyManager enemyManager;
+        private PlayerManager playerManager;
 
         private CombatState state;
 
@@ -31,6 +32,7 @@ namespace FoolsBrand
         public override void Init(GameManager gm, HierarchyManager parentManager)
         {
             enemyManager = gm.GetManager<EnemyManager>();
+            playerManager = gm.GetManager<PlayerManager>();
         }
 
         public void BeginCombat()
@@ -48,7 +50,7 @@ namespace FoolsBrand
                 // Player takes action
                 state = CombatState.PlayerAction;
 
-                yield return null; // TODO: Add a player combatant.
+                yield return StartCoroutine(playerManager.Act(enemyManager.CurrentEnemy));
 
                 if (CheckCombatState())
                 {
@@ -58,10 +60,7 @@ namespace FoolsBrand
                 // Enemies take action.
                 state = CombatState.EnemyAction;
 
-                foreach(Enemy enemy in enemyManager.CurrentEnemies)
-                {
-                    yield return StartCoroutine(enemy.Act(default));
-                }
+                yield return StartCoroutine(enemyManager.CurrentEnemy.Act(playerManager.Player));
 
                 if (CheckCombatState())
                 {
@@ -88,12 +87,11 @@ namespace FoolsBrand
         private bool CheckCombatState()
         {
             // Check for death.
-            if (false) // TODO: Add check for player death.
+            if (playerManager.IsDead)
             {
                 state = CombatState.Defeat;
                 return true;
             }
-
 
             // Check for victory.
             if (enemyManager.CurrentEnemies.Count == 0)

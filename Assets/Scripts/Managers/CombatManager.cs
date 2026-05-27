@@ -28,9 +28,9 @@ namespace FoolsBrand
             Defeat
         }
 
-        public override void Init(GameManager gm)
+        public override void Init(GameManager gm, HierarchyManager parentManager)
         {
-            enemyManager = gm.EnemyManager;
+            enemyManager = gm.GetManager<EnemyManager>();
         }
 
         public void BeginCombat()

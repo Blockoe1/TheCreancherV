@@ -8,36 +8,29 @@ using UnityEngine;
 /// <summary>
 /// Master game manager. Manages the individual managers
 /// </summary>
-public class GameManager : MonoBehaviour
+public class GameManager : HierarchyManager
 {
-    [SerializeField] private DiceManager diceBag;
-    [SerializeField] private EnemyManager enemyManager;
-    [SerializeField] private CombatManager combatManager;
-    [SerializeField] private UIManager uiManager;
-
-    public EnemyManager EnemyManager => enemyManager;
-
     /// <summary>
     /// Initialize the other managers
     /// </summary>
     private void Awake()
     {
-        diceBag.Init();
-        enemyManager.Init(this);
-        combatManager.Init(this);
+        Init(this, this);
 
-        uiManager.Init(this);
+        GameStart();
     }
 
-    // Need to move things out of start at some point.
-    private void Start()
+    public override void GameStart()
     {
+        base.GameStart();
+
+        EnemyManager enemyManager = GetManager<EnemyManager>();
         enemyManager.SpawnRandomEnemy();
 
-        combatManager.BeginCombat();
+        GetManager<CombatManager>().BeginCombat();
 
         // Debug start.
 
-        GetComponentInChildren<LimbUIManager>().SetDisplays(enemyManager.CurrentEnemy);
+        GetManager<UIManager>().GetManager<LimbUIManager>().SetDisplays(enemyManager.CurrentEnemy);
     }
 }

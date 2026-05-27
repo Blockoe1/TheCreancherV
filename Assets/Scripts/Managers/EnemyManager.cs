@@ -42,7 +42,7 @@ namespace FoolsBrand.Enemies
             }
         }
 
-        public override void Init(GameManager gm)
+        public override void Init(GameManager gm, HierarchyManager parentManager)
         {
             enemyPos = GameObject.FindGameObjectWithTag(ENEMY_POS_TAG).transform;
         }

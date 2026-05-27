@@ -6,10 +6,12 @@
 //
 // Brief Description : Inflicts poison on a poisonable target.
 *****************************************************************************/
+using System;
 using UnityEngine;
 
 namespace FoolsBrand
 {
+    [System.Serializable]
     public class PoisonAction : DiceAction
     {
         public override int PriorityValue => 101;

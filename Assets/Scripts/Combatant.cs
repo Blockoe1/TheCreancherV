@@ -66,6 +66,6 @@ namespace FoolsBrand
         /// <summary>
         /// Called when its this combatant's turn to act.
         /// </summary>
-        public abstract IEnumerator Act(ITargetable target);
+        public abstract IEnumerator Act(Combatant target);
     }
 }

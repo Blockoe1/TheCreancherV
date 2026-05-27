@@ -127,93 +127,48 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
   _dieName: DieBase
   dieFaces:
-  - _rollDie:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2299449444861537981}
-          m_TargetAssemblyTypeName: DieBase, Assembly-CSharp
-          m_MethodName: FaceDamage
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 1
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - _rollDie:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2299449444861537981}
-          m_TargetAssemblyTypeName: DieBase, Assembly-CSharp
-          m_MethodName: FaceDamage
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 2
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - _rollDie:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2299449444861537981}
-          m_TargetAssemblyTypeName: DieBase, Assembly-CSharp
-          m_MethodName: FaceDamage
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 3
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - _rollDie:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2299449444861537981}
-          m_TargetAssemblyTypeName: DieBase, Assembly-CSharp
-          m_MethodName: FaceDamage
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 4
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - _rollDie:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2299449444861537981}
-          m_TargetAssemblyTypeName: DieBase, Assembly-CSharp
-          m_MethodName: FaceDamage
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 5
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - _rollDie:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2299449444861537981}
-          m_TargetAssemblyTypeName: DieBase, Assembly-CSharp
-          m_MethodName: FaceDamage
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 6
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  - faceSprite: {fileID: 0}
+    faceActions:
+    - rid: 7292673129211232363
+  - faceSprite: {fileID: 0}
+    faceActions:
+    - rid: 7292673129211232364
+  - faceSprite: {fileID: 0}
+    faceActions:
+    - rid: 7292673129211232365
+  - faceSprite: {fileID: 0}
+    faceActions:
+    - rid: 7292673129211232366
+  - faceSprite: {fileID: 0}
+    faceActions:
+    - rid: 7292673129211232367
+  - faceSprite: {fileID: 0}
+    faceActions:
+    - rid: 7292673129211232368
+  references:
+    version: 2
+    RefIds:
+    - rid: 7292673129211232363
+      type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
+      data:
+        value: 1
+    - rid: 7292673129211232364
+      type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
+      data:
+        value: 2
+    - rid: 7292673129211232365
+      type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
+      data:
+        value: 3
+    - rid: 7292673129211232366
+      type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
+      data:
+        value: 4
+    - rid: 7292673129211232367
+      type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
+      data:
+        value: 5
+    - rid: 7292673129211232368
+      type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
+      data:
+        value: 6

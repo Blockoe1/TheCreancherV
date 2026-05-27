@@ -46,7 +46,7 @@ namespace FoolsBrand.Enemies
         /// </summary>
         public override IEnumerator Act()
         {
-            List<Action> actions = GetRandomLimb().RollAttack();
+            List<DiceAction> actions = GetRandomLimb().RollAttack();
             yield return StartCoroutine(ProcessActions(actions));
         }
     }

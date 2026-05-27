@@ -84,12 +84,17 @@ namespace FoolsBrand
         [ContextMenu("End Turn")]
         public void EndTurn()
         {
-            List<Action> allActions = new();
+            List<DiceAction> allActions = new();
+            MinPriorityQueue<DiceAction> actionQueue = new MinPriorityQueue<DiceAction>();
             foreach (GameObject dice in diceInPlay)
             {
                 DieBase die = dice.GetComponent<DieBase>();
-                die.RollDie();
-                allActions.AddRange(die.ApplyEffect());
+                DiceAction[] actions = die.RollDie();
+                foreach(DiceAction action in actions)
+                {
+                    actionQueue.Enqueue(action, action.PriorityValue);
+                }
+                //allActions.AddRange(die.ApplyEffect());
                 dice.SetActive(false);
                 _discardBag.Add(_rollingDice[0]);
                 _rollingDice.RemoveAt(0);
@@ -97,53 +102,60 @@ namespace FoolsBrand
 
             diceInPlay.Clear();
 
+            while (actionQueue.Count > 0)
+            {
+                // Switch this to inheritance support later.
+                DiceAction action = actionQueue.Dequeue();
+                action.PerformAction();
+            }
+
             //Sort out all of the actions into their respective category
-            Dictionary<Action.ActionTypes, List<Action>> sortedActions = new();
-            foreach (Action action in allActions)
-            {
-                if (!sortedActions.ContainsKey(action.Type))
-                {
-                    sortedActions.Add(action.Type, new List<Action>());
-                }
+            //Dictionary<Action.ActionTypes, List<Action>> sortedActions = new();
+            //foreach (Action action in allActions)
+            //{
+            //    if (!sortedActions.ContainsKey(action.Type))
+            //    {
+            //        sortedActions.Add(action.Type, new List<Action>());
+            //    }
 
-                sortedActions[action.Type].Add(action);
-            }
+            //    sortedActions[action.Type].Add(action);
+            //}
 
-            if (sortedActions.ContainsKey(Action.ActionTypes.CORRUPTION))
-            {
-                foreach (Action action in sortedActions[Action.ActionTypes.CORRUPTION])
-                {
-                    //Apply corruption to dice here
-                    Debug.Log("Applied corruption to " + action.Value.ToString() + " dice.");
-                }
-            }
+            //if (sortedActions.ContainsKey(Action.ActionTypes.CORRUPTION))
+            //{
+            //    foreach (Action action in sortedActions[Action.ActionTypes.CORRUPTION])
+            //    {
+            //        //Apply corruption to dice here
+            //        Debug.Log("Applied corruption to " + action.Value.ToString() + " dice.");
+            //    }
+            //}
 
-            if (sortedActions.ContainsKey(Action.ActionTypes.HEAL))
-            {
-                foreach (Action action in sortedActions[Action.ActionTypes.HEAL])
-                {
-                    //Apply healing
-                    Debug.Log("Applied " + action.Value.ToString() + " healing to self.");
-                }
-            }
+            //if (sortedActions.ContainsKey(Action.ActionTypes.HEAL))
+            //{
+            //    foreach (Action action in sortedActions[Action.ActionTypes.HEAL])
+            //    {
+            //        //Apply healing
+            //        Debug.Log("Applied " + action.Value.ToString() + " healing to self.");
+            //    }
+            //}
 
-            if (sortedActions.ContainsKey(Action.ActionTypes.ATTACK))
-            {
-                foreach (Action action in sortedActions[Action.ActionTypes.ATTACK])
-                {
-                    //Apply damage
-                    Debug.Log("Dealt " + action.Value.ToString() + " damage.");
-                }
-            }
+            //if (sortedActions.ContainsKey(Action.ActionTypes.ATTACK))
+            //{
+            //    foreach (Action action in sortedActions[Action.ActionTypes.ATTACK])
+            //    {
+            //        //Apply damage
+            //        Debug.Log("Dealt " + action.Value.ToString() + " damage.");
+            //    }
+            //}
 
-            if (sortedActions.ContainsKey(Action.ActionTypes.POSION))
-            {
-                foreach (Action action in sortedActions[Action.ActionTypes.POSION])
-                {
-                    //Apply poison
-                    Debug.Log("Applied " + action.Value.ToString() + " poison.");
-                }
-            }
+            //if (sortedActions.ContainsKey(Action.ActionTypes.POSION))
+            //{
+            //    foreach (Action action in sortedActions[Action.ActionTypes.POSION])
+            //    {
+            //        //Apply poison
+            //        Debug.Log("Applied " + action.Value.ToString() + " poison.");
+            //    }
+            //}
 
             StartTurn();
         }

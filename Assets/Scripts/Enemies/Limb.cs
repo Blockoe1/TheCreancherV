@@ -47,7 +47,7 @@ namespace FoolsBrand.Enemies
         /// </summary>
         /// <remarks>Does not yet apply custom effects.</remarks>
         /// <returns>The damage dealt by this limb.</returns>
-        public List<Action> RollAttack()
+        public List<DiceAction> RollAttack()
         {
             if (attackDice == null)
             {

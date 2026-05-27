@@ -547,6 +547,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6626c6740f990b349bdb55cf4e693443, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  managers:
+  - {fileID: 1263418893}
+  - {fileID: 1150276239}
+  - {fileID: 1547942984}
+  - {fileID: 1483190520}
   diceBag: {fileID: 1263418893}
   enemyManager: {fileID: 1150276239}
   combatManager: {fileID: 1547942984}

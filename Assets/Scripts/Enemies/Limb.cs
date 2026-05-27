@@ -47,14 +47,13 @@ namespace FoolsBrand.Enemies
         /// </summary>
         /// <remarks>Does not yet apply custom effects.</remarks>
         /// <returns>The damage dealt by this limb.</returns>
-        public List<DiceAction> RollAttack()
+        public DiceAction[] RollAttack()
         {
             if (attackDice == null)
             {
                 Debug.LogWarning($"Enemy {transform.parent.gameObject.name} does not have an attack dice assigned to it's {name} limb.");
             }
-            attackDice.RollDie();
-            return attackDice.ApplyEffect();
+            return attackDice.RollDie();
         }
 
         /// <summary>

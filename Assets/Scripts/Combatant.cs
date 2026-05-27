@@ -13,7 +13,7 @@ using UnityEngine.Events;
 
 namespace FoolsBrand
 {
-    public abstract class Combatant : MonoBehaviour
+    public abstract class Combatant : MonoBehaviour, ITargetable
     {
         [SerializeField] private HealthStruct health;
         [SerializeField] private UnityEvent onDeathEvent;
@@ -44,7 +44,7 @@ namespace FoolsBrand
         /// Makes this combatant perform a certain list of combat actions.
         /// </summary>
         /// <param name="actions">The actions to perform.</param>
-        public IEnumerator ProcessActions(List<DiceAction> actions)
+        public IEnumerator ProcessActions(DiceAction[] actions, ITargetable target)
         {
             MinPriorityQueue<DiceAction> sortedActions = new MinPriorityQueue<DiceAction>();
             foreach(DiceAction action in actions)
@@ -57,7 +57,7 @@ namespace FoolsBrand
             {
                 // Switch this to inheritance support later.
                 DiceAction action = sortedActions.Dequeue();
-                action.PerformAction();
+                action.PerformAction(target, this);
 
             }
             yield return null;
@@ -66,6 +66,6 @@ namespace FoolsBrand
         /// <summary>
         /// Called when its this combatant's turn to act.
         /// </summary>
-        public abstract IEnumerator Act();
+        public abstract IEnumerator Act(ITargetable target);
     }
 }

@@ -44,10 +44,10 @@ namespace FoolsBrand.Enemies
         /// <summary>
         /// When enemies act, they choose a random limb and execute an attack based on that limb's attack dice.
         /// </summary>
-        public override IEnumerator Act()
+        public override IEnumerator Act(ITargetable target)
         {
-            List<DiceAction> actions = GetRandomLimb().RollAttack();
-            yield return StartCoroutine(ProcessActions(actions));
+            DiceAction[] actions = GetRandomLimb().RollAttack();
+            yield return StartCoroutine(ProcessActions(actions, target));
         }
     }
 }

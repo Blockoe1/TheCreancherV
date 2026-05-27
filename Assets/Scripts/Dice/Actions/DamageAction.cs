@@ -1,10 +1,10 @@
 /*****************************************************************************
-// File Name : CombatManager.cs
+// File Name : DamageAction.cs
 // Author : Arcadia Koederitz
-// Creation Date : 5/25/2026
-// Last Modified : 5/25/2026
+// Creation Date : 5/27/2026
+// Last Modified : 5/27/2026
 //
-// Brief Description : Controls the progression of combat.
+// Brief Description : Deals damage to the target.
 *****************************************************************************/
 using UnityEngine;
 
@@ -14,9 +14,9 @@ namespace FoolsBrand
     {
         public override int PriorityValue => 100;
 
-        public override void PerformAction()
+        public override void PerformAction(ITargetable target, Combatant user)
         {
-            Debug.Log("Attack");
+            Debug.Log($"{user} attacked {target} for {value}.");
         }
     }
 }

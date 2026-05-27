@@ -1,10 +1,10 @@
 /*****************************************************************************
-// File Name : CombatManager.cs
+// File Name : PoisonAction.cs
 // Author : Arcadia Koederitz
-// Creation Date : 5/25/2026
-// Last Modified : 5/25/2026
+// Creation Date : 5/27/2026
+// Last Modified : 5/27/2026
 //
-// Brief Description : Controls the progression of combat.
+// Brief Description : Inflicts poison on a poisonable target.
 *****************************************************************************/
 using UnityEngine;
 
@@ -14,9 +14,9 @@ namespace FoolsBrand
     {
         public override int PriorityValue => 101;
 
-        public override void PerformAction()
+        public override void PerformAction(ITargetable target, Combatant user)
         {
-            Debug.Log("Poison");
+            Debug.Log($"{user} poisoned {target} for {value}.");
         }
     }
 }

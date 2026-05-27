@@ -1,19 +1,17 @@
+using FoolsBrand;
+using System;
+using UnityEngine;
+
 /// <summary>
 /// Stores types of actions
 /// </summary>
 [System.Serializable]
 public abstract class DiceAction
 {
-    protected int faceValue;
+    [SerializeField] protected int value;
 
     public abstract int PriorityValue { get; }
-    public abstract void PerformAction(Combatant);
-
-    public int FaceValue
-    {
-        get { return faceValue; }
-        set {  faceValue = value; }
-    }
+    public abstract void PerformAction(ITargetable target, Combatant user);
 
     //public enum ActionTypes
     //{

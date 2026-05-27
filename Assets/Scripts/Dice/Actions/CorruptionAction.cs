@@ -1,10 +1,10 @@
 /*****************************************************************************
-// File Name : CombatManager.cs
+// File Name : CorruptionAction.cs
 // Author : Arcadia Koederitz
-// Creation Date : 5/25/2026
-// Last Modified : 5/25/2026
+// Creation Date : 5/27/2026
+// Last Modified : 5/27/2026
 //
-// Brief Description : Controls the progression of combat.
+// Brief Description : Corrupts a number of the user's dice
 *****************************************************************************/
 using UnityEngine;
 
@@ -16,9 +16,9 @@ namespace FoolsBrand
         [SerializeField] private int numCorrupted;
         public override int PriorityValue => 0;
 
-        public override void PerformAction()
+        public override void PerformAction(ITargetable target,  Combatant user)
         {
-            Debug.Log("Corruption");
+            Debug.Log($"{user} corrupted {value} of their dice.");
         }
     }
 }

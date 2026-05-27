@@ -30,14 +30,14 @@ public class DieBase : MonoBehaviour
     /// <summary>
     /// Applying the effect of the die to the enemy's limb
     /// </summary>
-    public List<DiceAction> ApplyEffect()
-    {
-        actions.Clear();
-        //target = target;
-        dieFaces[dieIndex].RollDie.Invoke();
-        //Send this information off to the gamemanager
-        return actions;
-    }
+    //public List<DiceAction> ApplyEffect()
+    //{
+    //    actions.Clear();
+    //    //target = target;
+    //    dieFaces[dieIndex].RollDie.Invoke();
+    //    //Send this information off to the gamemanager
+    //    return actions;
+    //}
 
     ///// <summary>
     ///// How much damage the die deals

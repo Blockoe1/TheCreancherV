@@ -1,3 +1,5 @@
+using FoolsBrand.Enemies;
+using System;
 using UnityEngine;
 
 /// <summary>
@@ -6,11 +8,18 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private DiceManager diceBag;
+    [SerializeField] private EnemyManager enemyManager;
     /// <summary>
     /// Initialize the other managers
     /// </summary>
-    private void Start()
+    private void Awake()
     {
         diceBag.Init();
+        enemyManager.Init();
+    }
+
+    private void Start()
+    {
+        enemyManager.SpawnRandomEnemy();
     }
 }

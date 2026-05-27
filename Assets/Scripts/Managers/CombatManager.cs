@@ -14,6 +14,7 @@ namespace FoolsBrand
 {
     public class CombatManager : Manager
     {
+        [SerializeField] private float debugWait;
         private EnemyManager enemyManager;
 
         private CombatState state;
@@ -66,6 +67,8 @@ namespace FoolsBrand
                 {
                     break;
                 }
+
+                yield return new WaitForSeconds(debugWait);
             }
             if (state == CombatState.Victory)
             {

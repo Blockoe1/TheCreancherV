@@ -21,6 +21,7 @@ namespace FoolsBrand.Enemies
         [SerializeField] private Enemy bossEnemy;
 
         private readonly List<Enemy> currentEnemies = new List<Enemy>();
+        public Enemy CurrentEnemy => currentEnemies.Count > 0 ? currentEnemies[0] : null;
 
         private Transform enemyPos;
 

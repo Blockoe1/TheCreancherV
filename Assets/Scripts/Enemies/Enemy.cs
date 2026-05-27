@@ -10,6 +10,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem.Utilities;
 
 namespace FoolsBrand.Enemies
 {
@@ -18,6 +19,8 @@ namespace FoolsBrand.Enemies
         private Limb[] limbs;
 
         public bool IsDead => Health.IsDead;
+
+        public ReadOnlyArray<Limb> Limbs => limbs;
         
         public void Init()
         {
@@ -45,6 +48,7 @@ namespace FoolsBrand.Enemies
         public override IEnumerator Act()
         {
             List<Action> actions = GetRandomLimb().RollAttack();
+            Debug.Log(actions);
             yield return StartCoroutine(ProcessActions(actions));
         }
     }

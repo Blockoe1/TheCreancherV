@@ -11,7 +11,7 @@ using UnityEngine;
 
 namespace FoolsBrand.Editor
 {
-    [CustomPropertyDrawer(typeof(HealthStruct))]
+    [CustomPropertyDrawer(typeof(HealthData))]
     public class HealthStructDrawer : PropertyDrawer
     {
         private SerializedProperty maxHealth;

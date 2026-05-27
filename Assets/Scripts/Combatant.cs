@@ -15,10 +15,10 @@ namespace FoolsBrand
 {
     public abstract class Combatant : MonoBehaviour, ITargetable
     {
-        [SerializeField] private HealthStruct health;
+        [SerializeField] private HealthData health;
         [SerializeField] private UnityEvent onDeathEvent;
 
-        public HealthStruct Health => health;
+        public HealthData Health => health;
 
         /// <summary>
         /// Makes this combatant take damage.

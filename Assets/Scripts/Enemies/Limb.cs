@@ -21,7 +21,7 @@ namespace FoolsBrand.Enemies
         #endregion
 
         [SerializeField] private bool isBody;
-        [SerializeField, HideIf("isBody")] private HealthStruct health;
+        [SerializeField, HideIf("isBody")] private HealthData health;
         [SerializeField] private int defense;
         [SerializeField] private float multiplier;
         [SerializeField] private DieBase attackDice;
@@ -31,7 +31,7 @@ namespace FoolsBrand.Enemies
 
         #region Properties
         public bool HasAttack => attackDice != null;
-        public HealthStruct Health => health;
+        public HealthData Health => health;
         public string LimbName => isBody ? BODY_NAME : name;
         public int Defense => defense;
         public float Multiplier => multiplier;

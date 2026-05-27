@@ -13,7 +13,7 @@ using UnityEngine;
 namespace FoolsBrand
 {
     [System.Serializable]
-    public struct HealthStruct
+    public class HealthData
     {
         [SerializeField] private int maxHealth;
 

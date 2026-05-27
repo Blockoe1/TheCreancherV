@@ -11,14 +11,9 @@ using UnityEngine.Events;
 
 namespace FoolsBrand.Enemies
 {
-    public class Enemy : MonoBehaviour
+    public class Enemy : Combatant
     {
-        [SerializeField] private HealthStruct health;
-        [SerializeField] private UnityEvent onDeathEvent;
-
         private Limb[] limbs;
-
-        public HealthStruct Health => health;
 
         public void Init()
         {
@@ -28,33 +23,24 @@ namespace FoolsBrand.Enemies
                 limb.Init();
             }
         }
-        
 
-        /// <summary>
-        /// Deals damage to an enemy, attacking a specific limb by index.
-        /// </summary>
-        /// <param name="damage"></param>
-        /// <param name="limbIndex"></param>
-        public void Attack(int damage, int limbIndex)
+        public void AttackEnemy(int damage, int limbIndex)
         {
-            if (health.IsDead)
-            {
-                Debug.LogError($"Enemy {name} took damage while dead.");
-                return;
-            }
             int mainDamage = limbs[limbIndex].AttackLimb(damage);
-
-            health.Value -= mainDamage;
-            if (health.IsDead)
-            {
-                // Death Handling.
-                onDeathEvent?.Invoke();
-            }
+            TakeDamage(mainDamage);
         }
 
         private Limb GetRandomLimb()
         {
             return limbs[Random.Range(0, limbs.Length)];
+        }
+
+        /// <summary>
+        /// When enemies act, they choose a random limb and execute an attack based on that limb's attack dice.
+        /// </summary>
+        public override void Act()
+        {
+            
         }
     }
 }

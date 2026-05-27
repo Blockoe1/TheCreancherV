@@ -8,6 +8,7 @@
 *****************************************************************************/
 using NaughtyAttributes;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -23,6 +24,7 @@ namespace FoolsBrand.Enemies
         [SerializeField, HideIf("isBody")] private HealthStruct health;
         [SerializeField] private int defense;
         [SerializeField] private float multiplier;
+        [SerializeField] private DieBase attackDice;
         [Header("Events")]
         [SerializeField] private UnityEvent<int> onDamageEvent;
         [SerializeField] private UnityEvent onDestroyEvent;
@@ -37,6 +39,17 @@ namespace FoolsBrand.Enemies
         public void Init()
         {
 
+        }
+
+        /// <summary>
+        /// Queries this limb's attack dice for the damage to deal from an attack.
+        /// </summary>
+        /// <remarks>Does not yet apply custom effects.</remarks>
+        /// <returns>The damage dealt by this limb.</returns>
+        public List<Action> GetAttackActions()
+        {
+            attackDice.RollDie();
+            return attackDice.ApplyEffect();
         }
 
         /// <summary>

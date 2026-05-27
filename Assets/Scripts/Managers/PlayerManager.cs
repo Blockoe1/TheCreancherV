@@ -44,7 +44,7 @@ namespace FoolsBrand
             {
                 // Switch this to inheritance support later.
                 DiceAction action = actionQueue.Dequeue();
-                action.PerformAction();
+                action.PerformAction(default, null);
             }
         }
     }

@@ -60,7 +60,7 @@ namespace FoolsBrand
 
                 foreach(Enemy enemy in enemyManager.CurrentEnemies)
                 {
-                    yield return StartCoroutine(enemy.Act());
+                    yield return StartCoroutine(enemy.Act(default));
                 }
 
                 if (CheckCombatState())

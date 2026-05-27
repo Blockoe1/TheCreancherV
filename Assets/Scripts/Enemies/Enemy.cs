@@ -6,20 +6,22 @@
 //
 // Brief Description : Base script for enemies that controls their limbs and actions during combat.
 *****************************************************************************/
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem.Utilities;
 
 namespace FoolsBrand.Enemies
 {
-    public class Enemy : MonoBehaviour
+    public class Enemy : Combatant
     {
-        [SerializeField] private HealthStruct health;
-        [SerializeField] private UnityEvent onDeathEvent;
-
         private Limb[] limbs;
 
-        public HealthStruct Health => health;
+        public bool IsDead => Health.IsDead;
 
+        public ReadOnlyArray<Limb> Limbs => limbs;
+        
         public void Init()
         {
             limbs = GetComponentsInChildren<Limb>();
@@ -28,33 +30,26 @@ namespace FoolsBrand.Enemies
                 limb.Init();
             }
         }
-        
 
-        /// <summary>
-        /// Deals damage to an enemy, attacking a specific limb by index.
-        /// </summary>
-        /// <param name="damage"></param>
-        /// <param name="limbIndex"></param>
-        public void Attack(int damage, int limbIndex)
+        public void AttackEnemy(int damage, int limbIndex)
         {
-            if (health.IsDead)
-            {
-                Debug.LogError($"Enemy {name} took damage while dead.");
-                return;
-            }
             int mainDamage = limbs[limbIndex].AttackLimb(damage);
-
-            health.Value -= mainDamage;
-            if (health.IsDead)
-            {
-                // Death Handling.
-                onDeathEvent?.Invoke();
-            }
+            TakeDamage(mainDamage);
         }
 
         private Limb GetRandomLimb()
         {
             return limbs[Random.Range(0, limbs.Length)];
+        }
+
+        /// <summary>
+        /// When enemies act, they choose a random limb and execute an attack based on that limb's attack dice.
+        /// </summary>
+        public override IEnumerator Act()
+        {
+            List<Action> actions = GetRandomLimb().RollAttack();
+            Debug.Log(actions);
+            yield return StartCoroutine(ProcessActions(actions));
         }
     }
 }

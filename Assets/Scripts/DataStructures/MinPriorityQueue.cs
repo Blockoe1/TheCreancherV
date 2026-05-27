@@ -12,6 +12,8 @@ namespace FoolsBrand
 {
     public class MinPriorityQueue<T> : ListMinHeap<PriorityQueueNode<T>>
     {
+        public int Count => list.Count;
+
         public void Enqueue(T item, int priority)
         {
             PriorityQueueNode<T> node = new PriorityQueueNode<T>(item, priority);

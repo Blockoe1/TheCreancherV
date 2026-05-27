@@ -6,6 +6,8 @@
 //
 // Brief Description : Base script for enemies that controls their limbs and actions during combat.
 *****************************************************************************/
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -15,6 +17,8 @@ namespace FoolsBrand.Enemies
     {
         private Limb[] limbs;
 
+        public bool IsDead => Health.IsDead;
+        
         public void Init()
         {
             limbs = GetComponentsInChildren<Limb>();
@@ -38,9 +42,10 @@ namespace FoolsBrand.Enemies
         /// <summary>
         /// When enemies act, they choose a random limb and execute an attack based on that limb's attack dice.
         /// </summary>
-        public override void Act()
+        public override IEnumerator Act()
         {
-            
+            List<Action> actions = GetRandomLimb().RollAttack();
+            yield return StartCoroutine(ProcessActions(actions));
         }
     }
 }

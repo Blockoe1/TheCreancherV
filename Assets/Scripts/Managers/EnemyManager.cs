@@ -7,20 +7,41 @@
 // Brief Description : Manages all singleton logic pertaining to enemies, such as spawning.
 *****************************************************************************/
 using System;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace FoolsBrand.Enemies
 {
-    public class EnemyManager : MonoBehaviour
+    public class EnemyManager : Manager
     {
         private const string ENEMY_POS_TAG = "EnemyPos";
 
         [SerializeField] private Enemy[] encounterableEnemies;
         [SerializeField] private Enemy bossEnemy;
 
+        private readonly List<Enemy> currentEnemies = new List<Enemy>();
+
         private Transform enemyPos;
 
-        public void Init()
+        public IReadOnlyList<Enemy> CurrentEnemies
+        {
+            get
+            {
+                // Flush dead enemies.
+                for(int i = 0; i < currentEnemies.Count; i++)
+                {
+                    if (currentEnemies[i].IsDead)
+                    {
+                        currentEnemies.RemoveAt(i);
+                        i--;
+                    }
+                }
+                return currentEnemies;
+            }
+        }
+
+        public override void Init(GameManager gm)
         {
             enemyPos = GameObject.FindGameObjectWithTag(ENEMY_POS_TAG).transform;
         }
@@ -42,6 +63,7 @@ namespace FoolsBrand.Enemies
         {
             Enemy spawnedEnemy = Instantiate(prefab, enemyPos.transform.position, Quaternion.identity, transform);
             spawnedEnemy.Init();
+            currentEnemies.Add(spawnedEnemy);
             return spawnedEnemy;
         }
     }

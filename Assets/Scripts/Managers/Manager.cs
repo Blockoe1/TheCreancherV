@@ -12,6 +12,6 @@ namespace FoolsBrand
 {
     public abstract class Manager : MonoBehaviour
     {
-        public virtual void Init() { }
+        public virtual void Init(GameManager gm) { }
     }
 }

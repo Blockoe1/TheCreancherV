@@ -6,6 +6,7 @@
 //
 // Brief Description : Base script any entity that can deal and recieve damage in combat.
 *****************************************************************************/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -43,7 +44,7 @@ namespace FoolsBrand
         /// Makes this combatant perform a certain list of combat actions.
         /// </summary>
         /// <param name="actions">The actions to perform.</param>
-        public void ProcessActions(List<Action> actions)
+        public IEnumerator ProcessActions(List<Action> actions)
         {
             MinPriorityQueue<Action> sortedActions = new MinPriorityQueue<Action>();
             foreach(Action action in actions)
@@ -59,25 +60,26 @@ namespace FoolsBrand
                 switch (action.Type)
                 {
                     case Action.ActionTypes.ATTACK:
-                        Debug.Log("Dealt " + action.Value.ToString() + " damage.");
+                        Debug.Log($"Combatant {name} dealt " + action.Value.ToString() + " damage.");
                         break;
                     case Action.ActionTypes.HEAL:
-                        Debug.Log("Applied " + action.Value.ToString() + " healing to self.");
+                        Debug.Log($"Combatant {name} applied " + action.Value.ToString() + " healing to self.");
                         break;
                     case Action.ActionTypes.CORRUPTION:
-                        Debug.Log("Applied corruption to " + action.Value.ToString() + " dice.");
+                        Debug.Log($"Combatant {name} applied corruption to " + action.Value.ToString() + " dice.");
                         break;
                     case Action.ActionTypes.POSION:
-                        Debug.Log("Applied " + action.Value.ToString() + " poison.");
+                        Debug.Log($"Combatant {name} applied " + action.Value.ToString() + " poison.");
                         break;
                 }
 
             }
+            yield return null;
         }
 
         /// <summary>
         /// Called when its this combatant's turn to act.
         /// </summary>
-        public abstract void Act();
+        public abstract IEnumerator Act();
     }
 }

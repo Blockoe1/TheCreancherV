@@ -28,7 +28,7 @@ namespace FoolsBrand
         /// <summary>
         /// Initialize the dice bags
         /// </summary>
-        public override void Init(GameManager gm)
+        public override void Init(GameManager gm, HierarchyManager parentManager)
         {
             Instance = this;
             SetupDiceDict();

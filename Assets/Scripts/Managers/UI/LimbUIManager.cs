@@ -22,7 +22,7 @@ namespace FoolsBrand.UI
 
         public static event System.Action<int, int> OnLimbSelectedEvent;
 
-        public override void Init(GameManager gm)
+        public override void Init(GameManager gm, HierarchyManager parentManager)
         {
             enemyManager = gm.GetManager<EnemyManager>();
         }

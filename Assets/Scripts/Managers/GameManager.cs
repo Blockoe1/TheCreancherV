@@ -15,7 +15,7 @@ public class GameManager : HierarchyManager
     /// </summary>
     private void Awake()
     {
-        Init(this);
+        Init(this, this);
 
         GameStart();
     }

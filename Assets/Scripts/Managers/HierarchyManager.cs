@@ -15,11 +15,11 @@ namespace FoolsBrand
     {
         [SerializeField] private Manager[] managers;
 
-        public override void Init(GameManager gm)
+        public override void Init(GameManager gm, HierarchyManager parentManager)
         {
             foreach (Manager manager in managers)
             {
-                manager.Init(gm);
+                manager.Init(gm, this);
             }
         }
 

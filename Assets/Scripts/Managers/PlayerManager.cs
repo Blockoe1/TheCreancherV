@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,20 +9,26 @@ namespace FoolsBrand
     /// </summary>
     public class PlayerManager : Manager
     {
-        [SerializeField] private HealthStruct playerHealth = new();
+        [SerializeField] private PlayerCombatant player;
+        [SerializeField] private HealthData playerHealth = new();
 
-        public static HealthStruct? PlayerHealth = null;
+        public static HealthData PlayerHealth = null;
         private DiceManager diceManager;
+
+        public PlayerCombatant Player => player;
+
+        public bool IsDead => player.Health.IsDead;
 
         public override void Init(GameManager gm, HierarchyManager parentManager)
         {
             PlayerHealth ??= playerHealth;
-            gm.GetManager<DiceManager>();
+            diceManager = gm.GetManager<DiceManager>();
         }
 
-        public void Act()
+        public IEnumerator Act(Combatant target)
         {
-            List<DiceAction> allActions = new();
+            diceManager.DrawDice();
+
             MinPriorityQueue<DiceAction> actionQueue = new MinPriorityQueue<DiceAction>();
             foreach (GameObject dice in diceManager.DiceInPlay)
             {
@@ -44,8 +51,9 @@ namespace FoolsBrand
             {
                 // Switch this to inheritance support later.
                 DiceAction action = actionQueue.Dequeue();
-                action.PerformAction(default, null);
+                yield return StartCoroutine(action.PerformAction(target, player));
             }
+            yield return null;
         }
     }
 }

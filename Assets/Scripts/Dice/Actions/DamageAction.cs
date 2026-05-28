@@ -6,17 +6,21 @@
 //
 // Brief Description : Deals damage to the target.
 *****************************************************************************/
+using System.Collections;
 using UnityEngine;
 
 namespace FoolsBrand
 {
+    [System.Serializable]
     public class DamageAction : DiceAction
     {
         public override int PriorityValue => 100;
 
-        public override void PerformAction(ITargetable target, Combatant user)
+        public override IEnumerator PerformAction(ITargetable target, Combatant user)
         {
             Debug.Log($"{user} attacked {target} for {value}.");
+            target.TakeDamage(value, user);
+            yield return null;
         }
     }
 }

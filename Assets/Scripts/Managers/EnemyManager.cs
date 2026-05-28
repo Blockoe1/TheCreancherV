@@ -7,8 +7,6 @@
 // Brief Description : Manages all singleton logic pertaining to enemies, such as spawning.
 *****************************************************************************/
 using System;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace FoolsBrand.Enemies
@@ -20,27 +18,23 @@ namespace FoolsBrand.Enemies
         [SerializeField] private Enemy[] encounterableEnemies;
         [SerializeField] private Enemy bossEnemy;
 
-        private readonly List<Enemy> currentEnemies = new List<Enemy>();
-        public Enemy CurrentEnemy => currentEnemies.Count > 0 ? currentEnemies[0] : null;
-
-        private Transform enemyPos;
-
-        public IReadOnlyList<Enemy> CurrentEnemies
+        private Enemy currentEnemy;
+        public Enemy CurrentEnemy
         {
             get
             {
-                // Flush dead enemies.
-                for(int i = 0; i < currentEnemies.Count; i++)
+                if (currentEnemy.IsDead)
                 {
-                    if (currentEnemies[i].IsDead)
-                    {
-                        currentEnemies.RemoveAt(i);
-                        i--;
-                    }
+                    currentEnemy = null;
                 }
-                return currentEnemies;
+
+                return currentEnemy;
             }
         }
+
+        private Transform enemyPos;
+
+        public static event Action<Enemy> EnemySpawnEvent;
 
         public override void Init(GameManager gm, HierarchyManager parentManager)
         {
@@ -62,9 +56,15 @@ namespace FoolsBrand.Enemies
         /// <returns></returns>
         public Enemy SpawnEnemy(Enemy prefab)
         {
+            if (currentEnemy != null)
+            {
+                Debug.LogWarning("Enemy was spawned before th eprevious enemy was destroyed.");
+            }
+
             Enemy spawnedEnemy = Instantiate(prefab, enemyPos.transform.position, Quaternion.identity, transform);
             spawnedEnemy.Init();
-            currentEnemies.Add(spawnedEnemy);
+            currentEnemy = spawnedEnemy;
+            EnemySpawnEvent?.Invoke(spawnedEnemy);
             return spawnedEnemy;
         }
     }

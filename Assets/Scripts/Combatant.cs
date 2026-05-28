@@ -15,16 +15,17 @@ namespace FoolsBrand
 {
     public abstract class Combatant : MonoBehaviour, ITargetable
     {
-        [SerializeField] private HealthStruct health;
+        [SerializeField] private HealthData health;
         [SerializeField] private UnityEvent onDeathEvent;
 
-        public HealthStruct Health => health;
+        public HealthData Health => health;
+        public UnityEvent OnDeathEvent => onDeathEvent;
 
         /// <summary>
         /// Makes this combatant take damage.
         /// </summary>
         /// <param name="damage"></param>
-        public void TakeDamage(int damage)
+        public virtual void TakeDamage(int damage, Combatant source)
         {
             if (health.IsDead)
             {
@@ -32,12 +33,17 @@ namespace FoolsBrand
                 return;
             }
 
-            health.Value -= damage;
+            health.Value -= CalcDamage(damage);
             if (health.IsDead)
             {
                 // Death Handling.
                 onDeathEvent?.Invoke();
             }
+        }
+
+        protected virtual int CalcDamage(int inDamage)
+        {
+            return inDamage;
         }
 
         /// <summary>
@@ -57,7 +63,7 @@ namespace FoolsBrand
             {
                 // Switch this to inheritance support later.
                 DiceAction action = sortedActions.Dequeue();
-                action.PerformAction(target, this);
+                yield return StartCoroutine(action.PerformAction(target, this));
 
             }
             yield return null;
@@ -66,6 +72,6 @@ namespace FoolsBrand
         /// <summary>
         /// Called when its this combatant's turn to act.
         /// </summary>
-        public abstract IEnumerator Act(ITargetable target);
+        public abstract IEnumerator Act(Combatant target);
     }
 }

@@ -75,16 +75,16 @@ namespace FoolsBrand
             }
 
             ShuffleDeck();
-            StartTurn();
+            //StartTurn();
         }
 
         /// <summary>
         /// Called whenever the next player turn starts
         /// </summary>
-        public void StartTurn()
-        {
-            DrawDice();
-        }
+        //public void StartTurn()
+        //{
+        //    DrawDice();
+        //}
 
 
         public void DiscardDice(int index)
@@ -100,61 +100,61 @@ namespace FoolsBrand
         /// <summary>
         /// Apply actions and discard current dice in play except reserve slot
         /// </summary>
-        [ContextMenu("End Turn")]
-        public void EndTurn()
-        {
+        //[ContextMenu("End Turn")]
+        //public void EndTurn()
+        //{
             
 
-            //Sort out all of the actions into their respective category
-            //Dictionary<Action.ActionTypes, List<Action>> sortedActions = new();
-            //foreach (Action action in allActions)
-            //{
-            //    if (!sortedActions.ContainsKey(action.Type))
-            //    {
-            //        sortedActions.Add(action.Type, new List<Action>());
-            //    }
+        //    //Sort out all of the actions into their respective category
+        //    //Dictionary<Action.ActionTypes, List<Action>> sortedActions = new();
+        //    //foreach (Action action in allActions)
+        //    //{
+        //    //    if (!sortedActions.ContainsKey(action.Type))
+        //    //    {
+        //    //        sortedActions.Add(action.Type, new List<Action>());
+        //    //    }
 
-            //    sortedActions[action.Type].Add(action);
-            //}
+        //    //    sortedActions[action.Type].Add(action);
+        //    //}
 
-            //if (sortedActions.ContainsKey(Action.ActionTypes.CORRUPTION))
-            //{
-            //    foreach (Action action in sortedActions[Action.ActionTypes.CORRUPTION])
-            //    {
-            //        //Apply corruption to dice here
-            //        Debug.Log("Applied corruption to " + action.Value.ToString() + " dice.");
-            //    }
-            //}
+        //    //if (sortedActions.ContainsKey(Action.ActionTypes.CORRUPTION))
+        //    //{
+        //    //    foreach (Action action in sortedActions[Action.ActionTypes.CORRUPTION])
+        //    //    {
+        //    //        //Apply corruption to dice here
+        //    //        Debug.Log("Applied corruption to " + action.Value.ToString() + " dice.");
+        //    //    }
+        //    //}
 
-            //if (sortedActions.ContainsKey(Action.ActionTypes.HEAL))
-            //{
-            //    foreach (Action action in sortedActions[Action.ActionTypes.HEAL])
-            //    {
-            //        //Apply healing
-            //        Debug.Log("Applied " + action.Value.ToString() + " healing to self.");
-            //    }
-            //}
+        //    //if (sortedActions.ContainsKey(Action.ActionTypes.HEAL))
+        //    //{
+        //    //    foreach (Action action in sortedActions[Action.ActionTypes.HEAL])
+        //    //    {
+        //    //        //Apply healing
+        //    //        Debug.Log("Applied " + action.Value.ToString() + " healing to self.");
+        //    //    }
+        //    //}
 
-            //if (sortedActions.ContainsKey(Action.ActionTypes.ATTACK))
-            //{
-            //    foreach (Action action in sortedActions[Action.ActionTypes.ATTACK])
-            //    {
-            //        //Apply damage
-            //        Debug.Log("Dealt " + action.Value.ToString() + " damage.");
-            //    }
-            //}
+        //    //if (sortedActions.ContainsKey(Action.ActionTypes.ATTACK))
+        //    //{
+        //    //    foreach (Action action in sortedActions[Action.ActionTypes.ATTACK])
+        //    //    {
+        //    //        //Apply damage
+        //    //        Debug.Log("Dealt " + action.Value.ToString() + " damage.");
+        //    //    }
+        //    //}
 
-            //if (sortedActions.ContainsKey(Action.ActionTypes.POSION))
-            //{
-            //    foreach (Action action in sortedActions[Action.ActionTypes.POSION])
-            //    {
-            //        //Apply poison
-            //        Debug.Log("Applied " + action.Value.ToString() + " poison.");
-            //    }
-            //}
+        //    //if (sortedActions.ContainsKey(Action.ActionTypes.POSION))
+        //    //{
+        //    //    foreach (Action action in sortedActions[Action.ActionTypes.POSION])
+        //    //    {
+        //    //        //Apply poison
+        //    //        Debug.Log("Applied " + action.Value.ToString() + " poison.");
+        //    //    }
+        //    //}
 
-            StartTurn();
-        }
+        //    StartTurn();
+        //}
 
         /// <summary>
         /// Draws 2 dice from the die bag

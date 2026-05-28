@@ -1,9 +1,6 @@
 using FoolsBrand;
 using FoolsBrand.Enemies;
 using FoolsBrand.UI;
-using System;
-using Unity.VisualScripting;
-using UnityEngine;
 
 /// <summary>
 /// Master game manager. Manages the individual managers
@@ -32,5 +29,10 @@ public class GameManager : HierarchyManager
         // Debug start.
 
         GetManager<UIManager>().GetManager<LimbUIManager>().SetDisplays(enemyManager.CurrentEnemy);
+    }
+
+    private void OnDestroy()
+    {
+        Deinit();
     }
 }

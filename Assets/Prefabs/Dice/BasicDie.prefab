@@ -33,8 +33,16 @@ PrefabInstance:
       value: Assembly-CSharp FoolsBrand.CorruptionAction
       objectReference: {fileID: 0}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232333].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232334].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: dieFaces.Array.data[0].faceActions.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: 'dieFaces.Array.data[0].faceActions.Array.data[0]'
@@ -43,6 +51,10 @@ PrefabInstance:
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: 'dieFaces.Array.data[0].faceActions.Array.data[1]'
       value: 7292673129211232334
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232334].numCorrupted
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9028978447311450076, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: m_LocalPosition.x

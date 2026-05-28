@@ -7,39 +7,46 @@
 // Brief Description : Controls an enemy's limbs and their relevant stats.
 *****************************************************************************/
 using NaughtyAttributes;
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace FoolsBrand.Enemies
 {
-    public class Limb : MonoBehaviour
+    public class Limb : MonoBehaviour, ITargetable
     {
         #region CONSTS
         private const string BODY_NAME = "Body";
         #endregion
 
         [SerializeField] private bool isBody;
-        [SerializeField, HideIf("isBody")] private HealthStruct health;
+        [SerializeField, HideIf("isBody")] private HealthData health;
         [SerializeField] private int defense;
         [SerializeField] private float multiplier;
+        [SerializeField, ShowIf("HasAttack")] private int attackWeight = 1;
         [SerializeField] private DieBase attackDice;
         [Header("Events")]
         [SerializeField] private UnityEvent<int> onDamageEvent;
         [SerializeField] private UnityEvent onDestroyEvent;
 
+        protected Enemy parentEnemy;
+
         #region Properties
+        public bool IsDead => !isBody && health.IsDead;
+        public bool IsBody => isBody;
         public bool HasAttack => attackDice != null;
-        public HealthStruct Health => health;
+        public HealthData Health => health;
         public string LimbName => isBody ? BODY_NAME : name;
         public int Defense => defense;
+        public int AttackWeight => attackWeight;
         public float Multiplier => multiplier;
+        public UnityEvent OnDestroyEvent => onDestroyEvent;
         #endregion
 
-        public void Init()
+        public void Init(Enemy parentEnemy)
         {
+            this.parentEnemy = parentEnemy;
 
+            LimbStart();
         }
 
         /// <summary>
@@ -61,26 +68,46 @@ namespace FoolsBrand.Enemies
         /// </summary>
         /// <param name="baseDamage">The damage to deal to the limb.</param>
         /// <returns></returns>
-        public int AttackLimb(int baseDamage)
+        public void TakeDamage(int baseDamage, Combatant source)
         {
             if (health.IsDead)
             {
                 Debug.LogError($"Limb {LimbName} took damage while dead.");
-                return 0;
+                return;
             }
-            int damage = baseDamage - defense;
+            int damage = Mathf.Max(baseDamage - defense, 0);
 
             // Deal damage to the limb.
-            health.Value -= damage;
-            onDamageEvent?.Invoke(damage);
-            if (health.IsDead)
+            if (!isBody)
             {
-                onDestroyEvent?.Invoke();
-                Destroy(gameObject);
+                health.Value -= damage;
+                onDamageEvent?.Invoke(damage);
+                if (health.IsDead)
+                {
+                    LimbDestroyed();
+                    onDestroyEvent?.Invoke();
+                    gameObject.SetActive(false);
+                }
             }
 
             // Deal damage to the main enemy.
-            return Mathf.RoundToInt(damage * multiplier);
+            parentEnemy.TakeDamage(Mathf.RoundToInt(damage * multiplier), source);
         }
+
+        #region Custom Effect Functions
+        protected virtual void LimbStart() { }
+
+        protected virtual void LimbDestroyed() { }
+        #endregion
+
+        #region Debug
+        [ContextMenu("Kill")]
+        private void Kill()
+        {
+            LimbDestroyed();
+            onDestroyEvent?.Invoke();
+            gameObject.SetActive(false);
+        }
+        #endregion
     }
 }

@@ -13,11 +13,17 @@ namespace FoolsBrand
     public static class PlayerInputManager
     {
         public static event Action<int> OnLimbSelectedInput;
+        public static event Action OnRollButtonPressed;
 
         public static void LimbSelected(int limbIndex)
         {
             UnityEngine.Debug.Log($"Limb at index {limbIndex} selected");
             OnLimbSelectedInput?.Invoke(limbIndex);
+        }
+
+        public static void OnRollPressed()
+        {
+            OnRollButtonPressed?.Invoke();
         }
     }
 }

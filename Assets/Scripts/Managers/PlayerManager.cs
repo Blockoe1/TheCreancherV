@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 namespace FoolsBrand
@@ -15,6 +16,10 @@ namespace FoolsBrand
         public static HealthData PlayerHealth = null;
         private DiceManager diceManager;
 
+        private int? targetedLimb = null;
+        //private DiceAction[] diceActions = null;
+        private MinPriorityQueue<DiceAction> actionQueue;
+
         public PlayerCombatant Player => player;
 
         public bool IsDead => player.Health.IsDead;
@@ -23,13 +28,14 @@ namespace FoolsBrand
         {
             PlayerHealth ??= playerHealth;
             diceManager = gm.GetManager<DiceManager>();
+
+            PlayerInputManager.OnLimbSelectedInput += PlayerInputManager_OnLimbSelectedInput;
+            PlayerInputManager.OnRollButtonPressed += PlayerInputManager_OnRollButtonPressed;
         }
 
-        public IEnumerator Act(Combatant target)
+        private void PlayerInputManager_OnRollButtonPressed()
         {
-            diceManager.DrawDice();
-
-            MinPriorityQueue<DiceAction> actionQueue = new MinPriorityQueue<DiceAction>();
+            actionQueue = new MinPriorityQueue<DiceAction>();
             foreach (GameObject dice in diceManager.DiceInPlay)
             {
                 DieBase die = dice.GetComponent<DieBase>();
@@ -38,14 +44,37 @@ namespace FoolsBrand
                 {
                     actionQueue.Enqueue(action, action.PriorityValue);
                 }
-                //allActions.AddRange(die.ApplyEffect());
-                dice.SetActive(false);
-
-
-                diceManager.DiscardDice(0);
             }
+        }
 
-            diceManager.ClearDiceInPlay();
+        private void PlayerInputManager_OnLimbSelectedInput(int limbIndex)
+        {
+            targetedLimb = limbIndex;
+        }
+
+        public IEnumerator Act(Combatant target)
+        {
+            Debug.Log("Turn Start");
+            //Player turn start
+            //Player draws dice
+            targetedLimb = null;
+            actionQueue = null;
+            diceManager.DrawDice();
+
+            //TODO - Dice Reservation
+
+            //TODO - Dice Bonus by not rolling
+
+            //Player rolls dice
+            yield return new WaitUntil(() => actionQueue != null);
+            Debug.Log("Dice Rolled");
+            //Player selects part
+            yield return new WaitUntil(() => targetedLimb != null);
+            Debug.Log("Limb Targeted");
+            //Actions
+            //Dice get Discarded
+            //Player End Turn
+
 
             while (actionQueue.Count > 0)
             {
@@ -53,6 +82,16 @@ namespace FoolsBrand
                 DiceAction action = actionQueue.Dequeue();
                 yield return StartCoroutine(action.PerformAction(target, player));
             }
+            Debug.Log("Actions Taken");
+
+            foreach (GameObject dice in diceManager.DiceInPlay)
+            {
+                dice.SetActive(false);
+                diceManager.DiscardDice(0);
+            }
+            diceManager.ClearDiceInPlay();
+            Debug.Log("Dice Discarded");
+
             yield return null;
         }
     }

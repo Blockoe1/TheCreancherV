@@ -67,7 +67,7 @@ namespace FoolsBrand
                     break;
                 }
 
-                yield return new WaitForSeconds(debugWait);
+                //yield return new WaitForSeconds(debugWait);
             }
             if (state == CombatState.Victory)
             {

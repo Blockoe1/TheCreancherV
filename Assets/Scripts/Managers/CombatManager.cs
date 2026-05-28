@@ -94,7 +94,7 @@ namespace FoolsBrand
             }
 
             // Check for victory.
-            if (enemyManager.CurrentEnemies.Count == 0)
+            if (enemyManager.CurrentEnemy == null)
             {
                 state = CombatState.Victory;
                 return true;

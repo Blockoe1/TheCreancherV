@@ -293,7 +293,7 @@ MonoBehaviour:
     maxHealth: 0
   defense: 5
   multiplier: 5
-  attackDice: {fileID: 755269475158816666}
+  attackDice: {fileID: 0}
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -571,7 +571,7 @@ MonoBehaviour:
     maxHealth: 0
   defense: 3
   multiplier: 1.5
-  attackDice: {fileID: 755269475158816666}
+  attackDice: {fileID: 0}
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -849,7 +849,7 @@ MonoBehaviour:
     maxHealth: 0
   defense: 3
   multiplier: 1.5
-  attackDice: {fileID: 755269475158816666}
+  attackDice: {fileID: 0}
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []

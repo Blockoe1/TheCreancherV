@@ -29,7 +29,6 @@ namespace FoolsBrand
         {
             if (health.IsDead)
             {
-                Debug.LogError($"Combatant {name} took damage while dead.");
                 return;
             }
 

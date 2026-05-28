@@ -6,6 +6,7 @@
 //
 // Brief Description : Corrupts a number of the user's dice
 *****************************************************************************/
+using System.Collections;
 using UnityEngine;
 
 namespace FoolsBrand
@@ -16,9 +17,10 @@ namespace FoolsBrand
         [SerializeField] private int numCorrupted;
         public override int PriorityValue => 0;
 
-        public override void PerformAction(ITargetable target,  Combatant user)
+        public override IEnumerator PerformAction(ITargetable target,  Combatant user)
         {
             Debug.Log($"{user} corrupted {value} of their dice.");
+            yield return null;
         }
     }
 }

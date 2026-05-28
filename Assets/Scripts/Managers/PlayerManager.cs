@@ -10,9 +10,9 @@ namespace FoolsBrand
     public class PlayerManager : Manager
     {
         [SerializeField] private PlayerCombatant player;
-        [SerializeField] private HealthStruct playerHealth = new();
+        [SerializeField] private HealthData playerHealth = new();
 
-        public static HealthStruct? PlayerHealth = null;
+        public static HealthData PlayerHealth = null;
         private DiceManager diceManager;
 
         public PlayerCombatant Player => player;
@@ -51,7 +51,7 @@ namespace FoolsBrand
             {
                 // Switch this to inheritance support later.
                 DiceAction action = actionQueue.Dequeue();
-                action.PerformAction(target, player);
+                yield return StartCoroutine(action.PerformAction(target, player));
             }
             yield return null;
         }

@@ -7,6 +7,7 @@
 // Brief Description : Inflicts poison on a poisonable target.
 *****************************************************************************/
 using System;
+using System.Collections;
 using UnityEngine;
 
 namespace FoolsBrand
@@ -16,9 +17,10 @@ namespace FoolsBrand
     {
         public override int PriorityValue => 101;
 
-        public override void PerformAction(ITargetable target, Combatant user)
+        public override IEnumerator PerformAction(ITargetable target, Combatant user)
         {
             Debug.Log($"{user} poisoned {target} for {value}.");
+            yield return null;
         }
     }
 }

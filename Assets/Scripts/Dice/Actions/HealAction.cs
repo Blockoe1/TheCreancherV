@@ -6,6 +6,7 @@
 //
 // Brief Description : Heals the user based on the result.
 *****************************************************************************/
+using System.Collections;
 using UnityEngine;
 
 namespace FoolsBrand
@@ -15,9 +16,11 @@ namespace FoolsBrand
     {
         public override int PriorityValue => 50;
 
-        public override void PerformAction(ITargetable target, Combatant user)
+        public override IEnumerator PerformAction(ITargetable target, Combatant user)
         {
             Debug.Log($"{user} healed for {value}.");
+            user.Health.Value += value;
+            yield return null;
         }
     }
 }

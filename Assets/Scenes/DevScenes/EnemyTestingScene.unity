@@ -325,6 +325,7 @@ MonoBehaviour:
   player: {fileID: 532085168}
   playerHealth:
     maxHealth: 30
+    health: 30
 --- !u!4 &370220023
 Transform:
   m_ObjectHideFlags: 0
@@ -595,7 +596,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.PlayerCombatant
   health:
-    maxHealth: 0
+    maxHealth: 30
+    health: 30
   onDeathEvent:
     m_PersistentCalls:
       m_Calls: []

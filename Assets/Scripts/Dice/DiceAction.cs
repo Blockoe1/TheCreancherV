@@ -1,5 +1,6 @@
 using FoolsBrand;
 using System;
+using System.Collections;
 using UnityEngine;
 
 /// <summary>
@@ -11,7 +12,7 @@ public abstract class DiceAction
     [SerializeField] protected int value;
 
     public abstract int PriorityValue { get; }
-    public abstract void PerformAction(ITargetable target, Combatant user);
+    public abstract IEnumerator PerformAction(ITargetable target, Combatant user);
 
     //public enum ActionTypes
     //{

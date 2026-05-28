@@ -18,13 +18,16 @@ namespace FoolsBrand.UI
 
         private readonly List<LimbDisplay> limbDisplays = new List<LimbDisplay>();
 
-        private EnemyManager enemyManager;
-
-        public static event System.Action<int, int> OnLimbSelectedEvent;
+        private Enemy currentDisplayedEnemy;
 
         public override void Init(GameManager gm, HierarchyManager parentManager)
         {
-            enemyManager = gm.GetManager<EnemyManager>();
+            EnemyManager.EnemySpawnEvent += SetDisplays;
+        }
+
+        public override void Deinit()
+        {
+            EnemyManager.EnemySpawnEvent -= SetDisplays;
         }
 
         /// <summary>
@@ -33,10 +36,32 @@ namespace FoolsBrand.UI
         /// <param name="toDisplay">The enemy to display limb info for.</param>
         public void SetDisplays(Enemy toDisplay)
         {
-            for(int i = 0; i < toDisplay.Limbs.Count; i++)
+            if (toDisplay != null)
             {
-                LimbDisplay display = GetDisplay(i);
-                display.SetLimb(toDisplay.Limbs[i]);
+                toDisplay.OnDeathEvent.RemoveListener(HideDisplays);
+            }
+
+            currentDisplayedEnemy = toDisplay;
+
+            if (currentDisplayedEnemy != null)
+            {
+                toDisplay.OnDeathEvent.AddListener(HideDisplays);
+
+                for (int i = 0; i < toDisplay.Limbs.Count; i++)
+                {
+                    LimbDisplay display = GetDisplay(i);
+                    display.SetLimb(toDisplay.Limbs[i]);
+                }
+                RefreshDisplays();
+            }
+            
+        }
+
+        public void RefreshDisplays()
+        {
+            foreach(LimbDisplay display in limbDisplays)
+            {
+                display.RefreshDisplay();
             }
         }
 
@@ -85,8 +110,7 @@ namespace FoolsBrand.UI
         /// <param name="limbIndex"></param>
         public void OnLimbSelected(int limbIndex)
         {
-            // First is enemy index, second is limb index.
-            OnLimbSelectedEvent?.Invoke(0, limbIndex);
+            PlayerInputManager.LimbSelected(limbIndex);
         }
     }
 }

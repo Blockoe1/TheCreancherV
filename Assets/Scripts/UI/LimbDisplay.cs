@@ -23,6 +23,8 @@ namespace FoolsBrand.UI
         private LimbUIManager manager;
         private int index;
 
+        private Limb currentLimb;
+
         public void Init(LimbUIManager manager, int index)
         {
             this.manager = manager;
@@ -42,16 +44,44 @@ namespace FoolsBrand.UI
             targetingButton.SetActive(enabled);
         }
 
+        private void HideDisplay()
+        {
+            gameObject.SetActive(false);
+        }
+
+        public void RefreshDisplay()
+        {
+            gameObject.SetActive(!currentLimb.IsDead);
+            transform.position = Camera.main.WorldToScreenPoint(currentLimb.gameObject.transform.position);
+            nameText.text = currentLimb.LimbName;
+            defenseText.text = "Defense: " + currentLimb.Defense.ToString();
+            multiplierText.text = "Multiplier: " + currentLimb.Multiplier.ToString();
+        }
+
         /// <summary>
         /// Sets the limb that this display shows info for.
         /// </summary>
         /// <param name="limb"></param>
         public void SetLimb(Limb limb)
         {
-            transform.position = Camera.main.WorldToScreenPoint(limb.gameObject.transform.position);
-            nameText.text = limb.LimbName;
-            defenseText.text = "Defense: " + limb.Defense.ToString();
-            multiplierText.text = "Multiplier: " + limb.Multiplier.ToString();
+            if (currentLimb != null)
+            {
+                // Clean up the last limb.
+                currentLimb.OnDestroyEvent.RemoveListener(HideDisplay);
+            }
+
+            currentLimb = limb;
+
+            if (currentLimb != null)
+            {
+                currentLimb.OnDestroyEvent.AddListener(HideDisplay);
+
+                RefreshDisplay();
+            }
+            else
+            {
+                HideDisplay();
+            }
         }
     }
 }

@@ -12,7 +12,7 @@ namespace FoolsBrand
         [SerializeField] private PlayerCombatant player;
         [SerializeField] private HealthData playerHealth = new();
 
-        public static HealthData? PlayerHealth = null;
+        public static HealthData PlayerHealth = null;
         private DiceManager diceManager;
 
         public PlayerCombatant Player => player;

@@ -24,7 +24,7 @@ namespace FoolsBrand
         /// Makes this combatant take damage.
         /// </summary>
         /// <param name="damage"></param>
-        public void TakeDamage(int damage)
+        public virtual void TakeDamage(int damage, Combatant source)
         {
             if (health.IsDead)
             {

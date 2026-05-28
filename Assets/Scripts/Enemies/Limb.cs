@@ -28,7 +28,7 @@ namespace FoolsBrand.Enemies
         [SerializeField] private UnityEvent<int> onDamageEvent;
         [SerializeField] private UnityEvent onDestroyEvent;
 
-        private Enemy parentEnemy;
+        protected Enemy parentEnemy;
 
         #region Properties
         public bool IsBody => isBody;
@@ -43,6 +43,8 @@ namespace FoolsBrand.Enemies
         public void Init(Enemy parentEnemy)
         {
             this.parentEnemy = parentEnemy;
+
+            LimbStart();
         }
 
         /// <summary>
@@ -64,7 +66,7 @@ namespace FoolsBrand.Enemies
         /// </summary>
         /// <param name="baseDamage">The damage to deal to the limb.</param>
         /// <returns></returns>
-        public void TakeDamage(int baseDamage)
+        public void TakeDamage(int baseDamage, Combatant source)
         {
             if (health.IsDead)
             {
@@ -73,6 +75,7 @@ namespace FoolsBrand.Enemies
             }
             int damage = baseDamage - defense;
 
+            OnLimbDamage(source);
             // Deal damage to the limb.
             if (!isBody)
             {
@@ -80,13 +83,32 @@ namespace FoolsBrand.Enemies
                 onDamageEvent?.Invoke(damage);
                 if (health.IsDead)
                 {
+                    LimbDestroyed();
                     onDestroyEvent?.Invoke();
                     Destroy(gameObject);
                 }
             }
 
             // Deal damage to the main enemy.
-            parentEnemy.TakeDamage(Mathf.RoundToInt(damage * multiplier));
+            parentEnemy.TakeDamage(Mathf.RoundToInt(damage * multiplier), source);
         }
+
+        #region Custom Effect Functions
+        protected virtual void LimbStart() { }
+
+        /// <summary>
+        /// Called when the enemy attacks with any limb.
+        /// </summary>
+        /// <param name="target"></param>
+        public virtual void OnAttack(ITargetable target) { }
+
+        public virtual void OnAttackLimb(ITargetable target) { }
+
+        protected virtual void OnLimbDamage(Combatant source) { }
+
+        public virtual void OnEnemyDamage(Combatant source) { }
+
+        protected virtual void LimbDestroyed() { }
+        #endregion
     }
 }

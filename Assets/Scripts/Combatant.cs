@@ -32,12 +32,17 @@ namespace FoolsBrand
                 return;
             }
 
-            health.Value -= damage;
+            health.Value -= CalcDamage(damage);
             if (health.IsDead)
             {
                 // Death Handling.
                 onDeathEvent?.Invoke();
             }
+        }
+
+        protected virtual int CalcDamage(int inDamage)
+        {
+            return inDamage;
         }
 
         /// <summary>
@@ -57,7 +62,7 @@ namespace FoolsBrand
             {
                 // Switch this to inheritance support later.
                 DiceAction action = sortedActions.Dequeue();
-                action.PerformAction(target, this);
+                yield return StartCoroutine(action.PerformAction(target, this));
 
             }
             yield return null;

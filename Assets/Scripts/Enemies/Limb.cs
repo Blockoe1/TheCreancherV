@@ -75,7 +75,7 @@ namespace FoolsBrand.Enemies
                 Debug.LogError($"Limb {LimbName} took damage while dead.");
                 return;
             }
-            int damage = baseDamage - defense;
+            int damage = Mathf.Max(baseDamage - defense, 0);
 
             // Deal damage to the limb.
             if (!isBody)

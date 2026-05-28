@@ -16,12 +16,12 @@ namespace FoolsBrand
     public class HealthData
     {
         [SerializeField] private int maxHealth;
+        [SerializeField, ReadOnly] private int health;
 
         public event Action<int> HealthChangedEvent;
 
         private bool isDead;
         private bool initialized;
-        private int health;
 
         public float HealthProportion => health / maxHealth;
         public bool IsDead => isDead;
@@ -30,27 +30,16 @@ namespace FoolsBrand
         {
             get 
             {
-                Initialize();
                 return health; 
             }
             set
             {
-                Initialize();
-                health = Mathf.Clamp(health + value, 0, maxHealth);
+                health = Mathf.Clamp(value, 0, maxHealth);
                 HealthChangedEvent?.Invoke(health);
                 if (health <= 0)
                 {
                     isDead = true;
                 }
-            }
-        }
-
-        private void Initialize()
-        {
-            if (!initialized)
-            {
-                health = maxHealth;
-                initialized = true;
             }
         }
     }

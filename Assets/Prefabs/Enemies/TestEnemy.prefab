@@ -135,10 +135,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemy
   health:
-    maxHealth: 0
+    maxHealth: 20
+    health: 20
   onDeathEvent:
     m_PersistentCalls:
       m_Calls: []
+  <BaseActionValue>k__BackingField: 1
 --- !u!114 &7062837483650609997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,8 +156,10 @@ MonoBehaviour:
   isBody: 1
   health:
     maxHealth: 0
+    health: 0
   defense: 0
   multiplier: 1
+  attackWeight: 1
   attackDice: {fileID: 755269475158816666}
   onDamageEvent:
     m_PersistentCalls:
@@ -291,8 +295,10 @@ MonoBehaviour:
   isBody: 0
   health:
     maxHealth: 0
+    health: 0
   defense: 5
   multiplier: 5
+  attackWeight: 1
   attackDice: {fileID: 0}
   onDamageEvent:
     m_PersistentCalls:
@@ -430,8 +436,10 @@ MonoBehaviour:
   isBody: 0
   health:
     maxHealth: 0
+    health: 0
   defense: 2
   multiplier: 1
+  attackWeight: 1
   attackDice: {fileID: 755269475158816666}
   onDamageEvent:
     m_PersistentCalls:
@@ -569,8 +577,10 @@ MonoBehaviour:
   isBody: 0
   health:
     maxHealth: 0
+    health: 0
   defense: 3
   multiplier: 1.5
+  attackWeight: 1
   attackDice: {fileID: 0}
   onDamageEvent:
     m_PersistentCalls:
@@ -708,8 +718,10 @@ MonoBehaviour:
   isBody: 0
   health:
     maxHealth: 0
+    health: 0
   defense: 2
   multiplier: 1
+  attackWeight: 1
   attackDice: {fileID: 755269475158816666}
   onDamageEvent:
     m_PersistentCalls:
@@ -847,8 +859,10 @@ MonoBehaviour:
   isBody: 0
   health:
     maxHealth: 0
+    health: 0
   defense: 3
   multiplier: 1.5
+  attackWeight: 1
   attackDice: {fileID: 0}
   onDamageEvent:
     m_PersistentCalls:

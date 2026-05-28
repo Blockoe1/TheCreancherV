@@ -51,7 +51,7 @@ namespace FoolsBrand
             {
                 // Switch this to inheritance support later.
                 DiceAction action = actionQueue.Dequeue();
-                action.PerformAction(target, player);
+                yield return StartCoroutine(action.PerformAction(target, player));
             }
             yield return null;
         }

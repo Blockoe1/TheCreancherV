@@ -11,9 +11,6 @@ public class DieBase : MonoBehaviour
     [SerializeField, Tooltip("DO NOT CHANGE THE NUMBER OF FACES. The effects of each face")] private DieFace[] dieFaces = new DieFace[6];
 
     private int dieIndex = 0;
-    private bool corrupted = false;
-
-    private List<DiceAction> actions = new();
 
     public string DieName { get => _dieName; }
 

@@ -13,6 +13,13 @@ namespace FoolsBrand.UI
 {
     public class UIManager : HierarchyManager
     {
-        
+        /// <summary>
+        /// Switch this to a different manager this is temporary.
+        /// When the roll button gets pressed, call the invoke
+        /// </summary>
+        public void OnRollPressed()
+        {
+            PlayerInputManager.OnRollPressed();
+        }
     }
 }

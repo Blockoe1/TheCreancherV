@@ -15,5 +15,7 @@ namespace FoolsBrand
         public virtual void Init(GameManager gm, HierarchyManager parentManager) { }
 
         public virtual void GameStart() { }
+
+        public virtual void Deinit() { }
     }
 }

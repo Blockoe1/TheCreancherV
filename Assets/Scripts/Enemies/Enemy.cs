@@ -6,6 +6,7 @@
 //
 // Brief Description : Base script for enemies that controls their limbs and actions during combat.
 *****************************************************************************/
+using System;
 using System.Collections;
 using System.Linq;
 using UnityEngine;
@@ -26,14 +27,7 @@ namespace FoolsBrand.Enemies
 
         public bool IsDead => Health.IsDead;
 
-        public ReadOnlyArray<Limb> Limbs
-        {
-            get
-            {
-                limbs = limbs.Where(x => x != null && !x.Health.IsDead).ToArray();
-                return limbs;
-            }
-        }    
+        public ReadOnlyArray<Limb> Limbs => limbs;   
         
         public void Init()
         {
@@ -54,20 +48,6 @@ namespace FoolsBrand.Enemies
         public override void TakeDamage(int damage, Combatant source)
         {
             base.TakeDamage(damage, source);
-            foreach(Limb limb in Limbs)
-            {
-                limb.OnEnemyDamage(source);
-            }
-        }
-
-        /// <summary>
-        /// Get a limb by index.
-        /// </summary>
-        /// <param name="index"></param>
-        /// <returns></returns>
-        public Limb GetLimb(int index)
-        {
-            return limbs[index];
         }
 
         private Limb GetRandomLimbWeighted(Limb[] limbs)
@@ -78,7 +58,7 @@ namespace FoolsBrand.Enemies
                 totalWeight += limb.AttackWeight;
             }
 
-            int random = Random.Range(0, totalWeight);
+            int random = UnityEngine.Random.Range(0, totalWeight);
             for(int i = 0; i < limbs.Length; i++)
             {
                 random -= limbs[i].AttackWeight;
@@ -88,6 +68,17 @@ namespace FoolsBrand.Enemies
                 }
             }
             return limbs[^1];
+        }
+
+        private void ExecuteForActiveLimbs(Action<Limb> toExecute)
+        {
+            foreach (var limb in Limbs)
+            {
+                if (!limb.Health.IsDead)
+                {
+                    toExecute(limb);
+                }
+            }
         }
 
         /// <summary>
@@ -106,13 +97,6 @@ namespace FoolsBrand.Enemies
 
                 Limb attackLimb = GetRandomLimbWeighted(attackLimbs);
                 DiceAction[] actions = attackLimb.RollAttack();
-                attackLimb.OnAttackLimb(target);
-
-                // Query all limbs for effects.
-                foreach(var limb in Limbs)
-                {
-                    limb.OnAttack(target);
-                }
 
                 yield return StartCoroutine(ProcessActions(actions, target));
             }

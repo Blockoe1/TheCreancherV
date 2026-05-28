@@ -31,6 +31,7 @@ namespace FoolsBrand.Enemies
         protected Enemy parentEnemy;
 
         #region Properties
+        public bool IsDead => !isBody && health.IsDead;
         public bool IsBody => isBody;
         public bool HasAttack => attackDice != null;
         public HealthData Health => health;
@@ -38,6 +39,7 @@ namespace FoolsBrand.Enemies
         public int Defense => defense;
         public int AttackWeight => attackWeight;
         public float Multiplier => multiplier;
+        public UnityEvent OnDestroyEvent => onDestroyEvent;
         #endregion
 
         public void Init(Enemy parentEnemy)
@@ -75,7 +77,6 @@ namespace FoolsBrand.Enemies
             }
             int damage = baseDamage - defense;
 
-            OnLimbDamage(source);
             // Deal damage to the limb.
             if (!isBody)
             {
@@ -85,7 +86,7 @@ namespace FoolsBrand.Enemies
                 {
                     LimbDestroyed();
                     onDestroyEvent?.Invoke();
-                    Destroy(gameObject);
+                    gameObject.SetActive(false);
                 }
             }
 
@@ -96,19 +97,17 @@ namespace FoolsBrand.Enemies
         #region Custom Effect Functions
         protected virtual void LimbStart() { }
 
-        /// <summary>
-        /// Called when the enemy attacks with any limb.
-        /// </summary>
-        /// <param name="target"></param>
-        public virtual void OnAttack(ITargetable target) { }
-
-        public virtual void OnAttackLimb(ITargetable target) { }
-
-        protected virtual void OnLimbDamage(Combatant source) { }
-
-        public virtual void OnEnemyDamage(Combatant source) { }
-
         protected virtual void LimbDestroyed() { }
+        #endregion
+
+        #region Debug
+        [ContextMenu("Kill")]
+        private void Kill()
+        {
+            LimbDestroyed();
+            onDestroyEvent?.Invoke();
+            gameObject.SetActive(false);
+        }
         #endregion
     }
 }

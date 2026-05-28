@@ -40,5 +40,13 @@ namespace FoolsBrand
         {
             return (T)Array.Find(managers, x => x is T);
         }
+
+        public override void Deinit()
+        {
+            foreach (Manager manager in managers)
+            {
+                manager.Deinit();
+            }
+        }
     }
 }

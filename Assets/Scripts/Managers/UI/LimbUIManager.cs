@@ -20,8 +20,6 @@ namespace FoolsBrand.UI
 
         private EnemyManager enemyManager;
 
-        public static event System.Action<int, int> OnLimbSelectedEvent;
-
         public override void Init(GameManager gm, HierarchyManager parentManager)
         {
             enemyManager = gm.GetManager<EnemyManager>();
@@ -37,6 +35,15 @@ namespace FoolsBrand.UI
             {
                 LimbDisplay display = GetDisplay(i);
                 display.SetLimb(toDisplay.Limbs[i]);
+            }
+            RefreshDisplays();
+        }
+
+        public void RefreshDisplays()
+        {
+            foreach(LimbDisplay display in limbDisplays)
+            {
+                display.RefreshDisplay();
             }
         }
 
@@ -85,8 +92,7 @@ namespace FoolsBrand.UI
         /// <param name="limbIndex"></param>
         public void OnLimbSelected(int limbIndex)
         {
-            // First is enemy index, second is limb index.
-            OnLimbSelectedEvent?.Invoke(0, limbIndex);
+            PlayerInputManager.LimbSelected(limbIndex);
         }
     }
 }

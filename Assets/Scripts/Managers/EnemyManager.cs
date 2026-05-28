@@ -6,6 +6,7 @@
 //
 // Brief Description : Manages all singleton logic pertaining to enemies, such as spawning.
 *****************************************************************************/
+using System;
 using UnityEngine;
 
 namespace FoolsBrand.Enemies
@@ -32,6 +33,8 @@ namespace FoolsBrand.Enemies
         }
 
         private Transform enemyPos;
+
+        public static event Action<Enemy> EnemySpawnEvent;
 
         public override void Init(GameManager gm, HierarchyManager parentManager)
         {
@@ -61,6 +64,7 @@ namespace FoolsBrand.Enemies
             Enemy spawnedEnemy = Instantiate(prefab, enemyPos.transform.position, Quaternion.identity, transform);
             spawnedEnemy.Init();
             currentEnemy = spawnedEnemy;
+            EnemySpawnEvent?.Invoke(spawnedEnemy);
             return spawnedEnemy;
         }
     }

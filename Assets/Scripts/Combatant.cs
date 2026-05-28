@@ -19,6 +19,7 @@ namespace FoolsBrand
         [SerializeField] private UnityEvent onDeathEvent;
 
         public HealthData Health => health;
+        public UnityEvent OnDeathEvent => onDeathEvent;
 
         /// <summary>
         /// Makes this combatant take damage.

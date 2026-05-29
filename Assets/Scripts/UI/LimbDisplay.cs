@@ -15,6 +15,7 @@ namespace FoolsBrand.UI
     public class LimbDisplay : MonoBehaviour
     {
         [SerializeField] private GameObject targetingButton;
+        [SerializeField] private HealthBar healthBar;
         [Header("Info Fields")]
         [SerializeField] private TMP_Text nameText;
         [SerializeField] private TMP_Text defenseText;
@@ -29,6 +30,12 @@ namespace FoolsBrand.UI
         {
             this.manager = manager;
             this.index = index;
+
+            // The limb at index 0 is always the body.
+            if (index == 0)
+            {
+                Destroy(healthBar.gameObject);
+            }
         }
 
         /// <summary>
@@ -71,15 +78,22 @@ namespace FoolsBrand.UI
             }
 
             currentLimb = limb;
-
+            
             if (currentLimb != null)
             {
                 currentLimb.OnDestroyEvent.AddListener(HideDisplay);
-
+                if (healthBar != null)
+                {
+                    healthBar.SetTargetHealth(currentLimb.Health);
+                }
                 RefreshDisplay();
             }
             else
             {
+                if (healthBar != null)
+                {
+                    healthBar.SetTargetHealth(null);
+                }
                 HideDisplay();
             }
         }

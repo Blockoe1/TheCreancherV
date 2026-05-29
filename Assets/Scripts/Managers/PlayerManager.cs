@@ -1,3 +1,4 @@
+using FoolsBrand.Enemies;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -11,7 +12,6 @@ namespace FoolsBrand
     public class PlayerManager : Manager
     {
         [SerializeField] private PlayerCombatant player;
-        [SerializeField] private HealthData playerHealth = new();
 
         public static HealthData PlayerHealth = null;
         private DiceManager diceManager;
@@ -26,7 +26,7 @@ namespace FoolsBrand
 
         public override void Init(GameManager gm, HierarchyManager parentManager)
         {
-            PlayerHealth ??= playerHealth;
+            PlayerHealth ??= player.Health;
             diceManager = gm.GetManager<DiceManager>();
 
             PlayerInputManager.OnLimbSelectedInput += PlayerInputManager_OnLimbSelectedInput;
@@ -54,6 +54,8 @@ namespace FoolsBrand
 
         public IEnumerator Act(Combatant target)
         {
+            Enemy enemyTarget = target as Enemy;
+
             Debug.Log("Turn Start");
             //Player turn start
             //Player draws dice
@@ -80,7 +82,7 @@ namespace FoolsBrand
             {
                 // Switch this to inheritance support later.
                 DiceAction action = actionQueue.Dequeue();
-                yield return StartCoroutine(action.PerformAction(target, player));
+                yield return StartCoroutine(action.PerformAction(enemyTarget.Limbs[(int)targetedLimb], player));
             }
             Debug.Log("Actions Taken");
 

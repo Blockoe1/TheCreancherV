@@ -294,8 +294,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemy.Limb
   isBody: 0
   health:
-    maxHealth: 0
-    health: 0
+    maxHealth: 3
+    health: 3
   defense: 5
   multiplier: 5
   attackWeight: 1
@@ -435,8 +435,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemy.Limb
   isBody: 0
   health:
-    maxHealth: 0
-    health: 0
+    maxHealth: 5
+    health: 5
   defense: 2
   multiplier: 1
   attackWeight: 1
@@ -576,8 +576,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemy.Limb
   isBody: 0
   health:
-    maxHealth: 0
-    health: 0
+    maxHealth: 7
+    health: 7
   defense: 3
   multiplier: 1.5
   attackWeight: 1
@@ -717,8 +717,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemy.Limb
   isBody: 0
   health:
-    maxHealth: 0
-    health: 0
+    maxHealth: 5
+    health: 5
   defense: 2
   multiplier: 1
   attackWeight: 1
@@ -858,8 +858,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemy.Limb
   isBody: 0
   health:
-    maxHealth: 0
-    health: 0
+    maxHealth: 7
+    health: 7
   defense: 3
   multiplier: 1.5
   attackWeight: 1

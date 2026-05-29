@@ -16,8 +16,14 @@ namespace FoolsBrand
     public class PlayerCombatant : Combatant, IEffectable
     {
         [SerializeField] private int defense;
+        [SerializeField] private DebugEffect debugEffect;
 
         private List<Effect> Effects = new List<Effect>();
+
+        private void Start()
+        {
+            ApplyEffect(debugEffect);
+        }
 
         /// <summary>
         /// Player queries any effects for modifying or triggering on damage.

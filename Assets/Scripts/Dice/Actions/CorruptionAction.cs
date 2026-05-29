@@ -14,7 +14,6 @@ namespace FoolsBrand
     [System.Serializable]
     public class CorruptionAction : DiceAction
     {
-        [SerializeField] private int numCorrupted;
         public override int PriorityValue => 0;
 
         public override IEnumerator PerformAction(ITargetable target,  Combatant user)

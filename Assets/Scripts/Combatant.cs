@@ -46,12 +46,17 @@ namespace FoolsBrand
             health.Value -= damage;
             int damageTaken = preHealth - health.Value;
 
+            CheckForDeath();
+            return damageTaken;
+        }
+
+        public void CheckForDeath()
+        {
             if (health.IsDead)
             {
                 // Death Handling.
                 onDeathEvent?.Invoke();
             }
-            return damageTaken;
         }
 
         /// <summary>

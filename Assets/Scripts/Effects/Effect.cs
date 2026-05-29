@@ -15,13 +15,14 @@ namespace FoolsBrand
     public abstract class Effect
     {
         [SerializeField] private bool hasDuration = true;
-        [SerializeField, ShowIf("hasDuration")] private int duration;
+        [SerializeField, ShowIf("hasDuration"), AllowNesting] protected int duration;
 
         public bool IsExpired => hasDuration && duration <= 0;
 
         public Effect(Effect copy)
         {
             this.duration = copy.duration;
+            this.hasDuration = copy.hasDuration;
         }
 
 

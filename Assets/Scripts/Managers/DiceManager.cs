@@ -35,17 +35,10 @@ namespace FoolsBrand
         {
             Instance = this;
             //Temp
-            DiceDatabase.SetupDiceDict(_allDice);
-            foreach (string die in DiceDatabase.AllDiceDict.Keys)
-            {
-                for (int i = 0; i < Random.Range(3, 50); i++)
-                {
-                    DiceGoingToCombat.Add(die);
-                }
-            }
+            SetupDiceDictionary();
 
             //End Temp
-            foreach(string die in DiceGoingToCombat)
+            foreach (string die in DiceGoingToCombat)
             {
                 _drawBag.Add(die);
             }
@@ -77,6 +70,10 @@ namespace FoolsBrand
             ShuffleDeck();
             //StartTurn();
         }
+        public void SetupDiceDictionary()
+        {
+            DiceDatabase.SetupDiceDict(_allDice);
+        }
 
         /// <summary>
         /// Called whenever the next player turn starts
@@ -103,7 +100,7 @@ namespace FoolsBrand
         //[ContextMenu("End Turn")]
         //public void EndTurn()
         //{
-            
+
 
         //    //Sort out all of the actions into their respective category
         //    //Dictionary<Action.ActionTypes, List<Action>> sortedActions = new();

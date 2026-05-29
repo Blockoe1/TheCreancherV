@@ -42,6 +42,14 @@ namespace FoolsBrand.Enemies
         }
 
         /// <summary>
+        /// Runs when the enemy dies
+        /// </summary>
+        private void EnemyDead()
+        {
+            RunManager.CombatWin();
+        }
+
+        /// <summary>
         /// Spawns a random enemy from the encounter enemies.
         /// </summary>
         public void SpawnRandomEnemy()
@@ -66,6 +74,7 @@ namespace FoolsBrand.Enemies
             spawnedEnemy.gameObject.name = spawnedEnemy.gameObject.name.Replace("(Clone)", "");
             currentEnemy = spawnedEnemy;
             EnemySpawnEvent?.Invoke(spawnedEnemy);
+            currentEnemy.OnDeathEvent.AddListener(EnemyDead);
             return spawnedEnemy;
         }
     }

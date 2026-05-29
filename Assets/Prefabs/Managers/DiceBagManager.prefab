@@ -46,7 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DiceManager
   _allDice:
   - {fileID: 4252415728962692394, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
-  - {fileID: 1606482591971861990, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
   - {fileID: 4252415728962692394, guid: 7f371f746b819a245bb4289aa4cd2ece, type: 3}
   - {fileID: 4252415728962692394, guid: c95d8592137d9ac4e86d2c4b43100f23, type: 3}
   - {fileID: 4252415728962692394, guid: fe2f9341e3ec2de40a72c7e80773cf19, type: 3}

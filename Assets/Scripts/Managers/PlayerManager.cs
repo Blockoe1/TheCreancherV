@@ -1,7 +1,5 @@
 using FoolsBrand.Enemies;
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 namespace FoolsBrand
@@ -31,6 +29,8 @@ namespace FoolsBrand
 
             PlayerInputManager.OnLimbSelectedInput += PlayerInputManager_OnLimbSelectedInput;
             PlayerInputManager.OnRollButtonPressed += PlayerInputManager_OnRollButtonPressed;
+
+            player.OnDeathEvent.AddListener(PlayerDead);
         }
 
         private void PlayerInputManager_OnRollButtonPressed()
@@ -45,6 +45,14 @@ namespace FoolsBrand
                     actionQueue.Enqueue(action, action.PriorityValue);
                 }
             }
+        }
+
+        /// <summary>
+        /// Runs when the player dies
+        /// </summary>
+        private void PlayerDead()
+        {
+            RunManager.CombatLose();
         }
 
         private void PlayerInputManager_OnLimbSelectedInput(int limbIndex)

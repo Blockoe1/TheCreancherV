@@ -11,7 +11,7 @@ namespace FoolsBrand
         /// </summary>
         public static void StartNewCombat()
         {
-            Debug.Log("Combat Start");
+            //Debug.Log("Combat Start");
             SceneManager.LoadScene("MainCombat");
         }
 
@@ -20,7 +20,8 @@ namespace FoolsBrand
         /// </summary>
         public static void CombatWin()
         {
-            Debug.Log("Combat Win");
+            //Debug.Log("Combat Win");
+            SceneManager.LoadScene("OutOfCombat");
         }
 
         /// <summary>
@@ -28,7 +29,7 @@ namespace FoolsBrand
         /// </summary>
         public static void CombatLose()
         {
-            Debug.Log("Combat Lose");
+            //Debug.Log("Combat Lose");
             SceneManager.LoadScene("Main Menu");
         }
 
@@ -38,7 +39,10 @@ namespace FoolsBrand
         /// <param name="startingDice"></param>
         public static void BeginNewGame(List<string> startingDice)
         {
-            DiceManager.DiceGoingToCombat = startingDice;
+            foreach (string die in startingDice)
+            {
+                DiceManager.DiceGoingToCombat.Add(die);
+            }
             StartNewCombat();
         }
     }

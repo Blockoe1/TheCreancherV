@@ -16,8 +16,6 @@ namespace FoolsBrand
         [SerializeField] private DiceManager diceManager;
         public void Start()
         {
-            diceManager.SetupDiceDictionary();
-
             List<string> validDice = DiceDatabase.AllDiceDict.Keys.ToList();
             for (int i = 0; i < diceRewards.Length; i++)
             {
@@ -30,6 +28,10 @@ namespace FoolsBrand
         public void SelectDie(int selectionIndex)
         {
             DiceManager.DiceGoingToCombat.Add(diceRewards[selectionIndex]);
+            foreach(string die in DiceManager.DiceGoingToCombat)
+            {
+                Debug.Log(die);
+            }
 
             RunManager.StartNewCombat();
         }

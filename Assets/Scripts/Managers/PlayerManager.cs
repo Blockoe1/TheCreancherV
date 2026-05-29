@@ -33,11 +33,18 @@ namespace FoolsBrand
             player.OnDeathEvent.AddListener(PlayerDead);
         }
 
+        private void OnDestroy()
+        {
+            PlayerInputManager.OnLimbSelectedInput -= PlayerInputManager_OnLimbSelectedInput;
+            PlayerInputManager.OnRollButtonPressed -= PlayerInputManager_OnRollButtonPressed;
+        }
+
         private void PlayerInputManager_OnRollButtonPressed()
         {
             actionQueue = new MinPriorityQueue<DiceAction>();
             foreach (GameObject dice in diceManager.DiceInPlay)
             {
+                Debug.Log(dice);
                 DieBase die = dice.GetComponent<DieBase>();
                 DiceAction[] actions = die.RollDie();
                 foreach (DiceAction action in actions)

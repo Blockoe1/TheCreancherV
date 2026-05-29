@@ -1121,6 +1121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1234344da1eff6843acb494ae77a089b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
+  _diceDatabaseReference: {fileID: 9130035646642930121, guid: ee0b0317b101e4c4aba3fc96f9c5d4bb, type: 3}
 --- !u!1 &1675515135
 GameObject:
   m_ObjectHideFlags: 0

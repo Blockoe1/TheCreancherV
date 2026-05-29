@@ -49,3 +49,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.UI.LimbUIManager
   limbDisplayPrefab: {fileID: 7294206605532445851, guid: a6f2d02e35d48894fa5cdd7d85298aa2, type: 3}
+  bodyDisplayPrefab: {fileID: 7148077236440832681, guid: 2fbf47ebf1cc4864890841fc674a83e4, type: 3}

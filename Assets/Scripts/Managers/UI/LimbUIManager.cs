@@ -15,9 +15,11 @@ namespace FoolsBrand.UI
     public class LimbUIManager : Manager
     {
         [SerializeField] private LimbDisplay limbDisplayPrefab;
+        [SerializeField] private LimbDisplay bodyDisplayPrefab;
 
         private readonly List<LimbDisplay> limbDisplays = new List<LimbDisplay>();
 
+        private LimbDisplay bodyDisplay;
         private Enemy currentDisplayedEnemy;
 
         public override void Init(GameManager gm, HierarchyManager parentManager)
@@ -99,8 +101,12 @@ namespace FoolsBrand.UI
         private void CreateLimbDisplay()
         {
             int index = limbDisplays.Count;
-            LimbDisplay limbDisplay = Instantiate(limbDisplayPrefab, transform);
-            limbDisplay.Init(this, index);
+            LimbDisplay limbDisplay = Instantiate(index == 0 ?  bodyDisplayPrefab: limbDisplayPrefab, transform);
+            if (index == 0)
+            {
+                bodyDisplay = limbDisplay;
+            }
+            limbDisplay.Init(this, index, bodyDisplay.transform);
             limbDisplays.Add(limbDisplay);
         }
 

@@ -1,7 +1,5 @@
 using FoolsBrand.Enemies;
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 namespace FoolsBrand
@@ -31,6 +29,14 @@ namespace FoolsBrand
 
             PlayerInputManager.OnLimbSelectedInput += PlayerInputManager_OnLimbSelectedInput;
             PlayerInputManager.OnRollButtonPressed += PlayerInputManager_OnRollButtonPressed;
+
+            player.OnDeathEvent.AddListener(PlayerDead);
+        }
+
+        private void OnDestroy()
+        {
+            PlayerInputManager.OnLimbSelectedInput -= PlayerInputManager_OnLimbSelectedInput;
+            PlayerInputManager.OnRollButtonPressed -= PlayerInputManager_OnRollButtonPressed;
         }
 
         private void PlayerInputManager_OnRollButtonPressed()
@@ -38,6 +44,7 @@ namespace FoolsBrand
             actionQueue = new MinPriorityQueue<DiceAction>();
             foreach (GameObject dice in diceManager.DiceInPlay)
             {
+                Debug.Log(dice);
                 DieBase die = dice.GetComponent<DieBase>();
                 DiceAction[] actions = die.RollDie();
                 foreach (DiceAction action in actions)
@@ -45,6 +52,14 @@ namespace FoolsBrand
                     actionQueue.Enqueue(action, action.PriorityValue);
                 }
             }
+        }
+
+        /// <summary>
+        /// Runs when the player dies
+        /// </summary>
+        private void PlayerDead()
+        {
+            RunManager.CombatLose();
         }
 
         private void PlayerInputManager_OnLimbSelectedInput(int limbIndex)

@@ -6,7 +6,7 @@ using FoolsBrand.UI;
 /// Master game manager. Manages the individual managers
 /// </summary>
 public class GameManager : HierarchyManager
-{
+{    
     /// <summary>
     /// Initialize the other managers
     /// </summary>

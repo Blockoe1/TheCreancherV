@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace FoolsBrand
 {
@@ -10,7 +11,7 @@ namespace FoolsBrand
     {
         public static DiceManager Instance;
 
-        [SerializeField] private List<GameObject> _allDice;
+        [SerializeField] private GameObject _diceDatabaseReference;
 
         //Dice bags
         [SerializeField] private List<string> _drawBag;
@@ -33,19 +34,25 @@ namespace FoolsBrand
         /// </summary>
         public override void Init(GameManager gm, HierarchyManager parentManager)
         {
+            diceInPlay.Clear();
             Instance = this;
-            //Temp
-            DiceDatabase.SetupDiceDict(_allDice);
-            foreach (string die in DiceDatabase.AllDiceDict.Keys)
+
+            if (DiceDatabaseSetup.Instance == null)
             {
-                for (int i = 0; i < Random.Range(3, 50); i++)
+                GameObject ddRef = Instantiate(_diceDatabaseReference);
+                ddRef.GetComponent<DiceDatabaseSetup>().QuickSetupInstance();
+            }
+
+            //Debug Feature
+            if(DiceGoingToCombat.Count == 0)
+            {
+                foreach(string die in DiceDatabaseSetup.Instance.StartingDice)
                 {
                     DiceGoingToCombat.Add(die);
                 }
             }
 
-            //End Temp
-            foreach(string die in DiceGoingToCombat)
+            foreach (string die in DiceGoingToCombat)
             {
                 _drawBag.Add(die);
             }
@@ -55,6 +62,7 @@ namespace FoolsBrand
             //But for now, we'll keep that in here
 
             //Setup the lookup table
+            diceLookup = new();
             foreach (string die in _drawBag)
             {
                 if (!diceLookup.ContainsKey(die))
@@ -96,65 +104,6 @@ namespace FoolsBrand
         {
             diceInPlay.Clear();
         }
-
-        /// <summary>
-        /// Apply actions and discard current dice in play except reserve slot
-        /// </summary>
-        //[ContextMenu("End Turn")]
-        //public void EndTurn()
-        //{
-            
-
-        //    //Sort out all of the actions into their respective category
-        //    //Dictionary<Action.ActionTypes, List<Action>> sortedActions = new();
-        //    //foreach (Action action in allActions)
-        //    //{
-        //    //    if (!sortedActions.ContainsKey(action.Type))
-        //    //    {
-        //    //        sortedActions.Add(action.Type, new List<Action>());
-        //    //    }
-
-        //    //    sortedActions[action.Type].Add(action);
-        //    //}
-
-        //    //if (sortedActions.ContainsKey(Action.ActionTypes.CORRUPTION))
-        //    //{
-        //    //    foreach (Action action in sortedActions[Action.ActionTypes.CORRUPTION])
-        //    //    {
-        //    //        //Apply corruption to dice here
-        //    //        Debug.Log("Applied corruption to " + action.Value.ToString() + " dice.");
-        //    //    }
-        //    //}
-
-        //    //if (sortedActions.ContainsKey(Action.ActionTypes.HEAL))
-        //    //{
-        //    //    foreach (Action action in sortedActions[Action.ActionTypes.HEAL])
-        //    //    {
-        //    //        //Apply healing
-        //    //        Debug.Log("Applied " + action.Value.ToString() + " healing to self.");
-        //    //    }
-        //    //}
-
-        //    //if (sortedActions.ContainsKey(Action.ActionTypes.ATTACK))
-        //    //{
-        //    //    foreach (Action action in sortedActions[Action.ActionTypes.ATTACK])
-        //    //    {
-        //    //        //Apply damage
-        //    //        Debug.Log("Dealt " + action.Value.ToString() + " damage.");
-        //    //    }
-        //    //}
-
-        //    //if (sortedActions.ContainsKey(Action.ActionTypes.POSION))
-        //    //{
-        //    //    foreach (Action action in sortedActions[Action.ActionTypes.POSION])
-        //    //    {
-        //    //        //Apply poison
-        //    //        Debug.Log("Applied " + action.Value.ToString() + " poison.");
-        //    //    }
-        //    //}
-
-        //    StartTurn();
-        //}
 
         /// <summary>
         /// Draws 2 dice from the die bag

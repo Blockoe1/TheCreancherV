@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3111911796141036167
+--- !u!1 &9130035646642930121
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1065709436716793467}
-  - component: {fileID: 9043426098967112633}
+  - component: {fileID: 2147820034189702159}
+  - component: {fileID: 6812186395307375998}
   m_Layer: 0
-  m_Name: DiceBagManager
+  m_Name: DieDatabaseSetup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1065709436716793467
+--- !u!4 &2147820034189702159
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3111911796141036167}
+  m_GameObject: {fileID: 9130035646642930121}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -32,29 +32,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9043426098967112633
+--- !u!114 &6812186395307375998
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3111911796141036167}
+  m_GameObject: {fileID: 9130035646642930121}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53e135296724c0c42b9d0a9c04471ccc, type: 3}
+  m_Script: {fileID: 11500000, guid: b769985e7ccf4d8409f56da403679e08, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DiceManager
-  _diceDatabaseReference: {fileID: 9130035646642930121, guid: ee0b0317b101e4c4aba3fc96f9c5d4bb, type: 3}
-  _allDice:
+  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.DiceDatabaseSetup
+  _dicePrefabs:
   - {fileID: 4252415728962692394, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
   - {fileID: 4252415728962692394, guid: 7f371f746b819a245bb4289aa4cd2ece, type: 3}
   - {fileID: 4252415728962692394, guid: c95d8592137d9ac4e86d2c4b43100f23, type: 3}
   - {fileID: 4252415728962692394, guid: fe2f9341e3ec2de40a72c7e80773cf19, type: 3}
-  _drawBag: []
-  _discardBag: []
-  _reservedDie: 
-  _rollingDice: []
-  _diePositions:
-  - {fileID: 0}
-  - {fileID: 0}
-  _reserveSlotPosition: {fileID: 0}
+  _startingDice:
+  - BasicDie
+  - BasicDie
+  - BasicDie
+  - HealingDie

@@ -18,6 +18,7 @@ namespace FoolsBrand.UI
     {
         [SerializeField] private Button targetingButton;
         [SerializeField] private CanvasGroup infoGroup;
+        [SerializeField] private RectTransform mainInfoTransform;
         [SerializeField] private HealthBar healthBar;
         [Header("Multiplier")]
         [SerializeField] private LineUI multiplierLine;
@@ -65,6 +66,7 @@ namespace FoolsBrand.UI
         {
             gameObject.SetActive(!currentLimb.IsDead);
             transform.position = Camera.main.WorldToScreenPoint(currentLimb.gameObject.transform.position);
+            SetAlignment(CheckScreenSide());
             if (nameText != null)
             {
                 nameText.text = currentLimb.LimbName;
@@ -119,6 +121,34 @@ namespace FoolsBrand.UI
                     healthBar.SetTargetHealth(null);
                 }
                 HideDisplay();
+            }
+        }
+
+        /// <summary>
+        /// Checks which side of the screen the display is on.
+        /// </summary>
+        /// <returns>True if the display is on the right side.</returns>
+        public bool CheckScreenSide()
+        {
+            return transform.position.x >= Screen.width / 2;
+        }
+
+        /// <summary>
+        /// Sets the alignment of the display so that the info never overlaps with the multiplier line.
+        /// </summary>
+        /// <param name="isRightAlign"></param>
+        public void SetAlignment(bool isRightAlign)
+        {
+            if (nameText != null)
+            {
+                nameText.alignment = isRightAlign ? TextAlignmentOptions.Left : TextAlignmentOptions.Right;
+            }
+
+            if (mainInfoTransform != null)
+            {
+                mainInfoTransform.anchorMin = new Vector2(isRightAlign ? 1 : 0, mainInfoTransform.anchorMin.y);
+                mainInfoTransform.anchorMax = new Vector2(isRightAlign ? 1 : 0, mainInfoTransform.anchorMax.y);
+                mainInfoTransform.pivot = new Vector2(isRightAlign ? 0 : 1, mainInfoTransform.pivot.y);
             }
         }
 

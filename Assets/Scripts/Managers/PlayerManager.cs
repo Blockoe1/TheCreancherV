@@ -1,4 +1,5 @@
 using FoolsBrand.Enemies;
+using FoolsBrand.UI;
 using System.Collections;
 using UnityEngine;
 
@@ -13,6 +14,7 @@ namespace FoolsBrand
 
         public static HealthData PlayerHealth = null;
         private DiceManager diceManager;
+        private LimbUIManager limbUIManager;
 
         private int? targetedLimb = null;
         //private DiceAction[] diceActions = null;
@@ -26,6 +28,7 @@ namespace FoolsBrand
         {
             PlayerHealth ??= player.Health;
             diceManager = gm.GetManager<DiceManager>();
+            limbUIManager = gm.GetManager<UIManager>().GetManager<LimbUIManager>();
 
             PlayerInputManager.OnLimbSelectedInput += PlayerInputManager_OnLimbSelectedInput;
             PlayerInputManager.OnRollButtonPressed += PlayerInputManager_OnRollButtonPressed;
@@ -78,6 +81,8 @@ namespace FoolsBrand
             actionQueue = null;
             diceManager.DrawDice();
 
+            limbUIManager.ToggleTargeting(true);
+
             //TODO - Dice Reservation
 
             //TODO - Dice Bonus by not rolling
@@ -91,7 +96,7 @@ namespace FoolsBrand
             //Actions
             //Dice get Discarded
             //Player End Turn
-
+            limbUIManager.ToggleTargeting(false);
 
             while (actionQueue.Count > 0)
             {

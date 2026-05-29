@@ -32,7 +32,7 @@ namespace FoolsBrand.Enemies
 
         protected Enemy parentEnemy;
 
-        private List<Effect> Effects = new List<Effect>();
+        private readonly List<Effect> Effects = new List<Effect>();
 
         #region Properties
         public bool IsDead => !isBody && health.IsDead;
@@ -176,11 +176,20 @@ namespace FoolsBrand.Enemies
         }
 
         /// <summary>
+        /// Removes an effect by it's type name
+        /// </summary>
+        /// <param name="className"></param>
+        public void RemoveEffect(string className)
+        {
+            Effects.RemoveAll(x => nameof(x) == className);
+        }
+
+        /// <summary>
         /// Removes all effects that have their duration expired.
         /// </summary>
         public void FlushEffects()
         {
-            Effects = Effects.Where(x => x.Duration > 0).ToList();
+            Effects.RemoveAll(x => x.IsExpired);
         }
         #endregion
 

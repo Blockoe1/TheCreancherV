@@ -13,6 +13,7 @@ namespace FoolsBrand
     public interface IEffectable
     {
         void ApplyEffect(Effect toApply);
+        void RemoveEffect(string className);
         void FlushEffects();
     }
 }

@@ -6,6 +6,7 @@
 //
 // Brief Description : custom temporary effect that can be applied to a combatant.
 *****************************************************************************/
+using NaughtyAttributes;
 using UnityEngine;
 
 namespace FoolsBrand
@@ -13,9 +14,10 @@ namespace FoolsBrand
     [System.Serializable]
     public abstract class Effect
     {
-        [SerializeField] private int duration;
+        [SerializeField] private bool hasDuration = true;
+        [SerializeField, ShowIf("hasDuration")] private int duration;
 
-        public int Duration => duration;
+        public bool IsExpired => hasDuration && duration <= 0;
 
         public Effect(Effect copy)
         {
@@ -44,7 +46,10 @@ namespace FoolsBrand
         public virtual void OnActionStart(Combatant combatant) { }
         public virtual void OnActionEnd(Combatant combatant)
         {
-            duration--;
+            if (hasDuration)
+            {
+                duration--;
+            }
         }
         public virtual void OnTakeDamage(Combatant combatant, Combatant attacker, int damageTaken) { }
         public virtual void OnDealDamage(Combatant combatant, ITargetable target,int damageDealt) { }

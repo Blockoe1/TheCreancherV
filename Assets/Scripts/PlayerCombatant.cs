@@ -99,13 +99,22 @@ namespace FoolsBrand
         {
             Effects.Add(toApply.Copy());
         }
-        
+
+        /// <summary>
+        /// Removes an effect by it's type name
+        /// </summary>
+        /// <param name="className"></param>
+        public void RemoveEffect(string className)
+        {
+            Effects.RemoveAll(x => nameof(x) == className);
+        }
+
         /// <summary>
         /// Removes all effects with 0 duration.
         /// </summary>
         public void FlushEffects()
         {
-            Effects = Effects.Where(x => x.Duration > 0).ToList();
+            Effects.RemoveAll(x => x.IsExpired);
         }
         #endregion
     }

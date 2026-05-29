@@ -97,7 +97,9 @@ namespace FoolsBrand
         /// <param name="toApply"></param>
         public void ApplyEffect(Effect toApply)
         {
-            Effects.Add(toApply.Copy());
+            Effect copy = toApply.Copy();
+            copy.OnEffectAdded(this, gameObject);
+            Effects.Add(copy);
         }
 
         /// <summary>
@@ -106,7 +108,15 @@ namespace FoolsBrand
         /// <param name="className"></param>
         public void RemoveEffect(string className)
         {
-            Effects.RemoveAll(x => nameof(x) == className);
+            for(int i = 0; i < Effects.Count; i++)
+            {
+                if (Effects[i].GetType().Name == className)
+                {
+                    Effects[i].OnEffectRemoved(this);
+                    Effects.RemoveAt(i);
+                    i--;
+                }
+            }
         }
 
         /// <summary>
@@ -114,7 +124,15 @@ namespace FoolsBrand
         /// </summary>
         public void FlushEffects()
         {
-            Effects.RemoveAll(x => x.IsExpired);
+            for (int i = 0; i < Effects.Count; i++)
+            {
+                if (Effects[i].IsExpired)
+                {
+                    Effects[i].OnEffectRemoved(this);
+                    Effects.RemoveAt(i);
+                    i--;
+                }
+            }
         }
         #endregion
     }

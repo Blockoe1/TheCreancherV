@@ -31,6 +31,8 @@ namespace FoolsBrand
         /// <returns></returns>
         public abstract Effect Copy();
 
+        public virtual void OnEffectAdded(Combatant combatant, GameObject appliedObj) { }
+
         /// <summary>
         /// Called before damage is dealt to apply any damage modifications.
         /// </summary>
@@ -53,5 +55,7 @@ namespace FoolsBrand
         }
         public virtual void OnTakeDamage(Combatant combatant, Combatant attacker, int damageTaken) { }
         public virtual void OnDealDamage(Combatant combatant, ITargetable target,int damageDealt) { }
+
+        public virtual void OnEffectRemoved(Combatant combatant) { }
     }
 }

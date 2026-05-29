@@ -63,6 +63,7 @@ namespace FoolsBrand.Enemies
 
             Enemy spawnedEnemy = Instantiate(prefab, enemyPos.transform.position, Quaternion.identity, transform);
             spawnedEnemy.Init();
+            spawnedEnemy.gameObject.name = spawnedEnemy.gameObject.name.Replace("(Clone)", "");
             currentEnemy = spawnedEnemy;
             EnemySpawnEvent?.Invoke(spawnedEnemy);
             return spawnedEnemy;

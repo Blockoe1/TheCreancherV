@@ -12,7 +12,6 @@ namespace FoolsBrand
     public class PlayerManager : Manager
     {
         [SerializeField] private PlayerCombatant player;
-        [SerializeField] private HealthData playerHealth = new();
 
         public static HealthData PlayerHealth = null;
         private DiceManager diceManager;
@@ -27,7 +26,7 @@ namespace FoolsBrand
 
         public override void Init(GameManager gm, HierarchyManager parentManager)
         {
-            PlayerHealth ??= playerHealth;
+            PlayerHealth ??= player.Health;
             diceManager = gm.GetManager<DiceManager>();
 
             PlayerInputManager.OnLimbSelectedInput += PlayerInputManager_OnLimbSelectedInput;

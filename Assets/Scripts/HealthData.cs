@@ -21,9 +21,8 @@ namespace FoolsBrand
         public event Action<int> HealthChangedEvent;
 
         private bool isDead;
-        private bool initialized;
 
-        public float HealthProportion => health / maxHealth;
+        public float HealthProportion => health / (float)maxHealth;
         public bool IsDead => isDead;
 
         public int Value

@@ -663,6 +663,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2464578056025293647, guid: 33302e20b5c44154797f95a77cdb7fbe, type: 3}
+      propertyPath: debugEffect.hasDuration
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

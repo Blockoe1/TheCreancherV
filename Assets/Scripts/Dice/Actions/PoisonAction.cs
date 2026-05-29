@@ -8,6 +8,7 @@
 *****************************************************************************/
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace FoolsBrand
@@ -15,11 +16,20 @@ namespace FoolsBrand
     [System.Serializable]
     public class PoisonAction : DiceAction
     {
+        [SerializeField] private PoisonEffect poison;
         public override int PriorityValue => 101;
 
         public override IEnumerator PerformAction(ITargetable target, Combatant user)
         {
-            Debug.Log($"{user} poisoned {target} for {value}.");
+            if (target is IEffectable effectable)
+            {
+                Debug.Log($"{user} poisoned {target} for {value}.");
+                effectable.ApplyEffect(poison);
+            }
+            else
+            {
+                Debug.Log("Poisoned Failed");
+            }
             yield return null;
         }
     }

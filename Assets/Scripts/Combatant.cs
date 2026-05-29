@@ -7,7 +7,6 @@
 // Brief Description : Base script any entity that can deal and recieve damage in combat.
 *****************************************************************************/
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -20,29 +19,44 @@ namespace FoolsBrand
 
         public HealthData Health => health;
         public UnityEvent OnDeathEvent => onDeathEvent;
+        
+        /// <summary>
+        /// Makes this combatant attack a target.
+        /// </summary>
+        /// <param name="damage"></param>
+        /// <param name="target"></param>
+        public virtual int Attack(int damage, ITargetable target)
+        {
+            int damageDealt = target.TakeDamage(damage, this);
+            return damageDealt;
+        }
 
         /// <summary>
         /// Makes this combatant take damage.
         /// </summary>
         /// <param name="damage"></param>
-        public virtual void TakeDamage(int damage, Combatant source)
+        public virtual int TakeDamage(int damage, Combatant source)
         {
             if (health.IsDead)
             {
-                return;
+                return 0;
             }
 
-            health.Value -= CalcDamage(damage);
+            int preHealth = health.Value;
+            health.Value -= damage;
+            int damageTaken = preHealth - health.Value;
+
+            CheckForDeath();
+            return damageTaken;
+        }
+
+        public void CheckForDeath()
+        {
             if (health.IsDead)
             {
                 // Death Handling.
                 onDeathEvent?.Invoke();
             }
-        }
-
-        protected virtual int CalcDamage(int inDamage)
-        {
-            return inDamage;
         }
 
         /// <summary>
@@ -72,5 +86,10 @@ namespace FoolsBrand
         /// Called when its this combatant's turn to act.
         /// </summary>
         public abstract IEnumerator Act(Combatant target);
+
+        private void OnDestroy()
+        {
+            onDeathEvent.RemoveAllListeners();
+        }
     }
 }

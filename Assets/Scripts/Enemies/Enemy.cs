@@ -25,6 +25,8 @@ namespace FoolsBrand.Enemies
         private Limb[] limbs;
         private Limb[] attackLimbs;
 
+        private Limb attackLimb;
+
         public bool IsDead => Health.IsDead;
 
         public ReadOnlyArray<Limb> Limbs => limbs;   
@@ -40,14 +42,28 @@ namespace FoolsBrand.Enemies
             attackLimbs = limbs.Where(x => x.HasAttack).ToArray();
         }
 
+        public override int Attack(int damage, ITargetable target)
+        {
+            if (attackLimb == null)
+            {
+                Debug.LogError("Attack limb was not set.");
+                return 0;
+            }
+
+            damage = attackLimb.QueryAttackModifiers(damage);
+            int damageDealt = base.Attack(damage, target);
+            attackLimb.TriggerOnDamage(this, target, damageDealt);
+            return damageDealt;
+        }
+
         /// <summary>
         /// Notify all limbs that the enemy has taken damage.
         /// </summary>
         /// <param name="damage"></param>
         /// <param name="source"></param>
-        public override void TakeDamage(int damage, Combatant source)
+        public override int TakeDamage(int damage, Combatant source)
         {
-            base.TakeDamage(damage, source);
+            return base.TakeDamage(damage, source);
         }
 
         private Limb GetRandomLimbWeighted(Limb[] limbs)
@@ -86,6 +102,10 @@ namespace FoolsBrand.Enemies
         /// </summary>
         public override IEnumerator Act(Combatant target)
         {
+            foreach(var limb in Limbs)
+            {
+                limb.OnActionStart();
+            }
             // Enemy needs to accrue enough ActionValue to act.  BaseActionValue can be reduced by limbs being destroyed.
             actionValue += BaseActionValue;
 
@@ -95,10 +115,17 @@ namespace FoolsBrand.Enemies
                 // Flush the attack limbs array of dead limbs.
                 attackLimbs = attackLimbs.Where(x => x != null && !x.Health.IsDead).ToArray();
 
-                Limb attackLimb = GetRandomLimbWeighted(attackLimbs);
+                attackLimb = GetRandomLimbWeighted(attackLimbs);
+
                 DiceAction[] actions = attackLimb.RollAttack();
 
                 yield return StartCoroutine(ProcessActions(actions, target));
+                attackLimb = null;
+            }
+
+            foreach (var limb in Limbs)
+            {
+                limb.OnActionEnd();
             }
         }
     }

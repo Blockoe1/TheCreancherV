@@ -7,12 +7,14 @@
 // Brief Description : Controls an enemy's limbs and their relevant stats.
 *****************************************************************************/
 using NaughtyAttributes;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace FoolsBrand.Enemies
 {
-    public class Limb : MonoBehaviour, ITargetable
+    public class Limb : MonoBehaviour, ITargetable, IEffectable
     {
         #region CONSTS
         private const string BODY_NAME = "Body";
@@ -29,6 +31,8 @@ namespace FoolsBrand.Enemies
         [SerializeField] private UnityEvent onDestroyEvent;
 
         protected Enemy parentEnemy;
+
+        private readonly List<Effect> Effects = new List<Effect>();
 
         #region Properties
         public bool IsDead => !isBody && health.IsDead;
@@ -49,6 +53,8 @@ namespace FoolsBrand.Enemies
             LimbStart();
         }
 
+
+
         /// <summary>
         /// Queries this limb's attack dice for the damage to deal from an attack.
         /// </summary>
@@ -68,18 +74,27 @@ namespace FoolsBrand.Enemies
         /// </summary>
         /// <param name="baseDamage">The damage to deal to the limb.</param>
         /// <returns></returns>
-        public void TakeDamage(int baseDamage, Combatant source)
+        public int TakeDamage(int baseDamage, Combatant source)
         {
             if (health.IsDead)
             {
-                return;
+                return 0;
             }
+
+            // Apply any damage reduction effects.
+            foreach (Effect effect in Effects)
+            {
+                baseDamage = effect.ModifyDamage(baseDamage);
+            }
+            // Apply defense
             int damage = Mathf.Max(baseDamage - defense, 0);
 
             // Deal damage to the limb.
             if (!isBody)
             {
+                int preHealth = health.Value;
                 health.Value -= damage;
+                int damageTaken = preHealth - health.Value;
                 onDamageEvent?.Invoke(damage);
                 if (health.IsDead)
                 {
@@ -87,11 +102,114 @@ namespace FoolsBrand.Enemies
                     onDestroyEvent?.Invoke();
                     gameObject.SetActive(false);
                 }
+
+                // Trigger any on damage effects.
+                if (!Health.IsDead)
+                {
+                    foreach (Effect effect in Effects)
+                    {
+                        effect.OnTakeDamage(parentEnemy, source, damageTaken);
+                    }
+                }
             }
 
             // Deal damage to the main enemy.
-            parentEnemy.TakeDamage(Mathf.RoundToInt(damage * multiplier), source);
+            return parentEnemy.TakeDamage(Mathf.RoundToInt(damage * multiplier), source);
         }
+
+        #region Effects
+        /// <summary>
+        /// Applie a custom effect to this limb.
+        /// </summary>
+        /// <param name="toApply"></param>
+        public void ApplyEffect(Effect toApply)
+        {
+            Effect copy = toApply.Copy();
+            copy.OnEffectAdded(parentEnemy, gameObject);
+            Effects.Add(copy);
+        }
+
+        /// <summary>
+        /// Start/end functions called by the base enemy
+        /// </summary>
+        public void OnActionStart()
+        {
+            foreach (Effect effect in Effects)
+            {
+                effect.OnActionStart(parentEnemy);
+            }
+        }
+        public void OnActionEnd()
+        {
+            foreach (Effect effect in Effects)
+            {
+                effect.OnActionEnd(parentEnemy);
+            }
+
+            FlushEffects();
+        }
+
+        /// <summary>
+        /// Applies any attack modifiers that this limb has on it when the enemy attacks using this limb.
+        /// </summary>
+        /// <param name="damage">The base damage of the attack.</param>
+        /// <returns>The modified damage amount.</returns>
+        public int QueryAttackModifiers(int damage)
+        {
+            foreach (Effect effect in Effects)
+            {
+                damage = effect.ModifyAttack(damage);
+            }
+            return damage;
+        }
+
+        /// <summary>
+        /// Calls any triggered effects when this limb attacks.
+        /// </summary>
+        /// <param name="enemy">The enemy that attacked with this limb.</param>
+        /// <param name="target">The target of the attack.</param>
+        /// <param name="damageDealt">The damage dealt.</param>
+        public void TriggerOnDamage(Enemy enemy, ITargetable target, int damageDealt)
+        {
+            foreach (Effect effect in Effects)
+            {
+                effect.OnDealDamage(enemy, target, damageDealt);
+            }
+        }
+
+        /// <summary>
+        /// Removes an effect by it's type name
+        /// </summary>
+        /// <param name="className"></param>
+        public void RemoveEffect(string className)
+        {
+            for (int i = 0; i < Effects.Count; i++)
+            {
+                if (Effects[i].GetType().Name == className)
+                {
+                    Effects[i].OnEffectRemoved(parentEnemy);
+                    Effects.RemoveAt(i);
+                    i--;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Removes all effects that have their duration expired.
+        /// </summary>
+        public void FlushEffects()
+        {
+            for (int i = 0; i < Effects.Count; i++)
+            {
+                if (Effects[i].IsExpired)
+                {
+                    Effects[i].OnEffectRemoved(parentEnemy);
+                    Effects.RemoveAt(i);
+                    i--;
+                }
+            }
+        }
+        #endregion
 
         #region Custom Effect Functions
         protected virtual void LimbStart() { }

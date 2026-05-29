@@ -18,16 +18,14 @@ namespace FoolsBrand
 
         private GameObject effectInstance;
 
-        public PoisonEffect(Effect copy) : base(copy)
-        {
-            PoisonEffect pCopy = copy as PoisonEffect;
-            poisonEffect = pCopy.poisonEffect;
-            tickDamage = pCopy.tickDamage;
-        }
+        public PoisonEffect(Effect copy) : base(copy) { }
 
         public override Effect Copy()
         {
-            return new PoisonEffect(this);
+            PoisonEffect copy = new PoisonEffect(this);
+            poisonEffect = copy.poisonEffect;
+            tickDamage = copy.tickDamage;
+            return copy;
         }
 
         public override void OnEffectAdded(Combatant combatant, GameObject appliedObj)

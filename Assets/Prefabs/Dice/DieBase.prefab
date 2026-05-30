@@ -495,6 +495,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
   _dieName: DieBase
+  rollingSpeed: 720
+  rollingVariance: 0
+  snapToResultTime: 0.05
   dieFaces:
   - faceText: '#'
     faceTextObj: {fileID: 4546455380314813136}

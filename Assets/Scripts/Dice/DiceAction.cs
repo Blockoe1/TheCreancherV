@@ -13,7 +13,7 @@ public abstract class DiceAction
     [SerializeField] protected int value;
 
     public abstract int PriorityValue { get; }
-    public abstract IEnumerator PerformAction(ITargetable target, Combatant user);
+    public abstract IEnumerator PerformAction(ITargetable target, IActionSource source, Combatant user);
 
     protected DieFace parentFace;
 

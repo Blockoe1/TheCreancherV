@@ -16,7 +16,7 @@ namespace FoolsBrand
     {
         public override int PriorityValue => 50;
 
-        public override IEnumerator PerformAction(ITargetable target, Combatant user)
+        public override IEnumerator PerformAction(ITargetable target, IActionSource source, Combatant user)
         {
             Debug.Log($"{user} healed for {value}.");
             user.Health.Value += value;

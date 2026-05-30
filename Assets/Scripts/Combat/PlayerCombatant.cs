@@ -6,6 +6,7 @@
 //
 // Brief Description : Main combatant for the player.
 *****************************************************************************/
+using FoolsBrand.Enemies;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,11 +14,14 @@ using UnityEngine;
 
 namespace FoolsBrand
 {
-    public class PlayerCombatant : Combatant, IEffectable
+    public class PlayerCombatant : Combatant, IEffectable, IActionSource
     {
         [SerializeField] private int defense;
 
         private List<Effect> Effects = new List<Effect>();
+
+        private MinPriorityQueue<DiceAction> actionQueue;
+        private Limb targetedLimb;
 
         /// <summary>
         /// Player queries any effects for modifying or triggering on damage.
@@ -69,6 +73,17 @@ namespace FoolsBrand
         }
 
         /// <summary>
+        /// Sets the target and actions that the player will perform when they act.
+        /// </summary>
+        /// <param name="actionQueue">The actions that the player will take.</param>
+        /// <param name="targetedLimb">The limb the player is targeting.</param>
+        public void SetActData(MinPriorityQueue<DiceAction> actionQueue, Limb targetedLimb)
+        {
+            this.actionQueue = actionQueue;
+            this.targetedLimb = targetedLimb;
+        }
+
+        /// <summary>
         /// Handles the player taking their action.
         /// </summary>
         /// <param name="target"></param>
@@ -80,14 +95,17 @@ namespace FoolsBrand
                 effect.OnActionStart(this, this);
             }
 
-            // Action action stuff.
-            yield return null;
+            yield return StartCoroutine(ProcessActions(actionQueue, this, targetedLimb));
 
             foreach (Effect effect in Effects)
             {
                 effect.OnActionEnd(this, this);
             }
             FlushEffects();
+
+            // Clear action data.
+            actionQueue = null;
+            targetedLimb = null;
         }
 
         #region Effects

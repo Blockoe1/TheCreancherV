@@ -21,8 +21,8 @@ public class DieBase : MonoBehaviour
 
     [SerializeField] private string _dieName = "Basic Die 1-6";
     [Header("Rolling Animation")]
-    [SerializeField] private float rollingSpeed;
-    [SerializeField] private float rollingVariance;
+    [SerializeField] private Vector3 rotSpeed1;
+    [SerializeField] private Vector3 rotSpeed2;
     [SerializeField] private float snapToResultTime;
     [Header("Faces")]
     [SerializeField, Tooltip("DO NOT CHANGE THE NUMBER OF FACES. The effects of each face")] private DieFace[] dieFaces = new DieFace[6];
@@ -48,7 +48,7 @@ public class DieBase : MonoBehaviour
     
     private static Vector3 GetRandomRollingVector(float speed)
     {
-        return new Vector3(Random.Range(-1f, 1f) * speed, Random.Range(-1f, 1f) * speed, Random.Range(-1f, 1f) * speed);
+        return new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized * speed;
     }
 
     private IEnumerator RollingAnimation()
@@ -56,6 +56,7 @@ public class DieBase : MonoBehaviour
         isRolling = true;
         float elapsedTime = 0;
         Vector3 speedVector = GetRandomRollingVector(rollingSpeed);
+        Quaternion speedQuat = Quaternion.Euler(speedVector);
         Debug.Log(speedVector);
         Vector3 varianceVector = new Vector3(rollingVariance, rollingVariance, rollingVariance);
         while (dieIndex < 0)
@@ -66,10 +67,11 @@ public class DieBase : MonoBehaviour
             //    ((maxRollingSpeed + minRollingSpeed) / 2) * elapsedTime;
             //transform.eulerAngles = rotation;
 
-            Vector3 rotation = (-2 * Mathf.Cos(Mathf.PI / 2 * elapsedTime) * varianceVector / Mathf.PI) +
-                speedVector * elapsedTime;
-            transform.eulerAngles = rotation;
-            //transform.Rotate(rollingSpeed * Time.deltaTime);
+            //Vector3 rotation = (-2 * Mathf.Cos(Mathf.PI / 2 * elapsedTime) * varianceVector / Mathf.PI) +
+            //    speedVector * elapsedTime;
+            //transform.eulerAngles = rotation;
+
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, transform.rotation * speedQuat, rollingSpeed * Time.deltaTime);
 
             yield return null;
         }

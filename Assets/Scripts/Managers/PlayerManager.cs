@@ -98,13 +98,8 @@ namespace FoolsBrand
             //Player End Turn
             limbUIManager.ToggleTargeting(false);
 
-            while (actionQueue.Count > 0)
-            {
-                // Switch this to inheritance support later.
-                DiceAction action = actionQueue.Dequeue();
-                yield return StartCoroutine(action.PerformAction(enemyTarget.Limbs[(int)targetedLimb], player));
-            }
-            Debug.Log("Actions Taken");
+            player.SetActData(actionQueue, enemyTarget.Limbs[(int)targetedLimb]);
+            yield return StartCoroutine(player.Act(enemyTarget));
 
             foreach (GameObject dice in diceManager.DiceInPlay)
             {

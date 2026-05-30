@@ -6,6 +6,7 @@
 //
 // Brief Description : Main combatant for the player.
 *****************************************************************************/
+using FoolsBrand.Enemies;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,9 @@ namespace FoolsBrand
         [SerializeField] private int defense;
 
         private List<Effect> Effects = new List<Effect>();
+
+        private MinPriorityQueue<DiceAction> actionQueue;
+        private Limb targetedLimb;
 
         /// <summary>
         /// Player queries any effects for modifying or triggering on damage.
@@ -69,6 +73,17 @@ namespace FoolsBrand
         }
 
         /// <summary>
+        /// Sets the target and actions that the player will perform when they act.
+        /// </summary>
+        /// <param name="actionQueue">The actions that the player will take.</param>
+        /// <param name="targetedLimb">The limb the player is targeting.</param>
+        public void SetActData(MinPriorityQueue<DiceAction> actionQueue, Limb targetedLimb)
+        {
+            this.actionQueue = actionQueue;
+            this.targetedLimb = targetedLimb;
+        }
+
+        /// <summary>
         /// Handles the player taking their action.
         /// </summary>
         /// <param name="target"></param>
@@ -80,14 +95,23 @@ namespace FoolsBrand
                 effect.OnActionStart(this, this);
             }
 
-            // Action action stuff.
-            yield return null;
+            yield return StartCoroutine(ProcessActions(actionQueue, targetedLimb));
+            while (actionQueue.Count > 0)
+            {
+                // Switch this to inheritance support later.
+                DiceAction action = actionQueue.Dequeue();
+                yield return StartCoroutine(action.PerformAction(targetedLimb, this));
+            }
 
             foreach (Effect effect in Effects)
             {
                 effect.OnActionEnd(this, this);
             }
             FlushEffects();
+
+            // Clear action data.
+            actionQueue = null;
+            targetedLimb = null;
         }
 
         #region Effects

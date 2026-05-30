@@ -117,7 +117,7 @@ namespace FoolsBrand.Enemies
 
                 attackLimb = GetRandomLimbWeighted(attackLimbs);
 
-                DiceAction[] actions = attackLimb.RollAttack();
+                MinPriorityQueue<DiceAction> actions = attackLimb.RollAttack();
 
                 yield return StartCoroutine(ProcessActions(actions, target));
                 attackLimb = null;

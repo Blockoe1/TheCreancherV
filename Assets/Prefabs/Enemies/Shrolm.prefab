@@ -456,7 +456,7 @@ MonoBehaviour:
   defense: 2
   multiplier: 1
   attackWeight: 1
-  attackDice: {fileID: 755269475158816666}
+  attackDice: {fileID: 7403563786225050731}
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -511,21 +511,27 @@ MonoBehaviour:
   localRotSpeed: {x: 0, y: 0, z: 0}
   worldRotSpeed: {x: 0, y: 0, z: 0}
   slerpTime: 0
+  slerpCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   dieFaces:
   - faceText: '#'
     faceTextObj: {fileID: 0}
     faceActions:
-    - rid: 4868126913438416962
+    - rid: 4868126913438416966
     - rid: 4868126888777744456
   - faceText: '#'
     faceTextObj: {fileID: 0}
     faceActions:
-    - rid: 4868126913438416963
+    - rid: 4868126913438416967
     - rid: 4868126888777744457
   - faceText: '#'
     faceTextObj: {fileID: 0}
     faceActions:
-    - rid: 4868126913438416964
+    - rid: 4868126913438416968
     - rid: 4868126888777744458
   references:
     version: 2
@@ -542,29 +548,29 @@ MonoBehaviour:
       type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
         value: 5
-    - rid: 4868126913438416962
-      type: {class: ModifyAttackAction, ns: FoolsBrand, asm: Assembly-CSharp}
+    - rid: 4868126913438416966
+      type: {class: SelfModifyAttackAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
         value: 0
         modifyAttackEffect:
           hasDuration: 0
-          duration: 1
+          duration: 0
           attackModifier: 3
-    - rid: 4868126913438416963
-      type: {class: ModifyAttackAction, ns: FoolsBrand, asm: Assembly-CSharp}
+    - rid: 4868126913438416967
+      type: {class: SelfModifyAttackAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
         value: 0
         modifyAttackEffect:
           hasDuration: 0
-          duration: 1
+          duration: 0
           attackModifier: 3
-    - rid: 4868126913438416964
-      type: {class: ModifyAttackAction, ns: FoolsBrand, asm: Assembly-CSharp}
+    - rid: 4868126913438416968
+      type: {class: SelfModifyAttackAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
         value: 0
         modifyAttackEffect:
           hasDuration: 0
-          duration: 1
+          duration: 0
           attackModifier: 3
 --- !u!1 &3661795786837044138
 GameObject:
@@ -614,6 +620,12 @@ MonoBehaviour:
   localRotSpeed: {x: 0, y: 0, z: 0}
   worldRotSpeed: {x: 0, y: 0, z: 0}
   slerpTime: 0
+  slerpCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   dieFaces:
   - faceText: '#'
     faceTextObj: {fileID: 0}
@@ -791,8 +803,8 @@ MonoBehaviour:
     health: 7
   defense: 0
   multiplier: 1
-  attackWeight: 1
-  attackDice: {fileID: 0}
+  attackWeight: 100
+  attackDice: {fileID: 753924102905241776}
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -933,7 +945,7 @@ MonoBehaviour:
   defense: 2
   multiplier: 1
   attackWeight: 1
-  attackDice: {fileID: 755269475158816666}
+  attackDice: {fileID: 6187090870116024368}
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1074,7 +1086,7 @@ MonoBehaviour:
   defense: 2
   multiplier: 1
   attackWeight: 1
-  attackDice: {fileID: 0}
+  attackDice: {fileID: 9215964055632037927}
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1129,6 +1141,12 @@ MonoBehaviour:
   localRotSpeed: {x: 0, y: 0, z: 0}
   worldRotSpeed: {x: 0, y: 0, z: 0}
   slerpTime: 0
+  slerpCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   dieFaces:
   - faceText: '#'
     faceTextObj: {fileID: 0}
@@ -1193,6 +1211,12 @@ MonoBehaviour:
   localRotSpeed: {x: 0, y: 0, z: 0}
   worldRotSpeed: {x: 0, y: 0, z: 0}
   slerpTime: 0
+  slerpCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   dieFaces:
   - faceText: '#'
     faceTextObj: {fileID: 0}

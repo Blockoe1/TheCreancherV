@@ -21,6 +21,7 @@ namespace FoolsBrand
 
         public override void OnEffectAdded(Combatant combatant, IEffectable effectSource, GameObject appliedObj)
         {
+            Debug.Log("Attack modifier added");
             Source = effectSource;
             Debug.Log(effectInstance);
         }

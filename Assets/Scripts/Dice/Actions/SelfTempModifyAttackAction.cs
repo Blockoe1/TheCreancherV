@@ -4,17 +4,17 @@ using UnityEngine;
 namespace FoolsBrand
 {
     [System.Serializable]
-    public class ShrolmEyeAction : DiceAction
+    public class SelfModifyAttackAction : DiceAction
     {
-        [SerializeField] private InvertColorEffect invertColorEffect;
+        [SerializeField] private TempModifyAttackEffect modifyAttackEffect;
 
         public override int PriorityValue => 100;
 
         public override IEnumerator PerformAction(ITargetable target, IActionSource source, Combatant user)
         {
-            if (target is IEffectable effectable)
+            if (source is IEffectable effectable)
             {
-                effectable.ApplyEffect(invertColorEffect);
+                effectable.ApplyEffect(modifyAttackEffect);
             }
             else
             {

@@ -63,7 +63,7 @@ namespace FoolsBrand
         /// Makes this combatant perform a certain list of combat actions.
         /// </summary>
         /// <param name="actions">The actions to perform.</param>
-        public IEnumerator ProcessActions(MinPriorityQueue<DiceAction> actions, ITargetable target)
+        public IEnumerator ProcessActions(MinPriorityQueue<DiceAction> actions, IActionSource source, ITargetable target)
         {
             //MinPriorityQueue<DiceAction> sortedActions = new MinPriorityQueue<DiceAction>();
             //foreach(DiceAction action in actions)
@@ -76,7 +76,7 @@ namespace FoolsBrand
             {
                 // Switch this to inheritance support later.
                 DiceAction action = actions.Dequeue();
-                yield return StartCoroutine(action.PerformAction(target, this));
+                yield return StartCoroutine(action.PerformAction(target, source, this));
 
             }
             yield return null;

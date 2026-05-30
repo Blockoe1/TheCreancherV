@@ -14,7 +14,7 @@ using UnityEngine.Events;
 
 namespace FoolsBrand.Enemies
 {
-    public class Limb : MonoBehaviour, ITargetable, IEffectable
+    public class Limb : MonoBehaviour, ITargetable, IEffectable, IActionSource
     {
         #region CONSTS
         private const string BODY_NAME = "Body";

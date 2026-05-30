@@ -14,7 +14,7 @@ using UnityEngine;
 
 namespace FoolsBrand
 {
-    public class PlayerCombatant : Combatant, IEffectable
+    public class PlayerCombatant : Combatant, IEffectable, IActionSource
     {
         [SerializeField] private int defense;
 
@@ -95,13 +95,7 @@ namespace FoolsBrand
                 effect.OnActionStart(this, this);
             }
 
-            yield return StartCoroutine(ProcessActions(actionQueue, targetedLimb));
-            while (actionQueue.Count > 0)
-            {
-                // Switch this to inheritance support later.
-                DiceAction action = actionQueue.Dequeue();
-                yield return StartCoroutine(action.PerformAction(targetedLimb, this));
-            }
+            yield return StartCoroutine(ProcessActions(actionQueue, this, targetedLimb));
 
             foreach (Effect effect in Effects)
             {

@@ -16,7 +16,7 @@ namespace FoolsBrand
     {
         public override int PriorityValue => 0;
 
-        public override IEnumerator PerformAction(ITargetable target,  Combatant user)
+        public override IEnumerator PerformAction(ITargetable target, IActionSource source, Combatant user)
         {
             Debug.Log($"{user} corrupted {value} of their dice.");
             yield return null;

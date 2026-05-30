@@ -134,6 +134,7 @@ namespace FoolsBrand
                         diceLookup[dice][j].transform.position = _diePositions[i].transform.position;
                         diceLookup[dice][j].transform.localScale = _diePositions[i].transform.localScale;
                         diceLookup[dice][j].SetActive(true);
+                        diceLookup[dice][j].GetComponent<DieBase>().StartRolling();
                         diceInPlay.Add(diceLookup[dice][j]);
                         break;
                     }

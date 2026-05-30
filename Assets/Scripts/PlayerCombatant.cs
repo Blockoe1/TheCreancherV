@@ -34,7 +34,7 @@ namespace FoolsBrand
             int damageDealt = base.Attack(damage, target);
             foreach (Effect effect in Effects)
             {
-                effect.OnDealDamage(this, target, damageDealt);
+                effect.OnDealDamage(this, this, target, damageDealt);
             }
             return damageDealt;
         }
@@ -62,7 +62,7 @@ namespace FoolsBrand
             {
                 foreach (Effect effect in Effects)
                 {
-                    effect.OnTakeDamage(this, source, damageTaken);
+                    effect.OnTakeDamage(this, this, source, damageTaken);
                 }
             }
             return damageTaken;
@@ -77,7 +77,7 @@ namespace FoolsBrand
         {
             foreach (Effect effect in Effects)
             {
-                effect.OnActionStart(this);
+                effect.OnActionStart(this, this);
             }
 
             // Action action stuff.
@@ -85,7 +85,7 @@ namespace FoolsBrand
 
             foreach (Effect effect in Effects)
             {
-                effect.OnActionEnd(this);
+                effect.OnActionEnd(this, this);
             }
             FlushEffects();
         }
@@ -98,7 +98,7 @@ namespace FoolsBrand
         public void ApplyEffect(Effect toApply)
         {
             Effect copy = toApply.Copy();
-            copy.OnEffectAdded(this, gameObject);
+            copy.OnEffectAdded(this, this, gameObject);
             Effects.Add(copy);
         }
 
@@ -112,7 +112,7 @@ namespace FoolsBrand
             {
                 if (Effects[i].GetType().Name == className)
                 {
-                    Effects[i].OnEffectRemoved(this);
+                    Effects[i].OnEffectRemoved(this, this);
                     Effects.RemoveAt(i);
                     i--;
                 }
@@ -128,7 +128,7 @@ namespace FoolsBrand
             {
                 if (Effects[i].IsExpired)
                 {
-                    Effects[i].OnEffectRemoved(this);
+                    Effects[i].OnEffectRemoved(this, this);
                     Effects.RemoveAt(i);
                     i--;
                 }

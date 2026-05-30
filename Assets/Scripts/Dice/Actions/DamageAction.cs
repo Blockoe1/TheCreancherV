@@ -16,7 +16,7 @@ namespace FoolsBrand
     {
         public override int PriorityValue => 100;
 
-        public override IEnumerator PerformAction(ITargetable target, Combatant user)
+        public override IEnumerator PerformAction(ITargetable target, IActionSource source, Combatant user)
         {
             Debug.Log($"{user} attacked {target} for {value}.");
             user.Attack(value, target);

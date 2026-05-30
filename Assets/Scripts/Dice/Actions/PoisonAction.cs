@@ -19,7 +19,7 @@ namespace FoolsBrand
         [SerializeField] private PoisonEffect poison;
         public override int PriorityValue => 101;
 
-        public override IEnumerator PerformAction(ITargetable target, Combatant user)
+        public override IEnumerator PerformAction(ITargetable target, IActionSource source, Combatant user)
         {
             if (target is IEffectable effectable)
             {

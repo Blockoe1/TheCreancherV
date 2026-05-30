@@ -63,20 +63,20 @@ namespace FoolsBrand
         /// Makes this combatant perform a certain list of combat actions.
         /// </summary>
         /// <param name="actions">The actions to perform.</param>
-        public IEnumerator ProcessActions(DiceAction[] actions, ITargetable target)
+        public IEnumerator ProcessActions(MinPriorityQueue<DiceAction> actions, IActionSource source, ITargetable target)
         {
-            MinPriorityQueue<DiceAction> sortedActions = new MinPriorityQueue<DiceAction>();
-            foreach(DiceAction action in actions)
-            {
-                // Need to make sure we re-order the type enum to include the execution order.
-                sortedActions.Enqueue(action, action.PriorityValue);
-            }
+            //MinPriorityQueue<DiceAction> sortedActions = new MinPriorityQueue<DiceAction>();
+            //foreach(DiceAction action in actions)
+            //{
+            //    // Need to make sure we re-order the type enum to include the execution order.
+            //    sortedActions.Enqueue(action, action.PriorityValue);
+            //}
 
-            while(sortedActions.Count > 0)
+            while(actions.Count > 0)
             {
                 // Switch this to inheritance support later.
-                DiceAction action = sortedActions.Dequeue();
-                yield return StartCoroutine(action.PerformAction(target, this));
+                DiceAction action = actions.Dequeue();
+                yield return StartCoroutine(action.PerformAction(target, source, this));
 
             }
             yield return null;

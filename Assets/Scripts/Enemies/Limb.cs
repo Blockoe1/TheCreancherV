@@ -14,7 +14,7 @@ using UnityEngine.Events;
 
 namespace FoolsBrand.Enemies
 {
-    public class Limb : MonoBehaviour, ITargetable, IEffectable
+    public class Limb : MonoBehaviour, ITargetable, IEffectable, IActionSource
     {
         #region CONSTS
         private const string BODY_NAME = "Body";
@@ -60,13 +60,21 @@ namespace FoolsBrand.Enemies
         /// </summary>
         /// <remarks>Does not yet apply custom effects.</remarks>
         /// <returns>The damage dealt by this limb.</returns>
-        public DiceAction[] RollAttack()
+        public MinPriorityQueue<DiceAction> RollAttack()
         {
             if (attackDice == null)
             {
                 Debug.LogWarning($"Enemy {transform.parent.gameObject.name} does not have an attack dice assigned to it's {name} limb.");
             }
-            return attackDice.RollDie();
+            DiceAction[] actions = attackDice.RollDie();
+            MinPriorityQueue<DiceAction> sortedActions = new MinPriorityQueue<DiceAction>();
+            foreach(DiceAction action in actions)
+            {
+                // Need to make sure we re-order the type enum to include the execution order.
+                sortedActions.Enqueue(action, action.PriorityValue);
+            }
+
+            return sortedActions;
         }
 
         /// <summary>

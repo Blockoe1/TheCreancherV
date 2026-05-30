@@ -34,6 +34,7 @@ public class DieBase : MonoBehaviour
     [SerializeField] private Vector3 localRotSpeed;
     [SerializeField] private Vector3 worldRotSpeed;
     [SerializeField] private float slerpTime;
+    [SerializeField] private AnimationCurve slerpCurve;
     [Header("Faces")]
     [SerializeField, Tooltip("DO NOT CHANGE THE NUMBER OF FACES. The effects of each face")] private DieFace[] dieFaces = new DieFace[6];
 
@@ -55,10 +56,14 @@ public class DieBase : MonoBehaviour
             StartCoroutine(RollingAnimation());
         }
     }
-    
-    private static Vector3 GetRandomRollingVector(float speed)
+
+    private Quaternion ApplyRollRotation(Quaternion rotation, float strength = 1)
     {
-        return new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized * speed;
+        rotation *= Quaternion.Euler(strength * Time.deltaTime * localRotSpeed);
+
+        // Apply world rotation.
+        rotation *= Quaternion.Inverse(rotation) * Quaternion.Euler(strength * Time.deltaTime * worldRotSpeed) * rotation;
+        return rotation;
     }
 
     private IEnumerator RollingAnimation()
@@ -67,12 +72,11 @@ public class DieBase : MonoBehaviour
 
         // Set a random starting rotation.
         transform.eulerAngles = new Vector3(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360));
-        IEnumerator Rolling()
-        {
-            //Quaternion rotQuat = Quaternion.Inverse(transform.rotation) * Quaternion.Euler(rotationSpeed);
-            //transform.rotation = transform.rotation * rotQuat;
 
-            transform.Rotate(localRotSpeed * Time.deltaTime, Space.Self);
+        while(dieIndex < 0)
+        {
+
+            //transform.Rotate(localRotSpeed * Time.deltaTime, Space.Self);
             //transform.Rotate(worldRotSpeed * Time.deltaTime, Space.World);
 
             transform.rotation = ApplyRollRotation(transform.rotation);
@@ -80,40 +84,22 @@ public class DieBase : MonoBehaviour
             yield return null;
         }
 
-        Quaternion ApplyRollRotation(Quaternion startRotation)
+        Quaternion rollRot = transform.rotation;
+        Quaternion targetRot = Quaternion.LookRotation(FACE_AXES[dieIndex], Vector3.up);
+
+        float timer = 0;
+        while (timer < slerpTime)
         {
-            // Apply local rotation
-            Quaternion rotation = startRotation;
+            float normalizedTime = timer / slerpTime;
+            // Continue the rolling animation, and slerp between that and the target.
+            rollRot = Quaternion.Normalize(ApplyRollRotation(rollRot, 1 - normalizedTime));
+            transform.rotation = Quaternion.Slerp(rollRot, targetRot, slerpCurve.Evaluate(normalizedTime));
 
-            // Apply world rotation.
-            rotation *= Quaternion.Euler(worldRotSpeed * Time.deltaTime);
-            return rotation;
+            timer += Time.deltaTime;
+            yield return null;
         }
-
-        IEnumerator SnapToTarget()
-        {
-            // Quickly snap to the target face.
-            Quaternion startRot = transform.rotation;
-            Quaternion targetRot = Quaternion.LookRotation(FACE_AXES[dieIndex], Vector3.up);
-
-            float timer = 0;
-            while (timer < slerpTime)
-            {
-                float normalizedTime = timer / slerpTime;
-                transform.rotation = Quaternion.Slerp(startRot, targetRot, normalizedTime);
-
-                timer += Time.deltaTime;
-                yield return null;
-            }
-            transform.rotation = targetRot;
-            isRolling = false;
-        }
-
-        while(dieIndex < 0)
-        {
-            yield return Rolling();
-        }
-        yield return SnapToTarget();
+        transform.rotation = targetRot;
+        isRolling = false;
     }
 
     /// <summary>

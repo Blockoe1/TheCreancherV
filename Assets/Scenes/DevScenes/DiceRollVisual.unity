@@ -598,6 +598,10 @@ PrefabInstance:
       propertyPath: '_diePositions.Array.data[1]'
       value: 
       objectReference: {fileID: 63183094}
+    - target: {fileID: 4557808712105358376, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 86.3999
+      objectReference: {fileID: 0}
     - target: {fileID: 5441532517234996568, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: m_Name
       value: GameManager

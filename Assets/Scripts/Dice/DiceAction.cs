@@ -15,25 +15,19 @@ public abstract class DiceAction
     public abstract int PriorityValue { get; }
     public abstract IEnumerator PerformAction(ITargetable target, Combatant user);
 
+    protected DieFace parentFace;
+
     public int Value
     {
         get => value;
         set => this.value = value;
     }
 
-    //public enum ActionTypes
-    //{
-    //    ATTACK,
-    //    HEAL,
-    //    POSION,
-    //    CORRUPTION
-    //}
-    //public Action(ActionTypes type, int value)
-    //{
-    //    Type = type;
-    //    Value = value;
-    //}
-
-    //public ActionTypes Type;
-    //public int Value;
+    /// <summary>
+    /// Initializes this action with a reference to the owned face.
+    /// </summary>
+    public void Initialize(DieFace face)
+    {
+        parentFace = face;
+    }
 }

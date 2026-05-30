@@ -1,3 +1,4 @@
+using CustomAttributes;
 using FoolsBrand;
 using System;
 using System.Collections;
@@ -13,6 +14,12 @@ public abstract class DiceAction
 
     public abstract int PriorityValue { get; }
     public abstract IEnumerator PerformAction(ITargetable target, Combatant user);
+
+    public int Value
+    {
+        get => value;
+        set => this.value = value;
+    }
 
     //public enum ActionTypes
     //{

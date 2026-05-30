@@ -1,3 +1,4 @@
+using CustomAttributes;
 using FoolsBrand;
 using System;
 using System.Collections;
@@ -14,19 +15,19 @@ public abstract class DiceAction
     public abstract int PriorityValue { get; }
     public abstract IEnumerator PerformAction(ITargetable target, Combatant user);
 
-    //public enum ActionTypes
-    //{
-    //    ATTACK,
-    //    HEAL,
-    //    POSION,
-    //    CORRUPTION
-    //}
-    //public Action(ActionTypes type, int value)
-    //{
-    //    Type = type;
-    //    Value = value;
-    //}
+    protected DieFace parentFace;
 
-    //public ActionTypes Type;
-    //public int Value;
+    public int Value
+    {
+        get => value;
+        set => this.value = value;
+    }
+
+    /// <summary>
+    /// Initializes this action with a reference to the owned face.
+    /// </summary>
+    public void Initialize(DieFace face)
+    {
+        parentFace = face;
+    }
 }

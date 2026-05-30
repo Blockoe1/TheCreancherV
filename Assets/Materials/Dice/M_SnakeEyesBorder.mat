@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_DiceBase
+  m_Name: M_SnakeEyesBorder
   m_Shader: {fileID: -6465566751694194690, guid: 39254d89b11f24a4c825288da185b142, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -82,7 +82,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture:
-        m_Texture: {fileID: 2800000, guid: 0f9a86d34f8ab5a40965f54b203dff9a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 51ae4919ddc3423498dd756797a94529, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -136,7 +136,7 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Region1: {r: 1, g: 1, b: 1, a: 1}
+    - _Region1: {r: 0.66910696, g: 0.8616352, b: 0.54461837, a: 1}
     - _Region2: {r: 1, g: 1, b: 0, a: 1}
     - _Region3: {r: 0, g: 1, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}

@@ -28,13 +28,13 @@ namespace FoolsBrand
             return copy;
         }
 
-        public override void OnEffectAdded(Combatant combatant, GameObject appliedObj)
+        public override void OnEffectAdded(Combatant combatant, IEffectable effectSource, GameObject appliedObj)
         {
             effectInstance = GameObject.Instantiate(poisonEffect, appliedObj.transform);
             Debug.Log(effectInstance);
         }
 
-        public override void OnEffectRemoved(Combatant combatant)
+        public override void OnEffectRemoved(Combatant combatant, IEffectable effectSource)
         {
             Debug.Log("Poison Removed");
             GameObject.Destroy(effectInstance);
@@ -44,13 +44,13 @@ namespace FoolsBrand
         /// Deals damage to the main enemy health.
         /// </summary>
         /// <param name="combatant">The combatant to deal poison damage to.</param>
-        public override void OnActionStart(Combatant combatant)
+        public override void OnActionStart(Combatant combatant, IEffectable effectSource)
         {
             if (combatant.Health.IsDead)
             {
                 return;
             }
-            base.OnActionStart(combatant);
+            base.OnActionStart(combatant, effectSource);
             combatant.Health.Value -= tickDamage;
             combatant.CheckForDeath();
         }

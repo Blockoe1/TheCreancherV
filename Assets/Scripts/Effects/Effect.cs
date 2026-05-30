@@ -32,7 +32,7 @@ namespace FoolsBrand
         /// <returns></returns>
         public abstract Effect Copy();
 
-        public virtual void OnEffectAdded(Combatant combatant, GameObject appliedObj) { }
+        public virtual void OnEffectAdded(Combatant combatant, IEffectable effectSource, GameObject appliedObj) { }
 
         /// <summary>
         /// Called before damage is dealt to apply any damage modifications.
@@ -46,17 +46,17 @@ namespace FoolsBrand
         /// <param name="takenDamage">The base damage the combatant is taking.</param>
         /// <returns>The modified damage from this effect.</returns>
         public virtual int ModifyDamage(int takenDamage) { return takenDamage; }
-        public virtual void OnActionStart(Combatant combatant) { }
-        public virtual void OnActionEnd(Combatant combatant)
+        public virtual void OnActionStart(Combatant combatant, IEffectable effectSource) { }
+        public virtual void OnActionEnd(Combatant combatant, IEffectable effectSource)
         {
             if (hasDuration)
             {
                 duration--;
             }
         }
-        public virtual void OnTakeDamage(Combatant combatant, Combatant attacker, int damageTaken) { }
-        public virtual void OnDealDamage(Combatant combatant, ITargetable target,int damageDealt) { }
+        public virtual void OnTakeDamage(Combatant combatant, IEffectable effectSource, Combatant attacker, int damageTaken) { }
+        public virtual void OnDealDamage(Combatant combatant, IEffectable effectSource, ITargetable target,int damageDealt) { }
 
-        public virtual void OnEffectRemoved(Combatant combatant) { }
+        public virtual void OnEffectRemoved(Combatant combatant, IEffectable effectSource) { }
     }
 }

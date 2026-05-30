@@ -108,7 +108,7 @@ namespace FoolsBrand.Enemies
                 {
                     foreach (Effect effect in Effects)
                     {
-                        effect.OnTakeDamage(parentEnemy, source, damageTaken);
+                        effect.OnTakeDamage(parentEnemy, this, source, damageTaken);
                     }
                 }
             }
@@ -125,7 +125,7 @@ namespace FoolsBrand.Enemies
         public void ApplyEffect(Effect toApply)
         {
             Effect copy = toApply.Copy();
-            copy.OnEffectAdded(parentEnemy, gameObject);
+            copy.OnEffectAdded(parentEnemy, this, gameObject);
             Effects.Add(copy);
         }
 
@@ -136,14 +136,14 @@ namespace FoolsBrand.Enemies
         {
             foreach (Effect effect in Effects)
             {
-                effect.OnActionStart(parentEnemy);
+                effect.OnActionStart(parentEnemy, this);
             }
         }
         public void OnActionEnd()
         {
             foreach (Effect effect in Effects)
             {
-                effect.OnActionEnd(parentEnemy);
+                effect.OnActionEnd(parentEnemy, this);
             }
 
             FlushEffects();
@@ -173,7 +173,7 @@ namespace FoolsBrand.Enemies
         {
             foreach (Effect effect in Effects)
             {
-                effect.OnDealDamage(enemy, target, damageDealt);
+                effect.OnDealDamage(enemy, this, target, damageDealt);
             }
         }
 
@@ -187,7 +187,7 @@ namespace FoolsBrand.Enemies
             {
                 if (Effects[i].GetType().Name == className)
                 {
-                    Effects[i].OnEffectRemoved(parentEnemy);
+                    Effects[i].OnEffectRemoved(parentEnemy, this);
                     Effects.RemoveAt(i);
                     i--;
                 }
@@ -203,7 +203,7 @@ namespace FoolsBrand.Enemies
             {
                 if (Effects[i].IsExpired)
                 {
-                    Effects[i].OnEffectRemoved(parentEnemy);
+                    Effects[i].OnEffectRemoved(parentEnemy, this);
                     Effects.RemoveAt(i);
                     i--;
                 }

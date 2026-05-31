@@ -40,10 +40,13 @@ public class DieBase : MonoBehaviour
 
     private int dieIndex = 0;
     private bool isRolling;
+    private bool isReserved = false;
 
     public string DieName { get => _dieName; }
 
     public ReadOnlyArray<DieFace> Faces => dieFaces;
+
+    public bool IsReserved { get => isReserved; set => isReserved = value; }
 
     /// <summary>
     /// Starts the dice's rolling animation.

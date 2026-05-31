@@ -23,7 +23,6 @@ namespace FoolsBrand
         {
             Debug.Log("Attack modifier added");
             Source = effectSource;
-            Debug.Log(effectInstance);
         }
 
         public override void OnEffectRemoved(Combatant combatant, IEffectable effectSource)

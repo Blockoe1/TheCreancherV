@@ -20,6 +20,9 @@ namespace FoolsBrand.Enemies
         private const string BODY_NAME = "Body";
         #endregion
 
+        [SerializeField, Tooltip("Adds this string to the end of an animation name for actions perfomed by this limb.  " +
+            "Only needs to be set if the limb has a custom animation.")] 
+        private string limbAnimNameSuffix;
         [SerializeField] private bool isBody;
         [SerializeField, HideIf("isBody")] private HealthData health;
         [SerializeField] private int defense;
@@ -123,6 +126,16 @@ namespace FoolsBrand.Enemies
 
             // Deal damage to the main enemy.
             return parentEnemy.TakeDamage(Mathf.RoundToInt(damage * multiplier), source);
+        }
+
+        /// <summary>
+        /// Plays an animation by name and returns the clip played.
+        /// </summary>
+        /// <param name="animationName"></param>
+        /// <returns></returns>
+        public AnimationClip PlayAnimation(string animationName)
+        {
+            return parentEnemy.PlayAnimation(animationName + limbAnimNameSuffix);
         }
 
         #region Effects

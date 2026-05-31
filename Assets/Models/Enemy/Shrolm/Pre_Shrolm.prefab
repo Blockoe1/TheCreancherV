@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6232700040784643468}
-  - component: {fileID: 742544530084320833}
   - component: {fileID: 7138906417024785733}
+  - component: {fileID: 1070043450597386290}
   m_Layer: 0
   m_Name: Pre_Shrolm
   m_TagString: Untagged
@@ -36,18 +36,6 @@ Transform:
   - {fileID: 9097758781758826856}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &742544530084320833
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8122105305914101375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d0861a1dcb901643af8afaab0630c38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.AnimationEvents
 --- !u!95 &7138906417024785733
 Animator:
   serializedVersion: 7
@@ -70,6 +58,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1070043450597386290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8122105305914101375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e947bc779ec60f48b1ff249d2aced28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.EnemyAnimator
+  _tick: 0.01
 --- !u!1001 &148732529879317171
 PrefabInstance:
   m_ObjectHideFlags: 0

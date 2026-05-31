@@ -104,7 +104,6 @@ namespace FoolsBrand
             {
                 //If there's no die reserved, draw a new one
                 _reservedDie = _rollingDice[index];
-                diceInPlay[index].transform.parent = _reserveSlotPosition.transform;
                 diceInPlay[index].transform.position = _reserveSlotPosition.transform.position;
                 diceInPlay[index].transform.localScale = _reserveSlotPosition.transform.localScale;
                 diceInPlay[index].GetComponent<DieBase>().IsReserved = true;
@@ -140,6 +139,19 @@ namespace FoolsBrand
             }
 
             //If there is a die reserved, swap them
+            //GameObject reservation = reservedDieGO;
+            //string reservationString = _reservedDie;
+
+            (reservedDieGO, diceInPlay[index]) = (diceInPlay[index], reservedDieGO);
+            (_rollingDice[index], _reservedDie) = (_reservedDie, _rollingDice[index]);
+
+            reservedDieGO.transform.position = _reserveSlotPosition.transform.position;
+            reservedDieGO.transform.localScale = _reserveSlotPosition.transform.localScale;
+            reservedDieGO.GetComponent<DieBase>().IsReserved = true;
+
+            diceInPlay[index].transform.position = _diePositions[index].transform.position;
+            diceInPlay[index].transform.localScale = _diePositions[index].transform.localScale;
+            diceInPlay[index].GetComponent<DieBase>().IsReserved = false;
         }
 
         public void DiscardDice(int index)

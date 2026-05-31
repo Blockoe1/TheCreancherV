@@ -23,13 +23,14 @@ namespace FoolsBrand
         public override Effect Copy()
         {
             PoisonEffect copy = new PoisonEffect(this);
-            poisonEffect = copy.poisonEffect;
-            tickDamage = copy.tickDamage;
+            copy.poisonEffect = poisonEffect;
+            copy.tickDamage = tickDamage;
             return copy;
         }
 
         public override void OnEffectAdded(Combatant combatant, IEffectable effectSource, GameObject appliedObj)
         {
+            Debug.Log(poisonEffect);
             if (poisonEffect != null)
             {
                 effectInstance = GameObject.Instantiate(poisonEffect, appliedObj.transform);

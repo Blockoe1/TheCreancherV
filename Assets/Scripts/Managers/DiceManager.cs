@@ -16,7 +16,7 @@ namespace FoolsBrand
         //Dice bags
         [SerializeField] private List<string> _drawBag;
         [SerializeField] private List<string> _discardBag;
-        [SerializeField] private string _reservedDie;
+        public string _reservedDie;
         [SerializeField] private List<string> _rollingDice;
         private List<GameObject> diceInPlay = new();
 

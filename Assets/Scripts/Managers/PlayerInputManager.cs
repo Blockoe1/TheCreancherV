@@ -17,7 +17,6 @@ namespace FoolsBrand
 
         public static void LimbSelected(int limbIndex)
         {
-            UnityEngine.Debug.Log($"Limb at index {limbIndex} selected");
             OnLimbSelectedInput?.Invoke(limbIndex);
         }
 

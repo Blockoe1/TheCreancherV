@@ -14,11 +14,13 @@ namespace FoolsBrand
 {
     public abstract class Combatant : MonoBehaviour, ITargetable
     {
+        [SerializeField] protected Animator animator;
         [SerializeField] private HealthData health;
         [SerializeField] private UnityEvent onDeathEvent;
 
         public HealthData Health => health;
         public UnityEvent OnDeathEvent => onDeathEvent;
+        public bool IsDead => health.IsDead;
         
         /// <summary>
         /// Makes this combatant attack a target.
@@ -76,7 +78,7 @@ namespace FoolsBrand
             {
                 // Switch this to inheritance support later.
                 DiceAction action = actions.Dequeue();
-                yield return StartCoroutine(action.PerformAction(target, source, this));
+                yield return StartCoroutine(action.PlayAction(target, source, this));
 
             }
             yield return null;
@@ -90,6 +92,23 @@ namespace FoolsBrand
         private void OnDestroy()
         {
             onDeathEvent.RemoveAllListeners();
+        }
+
+        /// <summary>
+        /// Plays an animation by name and returns the clip played.
+        /// </summary>
+        /// <param name="animationName"></param>
+        /// <returns></returns>
+        public AnimationClip PlayAnimation(string animationName)
+        {
+            if (animator == null || animationName == "") { return null; }
+            animator.SetTrigger(animationName);
+            animator.Update(0);
+            // Makes a few assumptions:
+            // 1. The clip we want is on layer  0.
+            // 2. The clip is in index 0 in the array
+            AnimationClip clip = animator.GetCurrentAnimatorClipInfo(0)[0].clip;
+            return clip;
         }
     }
 }

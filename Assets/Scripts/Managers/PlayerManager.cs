@@ -47,7 +47,6 @@ namespace FoolsBrand
             actionQueue = new MinPriorityQueue<DiceAction>();
             foreach (GameObject dice in diceManager.DiceInPlay)
             {
-                Debug.Log(dice);
                 DieBase die = dice.GetComponent<DieBase>();
                 DiceAction[] actions = die.RollDie();
                 foreach (DiceAction action in actions)
@@ -74,7 +73,6 @@ namespace FoolsBrand
         {
             Enemy enemyTarget = target as Enemy;
 
-            Debug.Log("Turn Start");
             //Player turn start
             //Player draws dice
             targetedLimb = null;
@@ -89,10 +87,8 @@ namespace FoolsBrand
 
             //Player rolls dice
             yield return new WaitUntil(() => actionQueue != null);
-            Debug.Log("Dice Rolled");
             //Player selects part
             yield return new WaitUntil(() => targetedLimb != null);
-            Debug.Log("Limb Targeted");
             //Actions
             //Dice get Discarded
             //Player End Turn
@@ -107,7 +103,6 @@ namespace FoolsBrand
                 diceManager.DiscardDice(0);
             }
             diceManager.ClearDiceInPlay();
-            Debug.Log("Dice Discarded");
 
             yield return null;
         }

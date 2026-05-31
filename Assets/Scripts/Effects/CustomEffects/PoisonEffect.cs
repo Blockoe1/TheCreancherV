@@ -31,12 +31,12 @@ namespace FoolsBrand
         public override void OnEffectAdded(Combatant combatant, IEffectable effectSource, GameObject appliedObj)
         {
             effectInstance = GameObject.Instantiate(poisonEffect, appliedObj.transform);
-            Debug.Log(effectInstance);
+            //Debug.Log(effectInstance);
         }
 
         public override void OnEffectRemoved(Combatant combatant, IEffectable effectSource)
         {
-            Debug.Log("Poison Removed");
+            //Debug.Log("Poison Removed");
             GameObject.Destroy(effectInstance);
         }
 

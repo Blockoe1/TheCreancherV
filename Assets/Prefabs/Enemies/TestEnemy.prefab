@@ -134,6 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0110fa8addd30048a75d795bbfb8111, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemy
+  animator: {fileID: 0}
   health:
     maxHealth: 20
     health: 20
@@ -153,6 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4539ebab66eab5840bb9d4342752f4d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemy.Limb
+  limbAnimNameSuffix: 
   isBody: 1
   health:
     maxHealth: 0
@@ -292,6 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4539ebab66eab5840bb9d4342752f4d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemy.Limb
+  limbAnimNameSuffix: 
   isBody: 0
   health:
     maxHealth: 3
@@ -433,6 +436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4539ebab66eab5840bb9d4342752f4d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemy.Limb
+  limbAnimNameSuffix: 
   isBody: 0
   health:
     maxHealth: 5
@@ -574,6 +578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4539ebab66eab5840bb9d4342752f4d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemy.Limb
+  limbAnimNameSuffix: 
   isBody: 0
   health:
     maxHealth: 7
@@ -715,6 +720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4539ebab66eab5840bb9d4342752f4d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemy.Limb
+  limbAnimNameSuffix: 
   isBody: 0
   health:
     maxHealth: 5
@@ -856,6 +862,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4539ebab66eab5840bb9d4342752f4d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemy.Limb
+  limbAnimNameSuffix: 
   isBody: 0
   health:
     maxHealth: 7
@@ -878,6 +885,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8022761948814560252}
     m_Modifications:
+    - target: {fileID: 771093319524680088, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1365350395911806623, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2880070388413821091, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3270382260691904596, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4252415728962692394, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
       propertyPath: m_Name
       value: BasicDie
@@ -926,11 +949,26 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6933899741985717521, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6962195676426560402, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7591162386441903752, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9147261810796201671, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 944691310037458876, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
+    - {fileID: 6085424675029913971, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
+    - {fileID: 9147261810796201671, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

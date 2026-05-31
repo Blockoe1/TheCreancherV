@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Rendering.RenderGraphModule;
 using UnityEngine.Rendering.Universal;
 
 public class InvertColorFeature : ScriptableRendererFeature
@@ -24,6 +25,11 @@ public class InvertColorFeature : ScriptableRendererFeature
         {
             material = mat;
             renderPassEvent = RenderPassEvent.AfterRendering;
+        }
+
+        public override void RecordRenderGraph(RenderGraph renderGraph, ContextContainer frameData)
+        {
+            
         }
 
         public override void OnCameraSetup(CommandBuffer cmd, ref RenderingData renderingData)
@@ -61,6 +67,7 @@ public class InvertColorFeature : ScriptableRendererFeature
     {
         renderer.EnqueuePass(pass);
     }
+
 
     public void EnableInvert() => pass.IsActive = true;
     public void DisableInvert() => pass.IsActive = false;

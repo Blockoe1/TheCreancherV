@@ -72,5 +72,10 @@ namespace FoolsBrand
             }
             catch (NullReferenceException) {}
         }
+
+        public void Impact()
+        {
+            // Does Nothing.
+        }
     }
 }

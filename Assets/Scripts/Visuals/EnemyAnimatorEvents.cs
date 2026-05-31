@@ -14,10 +14,5 @@ namespace FoolsBrand
             { ColorChangeAllRegions(_hurtColor, _toHurtFlashDuration); }
             catch (NullReferenceException) {}
         }
-
-        public void Impact()
-        {
-            // Does Nothing.
-        }
     }
 }

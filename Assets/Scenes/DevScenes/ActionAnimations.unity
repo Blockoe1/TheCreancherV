@@ -119,26 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &43729149 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9176450224407929859, guid: 33302e20b5c44154797f95a77cdb7fbe, type: 3}
-  m_PrefabInstance: {fileID: 2984211772716764235}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &43729151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 43729149}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e947bc779ec60f48b1ff249d2aced28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.EnemyAnimatorEvents
-  _tick: 0.01
-  _hurtColor: {r: 1, g: 0, b: 0, a: 1}
-  _toHurtFlashDuration: 0.1
 --- !u!1 &63183094
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,18 +623,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 622140110400974375, guid: 33302e20b5c44154797f95a77cdb7fbe, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 98.3263
-      objectReference: {fileID: 0}
-    - target: {fileID: 622140110400974375, guid: 33302e20b5c44154797f95a77cdb7fbe, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 98.3263
-      objectReference: {fileID: 0}
-    - target: {fileID: 622140110400974375, guid: 33302e20b5c44154797f95a77cdb7fbe, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 76.513
-      objectReference: {fileID: 0}
     - target: {fileID: 887804118228744433, guid: 33302e20b5c44154797f95a77cdb7fbe, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -699,33 +667,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 2464578056025293647, guid: 33302e20b5c44154797f95a77cdb7fbe, type: 3}
-      propertyPath: debugEffect.hasDuration
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3979628733608573814, guid: 33302e20b5c44154797f95a77cdb7fbe, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 2fb131896e1d746439864e10c579466f, type: 2}
-    - target: {fileID: 8363919465755393721, guid: 33302e20b5c44154797f95a77cdb7fbe, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8363919465755393721, guid: 33302e20b5c44154797f95a77cdb7fbe, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8363919465755393721, guid: 33302e20b5c44154797f95a77cdb7fbe, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 9176450224407929859, guid: 33302e20b5c44154797f95a77cdb7fbe, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 43729151}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33302e20b5c44154797f95a77cdb7fbe, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

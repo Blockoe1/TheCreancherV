@@ -137,15 +137,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: ffb7079bfec6b7a43a5cfe1eca1ce06e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ffb7079bfec6b7a43a5cfe1eca1ce06e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ffb7079bfec6b7a43a5cfe1eca1ce06e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ffb7079bfec6b7a43a5cfe1eca1ce06e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -191,6 +191,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: M_Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8879528566716807029, guid: ffb7079bfec6b7a43a5cfe1eca1ce06e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 98.3263
+      objectReference: {fileID: 0}
+    - target: {fileID: 8879528566716807029, guid: ffb7079bfec6b7a43a5cfe1eca1ce06e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 98.3263
+      objectReference: {fileID: 0}
+    - target: {fileID: 8879528566716807029, guid: ffb7079bfec6b7a43a5cfe1eca1ce06e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 76.513
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -201,6 +213,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ffb7079bfec6b7a43a5cfe1eca1ce06e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3979628733608573814}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ffb7079bfec6b7a43a5cfe1eca1ce06e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8858301875259957147}
   m_SourcePrefab: {fileID: 100100000, guid: ffb7079bfec6b7a43a5cfe1eca1ce06e, type: 3}
 --- !u!4 &8363919465755393721 stripped
 Transform:
@@ -227,7 +242,7 @@ Animator:
   m_GameObject: {fileID: 9176450224407929859}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b515a4f44d464964db40d59ddaa20b16, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2fb131896e1d746439864e10c579466f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -239,3 +254,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8858301875259957147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9176450224407929859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d0861a1dcb901643af8afaab0630c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.AnimatorEvents
+  _tick: 0.01

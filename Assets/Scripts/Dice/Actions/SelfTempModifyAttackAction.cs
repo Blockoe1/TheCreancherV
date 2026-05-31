@@ -8,7 +8,7 @@ namespace FoolsBrand
     {
         [SerializeField] private TempModifyAttackEffect modifyAttackEffect;
 
-        public override int PriorityValue => 100;
+        public override int PriorityValue => 90;
 
         public override IEnumerator PerformAction(ITargetable target, IActionSource source, Combatant user)
         {

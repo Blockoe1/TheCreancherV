@@ -34,7 +34,7 @@ namespace FoolsBrand
 
         public override int ModifyAttack(int dealtDamage)
         {
-            Source.RemoveEffect(this.GetType().Name);
+            markRemove = true;
             return dealtDamage + attackModifier;
         }
     }

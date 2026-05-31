@@ -803,7 +803,7 @@ MonoBehaviour:
     health: 7
   defense: 0
   multiplier: 1
-  attackWeight: 100
+  attackWeight: 1
   attackDice: {fileID: 753924102905241776}
   onDamageEvent:
     m_PersistentCalls:

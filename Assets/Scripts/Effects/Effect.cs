@@ -17,7 +17,9 @@ namespace FoolsBrand
         [SerializeField] private bool hasDuration = true;
         [SerializeField, ShowIf("hasDuration"), AllowNesting] protected int duration;
 
-        public bool IsExpired => hasDuration && duration <= 0;
+        protected bool markRemove;
+
+        public bool IsExpired => (hasDuration && duration <= 0) || markRemove;
 
         public Effect(Effect copy)
         {

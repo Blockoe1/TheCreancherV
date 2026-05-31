@@ -30,14 +30,20 @@ namespace FoolsBrand
 
         public override void OnEffectAdded(Combatant combatant, IEffectable effectSource, GameObject appliedObj)
         {
-            effectInstance = GameObject.Instantiate(poisonEffect, appliedObj.transform);
+            if (poisonEffect != null)
+            {
+                effectInstance = GameObject.Instantiate(poisonEffect, appliedObj.transform);
+            }
             //Debug.Log(effectInstance);
         }
 
         public override void OnEffectRemoved(Combatant combatant, IEffectable effectSource)
         {
             //Debug.Log("Poison Removed");
-            GameObject.Destroy(effectInstance);
+            if (effectInstance != null)
+            {
+                GameObject.Destroy(effectInstance);
+            }
         }
 
         /// <summary>

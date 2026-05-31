@@ -11,6 +11,7 @@ namespace FoolsBrand
     public class PlayerManager : Manager
     {
         [SerializeField] private PlayerCombatant player;
+        [SerializeField] private GameObject[] reservationButtons;
 
         public static HealthData PlayerHealth = null;
         private DiceManager diceManager;
@@ -48,6 +49,10 @@ namespace FoolsBrand
             foreach (GameObject dice in diceManager.DiceInPlay)
             {
                 DieBase die = dice.GetComponent<DieBase>();
+                if (die.IsReserved)
+                {
+                    continue;
+                }
                 DiceAction[] actions = die.RollDie();
                 foreach (DiceAction action in actions)
                 {
@@ -78,6 +83,11 @@ namespace FoolsBrand
             targetedLimb = null;
             actionQueue = null;
             diceManager.DrawDice();
+            //Make reservation buttons appear
+            foreach (GameObject button in reservationButtons)
+            {
+                button.SetActive(true);
+            }
 
             limbUIManager.ToggleTargeting(true);
 
@@ -87,6 +97,11 @@ namespace FoolsBrand
 
             //Player rolls dice
             yield return new WaitUntil(() => actionQueue != null);
+            foreach (GameObject button in reservationButtons)
+            {
+                button.SetActive(false);
+            }
+            //Make reservation buttons disappear
             //Player selects part
             yield return new WaitUntil(() => targetedLimb != null);
             //Actions

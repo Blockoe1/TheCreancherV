@@ -58,17 +58,29 @@ public abstract class DiceAction
     /// <returns></returns>
     public IEnumerator PlayAction(ITargetable target, IActionSource source, Combatant user)
     {
+        if (target.IsDead) { yield break; }
         // Play the animation.
         AnimationClip clip = source.PlayAnimation(animationName);
-
         // Get the animation, impact, and vfx preload time.
-        float animationTime = clip.length;
-        float impactTime = GetImpactTime(clip);
-        float effectPreloadTime = actionVFX.PreloadTime;
+        float animationTime = 0, impactTime = 0, effectPreloadTime = 0;
+
+        if (clip != null)
+        {
+            animationTime = clip.length;
+            impactTime = GetImpactTime(clip);
+        }
+        if (actionVFX != null)
+        {
+            effectPreloadTime = actionVFX.PreloadTime;
+        }
+
         // Wait the corresponding times.
         yield return new WaitForSeconds(impactTime - effectPreloadTime);
         // Play visual effects.
-        PlayVFX(target, source, user, actionVFX.EffectObj);
+        if (actionVFX != null)
+        {
+            PlayVFX(target, source, user, actionVFX.EffectObj);
+        }
         yield return new WaitForSeconds(effectPreloadTime);
         // Perform the actual action.
         yield return PerformAction(target, source, user);

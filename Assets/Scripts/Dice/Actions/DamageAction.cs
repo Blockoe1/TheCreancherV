@@ -18,7 +18,6 @@ namespace FoolsBrand
 
         public override IEnumerator PerformAction(ITargetable target, IActionSource source, Combatant user)
         {
-            Debug.Log($"{user} attacked {target} for {value}.");
             user.Attack(value, target);
             yield return null;
         }

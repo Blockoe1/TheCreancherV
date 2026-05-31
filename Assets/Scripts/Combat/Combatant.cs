@@ -20,6 +20,7 @@ namespace FoolsBrand
 
         public HealthData Health => health;
         public UnityEvent OnDeathEvent => onDeathEvent;
+        public bool IsDead => health.IsDead;
         
         /// <summary>
         /// Makes this combatant attack a target.
@@ -100,6 +101,7 @@ namespace FoolsBrand
         /// <returns></returns>
         public AnimationClip PlayAnimation(string animationName)
         {
+            if (animator == null || animationName == "") { return null; }
             animator.SetTrigger(animationName);
             animator.Update(0);
             // Makes a few assumptions:

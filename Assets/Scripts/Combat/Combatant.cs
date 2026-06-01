@@ -7,6 +7,7 @@
 // Brief Description : Base script any entity that can deal and recieve damage in combat.
 *****************************************************************************/
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -95,6 +96,7 @@ namespace FoolsBrand
         private void OnDestroy()
         {
             onDeathEvent.RemoveAllListeners();
+            OnDeath();
         }
 
         /// <summary>

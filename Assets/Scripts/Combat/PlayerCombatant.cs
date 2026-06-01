@@ -94,14 +94,14 @@ namespace FoolsBrand
         {
             foreach (Effect effect in Effects)
             {
-                effect.OnActionStart(this, this);
+                yield return effect.OnActionStart(this, this);
             }
 
             yield return StartCoroutine(ProcessActions(actionQueue, this, targetedLimb));
 
             foreach (Effect effect in Effects)
             {
-                effect.OnActionEnd(this, this);
+                yield return effect.OnActionEnd(this, this);
             }
             FlushEffects();
 

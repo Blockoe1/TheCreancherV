@@ -105,6 +105,54 @@ PrefabInstance:
       value: 7292673129211232383
       objectReference: {fileID: 0}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232378].actionVFX
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232379].actionVFX
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232380].actionVFX
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232381].actionVFX
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232382].actionVFX
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232383].actionVFX
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232378].animationName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232379].animationName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232380].animationName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232381].animationName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232382].animationName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232383].animationName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: managedReferences[7292673129211232378].poison.duration
       value: 0
       objectReference: {fileID: 0}
@@ -127,6 +175,30 @@ PrefabInstance:
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: managedReferences[7292673129211232383].poison.duration
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232378].poison.tickDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232379].poison.tickDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232380].poison.tickDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232381].poison.tickDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232382].poison.tickDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232383].poison.tickDelay
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: managedReferences[7292673129211232378].poison.tickDamage
@@ -179,27 +251,51 @@ PrefabInstance:
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: managedReferences[7292673129211232378].poison.poisonEffect
       value: 
-      objectReference: {fileID: 4372371654624159935, guid: 6fe5c9ffebec1334aa3c8458b6c4bf82, type: 3}
+      objectReference: {fileID: 7474686967035214249, guid: 6fe5c9ffebec1334aa3c8458b6c4bf82, type: 3}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: managedReferences[7292673129211232379].poison.poisonEffect
       value: 
-      objectReference: {fileID: 4372371654624159935, guid: 6fe5c9ffebec1334aa3c8458b6c4bf82, type: 3}
+      objectReference: {fileID: 7474686967035214249, guid: 6fe5c9ffebec1334aa3c8458b6c4bf82, type: 3}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: managedReferences[7292673129211232380].poison.poisonEffect
       value: 
-      objectReference: {fileID: 4372371654624159935, guid: 6fe5c9ffebec1334aa3c8458b6c4bf82, type: 3}
+      objectReference: {fileID: 7474686967035214249, guid: 6fe5c9ffebec1334aa3c8458b6c4bf82, type: 3}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: managedReferences[7292673129211232381].poison.poisonEffect
       value: 
-      objectReference: {fileID: 4372371654624159935, guid: 6fe5c9ffebec1334aa3c8458b6c4bf82, type: 3}
+      objectReference: {fileID: 7474686967035214249, guid: 6fe5c9ffebec1334aa3c8458b6c4bf82, type: 3}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: managedReferences[7292673129211232382].poison.poisonEffect
       value: 
-      objectReference: {fileID: 4372371654624159935, guid: 6fe5c9ffebec1334aa3c8458b6c4bf82, type: 3}
+      objectReference: {fileID: 7474686967035214249, guid: 6fe5c9ffebec1334aa3c8458b6c4bf82, type: 3}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: managedReferences[7292673129211232383].poison.poisonEffect
       value: 
-      objectReference: {fileID: 4372371654624159935, guid: 6fe5c9ffebec1334aa3c8458b6c4bf82, type: 3}
+      objectReference: {fileID: 7474686967035214249, guid: 6fe5c9ffebec1334aa3c8458b6c4bf82, type: 3}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232378].poison.poisonEffectBurst
+      value: 
+      objectReference: {fileID: 3510531163261658276, guid: 64ccc00c4ec7cf244a008226545a907d, type: 3}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232379].poison.poisonEffectBurst
+      value: 
+      objectReference: {fileID: 3510531163261658276, guid: 64ccc00c4ec7cf244a008226545a907d, type: 3}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232380].poison.poisonEffectBurst
+      value: 
+      objectReference: {fileID: 3510531163261658276, guid: 64ccc00c4ec7cf244a008226545a907d, type: 3}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232381].poison.poisonEffectBurst
+      value: 
+      objectReference: {fileID: 3510531163261658276, guid: 64ccc00c4ec7cf244a008226545a907d, type: 3}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232382].poison.poisonEffectBurst
+      value: 
+      objectReference: {fileID: 3510531163261658276, guid: 64ccc00c4ec7cf244a008226545a907d, type: 3}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232383].poison.poisonEffectBurst
+      value: 
+      objectReference: {fileID: 3510531163261658276, guid: 64ccc00c4ec7cf244a008226545a907d, type: 3}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: dieFaces.Array.data[0]._rollDie.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: FacePoison

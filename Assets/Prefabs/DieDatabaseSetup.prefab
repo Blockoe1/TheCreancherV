@@ -50,7 +50,7 @@ MonoBehaviour:
   - {fileID: 4252415728962692394, guid: c95d8592137d9ac4e86d2c4b43100f23, type: 3}
   - {fileID: 4252415728962692394, guid: fe2f9341e3ec2de40a72c7e80773cf19, type: 3}
   _startingDice:
-  - BasicDie
+  - SnakeEye
   - BasicDie
   - BasicDie
   - HealingDie

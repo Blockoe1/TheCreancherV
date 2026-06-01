@@ -74,6 +74,12 @@ namespace FoolsBrand
             return damageTaken;
         }
 
+        protected override void OnDeath()
+        {
+            base.OnDeath();
+            RemoveAllEffects();
+        }
+
         /// <summary>
         /// Sets the target and actions that the player will perform when they act.
         /// </summary>
@@ -94,14 +100,14 @@ namespace FoolsBrand
         {
             foreach (Effect effect in Effects)
             {
-                effect.OnActionStart(this, this);
+                yield return effect.OnActionStart(this, this);
             }
 
             yield return StartCoroutine(ProcessActions(actionQueue, this, targetedLimb));
 
             foreach (Effect effect in Effects)
             {
-                effect.OnActionEnd(this, this);
+                yield return effect.OnActionEnd(this, this);
             }
             FlushEffects();
 
@@ -146,6 +152,19 @@ namespace FoolsBrand
                     i--;
                 }
             }
+        }
+
+        /// <summary>
+        /// Removes all effects on the player.
+        /// </summary>
+        public void RemoveAllEffects()
+        {
+            for (int i = 0; i < Effects.Count; i++)
+            {
+                Effects[i].OnEffectRemoved(this, this);
+            }
+
+            Effects.Clear();
         }
 
         /// <summary>

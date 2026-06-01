@@ -14,6 +14,7 @@ namespace FoolsBrand
     {
         void ApplyEffect(Effect toApply);
         void RemoveEffect(string className);
+        void RemoveAllEffects();
         void FlushEffects();
     }
 }

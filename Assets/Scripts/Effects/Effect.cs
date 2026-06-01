@@ -7,6 +7,7 @@
 // Brief Description : custom temporary effect that can be applied to a combatant.
 *****************************************************************************/
 using NaughtyAttributes;
+using System.Collections;
 using UnityEngine;
 
 namespace FoolsBrand
@@ -48,13 +49,17 @@ namespace FoolsBrand
         /// <param name="takenDamage">The base damage the combatant is taking.</param>
         /// <returns>The modified damage from this effect.</returns>
         public virtual int ModifyDamage(int takenDamage) { return takenDamage; }
-        public virtual void OnActionStart(Combatant combatant, IEffectable effectSource) { }
-        public virtual void OnActionEnd(Combatant combatant, IEffectable effectSource)
+        public virtual IEnumerator OnActionStart(Combatant combatant, IEffectable effectSource) 
+        {
+            yield break;
+        }
+        public virtual IEnumerator OnActionEnd(Combatant combatant, IEffectable effectSource)
         {
             if (hasDuration)
             {
                 duration--;
             }
+            yield break;
         }
         public virtual void OnTakeDamage(Combatant combatant, IEffectable effectSource, Combatant attacker, int damageTaken) { }
         public virtual void OnDealDamage(Combatant combatant, IEffectable effectSource, ITargetable target,int damageDealt) { }

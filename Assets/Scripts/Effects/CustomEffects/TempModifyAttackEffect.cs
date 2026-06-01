@@ -16,6 +16,7 @@ namespace FoolsBrand
         public override Effect Copy()
         {
             TempModifyAttackEffect copy = new TempModifyAttackEffect(this);
+            copy.attackModifier = attackModifier;
             return copy;
         }
 

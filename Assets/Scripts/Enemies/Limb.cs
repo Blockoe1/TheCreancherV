@@ -7,6 +7,7 @@
 // Brief Description : Controls an enemy's limbs and their relevant stats.
 *****************************************************************************/
 using NaughtyAttributes;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -109,9 +110,7 @@ namespace FoolsBrand.Enemies
                 onDamageEvent?.Invoke(damage);
                 if (health.IsDead)
                 {
-                    LimbDestroyed();
-                    onDestroyEvent?.Invoke();
-                    gameObject.SetActive(false);
+                    OnLimbDeath();
                 }
 
                 // Trigger any on damage effects.
@@ -162,18 +161,18 @@ namespace FoolsBrand.Enemies
         /// <summary>
         /// Start/end functions called by the base enemy
         /// </summary>
-        public void OnActionStart()
+        public IEnumerator OnActionStart()
         {
             foreach (Effect effect in Effects)
             {
-                effect.OnActionStart(parentEnemy, this);
+                yield return effect.OnActionStart(parentEnemy, this);
             }
         }
-        public void OnActionEnd()
+        public IEnumerator OnActionEnd()
         {
             foreach (Effect effect in Effects)
             {
-                effect.OnActionEnd(parentEnemy, this);
+                yield return effect.OnActionEnd(parentEnemy, this);
             }
 
             FlushEffects();
@@ -225,6 +224,19 @@ namespace FoolsBrand.Enemies
         }
 
         /// <summary>
+        /// Removes all effects from the limb.
+        /// </summary>
+        public void RemoveAllEffects()
+        {
+            for (int i = 0; i < Effects.Count; i++)
+            {
+                Effects[i].OnEffectRemoved(parentEnemy, this);
+            }
+
+            Effects.Clear();
+        }
+
+        /// <summary>
         /// Removes all effects that have their duration expired.
         /// </summary>
         public void FlushEffects()
@@ -240,6 +252,14 @@ namespace FoolsBrand.Enemies
             }
         }
         #endregion
+
+        public void OnLimbDeath()
+        {
+            LimbDestroyed();
+            onDestroyEvent?.Invoke();
+            gameObject.SetActive(false);
+            RemoveAllEffects();
+        }
 
         #region Custom Effect Functions
         protected virtual void LimbStart() { }

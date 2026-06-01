@@ -27,8 +27,6 @@ namespace FoolsBrand.Enemies
 
         private Limb attackLimb;
 
-        public bool IsDead => Health.IsDead;
-
         public ReadOnlyArray<Limb> Limbs => limbs;   
         
         public void Init()
@@ -104,7 +102,7 @@ namespace FoolsBrand.Enemies
         {
             foreach(var limb in Limbs)
             {
-                limb.OnActionStart();
+                yield return limb.OnActionStart();
             }
             // Enemy needs to accrue enough ActionValue to act.  BaseActionValue can be reduced by limbs being destroyed.
             actionValue += BaseActionValue;
@@ -125,7 +123,7 @@ namespace FoolsBrand.Enemies
 
             foreach (var limb in Limbs)
             {
-                limb.OnActionEnd();
+                yield return limb.OnActionEnd();
             }
         }
     }

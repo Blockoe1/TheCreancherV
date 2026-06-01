@@ -11,6 +11,7 @@ using UnityEngine;
 
 namespace FoolsBrand
 {
+    [System.Serializable]
     public class AttackMultiplierEffect : Effect
     {
         [SerializeField] private float multiplier; 

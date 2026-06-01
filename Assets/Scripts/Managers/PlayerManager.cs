@@ -11,12 +11,14 @@ namespace FoolsBrand
     public class PlayerManager : Manager
     {
         [SerializeField] private PlayerCombatant player;
+        [SerializeField] private float selectLimbWaitTime = 0.25f;
         [SerializeField] private AttackMultiplierEffect selectLimbBonus;
         [SerializeField] private GameObject[] reservationButtons;
 
         public static HealthData PlayerHealth = null;
         private DiceManager diceManager;
         private LimbUIManager limbUIManager;
+        private DiceUIManager diceUI;
 
         private int? targetedLimb = null;
         //private DiceAction[] diceActions = null;
@@ -31,6 +33,7 @@ namespace FoolsBrand
             PlayerHealth ??= player.Health;
             diceManager = gm.GetManager<DiceManager>();
             limbUIManager = gm.GetManager<UIManager>().GetManager<LimbUIManager>();
+            diceUI = gm.GetManager<UIManager>().GetManager<DiceUIManager>();
 
             PlayerInputManager.OnLimbSelectedInput += PlayerInputManager_OnLimbSelectedInput;
             PlayerInputManager.OnRollButtonPressed += PlayerInputManager_OnRollButtonPressed;
@@ -86,38 +89,35 @@ namespace FoolsBrand
             actionQueue = null;
             diceManager.DrawDice();
             //Make reservation buttons appear
-            foreach (GameObject button in reservationButtons)
-            {
-                button.SetActive(true);
-            }
-
+            diceUI.ToggleReserveButtons(true);
+            diceUI.ToggleRollButton(true);
             limbUIManager.ToggleTargeting(true);
 
             //TODO - Dice Bonus by not rolling
 
             //Player rolls dice
-            while (targetedLimb != null)
+            while (targetedLimb == null)
             {
-
+                // When the player rolls, remove ability to reserve.
+                if (actionQueue != null)
+                {
+                    diceUI.ToggleRollButton(false);
+                    diceUI.ToggleReserveButtons(false);
+                }
                 yield return null;
             }
 
-            // If the player hasn't rolled yet, roll the dice automatically.
-            if (actionQueue != null)
-            {
-
-            }
-
-            yield return new WaitUntil(() => actionQueue != null);
-            foreach (GameObject button in reservationButtons)
-            {
-                button.SetActive(false);
-            }
-            //Make reservation buttons disappear
-            //Player selects part
-            yield return new WaitUntil(() => targetedLimb != null);
-
+            diceUI.ToggleReserveButtons(false);
+            diceUI.ToggleRollButton(false);
             limbUIManager.ToggleTargeting(false);
+
+            // If the player hasn't rolled yet, roll the dice automatically and apply a damage boost.
+            if (actionQueue == null)
+            {
+                player.ApplyEffect(selectLimbBonus);
+                PlayerInputManager_OnRollButtonPressed();
+                yield return new WaitForSeconds(selectLimbWaitTime);
+            }
 
             player.SetActData(actionQueue, enemyTarget.Limbs[(int)targetedLimb]);
             yield return StartCoroutine(player.Act(enemyTarget));

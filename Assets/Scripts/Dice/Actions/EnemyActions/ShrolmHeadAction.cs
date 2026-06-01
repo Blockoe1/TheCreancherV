@@ -1,3 +1,4 @@
+using FoolsBrand.UI;
 using System.Collections;
 using UnityEngine;
 
@@ -6,15 +7,14 @@ namespace FoolsBrand
     [System.Serializable]
     public class ShrolmHeadAction : DiceAction
     {
-        [SerializeField] private InvertColorEffect invertColorEffect;
-
-        private string eatenDice;
         public override int PriorityValue => 100;
+
+        DiceManager diceManager;
 
         public override IEnumerator PerformAction(ITargetable target, IActionSource source, Combatant user)
         {
-            eatenDice = DiceManager.Instance._reservedDie;
-            DiceManager.Instance._reservedDie = null;
+            diceManager = DiceManager.Instance;
+            diceManager.ClearReserveSlot();
             yield return null;
         }
     }

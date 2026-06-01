@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 887804118228744433}
   - component: {fileID: 2464578056025293647}
+  - component: {fileID: 6958373031082848585}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -57,6 +58,19 @@ MonoBehaviour:
   defense: 0
   <DamageNumberPoint>k__BackingField: {fileID: 5608584918391360693}
   effectPoint: {fileID: 1875791562299834991}
+--- !u!114 &6958373031082848585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2422329881525701407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d8553b13b500e245a6448a035441c9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InvertColorToggle
+  invertMaterial: {fileID: 2100000, guid: 4778f943318669d468f44f6ab3a8edcc, type: 2}
 --- !u!1 &5770376317699931839
 GameObject:
   m_ObjectHideFlags: 0

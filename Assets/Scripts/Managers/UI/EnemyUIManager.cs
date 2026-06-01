@@ -21,6 +21,7 @@ namespace FoolsBrand.UI
 
         [SerializeField, ShowIfNull] private CanvasGroup enemyGroup;
 
+        private DamageNumberManager dnm;
         private Enemy currentEnemy;
 
         private void Reset()
@@ -30,6 +31,7 @@ namespace FoolsBrand.UI
 
         public override void Init(GameManager gm, HierarchyManager parentManager)
         {
+            dnm = parentManager.GetManager<DamageNumberManager>();
             EnemyManager.EnemySpawnEvent += LoadEnemy;
         }
 
@@ -39,14 +41,14 @@ namespace FoolsBrand.UI
         }
 
         // Setup the enemy's health bar
-        private void LoadEnemy(Enemy obj)
+        private void LoadEnemy(Enemy enemy)
         {
             if (currentEnemy != null)
             {
                 currentEnemy.OnDeathEvent.RemoveListener(OnEnemyDeath);
             }
 
-            currentEnemy = obj;
+            currentEnemy = enemy;
 
             if (currentEnemy != null)
             {
@@ -54,6 +56,7 @@ namespace FoolsBrand.UI
                 currentEnemy.OnDeathEvent.AddListener(OnEnemyDeath);
                 enemyHealthBar.SetTargetHealth(currentEnemy.Health);
                 enemyNameText.text = currentEnemy.name;
+                dnm.RegisterDamageNumber(enemy.Health, enemy.transform);
             }
             else
             {
@@ -64,6 +67,7 @@ namespace FoolsBrand.UI
         public void OnEnemyDeath()
         {
             currentEnemy.OnDeathEvent.RemoveListener(OnEnemyDeath);
+            dnm.UnregisterDamageNumber(currentEnemy.Health);
             currentEnemy = null;
             ToggleEnemyUI(false);
         }

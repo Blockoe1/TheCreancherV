@@ -17,6 +17,7 @@ namespace FoolsBrand
     public class PlayerCombatant : Combatant, IEffectable, IActionSource
     {
         [SerializeField] private int defense;
+        [field: SerializeField] public Transform DamageNumberPoint { get; private set; }
 
         private List<Effect> Effects = new List<Effect>();
 

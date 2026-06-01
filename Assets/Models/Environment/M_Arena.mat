@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7124374448710508168
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Editor::UnityEditor.Rendering.Universal.AssetVersion
-  version: 10
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -20,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_SnakeEyes
+  m_Name: M_Arena
   m_Shader: {fileID: -6465566751694194690, guid: 39254d89b11f24a4c825288da185b142, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -82,7 +69,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture:
-        m_Texture: {fileID: 2800000, guid: 0f9a86d34f8ab5a40965f54b203dff9a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 908929e26ada81b41b82f4eb3ee410f2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -136,16 +123,26 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _EmissiveRegion: {r: 0, g: 0, b: 0, a: 1}
-    - _REGION_0: {r: 0.2626887, g: 0.40251565, b: 0.10759059, a: 1}
-    - _REGION_1: {r: 1, g: 1, b: 0, a: 1}
-    - _REGION_2: {r: 0, g: 1, b: 0, a: 1}
-    - _REGION_3: {r: 0, g: 1, b: 1, a: 1}
-    - _REGION_4: {r: 0, g: 0, b: 1, a: 1}
-    - _REGION_5: {r: 1, g: 0, b: 1, a: 1}
-    - _Region1: {r: 0.13609713, g: 0.23270428, b: 0.057810146, a: 1}
-    - _Region2: {r: 1, g: 1, b: 0, a: 1}
-    - _Region3: {r: 0, g: 1, b: 0, a: 1}
+    - _EmissiveRegion: {r: 1, g: 0, b: 1, a: 1}
+    - _REGION_0: {r: 0.78113204, g: 0.01962465, b: 0, a: 1}
+    - _REGION_1: {r: 0.9245283, g: 0.9245283, b: 0.9245283, a: 1}
+    - _REGION_2: {r: 0.09394796, g: 0.09926852, b: 0.10943389, a: 1}
+    - _REGION_3: {r: 0.6773585, g: 1, b: 1, a: 1}
+    - _REGION_4: {r: 0.25142747, g: 0.25142747, b: 0.2981131, a: 1}
+    - _REGION_5: {r: 1, g: 0.9627644, b: 0.25471687, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
+--- !u!114 &2408663708239628274
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Editor::UnityEditor.Rendering.Universal.AssetVersion
+  version: 10

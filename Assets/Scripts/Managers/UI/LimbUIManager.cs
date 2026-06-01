@@ -19,11 +19,14 @@ namespace FoolsBrand.UI
 
         private readonly List<LimbDisplay> limbDisplays = new List<LimbDisplay>();
 
+        private DamageNumberManager dnm;
+
         private LimbDisplay bodyDisplay;
         private Enemy currentDisplayedEnemy;
 
         public override void Init(GameManager gm, HierarchyManager parentManager)
         {
+            dnm = parentManager.GetManager<DamageNumberManager>();
             EnemyManager.EnemySpawnEvent += SetDisplays;
         }
 
@@ -53,6 +56,7 @@ namespace FoolsBrand.UI
                 {
                     LimbDisplay display = GetDisplay(i);
                     display.SetLimb(toDisplay.Limbs[i]);
+
                 }
                 RefreshDisplays();
             }
@@ -106,7 +110,7 @@ namespace FoolsBrand.UI
             {
                 bodyDisplay = limbDisplay;
             }
-            limbDisplay.Init(this, index, bodyDisplay.transform);
+            limbDisplay.Init(this, dnm, index, bodyDisplay.transform);
             limbDisplays.Add(limbDisplay);
         }
 

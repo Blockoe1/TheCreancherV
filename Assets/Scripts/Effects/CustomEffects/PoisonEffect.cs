@@ -57,7 +57,6 @@ namespace FoolsBrand
         /// <param name="combatant">The combatant to deal poison damage to.</param>
         public override IEnumerator OnActionStart(Combatant combatant, IEffectable effectSource)
         {
-            Debug.Log("Poison Action Start");
             if (combatant.Health.IsDead)
             {
                 yield break;

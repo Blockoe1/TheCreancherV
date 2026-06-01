@@ -138,6 +138,15 @@ namespace FoolsBrand.Enemies
             return parentEnemy.PlayAnimation(animationName + limbAnimNameSuffix);
         }
 
+        /// <summary>
+        /// Effects play at the position of the limb.
+        /// </summary>
+        /// <returns></returns>
+        public Vector3 GetEffectPosition()
+        {
+            return transform.position;
+        }
+
         #region Effects
         /// <summary>
         /// Applie a custom effect to this limb.

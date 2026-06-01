@@ -110,5 +110,14 @@ namespace FoolsBrand
             AnimationClip clip = animator.GetCurrentAnimatorClipInfo(0)[0].clip;
             return clip;
         }
+
+        /// <summary>
+        /// Effects play at the position of the combatant.
+        /// </summary>
+        /// <returns></returns>
+        public virtual Vector3 GetEffectPosition()
+        {
+            return transform.position;
+        }
     }
 }

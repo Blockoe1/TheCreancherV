@@ -75,7 +75,7 @@ public abstract class DiceAction
         }
 
         // Wait the corresponding times.
-        yield return new WaitForSeconds(impactTime - effectPreloadTime);
+        yield return new WaitForSeconds(Mathf.Max(impactTime - effectPreloadTime, effectPreloadTime));
         // Play visual effects.
         if (actionVFX != null)
         {
@@ -101,7 +101,7 @@ public abstract class DiceAction
     {
         if (target is MonoBehaviour mb)
         {
-            GameObject.Instantiate(effectPrefab, mb.transform.position, Quaternion.identity);
+            GameObject.Instantiate(effectPrefab, target.GetEffectPosition(), Quaternion.identity);
         }
         else
         {

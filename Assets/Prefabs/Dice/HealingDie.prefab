@@ -97,6 +97,54 @@ PrefabInstance:
       value: 7292673129211232377
       objectReference: {fileID: 0}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232371].actionVFX
+      value: 
+      objectReference: {fileID: 11400000, guid: aa0ee82cd2a0f2744af5fc049fc54742, type: 2}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232372].actionVFX
+      value: 
+      objectReference: {fileID: 11400000, guid: aa0ee82cd2a0f2744af5fc049fc54742, type: 2}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232373].actionVFX
+      value: 
+      objectReference: {fileID: 11400000, guid: aa0ee82cd2a0f2744af5fc049fc54742, type: 2}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232374].actionVFX
+      value: 
+      objectReference: {fileID: 11400000, guid: aa0ee82cd2a0f2744af5fc049fc54742, type: 2}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232375].actionVFX
+      value: 
+      objectReference: {fileID: 11400000, guid: aa0ee82cd2a0f2744af5fc049fc54742, type: 2}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232377].actionVFX
+      value: 
+      objectReference: {fileID: 11400000, guid: aa0ee82cd2a0f2744af5fc049fc54742, type: 2}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232371].animationName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232372].animationName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232373].animationName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232374].animationName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232375].animationName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: managedReferences[7292673129211232377].animationName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: dieFaces.Array.data[0]._rollDie.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: FaceSelfHeal
       objectReference: {fileID: 0}

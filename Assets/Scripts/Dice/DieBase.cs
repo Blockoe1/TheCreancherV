@@ -105,6 +105,12 @@ public class DieBase : MonoBehaviour
         isRolling = false;
     }
 
+    private void OnDisable()
+    {
+        isRolling = false;
+        isReserved = false;
+    }
+
     /// <summary>
     /// The actual rolling of this die
     /// </summary>

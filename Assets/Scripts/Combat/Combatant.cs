@@ -58,8 +58,11 @@ namespace FoolsBrand
             {
                 // Death Handling.
                 onDeathEvent?.Invoke();
+                OnDeath();
             }
         }
+
+        protected virtual void OnDeath() { }
 
         /// <summary>
         /// Makes this combatant perform a certain list of combat actions.

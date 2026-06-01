@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2812084402080559741}
   - component: {fileID: 853774881411765040}
   - component: {fileID: 4546455380314813136}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Face1Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 6520065915657957450}
   - component: {fileID: 4774355207031759212}
   - component: {fileID: 7439938388762458822}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Face4Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -375,7 +375,7 @@ GameObject:
   - component: {fileID: 8735584197218931135}
   - component: {fileID: 6032950842293683723}
   - component: {fileID: 2299449444861537981}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: DieBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -554,26 +554,38 @@ MonoBehaviour:
       type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
         value: 1
+        animationName: 
+        actionVFX: {fileID: 0}
     - rid: 7292673129211232364
       type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
         value: 2
+        animationName: 
+        actionVFX: {fileID: 0}
     - rid: 7292673129211232365
       type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
         value: 3
+        animationName: 
+        actionVFX: {fileID: 0}
     - rid: 7292673129211232366
       type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
         value: 4
+        animationName: 
+        actionVFX: {fileID: 0}
     - rid: 7292673129211232367
       type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
         value: 5
+        animationName: 
+        actionVFX: {fileID: 0}
     - rid: 7292673129211232368
       type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
         value: 6
+        animationName: 
+        actionVFX: {fileID: 0}
 --- !u!1 &2881102808344166740
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,7 +597,7 @@ GameObject:
   - component: {fileID: 5198032116154078501}
   - component: {fileID: 3185146675122010229}
   - component: {fileID: 5813998263862499600}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Face3Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -766,7 +778,7 @@ GameObject:
   - component: {fileID: 1649914503725997204}
   - component: {fileID: 904153497095588500}
   - component: {fileID: 824878528498425248}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Face6Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -947,7 +959,7 @@ GameObject:
   - component: {fileID: 2657456627913087569}
   - component: {fileID: 7153420306699366092}
   - component: {fileID: 8707945380945595831}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Face2Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1128,7 +1140,7 @@ GameObject:
   - component: {fileID: 6477474459479117594}
   - component: {fileID: 6364756520113393298}
   - component: {fileID: 4236132167956338783}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Face5Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1353,6 +1365,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e002c126740bb9d4d916ebcf303112f8, type: 3}
       propertyPath: m_Name
       value: M_DiceBorder
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e002c126740bb9d4d916ebcf303112f8, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: e002c126740bb9d4d916ebcf303112f8, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

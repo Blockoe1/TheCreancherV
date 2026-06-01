@@ -1,7 +1,7 @@
 using System.Linq;
 using UnityEngine;
 using System.Collections.Generic;
-using TMPro;
+using System.Collections;
 
 namespace FoolsBrand
 {
@@ -13,6 +13,7 @@ namespace FoolsBrand
         private string[] diceRewards = new string[3];
         [SerializeField] private Transform[] _dicePositions;
         [SerializeField] private GameObject _diceDatabaseReference;
+        [SerializeField] private float rotationSpeed;
 
         [SerializeField] private DiceManager diceManager;
         public void Start()
@@ -29,8 +30,21 @@ namespace FoolsBrand
                 diceRewards[i] = validDice[Random.Range(0, validDice.Count)];
                 validDice.Remove(diceRewards[i]);
 
-                GameObject die = Instantiate(DiceDatabase.AllDiceDict[diceRewards[i]], _dicePositions[i]);
-                //die.layer = LayerMask.NameToLayer("UI");
+                Instantiate(DiceDatabase.AllDiceDict[diceRewards[i]], _dicePositions[i]);
+            }
+
+            StartCoroutine(RotateDice());
+        }
+
+        private IEnumerator RotateDice()
+        {
+            while (true)
+            {
+                foreach (Transform t in _dicePositions)
+                {
+                    t.Rotate(Vector3.up, rotationSpeed, Space.World);
+                }
+                yield return null;
             }
         }
 

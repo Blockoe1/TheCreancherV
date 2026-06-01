@@ -1428,6 +1428,7 @@ MonoBehaviour:
   - {fileID: 1705872060}
   - {fileID: 1524776835}
   _diceDatabaseReference: {fileID: 9130035646642930121, guid: ee0b0317b101e4c4aba3fc96f9c5d4bb, type: 3}
+  rotationSpeed: 1
   diceManager: {fileID: 236753987}
 --- !u!1 &2102578790
 GameObject:

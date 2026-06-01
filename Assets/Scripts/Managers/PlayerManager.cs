@@ -96,25 +96,28 @@ namespace FoolsBrand
             //TODO - Dice Bonus by not rolling
 
             //Player rolls dice
-            while (targetedLimb != null)
+            while (targetedLimb == null)
             {
                 // When the player rolls, remove ability to reserve.
                 if (actionQueue != null)
                 {
+                    diceUI.ToggleRollButton(false);
                     diceUI.ToggleReserveButtons(false);
                 }
                 yield return null;
             }
 
+            diceUI.ToggleReserveButtons(false);
+            diceUI.ToggleRollButton(false);
+            limbUIManager.ToggleTargeting(false);
+
             // If the player hasn't rolled yet, roll the dice automatically and apply a damage boost.
-            if (actionQueue != null)
+            if (actionQueue == null)
             {
                 player.ApplyEffect(selectLimbBonus);
                 PlayerInputManager_OnRollButtonPressed();
+                yield return new WaitForSeconds(selectLimbWaitTime);
             }
-
-            diceUI.ToggleRollButton(false);
-            limbUIManager.ToggleTargeting(false);
 
             player.SetActData(actionQueue, enemyTarget.Limbs[(int)targetedLimb]);
             yield return StartCoroutine(player.Act(enemyTarget));

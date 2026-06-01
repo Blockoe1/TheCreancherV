@@ -832,6 +832,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 532085168}
     - target: {fileID: 9192090825351714869, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+      propertyPath: selectLimbWaitTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192090825351714869, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: selectLimbBonus.multiplier
       value: 1.25
       objectReference: {fileID: 0}
@@ -870,7 +874,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 887804118228744433, guid: 33302e20b5c44154797f95a77cdb7fbe, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9
+      value: -9.25
       objectReference: {fileID: 0}
     - target: {fileID: 887804118228744433, guid: 33302e20b5c44154797f95a77cdb7fbe, type: 3}
       propertyPath: m_LocalRotation.w

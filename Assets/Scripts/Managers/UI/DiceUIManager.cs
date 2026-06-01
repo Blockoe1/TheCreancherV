@@ -16,6 +16,7 @@ namespace FoolsBrand
     {
         [SerializeField] private CanvasGroup reserveButtons;
         [SerializeField] private CanvasGroup rollButton;
+        [SerializeField, Range(0, 1)] private float disabledAlpha;
 
         public void ToggleReserveButtons(bool isVisible)
         {
@@ -29,7 +30,7 @@ namespace FoolsBrand
 
         private void ToggleGroup(CanvasGroup group, bool isVisible)
         {
-            group.alpha = isVisible ? 1 : 0;
+            group.alpha = isVisible ? 1 : disabledAlpha;
             group.interactable = isVisible;
             group.blocksRaycasts = isVisible;
         }

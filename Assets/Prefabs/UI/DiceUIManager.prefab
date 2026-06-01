@@ -1128,6 +1128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.DiceUIManager
   reserveButtons: {fileID: 709278287480456156}
   rollButton: {fileID: 6595627360476319046}
+  disabledAlpha: 0.5
 --- !u!225 &6597837760928781330
 CanvasGroup:
   m_ObjectHideFlags: 0

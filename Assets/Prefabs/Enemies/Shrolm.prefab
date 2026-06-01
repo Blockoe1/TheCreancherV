@@ -567,7 +567,7 @@ MonoBehaviour:
         modifyAttackEffect:
           hasDuration: 0
           duration: 0
-          attackModifier: 3
+          attackModifier: 4
     - rid: 4868126913438416967
       type: {class: SelfModifyAttackAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
@@ -577,7 +577,7 @@ MonoBehaviour:
         modifyAttackEffect:
           hasDuration: 0
           duration: 0
-          attackModifier: 3
+          attackModifier: 4
     - rid: 4868126913438416968
       type: {class: SelfModifyAttackAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
@@ -587,7 +587,7 @@ MonoBehaviour:
         modifyAttackEffect:
           hasDuration: 0
           duration: 0
-          attackModifier: 3
+          attackModifier: 4
 --- !u!1 &3661795786837044138
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,31 +669,31 @@ MonoBehaviour:
     - rid: 4868126888777744456
       type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
-        value: 5
+        value: 6
         animationName: 
         actionVFX: {fileID: 0}
     - rid: 4868126888777744457
       type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
-        value: 6
+        value: 7
         animationName: 
         actionVFX: {fileID: 0}
     - rid: 4868126888777744458
       type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
-        value: 7
+        value: 8
         animationName: 
         actionVFX: {fileID: 0}
     - rid: 4868126888777744459
       type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
-        value: 8
+        value: 9
         animationName: 
         actionVFX: {fileID: 0}
     - rid: 4868126888777744460
       type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
-        value: 9
+        value: 10
         animationName: 
         actionVFX: {fileID: 0}
 --- !u!1 &4169037719724301315
@@ -830,7 +830,7 @@ MonoBehaviour:
     health: 7
   defense: 0
   multiplier: 1
-  attackWeight: 100
+  attackWeight: 1
   attackDice: {fileID: 753924102905241776}
   onDamageEvent:
     m_PersistentCalls:

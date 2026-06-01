@@ -55,6 +55,23 @@ MonoBehaviour:
   - {fileID: 3440638476070191939}
   - {fileID: 9192090825351714869}
   - {fileID: 3317608462264096799}
+  mainMenuAction:
+    m_Name: Main Menu
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: f4c6a3c5-1781-49ce-9f36-ba38758413a0
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 4214fe74-e94c-41b7-925c-66c55b87e50c
+      m_Path: <Keyboard>/escape
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Main Menu
+      m_Flags: 0
+    m_Flags: 0
 --- !u!1001 &821984334870767815
 PrefabInstance:
   m_ObjectHideFlags: 0

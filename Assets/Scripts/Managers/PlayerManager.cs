@@ -91,8 +91,6 @@ namespace FoolsBrand
 
             limbUIManager.ToggleTargeting(true);
 
-            //TODO - Dice Reservation
-
             //TODO - Dice Bonus by not rolling
 
             //Player rolls dice

@@ -108,6 +108,7 @@ public class DieBase : MonoBehaviour
     private void OnDisable()
     {
         isRolling = false;
+        isReserved = false;
     }
 
     /// <summary>

@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -28,6 +29,7 @@ namespace FoolsBrand
         private Dictionary<string, GameObject[]> diceLookup = new();
 
         public List<GameObject> DiceInPlay => diceInPlay;
+        public int NumDiceLeft => _drawBag.Count + _discardBag.Count + _rollingDice.Count + (_reservedDie == "" ? 0 : 1);
 
         /// <summary>
         /// Initialize the dice bags
@@ -162,6 +164,31 @@ namespace FoolsBrand
         public void ClearDiceInPlay()
         {
             diceInPlay.Clear();
+        }
+
+        /// <summary>
+        /// Clears the reserve slot from play
+        /// </summary>
+        [Button("Delete Reserve Slot")]
+        public void ClearReserveSlot()
+        {
+            if(_reservedDie == "")
+            {
+                Debug.Log("No Die in slot");
+                return;
+            }
+
+            Debug.Log(NumDiceLeft);
+            if(NumDiceLeft <= 3)
+            {
+                Debug.Log("Not enough dice");
+                return;
+            }
+
+            reservedDieGO.SetActive(false);
+            reservedDieGO = null;
+
+            _reservedDie = "";
         }
 
         /// <summary>

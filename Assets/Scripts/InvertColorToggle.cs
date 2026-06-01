@@ -1,14 +1,17 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
-public static class InvertColorToggle
+public class InvertColorToggle: MonoBehaviour
 {
-    public static void EnableInvert()
+    [SerializeField] private Material invertMaterial;
+
+    public void EnableInvert()
     {
-        Shader.EnableKeyword("_INVERTENABLED");
+       invertMaterial.SetFloat("_InvertEnabled", 1f);
     }
 
-    public static void DisableInvert()
+    public void DisableInvert()
     {
-        Shader.DisableKeyword("_INVERTENABLED");
+        invertMaterial.SetFloat("_InvertEnabled", 0f);
     }
 }

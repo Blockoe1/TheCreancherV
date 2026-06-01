@@ -46,6 +46,12 @@ namespace FoolsBrand.UI
             }
         }
 
+        public override void Deinit()
+        {
+            // Clear all damage numbers registered on deinit.
+
+        }
+
         /// <summary>
         /// Adds a new health data class to show damage numbers for.
         /// </summary>
@@ -68,6 +74,18 @@ namespace FoolsBrand.UI
                 damageNumberRegistry[health].CleanUp();
                 damageNumberRegistry.Remove(health);
             }
+        }
+
+        /// <summary>
+        /// Unregisters all damage numbers.
+        /// </summary>
+        public void UnregisterAllDamageNumbers()
+        {
+            foreach(DamageNumberRegistration registration in damageNumberRegistry.Values)
+            {
+                registration.CleanUp();
+            }
+            damageNumberRegistry.Clear();
         }
 
         private static Vector3 GetScreenPos(Vector3 worldPos)

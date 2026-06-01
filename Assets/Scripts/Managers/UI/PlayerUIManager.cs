@@ -14,9 +14,21 @@ namespace FoolsBrand.UI
     {
         [SerializeField] private HealthBar playerHealthBar;
 
+        private PlayerCombatant player;
+        private DamageNumberManager dnm;
+
         public override void Init(GameManager gm, HierarchyManager parentManager)
         {
-            playerHealthBar.SetTargetHealth(gm.GetManager<PlayerManager>().Player.Health);
+            player = gm.GetManager<PlayerManager>().Player;
+            playerHealthBar.SetTargetHealth(player.Health);
+            dnm = parentManager.GetManager<DamageNumberManager>();
+
+            dnm.RegisterDamageNumber(player.Health, player.transform);
+        }
+
+        public override void Deinit()
+        {
+            dnm.UnregisterDamageNumber(player.Health);
         }
     }
 }

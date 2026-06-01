@@ -17,7 +17,7 @@ namespace FoolsBrand
         [SerializeField] private T prefab;
         [SerializeField] private Transform parentTransform;
 
-        private readonly Queue<T> objectPool = new Queue<T>();
+        private Queue<T> objectPool = new Queue<T>();
 
         public ObjectPool(T prefabReference, Transform parentTransform)
         {
@@ -31,6 +31,7 @@ namespace FoolsBrand
         /// <returns></returns>
         public T GetObject()
         {
+            objectPool ??= new Queue<T>();
             T obj = objectPool.Count > 0 ? objectPool.Dequeue() : GameObject.Instantiate(prefab, parentTransform);
             obj.gameObject.SetActive(true);
             return obj;

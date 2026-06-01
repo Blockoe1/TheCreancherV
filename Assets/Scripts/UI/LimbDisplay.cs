@@ -29,14 +29,16 @@ namespace FoolsBrand.UI
         [SerializeField] private TMP_Text multiplierText;
 
         private LimbUIManager manager;
+        private DamageNumberManager dnm;
         private int index;
 
         private Limb currentLimb;
         private Transform bodyDisplay;
 
-        public void Init(LimbUIManager manager, int index, Transform bodyDisplay)
+        public void Init(LimbUIManager manager, DamageNumberManager dnm, int index, Transform bodyDisplay)
         {
             this.manager = manager;
+            this.dnm = dnm;
             this.index = index;
             this.bodyDisplay = bodyDisplay;
 
@@ -57,7 +59,7 @@ namespace FoolsBrand.UI
             targetingButton.interactable = enabled;
         }
 
-        private void HideDisplay()
+        private void OnLimbDestroyed()
         {
             gameObject.SetActive(false);
         }
@@ -100,18 +102,20 @@ namespace FoolsBrand.UI
             if (currentLimb != null)
             {
                 // Clean up the last limb.
-                currentLimb.OnDestroyEvent.RemoveListener(HideDisplay);
+                currentLimb.OnDestroyEvent.RemoveListener(OnLimbDestroyed);
+                dnm.UnregisterDamageNumber(currentLimb.Health);
             }
 
             currentLimb = limb;
             
             if (currentLimb != null)
             {
-                currentLimb.OnDestroyEvent.AddListener(HideDisplay);
+                currentLimb.OnDestroyEvent.AddListener(OnLimbDestroyed);
                 if (healthBar != null)
                 {
                     healthBar.SetTargetHealth(currentLimb.Health);
                 }
+                dnm.RegisterDamageNumber(currentLimb.Health, currentLimb.transform);
                 RefreshDisplay();
             }
             else
@@ -120,7 +124,7 @@ namespace FoolsBrand.UI
                 {
                     healthBar.SetTargetHealth(null);
                 }
-                HideDisplay();
+                OnLimbDestroyed();
             }
         }
 

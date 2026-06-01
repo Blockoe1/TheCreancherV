@@ -34,10 +34,10 @@ RectTransform:
   m_Children:
   - {fileID: 6366123826555831071}
   - {fileID: 7684214779967904027}
-  - {fileID: 7864188726717496444}
   - {fileID: 1310654843317354546}
   - {fileID: 5495808254237431204}
   - {fileID: 7497479317433914155}
+  - {fileID: 7864188726717496444}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -121,8 +121,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.UI.UIManager
   managers:
-  - {fileID: 7940127308206512893}
   - {fileID: 8446623043826560991}
+  - {fileID: 7940127308206512893}
   - {fileID: 2323756014679833424}
   - {fileID: 8949570215330355610}
   - {fileID: 7668125107225918568}

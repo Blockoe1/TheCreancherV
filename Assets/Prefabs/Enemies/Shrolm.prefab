@@ -138,6 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0110fa8addd30048a75d795bbfb8111, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemy
+  animator: {fileID: 0}
   health:
     maxHealth: 30
     health: 30
@@ -157,6 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4539ebab66eab5840bb9d4342752f4d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemy.Limb
+  limbAnimNameSuffix: 
   isBody: 1
   health:
     maxHealth: 0
@@ -296,6 +298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4539ebab66eab5840bb9d4342752f4d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemy.Limb
+  limbAnimNameSuffix: 
   isBody: 0
   health:
     maxHealth: 8
@@ -449,6 +452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4539ebab66eab5840bb9d4342752f4d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemy.Limb
+  limbAnimNameSuffix: 
   isBody: 0
   health:
     maxHealth: 6
@@ -540,18 +544,26 @@ MonoBehaviour:
       type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
         value: 3
+        animationName: 
+        actionVFX: {fileID: 0}
     - rid: 4868126888777744457
       type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
         value: 4
+        animationName: 
+        actionVFX: {fileID: 0}
     - rid: 4868126888777744458
       type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
         value: 5
+        animationName: 
+        actionVFX: {fileID: 0}
     - rid: 4868126913438416966
       type: {class: SelfModifyAttackAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
         value: 0
+        animationName: 
+        actionVFX: {fileID: 0}
         modifyAttackEffect:
           hasDuration: 0
           duration: 0
@@ -560,6 +572,8 @@ MonoBehaviour:
       type: {class: SelfModifyAttackAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
         value: 0
+        animationName: 
+        actionVFX: {fileID: 0}
         modifyAttackEffect:
           hasDuration: 0
           duration: 0
@@ -568,6 +582,8 @@ MonoBehaviour:
       type: {class: SelfModifyAttackAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
         value: 0
+        animationName: 
+        actionVFX: {fileID: 0}
         modifyAttackEffect:
           hasDuration: 0
           duration: 0
@@ -654,22 +670,32 @@ MonoBehaviour:
       type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
         value: 5
+        animationName: 
+        actionVFX: {fileID: 0}
     - rid: 4868126888777744457
       type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
         value: 6
+        animationName: 
+        actionVFX: {fileID: 0}
     - rid: 4868126888777744458
       type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
         value: 7
+        animationName: 
+        actionVFX: {fileID: 0}
     - rid: 4868126888777744459
       type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
         value: 8
+        animationName: 
+        actionVFX: {fileID: 0}
     - rid: 4868126888777744460
       type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
         value: 9
+        animationName: 
+        actionVFX: {fileID: 0}
 --- !u!1 &4169037719724301315
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,6 +823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4539ebab66eab5840bb9d4342752f4d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemy.Limb
+  limbAnimNameSuffix: 
   isBody: 0
   health:
     maxHealth: 7
@@ -938,6 +965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4539ebab66eab5840bb9d4342752f4d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemy.Limb
+  limbAnimNameSuffix: 
   isBody: 0
   health:
     maxHealth: 6
@@ -1079,6 +1107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4539ebab66eab5840bb9d4342752f4d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemy.Limb
+  limbAnimNameSuffix: 
   isBody: 0
   health:
     maxHealth: 6
@@ -1159,6 +1188,8 @@ MonoBehaviour:
       type: {class: ModifyAttackAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
         value: 0
+        animationName: 
+        actionVFX: {fileID: 0}
         modifyAttackEffect:
           hasDuration: 0
           duration: 1
@@ -1229,6 +1260,8 @@ MonoBehaviour:
       type: {class: ShrolmEyeAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
         value: 0
+        animationName: 
+        actionVFX: {fileID: 0}
         invertColorEffect:
           hasDuration: 1
           duration: 3

@@ -1,6 +1,6 @@
+using NaughtyAttributes;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace FoolsBrand
 {
@@ -16,9 +16,10 @@ namespace FoolsBrand
         //Dice bags
         [SerializeField] private List<string> _drawBag;
         [SerializeField] private List<string> _discardBag;
-        public string _reservedDie;
+        public string _reservedDie = "";
         [SerializeField] private List<string> _rollingDice;
         private List<GameObject> diceInPlay = new();
+        private GameObject reservedDieGO;
 
         public static List<string> DiceGoingToCombat = new();
 
@@ -28,6 +29,7 @@ namespace FoolsBrand
         private Dictionary<string, GameObject[]> diceLookup = new();
 
         public List<GameObject> DiceInPlay => diceInPlay;
+        public int NumDiceLeft => _drawBag.Count + _discardBag.Count + _rollingDice.Count + (_reservedDie == "" ? 0 : 1);
 
         /// <summary>
         /// Initialize the dice bags
@@ -86,14 +88,73 @@ namespace FoolsBrand
             //StartTurn();
         }
 
-        /// <summary>
-        /// Called whenever the next player turn starts
-        /// </summary>
+        ///// <summary>
+        ///// Called whenever the next player turn starts
+        ///// </summary>
         //public void StartTurn()
         //{
         //    DrawDice();
         //}
 
+        /// <summary>
+        /// Dice reservation
+        /// </summary>
+        /// <param name="index">Index of which die is getting reserved</param>
+        public void ReserveDie(int index)
+        {
+            if(_reservedDie == "")
+            {
+                //If there's no die reserved, draw a new one
+                _reservedDie = _rollingDice[index];
+                diceInPlay[index].transform.position = _reserveSlotPosition.transform.position;
+                diceInPlay[index].transform.localScale = _reserveSlotPosition.transform.localScale;
+                diceInPlay[index].GetComponent<DieBase>().IsReserved = true;
+
+                _rollingDice.RemoveAt(index);
+
+                if (_drawBag.Count <= 0)
+                {
+                    ShuffleDeck();
+                }
+                _rollingDice.Insert(index, _drawBag[0]);
+                _drawBag.RemoveAt(0);
+
+                reservedDieGO = diceInPlay[index];
+                diceInPlay.RemoveAt(index);
+
+                string dice = _rollingDice[index].ToString();
+
+                for (int j = 0; j < diceLookup[dice].Length; j++)
+                {
+                    if (!diceLookup[dice][j].activeSelf)
+                    {
+                        diceLookup[dice][j].transform.position = _diePositions[index].transform.position;
+                        diceLookup[dice][j].transform.localScale = _diePositions[index].transform.localScale;
+                        diceLookup[dice][j].SetActive(true);
+                        diceLookup[dice][j].GetComponent<DieBase>().StartRolling();
+                        diceInPlay.Insert(index, diceLookup[dice][j]);
+                        break;
+                    }
+                }
+
+                return;
+            }
+
+            //If there is a die reserved, swap them
+            //GameObject reservation = reservedDieGO;
+            //string reservationString = _reservedDie;
+
+            (reservedDieGO, diceInPlay[index]) = (diceInPlay[index], reservedDieGO);
+            (_rollingDice[index], _reservedDie) = (_reservedDie, _rollingDice[index]);
+
+            reservedDieGO.transform.position = _reserveSlotPosition.transform.position;
+            reservedDieGO.transform.localScale = _reserveSlotPosition.transform.localScale;
+            reservedDieGO.GetComponent<DieBase>().IsReserved = true;
+
+            diceInPlay[index].transform.position = _diePositions[index].transform.position;
+            diceInPlay[index].transform.localScale = _diePositions[index].transform.localScale;
+            diceInPlay[index].GetComponent<DieBase>().IsReserved = false;
+        }
 
         public void DiscardDice(int index)
         {
@@ -103,6 +164,31 @@ namespace FoolsBrand
         public void ClearDiceInPlay()
         {
             diceInPlay.Clear();
+        }
+
+        /// <summary>
+        /// Clears the reserve slot from play
+        /// </summary>
+        [Button("Delete Reserve Slot")]
+        public void ClearReserveSlot()
+        {
+            if(_reservedDie == "")
+            {
+                Debug.Log("No Die in slot");
+                return;
+            }
+
+            Debug.Log(NumDiceLeft);
+            if(NumDiceLeft <= 3)
+            {
+                Debug.Log("Not enough dice");
+                return;
+            }
+
+            reservedDieGO.SetActive(false);
+            reservedDieGO = null;
+
+            _reservedDie = "";
         }
 
         /// <summary>

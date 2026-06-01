@@ -17,6 +17,8 @@ namespace FoolsBrand
     public class PlayerCombatant : Combatant, IEffectable, IActionSource
     {
         [SerializeField] private int defense;
+        [field: SerializeField] public Transform DamageNumberPoint { get; private set; }
+        [SerializeField] private Transform effectPoint;
 
         private List<Effect> Effects = new List<Effect>();
 
@@ -106,6 +108,15 @@ namespace FoolsBrand
             // Clear action data.
             actionQueue = null;
             targetedLimb = null;
+        }
+
+        /// <summary>
+        /// Player effects need to be offset.
+        /// </summary>
+        /// <returns></returns>
+        public override Vector3 GetEffectPosition()
+        {
+            return effectPoint.transform.position;
         }
 
         #region Effects

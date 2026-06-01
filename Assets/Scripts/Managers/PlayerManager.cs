@@ -11,6 +11,7 @@ namespace FoolsBrand
     public class PlayerManager : Manager
     {
         [SerializeField] private PlayerCombatant player;
+        [SerializeField] private GameObject[] reservationButtons;
 
         public static HealthData PlayerHealth = null;
         private DiceManager diceManager;
@@ -47,8 +48,11 @@ namespace FoolsBrand
             actionQueue = new MinPriorityQueue<DiceAction>();
             foreach (GameObject dice in diceManager.DiceInPlay)
             {
-                Debug.Log(dice);
                 DieBase die = dice.GetComponent<DieBase>();
+                if (die.IsReserved)
+                {
+                    continue;
+                }
                 DiceAction[] actions = die.RollDie();
                 foreach (DiceAction action in actions)
                 {
@@ -74,25 +78,30 @@ namespace FoolsBrand
         {
             Enemy enemyTarget = target as Enemy;
 
-            Debug.Log("Turn Start");
             //Player turn start
             //Player draws dice
             targetedLimb = null;
             actionQueue = null;
             diceManager.DrawDice();
+            //Make reservation buttons appear
+            foreach (GameObject button in reservationButtons)
+            {
+                button.SetActive(true);
+            }
 
             limbUIManager.ToggleTargeting(true);
-
-            //TODO - Dice Reservation
 
             //TODO - Dice Bonus by not rolling
 
             //Player rolls dice
             yield return new WaitUntil(() => actionQueue != null);
-            Debug.Log("Dice Rolled");
+            foreach (GameObject button in reservationButtons)
+            {
+                button.SetActive(false);
+            }
+            //Make reservation buttons disappear
             //Player selects part
             yield return new WaitUntil(() => targetedLimb != null);
-            Debug.Log("Limb Targeted");
             //Actions
             //Dice get Discarded
             //Player End Turn
@@ -107,7 +116,6 @@ namespace FoolsBrand
                 diceManager.DiscardDice(0);
             }
             diceManager.ClearDiceInPlay();
-            Debug.Log("Dice Discarded");
 
             yield return null;
         }

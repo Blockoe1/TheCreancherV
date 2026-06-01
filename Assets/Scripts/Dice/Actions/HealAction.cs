@@ -18,9 +18,14 @@ namespace FoolsBrand
 
         public override IEnumerator PerformAction(ITargetable target, IActionSource source, Combatant user)
         {
-            Debug.Log($"{user} healed for {value}.");
             user.Health.Value += value;
             yield return null;
+        }
+
+        protected override void PlayVFX(ITargetable target, IActionSource source, Combatant user, GameObject effectPrefab)
+        {
+            GameObject.Instantiate(effectPrefab, user.GetEffectPosition(), Quaternion.identity);
+            
         }
     }
 }

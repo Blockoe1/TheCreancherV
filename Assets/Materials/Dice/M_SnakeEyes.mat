@@ -136,6 +136,13 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissiveRegion: {r: 0, g: 0, b: 0, a: 1}
+    - _REGION_0: {r: 0.2626887, g: 0.40251565, b: 0.10759059, a: 1}
+    - _REGION_1: {r: 1, g: 1, b: 0, a: 1}
+    - _REGION_2: {r: 0, g: 1, b: 0, a: 1}
+    - _REGION_3: {r: 0, g: 1, b: 1, a: 1}
+    - _REGION_4: {r: 0, g: 0, b: 1, a: 1}
+    - _REGION_5: {r: 1, g: 0, b: 1, a: 1}
     - _Region1: {r: 0.13609713, g: 0.23270428, b: 0.057810146, a: 1}
     - _Region2: {r: 1, g: 1, b: 0, a: 1}
     - _Region3: {r: 0, g: 1, b: 0, a: 1}

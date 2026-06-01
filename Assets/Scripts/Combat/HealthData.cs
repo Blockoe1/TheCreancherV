@@ -33,8 +33,9 @@ namespace FoolsBrand
             }
             set
             {
+                int healthChange = value - health;
                 health = Mathf.Clamp(value, 0, maxHealth);
-                HealthChangedEvent?.Invoke(health);
+                HealthChangedEvent?.Invoke(healthChange);
                 if (health <= 0)
                 {
                     isDead = true;

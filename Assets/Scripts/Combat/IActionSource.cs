@@ -12,6 +12,6 @@ namespace FoolsBrand
 {
     public interface IActionSource
     {
-        
+        AnimationClip PlayAnimation(string animationName);
     }
 }

@@ -23,7 +23,7 @@ namespace FoolsBrand.UI
             playerHealthBar.SetTargetHealth(player.Health);
             dnm = parentManager.GetManager<DamageNumberManager>();
 
-            dnm.RegisterDamageNumber(player.Health, player.transform);
+            dnm.RegisterDamageNumber(player.Health, player.DamageNumberPoint);
         }
 
         public override void Deinit()

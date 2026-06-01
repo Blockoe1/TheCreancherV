@@ -74,6 +74,12 @@ namespace FoolsBrand
             return damageTaken;
         }
 
+        protected override void OnDeath()
+        {
+            base.OnDeath();
+            RemoveAllEffects();
+        }
+
         /// <summary>
         /// Sets the target and actions that the player will perform when they act.
         /// </summary>
@@ -146,6 +152,19 @@ namespace FoolsBrand
                     i--;
                 }
             }
+        }
+
+        /// <summary>
+        /// Removes all effects on the player.
+        /// </summary>
+        public void RemoveAllEffects()
+        {
+            for (int i = 0; i < Effects.Count; i++)
+            {
+                Effects[i].OnEffectRemoved(this, this);
+            }
+
+            Effects.Clear();
         }
 
         /// <summary>

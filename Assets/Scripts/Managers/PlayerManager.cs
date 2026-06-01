@@ -11,6 +11,7 @@ namespace FoolsBrand
     public class PlayerManager : Manager
     {
         [SerializeField] private PlayerCombatant player;
+        [SerializeField] private AttackMultiplierEffect selectLimbBonus;
         [SerializeField] private GameObject[] reservationButtons;
 
         public static HealthData PlayerHealth = null;
@@ -61,6 +62,7 @@ namespace FoolsBrand
             }
         }
 
+
         /// <summary>
         /// Runs when the player dies
         /// </summary>
@@ -94,6 +96,18 @@ namespace FoolsBrand
             //TODO - Dice Bonus by not rolling
 
             //Player rolls dice
+            while (targetedLimb != null)
+            {
+
+                yield return null;
+            }
+
+            // If the player hasn't rolled yet, roll the dice automatically.
+            if (actionQueue != null)
+            {
+
+            }
+
             yield return new WaitUntil(() => actionQueue != null);
             foreach (GameObject button in reservationButtons)
             {
@@ -102,9 +116,7 @@ namespace FoolsBrand
             //Make reservation buttons disappear
             //Player selects part
             yield return new WaitUntil(() => targetedLimb != null);
-            //Actions
-            //Dice get Discarded
-            //Player End Turn
+
             limbUIManager.ToggleTargeting(false);
 
             player.SetActData(actionQueue, enemyTarget.Limbs[(int)targetedLimb]);

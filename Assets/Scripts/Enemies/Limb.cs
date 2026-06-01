@@ -20,16 +20,16 @@ namespace FoolsBrand.Enemies
         #region CONSTS
         private const string BODY_NAME = "Body";
         #endregion
-
-        [SerializeField, Tooltip("Adds this string to the end of an animation name for actions perfomed by this limb.  " +
-            "Only needs to be set if the limb has a custom animation.")] 
-        private string limbAnimNameSuffix;
         [SerializeField] private bool isBody;
         [SerializeField, HideIf("isBody")] private HealthData health;
         [SerializeField] private int defense;
         [SerializeField] private float multiplier;
         [SerializeField, ShowIf("HasAttack")] private int attackWeight = 1;
         [SerializeField] private DieBase attackDice;
+        [SerializeField, Tooltip("Adds this string to the end of an animation name for actions perfomed by this limb.  " +
+            "Only needs to be set if the limb has a custom animation.")]
+        private string limbAnimNameSuffix;
+
         [Header("Events")]
         [SerializeField] private UnityEvent<int> onDamageEvent;
         [SerializeField] private UnityEvent onDestroyEvent;
@@ -56,8 +56,6 @@ namespace FoolsBrand.Enemies
 
             LimbStart();
         }
-
-
 
         /// <summary>
         /// Queries this limb's attack dice for the damage to deal from an attack.

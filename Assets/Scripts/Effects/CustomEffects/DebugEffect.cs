@@ -6,6 +6,7 @@
 //
 // Brief Description : Prints all effect callbacks to the console.
 *****************************************************************************/
+using System.Collections;
 using UnityEngine;
 
 namespace FoolsBrand
@@ -46,16 +47,16 @@ namespace FoolsBrand
             base.OnEffectRemoved(combatant, effectSource);
         }
 
-        public override void OnActionStart(Combatant combatant, IEffectable effectSource)
+        public override IEnumerator OnActionStart(Combatant combatant, IEffectable effectSource)
         {
             Debug.Log("Debug action start");
-            base.OnActionStart(combatant, effectSource);
+            yield return base.OnActionStart(combatant, effectSource);
         }
 
-        public override void OnActionEnd(Combatant combatant, IEffectable effectSource)
+        public override IEnumerator OnActionEnd(Combatant combatant, IEffectable effectSource)
         {
             Debug.Log("Debut Action End");
-            base.OnActionEnd(combatant, effectSource);
+            yield return base.OnActionEnd(combatant, effectSource);
         }
 
         public override void OnDealDamage(Combatant combatant, IEffectable effectSource, ITargetable target, int damageDealt)

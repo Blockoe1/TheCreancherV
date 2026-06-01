@@ -7,8 +7,8 @@ namespace FoolsBrand
     [System.Serializable]
     public class InvertColorEffect : Effect
     {
-        private InvertColorFeature feature;
         private IEffectable source;
+        private InvertColorToggle invertColorToggle;
 
         public InvertColorEffect(Effect copy) : base(copy) { }
 
@@ -19,13 +19,19 @@ namespace FoolsBrand
 
         public override void OnEffectAdded(Combatant combatant, IEffectable effectSource, GameObject appliedObj)
         {
-            InvertColorFeature.Instance?.EnableInvert();
+            invertColorToggle = appliedObj.GetComponent<InvertColorToggle>();
+            if (invertColorToggle != null)
+            {
+                invertColorToggle.EnableInvert();
+            }
         }
 
         public override void OnEffectRemoved(Combatant combatant, IEffectable effectSource)
         {
-            InvertColorFeature.Instance?.DisableInvert();
+            invertColorToggle.DisableInvert();
         }
+
+
 
     }
 }

@@ -110,9 +110,7 @@ namespace FoolsBrand.Enemies
                 onDamageEvent?.Invoke(damage);
                 if (health.IsDead)
                 {
-                    LimbDestroyed();
-                    onDestroyEvent?.Invoke();
-                    gameObject.SetActive(false);
+                    OnLimbDeath();
                 }
 
                 // Trigger any on damage effects.
@@ -226,6 +224,19 @@ namespace FoolsBrand.Enemies
         }
 
         /// <summary>
+        /// Removes all effects from the limb.
+        /// </summary>
+        public void RemoveAllEffects()
+        {
+            for (int i = 0; i < Effects.Count; i++)
+            {
+                Effects[i].OnEffectRemoved(parentEnemy, this);
+            }
+
+            Effects.Clear();
+        }
+
+        /// <summary>
         /// Removes all effects that have their duration expired.
         /// </summary>
         public void FlushEffects()
@@ -241,6 +252,14 @@ namespace FoolsBrand.Enemies
             }
         }
         #endregion
+
+        public void OnLimbDeath()
+        {
+            LimbDestroyed();
+            onDestroyEvent?.Invoke();
+            gameObject.SetActive(false);
+            RemoveAllEffects();
+        }
 
         #region Custom Effect Functions
         protected virtual void LimbStart() { }

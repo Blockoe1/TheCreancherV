@@ -55,6 +55,18 @@ namespace FoolsBrand.Enemies
         }
 
         /// <summary>
+        ///  Destroy all limbs when the enemy is killed.
+        /// </summary>
+        protected override void OnDeath()
+        {
+            base.OnDeath();
+            foreach(Limb limb in limbs)
+            {
+                limb.OnLimbDeath();
+            }
+        }
+
+        /// <summary>
         /// Notify all limbs that the enemy has taken damage.
         /// </summary>
         /// <param name="damage"></param>

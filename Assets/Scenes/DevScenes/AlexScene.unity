@@ -119,11 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &34422745 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2422329881525701407, guid: 33302e20b5c44154797f95a77cdb7fbe, type: 3}
-  m_PrefabInstance: {fileID: 2984211772716764235}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &63183094
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,25 +425,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2464578056025293647, guid: 33302e20b5c44154797f95a77cdb7fbe, type: 3}
   m_PrefabInstance: {fileID: 2984211772716764235}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 34422745}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1341622c3a76b242a6bbe4934dc09df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.PlayerCombatant
---- !u!114 &532085170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 34422745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d8553b13b500e245a6448a035441c9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InvertColorToggle
-  invertMaterial: {fileID: 2100000, guid: 4778f943318669d468f44f6ab3a8edcc, type: 2}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,10 +678,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2422329881525701407, guid: 33302e20b5c44154797f95a77cdb7fbe, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 532085170}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33302e20b5c44154797f95a77cdb7fbe, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

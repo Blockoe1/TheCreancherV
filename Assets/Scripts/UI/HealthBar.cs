@@ -35,8 +35,8 @@ namespace FoolsBrand.UI
         /// <summary>
         /// Updates the health bar to reflect changes to the health data.
         /// </summary>
-        /// <param name="health"></param>
-        private void UpdateHealthBar(int health)
+        /// <param name="healthChange"></param>
+        private void UpdateHealthBar(int healthChange)
         {
             // Add tweening later.
             barRect.anchorMax = new Vector2(referenceHealth.HealthProportion, barRect.anchorMax.y);

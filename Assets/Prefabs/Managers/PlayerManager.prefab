@@ -45,3 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.PlayerManager
   player: {fileID: 0}
+  selectLimbWaitTime: 0.5
+  selectLimbBonus:
+    hasDuration: 0
+    duration: 0
+    multiplier: 1.25
+  reservationButtons:
+  - {fileID: 0}
+  - {fileID: 0}

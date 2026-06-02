@@ -14,7 +14,6 @@ namespace FoolsBrand
 {
     public class CombatManager : Manager
     {
-        [SerializeField] private float debugWait;
         private EnemyManager enemyManager;
         private PlayerManager playerManager;
 

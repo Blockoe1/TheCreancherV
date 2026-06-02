@@ -120,7 +120,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3173429449667560629}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: FoolsBrand.DiceManager, Assembly-CSharp
+        m_MethodName: ReserveDie
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2824744905430188240
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,7 +529,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6470486475298221232}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: FoolsBrand.DiceManager, Assembly-CSharp
+        m_MethodName: ReserveDie
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6063440879747337434
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,6 +554,7 @@ GameObject:
   - component: {fileID: 5220729441676875928}
   - component: {fileID: 5474666783300238106}
   - component: {fileID: 1211386450167377731}
+  - component: {fileID: 6595627360476319046}
   m_Layer: 5
   m_Name: RollButton
   m_TagString: Untagged
@@ -554,8 +579,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 92, y: -62.399994}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 175, y: -62.399994}
+  m_SizeDelta: {x: 100, y: 30}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &5220729441676875928
 CanvasRenderer:
@@ -639,8 +664,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: FoolsBrand.UI.UIManager, Assembly-CSharp
+      - m_Target: {fileID: 8379926788483874655}
+        m_TargetAssemblyTypeName: FoolsBrand.DiceUIManager, Assembly-CSharp
         m_MethodName: OnRollPressed
         m_Mode: 1
         m_Arguments:
@@ -651,6 +676,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!225 &6595627360476319046
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6063440879747337434}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &6283992324314626938
 GameObject:
   m_ObjectHideFlags: 0
@@ -1113,6 +1150,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fa1708bb04fdf147b1905faddfa1aa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.DiceUIManager
+  reserveButtons: {fileID: 709278287480456156}
+  rollButton: {fileID: 6595627360476319046}
+  disabledAlpha: 0.5
 --- !u!225 &6597837760928781330
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1134,6 +1174,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3290213352218984712}
+  - component: {fileID: 709278287480456156}
   m_Layer: 5
   m_Name: Dice
   m_TagString: Untagged
@@ -1162,3 +1203,15 @@ RectTransform:
   m_AnchoredPosition: {x: 352.80005, y: -201.6}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &709278287480456156
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9218445761632747372}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

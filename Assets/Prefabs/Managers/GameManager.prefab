@@ -285,10 +285,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 1326467615441105993}
     m_Modifications:
     - target: {fileID: 2305473154639124694, guid: 3ac39ecbcb9958d4e829f8edf1662af1, type: 3}
-      propertyPath: reservationButtons.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2305473154639124694, guid: 3ac39ecbcb9958d4e829f8edf1662af1, type: 3}
       propertyPath: 'reservationButtons.Array.data[0]'
       value: 
       objectReference: {fileID: 425883078910460674}

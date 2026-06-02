@@ -108,15 +108,18 @@ namespace FoolsBrand.Enemies
                 onDamageEvent?.Invoke(damage);
                 if (health.IsDead)
                 {
+                    // If the limb dies to damage, disable it.
+                    gameObject.SetActive(false);
                     OnLimbDeath();
                 }
 
                 // Trigger any on damage effects.
                 if (!Health.IsDead)
                 {
-                    foreach (Effect effect in Effects)
+                    for (int i = 0; i < Effects.Count; i++)
                     {
-                        effect.OnTakeDamage(parentEnemy, this, source, damageTaken);
+                        if (IsDead) { break; }
+                        Effects[i].OnTakeDamage(parentEnemy, this, source, damageTaken);
                     }
                 }
             }
@@ -161,16 +164,18 @@ namespace FoolsBrand.Enemies
         /// </summary>
         public IEnumerator OnActionStart()
         {
-            foreach (Effect effect in Effects)
+            for(int i = 0; i < Effects.Count; i++)
             {
-                yield return effect.OnActionStart(parentEnemy, this);
+                if (IsDead) { yield break; }
+                yield return Effects[i].OnActionStart(parentEnemy, this);
             }
         }
         public IEnumerator OnActionEnd()
         {
-            foreach (Effect effect in Effects)
+            for (int i = 0; i < Effects.Count; i++)
             {
-                yield return effect.OnActionEnd(parentEnemy, this);
+                if (IsDead) { yield break; }
+                yield return Effects[i].OnActionEnd(parentEnemy, this);
             }
 
             FlushEffects();
@@ -198,9 +203,10 @@ namespace FoolsBrand.Enemies
         /// <param name="damageDealt">The damage dealt.</param>
         public void TriggerOnDamage(Enemy enemy, ITargetable target, int damageDealt)
         {
-            foreach (Effect effect in Effects)
+            for(int i = 0; i < Effects.Count; i++)
             {
-                effect.OnDealDamage(enemy, this, target, damageDealt);
+                if (IsDead) {  break; }
+                Effects[i].OnDealDamage(enemy, this, target, damageDealt);
             }
         }
 
@@ -255,7 +261,6 @@ namespace FoolsBrand.Enemies
         {
             LimbDestroyed();
             onDestroyEvent?.Invoke();
-            gameObject.SetActive(false);
             RemoveAllEffects();
         }
 
@@ -263,16 +268,6 @@ namespace FoolsBrand.Enemies
         protected virtual void LimbStart() { }
 
         protected virtual void LimbDestroyed() { }
-        #endregion
-
-        #region Debug
-        [ContextMenu("Kill")]
-        private void Kill()
-        {
-            LimbDestroyed();
-            onDestroyEvent?.Invoke();
-            gameObject.SetActive(false);
-        }
         #endregion
     }
 }

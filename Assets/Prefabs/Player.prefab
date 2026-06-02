@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 887804118228744433}
   - component: {fileID: 2464578056025293647}
   - component: {fileID: 6958373031082848585}
+  - component: {fileID: 1331040891389375334}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -48,10 +49,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1341622c3a76b242a6bbe4934dc09df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.PlayerCombatant
-  animator: {fileID: 3979628733608573814}
   health:
     maxHealth: 30
     health: 30
+  <Animator>k__BackingField: {fileID: 1331040891389375334}
   onDeathEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -71,6 +72,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InvertColorToggle
   invertMaterial: {fileID: 2100000, guid: 4778f943318669d468f44f6ab3a8edcc, type: 2}
+--- !u!114 &1331040891389375334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2422329881525701407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 775463bebcc50c54583de23ea311a66a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.CombatantAnimator
+  animator: {fileID: 3979628733608573814}
+  combatant: {fileID: 2464578056025293647}
 --- !u!1 &5770376317699931839
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,7 +310,7 @@ PrefabInstance:
       addedObject: {fileID: 3979628733608573814}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ffb7079bfec6b7a43a5cfe1eca1ce06e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8858301875259957147}
+      addedObject: {fileID: 6641066451335700617}
   m_SourcePrefab: {fileID: 100100000, guid: ffb7079bfec6b7a43a5cfe1eca1ce06e, type: 3}
 --- !u!4 &8363919465755393721 stripped
 Transform:
@@ -334,7 +349,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8858301875259957147
+--- !u!114 &6641066451335700617
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -343,7 +358,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 9176450224407929859}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d0861a1dcb901643af8afaab0630c38, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e947bc779ec60f48b1ff249d2aced28, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.AnimatorEvents
+  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.EnemyAnimatorEvents
   _tick: 0.01
+  _hurtColor: {r: 1, g: 0, b: 0, a: 1}
+  _toHurtFlashDuration: 0.1

@@ -38,9 +38,10 @@ namespace FoolsBrand
                 damage = effect.ModifyAttack(damage);
             }
             int damageDealt = base.Attack(damage, target);
-            foreach (Effect effect in Effects)
+            for(int i = 0; i < Effects.Count; i++)
             {
-                effect.OnDealDamage(this, this, target, damageDealt);
+                if (IsDead) { break; }
+                Effects[i].OnDealDamage(this, this, target, damageDealt);
             }
             return damageDealt;
         }
@@ -66,9 +67,10 @@ namespace FoolsBrand
             // Trigger any on damage effects.
             if (!Health.IsDead)
             {
-                foreach (Effect effect in Effects)
+                for (int i = 0; i < Effects.Count; i++)
                 {
-                    effect.OnTakeDamage(this, this, source, damageTaken);
+                    if (IsDead) { break; }
+                    Effects[i].OnTakeDamage(this, this, source, damageTaken);
                 }
             }
             return damageTaken;
@@ -98,16 +100,18 @@ namespace FoolsBrand
         /// <returns></returns>
         public override IEnumerator Act(Combatant target)
         {
-            foreach (Effect effect in Effects)
+            for (int i = 0; i < Effects.Count; i++)
             {
-                yield return effect.OnActionStart(this, this);
+                if (IsDead) { yield break; }
+                yield return Effects[i].OnActionStart(this, this);
             }
 
             yield return StartCoroutine(ProcessActions(actionQueue, this, targetedLimb));
 
-            foreach (Effect effect in Effects)
+            for (int i = 0; i < Effects.Count; i++)
             {
-                yield return effect.OnActionEnd(this, this);
+                if (IsDead) { yield break; }
+                yield return Effects[i].OnActionEnd(this, this);
             }
             FlushEffects();
 

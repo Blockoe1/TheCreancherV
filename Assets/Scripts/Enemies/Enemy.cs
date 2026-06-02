@@ -112,10 +112,13 @@ namespace FoolsBrand.Enemies
         /// </summary>
         public override IEnumerator Act(Combatant target)
         {
-            foreach(var limb in Limbs)
+            if (IsDead) { yield break; }
+            foreach (var limb in Limbs)
             {
                 yield return limb.OnActionStart();
             }
+
+            if (IsDead) { yield break; }
             // Enemy needs to accrue enough ActionValue to act.  BaseActionValue can be reduced by limbs being destroyed.
             actionValue += BaseActionValue;
 

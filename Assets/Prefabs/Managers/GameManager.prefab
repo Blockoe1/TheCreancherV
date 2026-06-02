@@ -245,6 +245,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1345140468486814719}
+    - target: {fileID: 7940127308206512893, guid: 2d1d954686a95ff4a9e8045107eb25ff, type: 3}
+      propertyPath: bodyDisplayPrefab
+      value: 
+      objectReference: {fileID: 7148077236440832681, guid: 2fbf47ebf1cc4864890841fc674a83e4, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

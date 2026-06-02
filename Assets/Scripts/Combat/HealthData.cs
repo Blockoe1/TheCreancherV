@@ -22,6 +22,7 @@ namespace FoolsBrand
 
         private bool isDead;
 
+        public int Max => maxHealth;
         public float HealthProportion => health / (float)maxHealth;
         public bool IsDead => isDead;
 

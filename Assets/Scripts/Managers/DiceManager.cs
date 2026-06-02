@@ -244,5 +244,13 @@ namespace FoolsBrand
                 (_drawBag[swapPosition], _drawBag[index]) = (_drawBag[index], _drawBag[swapPosition]);
             }
         }
+
+        /// <summary>
+        /// Clears all the dice you've gathered this run.
+        /// </summary>
+        public static void ClearDice()
+        {
+            DiceGoingToCombat.Clear();
+        }
     }
 }

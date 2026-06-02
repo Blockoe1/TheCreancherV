@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4827303349966865765}
   - component: {fileID: 3228334127417555230}
   - component: {fileID: 7062837483650609997}
+  - component: {fileID: 6218008530191639808}
   m_Layer: 0
   m_Name: TestEnemy
   m_TagString: Untagged
@@ -34,12 +35,8 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8159302968056740640}
-  - {fileID: 1458301781391029449}
-  - {fileID: 4442683977288206313}
-  - {fileID: 2275398282415124729}
-  - {fileID: 8725119114999744526}
   - {fileID: 7556873663942866683}
+  - {fileID: 1433691490973614840}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &64462308294628878
@@ -134,10 +131,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0110fa8addd30048a75d795bbfb8111, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemy
-  animator: {fileID: 0}
   health:
     maxHealth: 20
     health: 20
+  <Animator>k__BackingField: {fileID: 6218008530191639808}
   onDeathEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -154,7 +151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4539ebab66eab5840bb9d4342752f4d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemy.Limb
-  limbAnimNameSuffix: 
   isBody: 1
   health:
     maxHealth: 0
@@ -163,12 +159,27 @@ MonoBehaviour:
   multiplier: 1
   attackWeight: 1
   attackDice: {fileID: 755269475158816666}
+  limbAnimNameSuffix: 
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
   onDestroyEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6218008530191639808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12832507243923747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 775463bebcc50c54583de23ea311a66a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.CombatantAnimator
+  animator: {fileID: 4763729547834333550}
+  combatant: {fileID: 3228334127417555230}
 --- !u!1 &1226081308352337859
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,7 +213,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8022761948814560252}
+  m_Father: {fileID: 1433691490973614840}
   m_LocalEulerAnglesHint: {x: 0, y: 89.044, z: 0}
 --- !u!33 &6886561451754456921
 MeshFilter:
@@ -294,7 +305,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4539ebab66eab5840bb9d4342752f4d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemy.Limb
-  limbAnimNameSuffix: 
   isBody: 0
   health:
     maxHealth: 3
@@ -303,6 +313,7 @@ MonoBehaviour:
   multiplier: 5
   attackWeight: 1
   attackDice: {fileID: 0}
+  limbAnimNameSuffix: 
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -342,7 +353,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8022761948814560252}
+  m_Father: {fileID: 1433691490973614840}
   m_LocalEulerAnglesHint: {x: 45.177, y: 89.044, z: 0}
 --- !u!33 &2215865309869428824
 MeshFilter:
@@ -436,7 +447,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4539ebab66eab5840bb9d4342752f4d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemy.Limb
-  limbAnimNameSuffix: 
   isBody: 0
   health:
     maxHealth: 5
@@ -445,12 +455,88 @@ MonoBehaviour:
   multiplier: 1
   attackWeight: 1
   attackDice: {fileID: 755269475158816666}
+  limbAnimNameSuffix: 
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
   onDestroyEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &3974634385725754940
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1433691490973614840}
+  - component: {fileID: 4763729547834333550}
+  - component: {fileID: 8468579181233459946}
+  m_Layer: 0
+  m_Name: Model
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1433691490973614840
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3974634385725754940}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8159302968056740640}
+  - {fileID: 1458301781391029449}
+  - {fileID: 4442683977288206313}
+  - {fileID: 2275398282415124729}
+  - {fileID: 8725119114999744526}
+  m_Father: {fileID: 8022761948814560252}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &4763729547834333550
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3974634385725754940}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2fb131896e1d746439864e10c579466f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8468579181233459946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3974634385725754940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e947bc779ec60f48b1ff249d2aced28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.EnemyAnimatorEvents
+  _tick: 0.01
+  _hurtColor: {r: 1, g: 0, b: 0, a: 1}
+  _toHurtFlashDuration: 0.1
 --- !u!1 &4169037719724301315
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,7 +570,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8022761948814560252}
+  m_Father: {fileID: 1433691490973614840}
   m_LocalEulerAnglesHint: {x: -33.715, y: 89.044, z: 0}
 --- !u!33 &7067259922666705969
 MeshFilter:
@@ -578,7 +664,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4539ebab66eab5840bb9d4342752f4d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemy.Limb
-  limbAnimNameSuffix: 
   isBody: 0
   health:
     maxHealth: 7
@@ -587,6 +672,7 @@ MonoBehaviour:
   multiplier: 1.5
   attackWeight: 1
   attackDice: {fileID: 0}
+  limbAnimNameSuffix: 
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -621,12 +707,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4544508711007706335}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.2629298, y: 0.6517639, z: 0.25857967, w: 0.6627279}
+  m_LocalRotation: {x: -0.26292983, y: 0.6517639, z: 0.2585797, w: 0.6627279}
   m_LocalPosition: {x: 1.227, y: 0, z: 0.025756836}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8022761948814560252}
+  m_Father: {fileID: 1433691490973614840}
   m_LocalEulerAnglesHint: {x: -43.28, y: 89.044, z: 0}
 --- !u!33 &5922667971009551134
 MeshFilter:
@@ -720,7 +806,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4539ebab66eab5840bb9d4342752f4d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemy.Limb
-  limbAnimNameSuffix: 
   isBody: 0
   health:
     maxHealth: 5
@@ -729,6 +814,7 @@ MonoBehaviour:
   multiplier: 1
   attackWeight: 1
   attackDice: {fileID: 755269475158816666}
+  limbAnimNameSuffix: 
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -768,7 +854,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8022761948814560252}
+  m_Father: {fileID: 1433691490973614840}
   m_LocalEulerAnglesHint: {x: 45.177, y: 89.044, z: 0}
 --- !u!33 &1871133719085861972
 MeshFilter:
@@ -862,7 +948,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4539ebab66eab5840bb9d4342752f4d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemy.Limb
-  limbAnimNameSuffix: 
   isBody: 0
   health:
     maxHealth: 7
@@ -871,6 +956,7 @@ MonoBehaviour:
   multiplier: 1.5
   attackWeight: 1
   attackDice: {fileID: 0}
+  limbAnimNameSuffix: 
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []

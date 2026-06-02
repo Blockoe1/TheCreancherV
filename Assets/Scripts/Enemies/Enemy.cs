@@ -59,21 +59,12 @@ namespace FoolsBrand.Enemies
         /// </summary>
         protected override void OnDeath()
         {
-            base.OnDeath();
-            foreach(Limb limb in limbs)
+            // Kill All Limbs
+            foreach (Limb limb in limbs)
             {
                 limb.OnLimbDeath();
             }
-        }
-
-        /// <summary>
-        /// Notify all limbs that the enemy has taken damage.
-        /// </summary>
-        /// <param name="damage"></param>
-        /// <param name="source"></param>
-        public override int TakeDamage(int damage, Combatant source)
-        {
-            return base.TakeDamage(damage, source);
+            base.OnDeath();
         }
 
         private Limb GetRandomLimbWeighted(Limb[] limbs)
@@ -112,10 +103,13 @@ namespace FoolsBrand.Enemies
         /// </summary>
         public override IEnumerator Act(Combatant target)
         {
-            foreach(var limb in Limbs)
+            if (IsDead) { yield break; }
+            foreach (var limb in Limbs)
             {
                 yield return limb.OnActionStart();
             }
+
+            if (IsDead) { yield break; }
             // Enemy needs to accrue enough ActionValue to act.  BaseActionValue can be reduced by limbs being destroyed.
             actionValue += BaseActionValue;
 

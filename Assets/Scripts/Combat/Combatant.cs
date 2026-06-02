@@ -6,6 +6,7 @@
 //
 // Brief Description : Base script any entity that can deal and recieve damage in combat.
 *****************************************************************************/
+using CustomAttributes;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -15,8 +16,8 @@ namespace FoolsBrand
 {
     public abstract class Combatant : MonoBehaviour, ITargetable
     {
-        [SerializeField] protected Animator animator;
         [SerializeField] private HealthData health;
+        [field: SerializeField] public CombatantAnimator Animator { get; private set; }
         [SerializeField] private UnityEvent onDeathEvent;
 
         public HealthData Health => health;
@@ -80,12 +81,14 @@ namespace FoolsBrand
 
             while(actions.Count > 0)
             {
+                // Stop performing actions if either side dies.
+                Debug.Log(target.IsDead);
+                if (target.IsDead || IsDead) { break; }
                 // Switch this to inheritance support later.
                 DiceAction action = actions.Dequeue();
                 yield return StartCoroutine(action.PlayAction(target, source, this));
 
             }
-            yield return null;
         }
 
         /// <summary>
@@ -99,21 +102,10 @@ namespace FoolsBrand
             OnDeath();
         }
 
-        /// <summary>
-        /// Plays an animation by name and returns the clip played.
-        /// </summary>
-        /// <param name="animationName"></param>
-        /// <returns></returns>
-        public AnimationClip PlayAnimation(string animationName)
+        public AnimationClip PlayAnimation(string name)
         {
-            if (animator == null || animationName == "") { return null; }
-            animator.SetTrigger(animationName);
-            animator.Update(0);
-            // Makes a few assumptions:
-            // 1. The clip we want is on layer  0.
-            // 2. The clip is in index 0 in the array
-            AnimationClip clip = animator.GetCurrentAnimatorClipInfo(0)[0].clip;
-            return clip;
+            if (Animator == null) { return null; }
+            return Animator.PlayAnimation(name);
         }
 
         /// <summary>

@@ -7,6 +7,7 @@
 // Brief Description : Manages all singleton logic pertaining to enemies, such as spawning.
 *****************************************************************************/
 using System;
+using System.Collections;
 using UnityEngine;
 
 namespace FoolsBrand.Enemies
@@ -46,6 +47,18 @@ namespace FoolsBrand.Enemies
         /// </summary>
         private void EnemyDead()
         {
+            StartCoroutine(DeathDelayRoutine());
+        }
+        /// <summary>
+        /// Delays advancing the run manager until the enemy plays it's death animation.
+        /// </summary>
+        /// <returns></returns>
+        private IEnumerator DeathDelayRoutine()
+        {
+            // Delay a frame to let the death animation begin.
+            yield return null;
+            float animationDuration = currentEnemy.Animator.GetAnimationDuration();
+            yield return new WaitForSeconds(animationDuration);
             RunManager.CombatWin();
         }
 

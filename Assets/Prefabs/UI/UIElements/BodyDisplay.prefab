@@ -12,6 +12,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BodyDisplay
       objectReference: {fileID: 0}
+    - target: {fileID: 5173904599790100132, guid: a6f2d02e35d48894fa5cdd7d85298aa2, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 5173904599790100132, guid: a6f2d02e35d48894fa5cdd7d85298aa2, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 7294206605532445851, guid: a6f2d02e35d48894fa5cdd7d85298aa2, type: 3}
       propertyPath: healthBar
       value: 
@@ -21,7 +29,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7294206605532445851, guid: a6f2d02e35d48894fa5cdd7d85298aa2, type: 3}
+      propertyPath: multiplierLine
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7294206605532445851, guid: a6f2d02e35d48894fa5cdd7d85298aa2, type: 3}
       propertyPath: multiplierText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7294206605532445851, guid: a6f2d02e35d48894fa5cdd7d85298aa2, type: 3}
+      propertyPath: multiplierTransform
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7769130087742308630, guid: a6f2d02e35d48894fa5cdd7d85298aa2, type: 3}

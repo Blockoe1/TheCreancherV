@@ -22,6 +22,14 @@ namespace FoolsBrand
             {
                 GameObject ddRef = Instantiate(_diceDatabaseReference);
                 ddRef.GetComponent<DiceDatabaseSetup>().QuickSetupInstance();
+
+                if (DiceManager.DiceGoingToCombat.Count == 0)
+                {
+                    foreach (string die in DiceDatabaseSetup.Instance.StartingDice)
+                    {
+                        DiceManager.DiceGoingToCombat.Add(die);
+                    }
+                }
             }
 
             List<string> validDice = DiceDatabase.AllDiceDict.Keys.ToList();

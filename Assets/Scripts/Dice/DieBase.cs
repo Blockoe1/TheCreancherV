@@ -1,9 +1,6 @@
 using NaughtyAttributes;
 using System.Collections;
-using System.Runtime.CompilerServices;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.Utilities;
 
 /// <summary>

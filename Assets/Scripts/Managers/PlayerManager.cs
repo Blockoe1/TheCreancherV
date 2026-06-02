@@ -71,6 +71,14 @@ namespace FoolsBrand
         /// </summary>
         private void PlayerDead()
         {
+            StartCoroutine(LoseRoutine());
+        }
+        private IEnumerator LoseRoutine()
+        {
+            // Delay a frame to let the death animation begin.
+            yield return null;
+            float animationDuration = player.Animator.GetAnimationDuration();
+            yield return new WaitForSeconds(animationDuration);
             RunManager.CombatLose();
         }
 

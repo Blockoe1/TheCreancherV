@@ -219,7 +219,7 @@ MonoBehaviour:
       type: {class: ShrolmHeadAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
         value: 0
-        animationName: 
+        animationName: T_ATTACK
         actionVFX: {fileID: 0}
 --- !u!1 &826302926243069942
 GameObject:
@@ -668,20 +668,20 @@ MonoBehaviour:
       type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
         value: 3
-        animationName: 
-        actionVFX: {fileID: 0}
+        animationName: T_ATTACK
+        actionVFX: {fileID: 11400000, guid: 4d68bc7bc40edc34ca9e270cd39a7fb5, type: 2}
     - rid: 4868126888777744457
       type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
         value: 4
-        animationName: 
-        actionVFX: {fileID: 0}
+        animationName: T_ATTACK
+        actionVFX: {fileID: 11400000, guid: 4d68bc7bc40edc34ca9e270cd39a7fb5, type: 2}
     - rid: 4868126888777744458
       type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
         value: 5
-        animationName: 
-        actionVFX: {fileID: 0}
+        animationName: T_ATTACK
+        actionVFX: {fileID: 11400000, guid: 4d68bc7bc40edc34ca9e270cd39a7fb5, type: 2}
     - rid: 4868126913438416966
       type: {class: SelfModifyAttackAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
@@ -692,6 +692,7 @@ MonoBehaviour:
           hasDuration: 0
           duration: 0
           attackModifier: 4
+          vfx: {fileID: 0}
     - rid: 4868126913438416967
       type: {class: SelfModifyAttackAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
@@ -702,6 +703,7 @@ MonoBehaviour:
           hasDuration: 0
           duration: 0
           attackModifier: 4
+          vfx: {fileID: 0}
     - rid: 4868126913438416968
       type: {class: SelfModifyAttackAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
@@ -712,6 +714,7 @@ MonoBehaviour:
           hasDuration: 0
           duration: 0
           attackModifier: 4
+          vfx: {fileID: 0}
 --- !u!1 &3437411820925650430
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,32 +888,32 @@ MonoBehaviour:
       type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
         value: 6
-        animationName: 
-        actionVFX: {fileID: 0}
+        animationName: T_ATTACK
+        actionVFX: {fileID: 11400000, guid: 4d68bc7bc40edc34ca9e270cd39a7fb5, type: 2}
     - rid: 4868126888777744457
       type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
         value: 7
-        animationName: 
-        actionVFX: {fileID: 0}
+        animationName: T_ATTACK
+        actionVFX: {fileID: 11400000, guid: 4d68bc7bc40edc34ca9e270cd39a7fb5, type: 2}
     - rid: 4868126888777744458
       type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
         value: 8
-        animationName: 
-        actionVFX: {fileID: 0}
+        animationName: T_ATTACK
+        actionVFX: {fileID: 11400000, guid: 4d68bc7bc40edc34ca9e270cd39a7fb5, type: 2}
     - rid: 4868126888777744459
       type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
         value: 9
-        animationName: 
-        actionVFX: {fileID: 0}
+        animationName: T_ATTACK
+        actionVFX: {fileID: 11400000, guid: 4d68bc7bc40edc34ca9e270cd39a7fb5, type: 2}
     - rid: 4868126888777744460
       type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
         value: 10
-        animationName: 
-        actionVFX: {fileID: 0}
+        animationName: T_ATTACK
+        actionVFX: {fileID: 11400000, guid: 4d68bc7bc40edc34ca9e270cd39a7fb5, type: 2}
 --- !u!1 &3951469853241603724
 GameObject:
   m_ObjectHideFlags: 0
@@ -1537,12 +1540,13 @@ MonoBehaviour:
       type: {class: ModifyAttackAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
         value: 0
-        animationName: 
+        animationName: T_ATTACK
         actionVFX: {fileID: 0}
         modifyAttackEffect:
           hasDuration: 0
           duration: 1
           attackModifier: -5
+          vfx: {fileID: 6354842147285684386, guid: 7ba3b933e06921a4f829f252927f089f, type: 3}
 --- !u!1 &8119140502177352646
 GameObject:
   m_ObjectHideFlags: 0
@@ -1772,7 +1776,7 @@ MonoBehaviour:
       type: {class: ShrolmEyeAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
         value: 0
-        animationName: 
+        animationName: T_ATTACK
         actionVFX: {fileID: 0}
         invertColorEffect:
           hasDuration: 1

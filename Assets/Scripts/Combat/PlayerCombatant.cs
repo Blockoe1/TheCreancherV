@@ -124,9 +124,9 @@ namespace FoolsBrand
         /// Player effects need to be offset.
         /// </summary>
         /// <returns></returns>
-        public override Vector3 GetEffectPosition()
+        public override Transform GetEffectTransform()
         {
-            return effectPoint.transform.position;
+            return effectPoint;
         }
 
         #region Effects

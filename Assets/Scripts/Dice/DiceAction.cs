@@ -101,7 +101,7 @@ public abstract class DiceAction
     {
         if (target is MonoBehaviour mb)
         {
-            GameObject.Instantiate(effectPrefab, target.GetEffectPosition(), Quaternion.identity);
+            GameObject.Instantiate(effectPrefab, target.GetEffectTransform().position, Quaternion.identity);
         }
         else
         {

@@ -83,7 +83,6 @@ namespace FoolsBrand
             {
                 // Stop performing actions if either side dies.
                 if (target.IsDead || IsDead) { break; }
-                // Switch this to inheritance support later.
                 DiceAction action = actions.Dequeue();
                 yield return StartCoroutine(action.PlayAction(target, source, this));
 
@@ -111,9 +110,9 @@ namespace FoolsBrand
         /// Effects play at the position of the combatant.
         /// </summary>
         /// <returns></returns>
-        public virtual Vector3 GetEffectPosition()
+        public virtual Transform GetEffectTransform()
         {
-            return transform.position;
+            return transform;
         }
     }
 }

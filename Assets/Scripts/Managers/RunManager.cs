@@ -30,6 +30,7 @@ namespace FoolsBrand
         public static void CombatLose()
         {
             //Debug.Log("Combat Lose");
+            DiceManager.ClearDice();
             SceneManager.LoadScene("Main Menu");
         }
 

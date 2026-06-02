@@ -1,9 +1,6 @@
 using NaughtyAttributes;
 using System.Collections;
-using System.Runtime.CompilerServices;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.Utilities;
 
 /// <summary>
@@ -31,7 +28,7 @@ public class DieBase : MonoBehaviour
     };
 
     [SerializeField] private string _dieName = "Basic Die 1-6";
-    [SerializeField] private string _dieDescription = "To be revealed in a future milestone...";
+    [SerializeField, TextArea] private string _dieDescription = "To be revealed in a future milestone...";
     [Header("Rolling Animation")]
     [SerializeField] private Vector3 localRotSpeed;
     [SerializeField] private Vector3 worldRotSpeed;

@@ -6,10 +6,11 @@ namespace FoolsBrand
     public class TempModifyAttackEffect : Effect
     {
         [SerializeField] private int attackModifier;
+        [SerializeField] private ParticleSystem vfx;
 
         IEffectable Source;
 
-        private GameObject effectInstance;
+        private  ParticleSystem vfxInstance;
 
         public TempModifyAttackEffect(Effect copy) : base(copy) { }
 
@@ -17,6 +18,7 @@ namespace FoolsBrand
         {
             TempModifyAttackEffect copy = new TempModifyAttackEffect(this);
             copy.attackModifier = attackModifier;
+            copy.vfx = vfx;
             return copy;
         }
 
@@ -24,12 +26,19 @@ namespace FoolsBrand
         {
             //Debug.Log("Attack modifier added");
             Source = effectSource;
+            if (vfx != null)
+            {
+                vfxInstance = GameObject.Instantiate(vfx, effectSource.GetEffectTransform());
+            }
         }
 
         public override void OnEffectRemoved(Combatant combatant, IEffectable effectSource)
         {
             //Debug.Log("Attack modifier removed");
-            GameObject.Destroy(effectInstance);
+            if (vfxInstance != null)
+            {
+                GameObject.Destroy(vfxInstance);
+            }
         }
 
         public override int ModifyAttack(int dealtDamage)

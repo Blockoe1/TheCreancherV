@@ -6,6 +6,7 @@
 //
 // Brief Description : Visualizes a certain HealthData object on the UI.
 *****************************************************************************/
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +15,7 @@ namespace FoolsBrand.UI
     public class HealthBar : MonoBehaviour
     {
         [SerializeField] private RectTransform barRect;
+        [SerializeField] private TMP_Text healthText;
         private HealthData referenceHealth;
 
         public void SetTargetHealth(HealthData healthData)
@@ -40,6 +42,10 @@ namespace FoolsBrand.UI
         {
             // Add tweening later.
             barRect.anchorMax = new Vector2(referenceHealth.HealthProportion, barRect.anchorMax.y);
+            if (healthText != null)
+            {
+                healthText.text = referenceHealth.Value + "/" + referenceHealth.Max;
+            }
         }
     }
 }

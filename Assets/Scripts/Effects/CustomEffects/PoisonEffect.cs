@@ -71,7 +71,9 @@ namespace FoolsBrand
         private static ParticleSystem SpawnEffectToMeshRenderer(ParticleSystem particleSystem, Transform transform)
         {
             ParticleSystem effectInstance = GameObject.Instantiate(particleSystem, transform);
-            if (transform.TryGetComponent(out MeshRenderer meshRenderer))
+            MeshRenderer meshRenderer = transform.GetComponentInChildren<MeshRenderer>();
+            //Debug.LogError(meshRenderer);
+            if (meshRenderer != null)
             {
                 var shape = effectInstance.shape;
                 shape.meshRenderer = meshRenderer;

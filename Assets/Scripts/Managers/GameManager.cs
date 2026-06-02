@@ -28,7 +28,7 @@ public class GameManager : HierarchyManager
 
     private void MainMenuAction_performed(InputAction.CallbackContext obj)
     {
-        SceneManager.LoadScene(0);
+        RunManager.CombatLose();
     }
 
     public override void GameStart()

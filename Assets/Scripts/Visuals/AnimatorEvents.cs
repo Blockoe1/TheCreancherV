@@ -13,6 +13,7 @@ namespace FoolsBrand
         protected void Start()
         {
             MeshRenderer[] mrs = GetComponentsInChildren<MeshRenderer>();
+            mcs = new MeshColorRegions[mrs.Length];
             Material curMat;
             for (int i = 0; i < mrs.Length; i++)
             {

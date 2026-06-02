@@ -29,7 +29,6 @@ namespace FoolsBrand.Enemies
         [SerializeField, Tooltip("Adds this string to the end of an animation name for actions perfomed by this limb.  " +
             "Only needs to be set if the limb has a custom animation.")]
         private string limbAnimNameSuffix;
-
         [Header("Events")]
         [SerializeField] private UnityEvent<int> onDamageEvent;
         [SerializeField] private UnityEvent onDestroyEvent;

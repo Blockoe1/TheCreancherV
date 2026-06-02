@@ -39,7 +39,7 @@ namespace FoolsBrand.Enemies
         private readonly List<Effect> Effects = new List<Effect>();
 
         #region Properties
-        public bool IsDead => !isBody && health.IsDead;
+        public bool IsDead => (!isBody && health.IsDead) || (parentEnemy != null && parentEnemy.IsDead);
         public bool IsBody => isBody;
         public bool HasAttack => attackDice != null;
         public HealthData Health => health;

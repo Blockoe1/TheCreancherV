@@ -51,10 +51,10 @@ namespace FoolsBrand
         public void SelectDie(int selectionIndex)
         {
             DiceManager.DiceGoingToCombat.Add(diceRewards[selectionIndex]);
-            foreach(string die in DiceManager.DiceGoingToCombat)
-            {
-                Debug.Log(die);
-            }
+            //foreach(string die in DiceManager.DiceGoingToCombat)
+            //{
+            //    Debug.Log(die);
+            //}
 
             RunManager.StartNewCombat();
         }

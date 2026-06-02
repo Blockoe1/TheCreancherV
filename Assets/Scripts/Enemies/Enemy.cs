@@ -59,21 +59,12 @@ namespace FoolsBrand.Enemies
         /// </summary>
         protected override void OnDeath()
         {
-            base.OnDeath();
-            foreach(Limb limb in limbs)
+            // Kill All Limbs
+            foreach (Limb limb in limbs)
             {
                 limb.OnLimbDeath();
             }
-        }
-
-        /// <summary>
-        /// Notify all limbs that the enemy has taken damage.
-        /// </summary>
-        /// <param name="damage"></param>
-        /// <param name="source"></param>
-        public override int TakeDamage(int damage, Combatant source)
-        {
-            return base.TakeDamage(damage, source);
+            base.OnDeath();
         }
 
         private Limb GetRandomLimbWeighted(Limb[] limbs)

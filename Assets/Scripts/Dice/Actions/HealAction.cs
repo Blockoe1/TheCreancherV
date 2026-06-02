@@ -24,7 +24,7 @@ namespace FoolsBrand
 
         protected override void PlayVFX(ITargetable target, IActionSource source, Combatant user, GameObject effectPrefab)
         {
-            GameObject.Instantiate(effectPrefab, user.transform.position, Quaternion.identity);
+            GameObject.Instantiate(effectPrefab, user.GetEffectPosition(), Quaternion.identity);
             
         }
     }

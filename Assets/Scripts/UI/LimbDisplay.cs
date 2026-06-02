@@ -164,6 +164,8 @@ namespace FoolsBrand.UI
         /// <exception cref="System.NotImplementedException"></exception>
         public void OnPointerEnter(PointerEventData eventData)
         {
+            // Always render the selected limb on top.
+            transform.SetAsLastSibling();
             infoGroup.alpha = 1;   
         }
         public void OnPointerExit(PointerEventData eventData)

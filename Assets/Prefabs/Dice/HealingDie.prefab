@@ -17,6 +17,12 @@ PrefabInstance:
       value: Healing Die
       objectReference: {fileID: 0}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: _dieDescription
+      value: '1-6
+
+        Restores health equal to the result.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: 'managedReferences[-2]'
       value: 
       objectReference: {fileID: 0}

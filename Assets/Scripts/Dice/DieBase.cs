@@ -31,7 +31,7 @@ public class DieBase : MonoBehaviour
     };
 
     [SerializeField] private string _dieName = "Basic Die 1-6";
-    [SerializeField] private string _dieDescription = "To be revealed in a future milestone...";
+    [SerializeField, TextArea] private string _dieDescription = "To be revealed in a future milestone...";
     [Header("Rolling Animation")]
     [SerializeField] private Vector3 localRotSpeed;
     [SerializeField] private Vector3 worldRotSpeed;

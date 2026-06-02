@@ -82,7 +82,6 @@ namespace FoolsBrand
             while(actions.Count > 0)
             {
                 // Stop performing actions if either side dies.
-                Debug.Log(target.IsDead);
                 if (target.IsDead || IsDead) { break; }
                 // Switch this to inheritance support later.
                 DiceAction action = actions.Dequeue();

@@ -82,7 +82,7 @@ namespace FoolsBrand.Enemies
                 Debug.LogWarning("Enemy was spawned before th eprevious enemy was destroyed.");
             }
 
-            Enemy spawnedEnemy = Instantiate(prefab, enemyPos.transform.position, prefab.transform.rotation);
+            Enemy spawnedEnemy = Instantiate(prefab, enemyPos.transform.position, enemyPos.transform.rotation);
             spawnedEnemy.transform.SetParent(transform, true);
             spawnedEnemy.Init();
             spawnedEnemy.gameObject.name = spawnedEnemy.gameObject.name.Replace("(Clone)", "");

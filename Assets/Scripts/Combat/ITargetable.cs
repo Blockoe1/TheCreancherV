@@ -5,7 +5,7 @@ namespace FoolsBrand
     public interface ITargetable
     {
         int TakeDamage(int damage, Combatant source);
-        Vector3 GetEffectPosition();
+        Transform GetEffectTransform();
         bool IsDead { get; }
     }
 }

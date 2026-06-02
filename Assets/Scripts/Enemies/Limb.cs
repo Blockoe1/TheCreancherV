@@ -141,9 +141,9 @@ namespace FoolsBrand.Enemies
         /// Effects play at the position of the limb.
         /// </summary>
         /// <returns></returns>
-        public Vector3 GetEffectPosition()
+        public Transform GetEffectTransform()
         {
-            return transform.position;
+            return transform;
         }
 
         #region Effects

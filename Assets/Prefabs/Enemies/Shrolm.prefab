@@ -692,6 +692,7 @@ MonoBehaviour:
           hasDuration: 0
           duration: 0
           attackModifier: 4
+          vfx: {fileID: 0}
     - rid: 4868126913438416967
       type: {class: SelfModifyAttackAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
@@ -702,6 +703,7 @@ MonoBehaviour:
           hasDuration: 0
           duration: 0
           attackModifier: 4
+          vfx: {fileID: 0}
     - rid: 4868126913438416968
       type: {class: SelfModifyAttackAction, ns: FoolsBrand, asm: Assembly-CSharp}
       data:
@@ -712,6 +714,7 @@ MonoBehaviour:
           hasDuration: 0
           duration: 0
           attackModifier: 4
+          vfx: {fileID: 0}
 --- !u!1 &3437411820925650430
 GameObject:
   m_ObjectHideFlags: 0
@@ -1543,6 +1546,7 @@ MonoBehaviour:
           hasDuration: 0
           duration: 1
           attackModifier: -5
+          vfx: {fileID: 6354842147285684386, guid: 7ba3b933e06921a4f829f252927f089f, type: 3}
 --- !u!1 &8119140502177352646
 GameObject:
   m_ObjectHideFlags: 0

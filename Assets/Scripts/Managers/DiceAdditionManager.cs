@@ -15,8 +15,6 @@ namespace FoolsBrand
         [SerializeField] private GameObject _diceDatabaseReference;
         [SerializeField] private float rotationSpeed;
         [SerializeField] private DieSelectionInfo[] _diceSelectionInfoBoxes;
-
-        [SerializeField] private DiceManager diceManager;
         public void Start()
         {
             if (DiceDatabaseSetup.Instance == null)

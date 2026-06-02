@@ -14,6 +14,7 @@ namespace FoolsBrand
         [SerializeField] private Transform[] _dicePositions;
         [SerializeField] private GameObject _diceDatabaseReference;
         [SerializeField] private float rotationSpeed;
+        [SerializeField] private DieSelectionInfo[] _diceSelectionInfoBoxes;
 
         [SerializeField] private DiceManager diceManager;
         public void Start()
@@ -22,6 +23,14 @@ namespace FoolsBrand
             {
                 GameObject ddRef = Instantiate(_diceDatabaseReference);
                 ddRef.GetComponent<DiceDatabaseSetup>().QuickSetupInstance();
+
+                if (DiceManager.DiceGoingToCombat.Count == 0)
+                {
+                    foreach (string die in DiceDatabaseSetup.Instance.StartingDice)
+                    {
+                        DiceManager.DiceGoingToCombat.Add(die);
+                    }
+                }
             }
 
             List<string> validDice = DiceDatabase.AllDiceDict.Keys.ToList();
@@ -30,7 +39,9 @@ namespace FoolsBrand
                 diceRewards[i] = validDice[Random.Range(0, validDice.Count)];
                 validDice.Remove(diceRewards[i]);
 
-                Instantiate(DiceDatabase.AllDiceDict[diceRewards[i]], _dicePositions[i]);
+                GameObject die = Instantiate(DiceDatabase.AllDiceDict[diceRewards[i]], _dicePositions[i]);
+                DieBase dieBase = die.GetComponent<DieBase>();
+                _diceSelectionInfoBoxes[i].SetupInfo(dieBase.DieName, dieBase.DieDescription);
             }
 
             StartCoroutine(RotateDice());

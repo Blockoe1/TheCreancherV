@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 3570869284346674417}
   - component: {fileID: 1732538906318716443}
   - component: {fileID: 8490373475418199630}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: LimbName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -352,7 +352,7 @@ GameObject:
   - component: {fileID: 4125544387953448977}
   - component: {fileID: 5652426141615349118}
   - component: {fileID: 8963846637266986571}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: TargetingButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -483,7 +483,7 @@ GameObject:
   - component: {fileID: 675337578228982234}
   - component: {fileID: 1653198570009844472}
   - component: {fileID: 6308805611378498333}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Defense
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -621,7 +621,7 @@ GameObject:
   - component: {fileID: 4520185417773728997}
   - component: {fileID: 6694499362196316352}
   - component: {fileID: 6107912258839642098}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: MultiplierLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -707,7 +707,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7769130087742308630}
   - component: {fileID: 7294206605532445851}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: LimbDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -767,7 +767,7 @@ GameObject:
   - component: {fileID: 516360098665715623}
   - component: {fileID: 229665723949304319}
   - component: {fileID: 125104430675198126}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Multiplier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -904,7 +904,7 @@ GameObject:
   - component: {fileID: 7621428806391273586}
   - component: {fileID: 5702903946805344916}
   - component: {fileID: 7963089320366158881}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Multiplier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -978,7 +978,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5173904599790100132}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: MainInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1016,7 +1016,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4792788700448638302}
   - component: {fileID: 939965213107080998}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: DisplayInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}

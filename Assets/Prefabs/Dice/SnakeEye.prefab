@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 824878528498425248, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: m_text
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 824878528498425248, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: m_fontColor.b
       value: 1
       objectReference: {fileID: 0}
@@ -34,7 +38,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: _dieDescription
-      value: '1-6
+      value: '1-3
 
         Applies poison to a limb, which deals damage to the main
         enemy every turn.'
@@ -109,11 +113,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: managedReferences[3144939765870887027].value
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: managedReferences[3144939765870887028].value
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: managedReferences[3144939765870887029].value
@@ -121,7 +125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: managedReferences[3144939765870887030].value
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: managedReferences[7292673129211232378].value
@@ -409,15 +413,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: managedReferences[3144939765870887027].poison.tickDamage
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: managedReferences[3144939765870887028].poison.tickDamage
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: managedReferences[3144939765870887030].poison.tickDamage
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: managedReferences[7292673129211232378].poison.tickDamage
@@ -628,6 +632,10 @@ PrefabInstance:
       value: FacePoison
       objectReference: {fileID: 0}
     - target: {fileID: 4236132167956338783, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: m_text
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4236132167956338783, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: m_fontColor.b
       value: 1
       objectReference: {fileID: 0}
@@ -679,6 +687,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 55c8078f7126a7a46a1f7fc2bfcfbfae, type: 2}
+    - target: {fileID: 7439938388762458822, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: m_text
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7439938388762458822, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: m_fontColor.b
       value: 1

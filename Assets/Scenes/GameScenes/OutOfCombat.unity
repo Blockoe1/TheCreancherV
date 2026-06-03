@@ -374,79 +374,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcaea0def437874b9c69fa4ab9c27bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.InfoBox
---- !u!1001 &236753985
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 2102578791}
-    m_Modifications:
-    - target: {fileID: 1065709436716793467, guid: 021549abce5b37f4498529770a5b6e11, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1065709436716793467, guid: 021549abce5b37f4498529770a5b6e11, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1065709436716793467, guid: 021549abce5b37f4498529770a5b6e11, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1065709436716793467, guid: 021549abce5b37f4498529770a5b6e11, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1065709436716793467, guid: 021549abce5b37f4498529770a5b6e11, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1065709436716793467, guid: 021549abce5b37f4498529770a5b6e11, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1065709436716793467, guid: 021549abce5b37f4498529770a5b6e11, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1065709436716793467, guid: 021549abce5b37f4498529770a5b6e11, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1065709436716793467, guid: 021549abce5b37f4498529770a5b6e11, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1065709436716793467, guid: 021549abce5b37f4498529770a5b6e11, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3111911796141036167, guid: 021549abce5b37f4498529770a5b6e11, type: 3}
-      propertyPath: m_Name
-      value: DiceBagManager
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 021549abce5b37f4498529770a5b6e11, type: 3}
---- !u!4 &236753986 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1065709436716793467, guid: 021549abce5b37f4498529770a5b6e11, type: 3}
-  m_PrefabInstance: {fileID: 236753985}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &236753987 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9043426098967112633, guid: 021549abce5b37f4498529770a5b6e11, type: 3}
-  m_PrefabInstance: {fileID: 236753985}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53e135296724c0c42b9d0a9c04471ccc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DiceManager
 --- !u!1 &370286435
 GameObject:
   m_ObjectHideFlags: 0
@@ -1747,7 +1674,7 @@ MonoBehaviour:
   - {fileID: 1827293603}
   - {fileID: 1723278278}
   - {fileID: 1476885349}
-  diceManager: {fileID: 236753987}
+  diceManager: {fileID: 0}
 --- !u!1 &2076034434
 GameObject:
   m_ObjectHideFlags: 0
@@ -1916,7 +1843,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 236753986}
   - {fileID: 1886749877}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

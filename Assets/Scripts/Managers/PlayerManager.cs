@@ -12,7 +12,6 @@ namespace FoolsBrand
     {
         [SerializeField] private PlayerCombatant player;
         [SerializeField] private float selectLimbWaitTime = 0.25f;
-        [SerializeField] private AttackMultiplierEffect selectLimbBonus;
         [SerializeField] private GameObject[] reservationButtons;
 
         public static HealthData PlayerHealth = null;
@@ -122,7 +121,6 @@ namespace FoolsBrand
             // If the player hasn't rolled yet, roll the dice automatically and apply a damage boost.
             if (actionQueue == null)
             {
-                player.ApplyEffect(selectLimbBonus);
                 PlayerInputManager_OnRollButtonPressed();
                 yield return new WaitForSeconds(selectLimbWaitTime);
             }

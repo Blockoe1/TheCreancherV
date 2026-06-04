@@ -57,6 +57,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   defense: 0
+  postActDelay: 0.5
   <DamageNumberPoint>k__BackingField: {fileID: 5608584918391360693}
   effectPoint: {fileID: 1875791562299834991}
 --- !u!114 &6958373031082848585

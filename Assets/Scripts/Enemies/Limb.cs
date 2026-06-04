@@ -153,9 +153,7 @@ namespace FoolsBrand.Enemies
         /// <returns></returns>
         public AnimationInfo PlayAnimation(string animationName)
         {
-            AnimationInfo debug = parentEnemy.PlayAnimation(animationName + limbAnimNameSuffix);
-            Debug.Log(debug);
-            return debug;
+            return parentEnemy.PlayAnimation(animationName + limbAnimNameSuffix);
         }
 
         /// <summary>

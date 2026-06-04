@@ -20,7 +20,7 @@ namespace FoolsBrand
         [field: SerializeField] public Transform DamageNumberPoint { get; private set; }
         [SerializeField] private Transform effectPoint;
 
-        private List<Effect> Effects = new List<Effect>();
+        private List<EffectInstance> Effects = new List<EffectInstance>();
 
         private MinPriorityQueue<DiceActionInfo> actionQueue;
         private Limb targetedLimb;
@@ -33,7 +33,7 @@ namespace FoolsBrand
         /// <returns>The amount of damage dealt.</returns>
         public override int Attack(int damage, ITargetable target)
         {
-            foreach (Effect effect in Effects)
+            foreach (EffectInstance effect in Effects)
             {
                 damage = effect.ModifyAttack(damage);
             }
@@ -55,7 +55,7 @@ namespace FoolsBrand
         public override int TakeDamage(int damage, Combatant source)
         {
             // Apply any damage reduction effects.
-            foreach (Effect effect in Effects)
+            foreach (EffectInstance effect in Effects)
             {
                 damage = effect.ModifyDamage(damage);
             }
@@ -134,22 +134,27 @@ namespace FoolsBrand
         /// Applies a temporary effect to this combatant.
         /// </summary>
         /// <param name="toApply"></param>
-        public void ApplyEffect(Effect toApply)
+        public void ApplyEffect(Effect toApply, int value)
         {
-            Effect copy = toApply.Copy();
-            copy.OnEffectAdded(this, this, gameObject);
-            Effects.Add(copy);
+            if (!toApply.AllowStacking && Effects.Any(X => X.Effect == toApply))
+            {
+                // Prevent duplicates being added if stacking is not allowed.
+                return;
+            }
+            EffectInstance instance = toApply.CreateInstance(value);
+            instance.OnEffectAdded(this, this, gameObject);
+            Effects.Add(instance);
         }
 
         /// <summary>
         /// Removes an effect by it's type name
         /// </summary>
         /// <param name="className"></param>
-        public void RemoveEffect(string className)
+        public void RemoveEffect(Effect toRemove)
         {
             for(int i = 0; i < Effects.Count; i++)
             {
-                if (Effects[i].GetType().Name == className)
+                if (Effects[i].Effect == toRemove)
                 {
                     Effects[i].OnEffectRemoved(this, this);
                     Effects.RemoveAt(i);

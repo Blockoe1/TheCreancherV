@@ -35,7 +35,7 @@ namespace FoolsBrand.Enemies
 
         protected Enemy parentEnemy;
 
-        private readonly List<Effect> Effects = new List<Effect>();
+        private readonly List<EffectInstance> Effects = new List<EffectInstance>();
 
         #region Properties
         public bool IsDead => (!isBody && health.IsDead) || (parentEnemy != null && parentEnemy.IsDead);
@@ -91,7 +91,7 @@ namespace FoolsBrand.Enemies
             }
 
             // Apply any damage reduction effects.
-            foreach (Effect effect in Effects)
+            foreach (EffectInstance effect in Effects)
             {
                 baseDamage = effect.ModifyDamage(baseDamage);
             }
@@ -151,11 +151,16 @@ namespace FoolsBrand.Enemies
         /// Applie a custom effect to this limb.
         /// </summary>
         /// <param name="toApply"></param>
-        public void ApplyEffect(Effect toApply)
+        public void ApplyEffect(Effect toApply, int value)
         {
-            Effect copy = toApply.Copy();
-            copy.OnEffectAdded(parentEnemy, this, gameObject);
-            Effects.Add(copy);
+            if (!toApply.AllowStacking && Effects.Any(X => X.Effect == toApply))
+            {
+                // Prevent duplicates being added if stacking is not allowed.
+                return;
+            }
+            EffectInstance instance = toApply.CreateInstance(value);
+            instance.OnEffectAdded(parentEnemy, this, gameObject);
+            Effects.Add(instance);
         }
 
         /// <summary>
@@ -187,7 +192,7 @@ namespace FoolsBrand.Enemies
         /// <returns>The modified damage amount.</returns>
         public int QueryAttackModifiers(int damage)
         {
-            foreach (Effect effect in Effects)
+            foreach (EffectInstance effect in Effects)
             {
                 damage = effect.ModifyAttack(damage);
             }
@@ -213,11 +218,11 @@ namespace FoolsBrand.Enemies
         /// Removes an effect by it's type name
         /// </summary>
         /// <param name="className"></param>
-        public void RemoveEffect(string className)
+        public void RemoveEffect(Effect toRemove)
         {
             for (int i = 0; i < Effects.Count; i++)
             {
-                if (Effects[i].GetType().Name == className)
+                if (Effects[i].Effect == toRemove)
                 {
                     Effects[i].OnEffectRemoved(parentEnemy, this);
                     Effects.RemoveAt(i);

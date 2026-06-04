@@ -14,14 +14,32 @@ namespace FoolsBrand
 {
     public abstract class Effect : ScriptableObject
     {
+        private const int BASE_POTENCY = 1;
+
         [SerializeField] private bool hasDuration;
-        [SerializeField, ShowIf("hasDuration"), AllowNesting] private bool useValueAsDuration;
-        [SerializeField, HideIf("useValueAsDuration"), AllowNesting] protected int baseDuration;
+        [SerializeField, ShowIf(nameof(hasDuration)), AllowNesting] private bool useValueAsDuration;
+        [SerializeField, ShowIf(nameof(ShowDuration)), AllowNesting] 
+        protected int baseDuration;
+        [SerializeField] private bool allowStacking;
         [SerializeField] protected ParticleSystem visualEffect;
 
+        public bool ShowDuration => hasDuration && !useValueAsDuration;
+        public bool AllowStacking => allowStacking;
         public bool HasDuration => hasDuration;
         public bool UseValueAsDuration => useValueAsDuration;
         public int BaseDuration => baseDuration;
+
+        /// <summary>
+        /// Creates a new instance of this effect.
+        /// </summary>
+        /// <param name="value">The value to use that determines the strength of the effect.</param>
+        /// <returns></returns>
+        public virtual EffectInstance CreateInstance(int value)
+        {
+            int potency = (hasDuration && useValueAsDuration) ? BASE_POTENCY : value;
+            int duration = (hasDuration && useValueAsDuration) ? value : baseDuration;
+            return new EffectInstance(this, potency, duration);
+        }
 
         /// <summary>
         /// Spawns the VFX object for this effect on the applied transform.

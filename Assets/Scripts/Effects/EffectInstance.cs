@@ -7,9 +7,7 @@
 // Brief Description : Specific instance of an effect that tracks potency and duration while applied to a combatant.
 *****************************************************************************/
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.VFX;
 
 namespace FoolsBrand
 {
@@ -23,6 +21,7 @@ namespace FoolsBrand
 
         public bool MarkRemove { get; set; }
 
+        public Effect Effect => effect;
         public int Potency => potency;
         public int Duration => duration;
         public bool IsExpired => (effect.HasDuration && duration <= 0) || MarkRemove;

@@ -6,6 +6,7 @@
 //
 // Brief Description : Inflicts poison on a poisonable target.
 *****************************************************************************/
+using CustomAttributes;
 using System.Collections;
 using UnityEngine;
 
@@ -14,7 +15,7 @@ namespace FoolsBrand
     [CreateAssetMenu(fileName = "ApplyEffectAction", menuName = "Scriptable Objects/Actions/Apply Effect")]
     public class ApplyEffectAction : DiceAction
     {
-        [SerializeField] private Effect effect;
+        [SerializeField, ShowNestedEditor] private Effect effect;
         [SerializeField, Tooltip("If set to true, the action applies the effect to the user.  False for the target.")] 
         private bool targetSelf;
         [SerializeField, Tooltip("Controls the order that actions occur in.  Lower priority goes first.  " +
@@ -26,11 +27,11 @@ namespace FoolsBrand
         {
             if (!targetSelf && target is IEffectable targetEffectable)
             {
-                targetEffectable.ApplyEffect(effect);
+                targetEffectable.ApplyEffect(effect, value);
             }
             if (targetSelf && source is IEffectable selfEffectable)
             {
-                selfEffectable.ApplyEffect(effect);
+                selfEffectable.ApplyEffect(effect, value);
             }
             else
             {

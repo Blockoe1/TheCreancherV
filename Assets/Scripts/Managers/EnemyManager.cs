@@ -17,7 +17,6 @@ namespace FoolsBrand.Enemies
         private const string ENEMY_POS_TAG = "EnemyPos";
 
         [SerializeField] private Enemy[] encounterableEnemies;
-        [SerializeField] private Enemy bossEnemy;
 
         private Enemy currentEnemy;
         public Enemy CurrentEnemy
@@ -59,15 +58,24 @@ namespace FoolsBrand.Enemies
             yield return null;
             float animationDuration = currentEnemy.Animator.GetAnimationDuration();
             yield return new WaitForSeconds(animationDuration);
-            RunManager.CombatWin();
+            if (RunManager.CurrentEncounterNum == encounterableEnemies.Length - 1)
+            {
+                // If this was the last encounter, win the game.
+                RunManager.WinRun();
+            }
+            else
+            {
+                RunManager.CombatWin();
+            }
+            
         }
 
         /// <summary>
         /// Spawns a random enemy from the encounter enemies.
         /// </summary>
-        public void SpawnRandomEnemy()
+        public void SpawnNextEnemy()
         {
-            SpawnEnemy(encounterableEnemies[UnityEngine.Random.Range(0, encounterableEnemies.Length)]);
+            SpawnEnemy(encounterableEnemies[RunManager.CurrentEncounterNum]);
         }
 
         /// <summary>

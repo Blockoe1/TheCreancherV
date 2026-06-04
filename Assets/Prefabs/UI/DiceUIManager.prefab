@@ -121,9 +121,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: FoolsBrand.DiceManager, Assembly-CSharp
-        m_MethodName: ReserveDie
+      - m_Target: {fileID: 8379926788483874655}
+        m_TargetAssemblyTypeName: FoolsBrand.DiceUIManager, Assembly-CSharp
+        m_MethodName: OnReservePressed
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -254,9 +254,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: FoolsBrand.DiceManager, Assembly-CSharp
-        m_MethodName: ReserveDie
+      - m_Target: {fileID: 8379926788483874655}
+        m_TargetAssemblyTypeName: FoolsBrand.DiceUIManager, Assembly-CSharp
+        m_MethodName: OnReservePressed
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

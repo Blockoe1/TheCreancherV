@@ -84,8 +84,15 @@ namespace FoolsBrand
                 }
             }
 
+            PlayerInputManager.OnReserveInput += ReserveDie;
+
             ShuffleDeck();
             //StartTurn();
+        }
+
+        public override void Deinit()
+        {
+            PlayerInputManager.OnReserveInput -= ReserveDie;
         }
 
         ///// <summary>

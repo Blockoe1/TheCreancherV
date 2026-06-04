@@ -712,6 +712,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.UI.HealthBar
   barRect: {fileID: 3976947770532423529}
   healthText: {fileID: 367472711429141704}
+  showMax: 1
 --- !u!1 &6693768847265803457
 GameObject:
   m_ObjectHideFlags: 0

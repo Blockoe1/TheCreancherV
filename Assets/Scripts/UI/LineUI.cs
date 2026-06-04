@@ -6,8 +6,6 @@
 //
 // Brief Description : Mimicks functionality of a line renderer by stretching and rotating an image.
 *****************************************************************************/
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace FoolsBrand

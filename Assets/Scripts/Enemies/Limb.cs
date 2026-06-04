@@ -26,6 +26,7 @@ namespace FoolsBrand.Enemies
         [SerializeField] private float multiplier;
         [SerializeField, ShowIf("HasAttack")] private int attackWeight = 1;
         [SerializeField] private DieBase attackDice;
+        [SerializeField, TextArea] private string customDescription;
         [SerializeField, Tooltip("Adds this string to the end of an animation name for actions perfomed by this limb.  " +
             "Only needs to be set if the limb has a custom animation.")]
         private string limbAnimNameSuffix;
@@ -47,6 +48,15 @@ namespace FoolsBrand.Enemies
         public int AttackWeight => attackWeight;
         public float Multiplier => multiplier;
         public UnityEvent OnDestroyEvent => onDestroyEvent;
+        public string Description
+        { 
+            get
+            {
+                string diceDescription = attackDice != null ? attackDice.DieDescription : "";
+                string spacer = (diceDescription != "" && customDescription != "" ? "\n\n" : "");
+                return diceDescription + spacer + customDescription;
+            }
+        }
         #endregion
 
         public void Init(Enemy parentEnemy)
@@ -123,8 +133,17 @@ namespace FoolsBrand.Enemies
                 }
             }
 
-            // Deal damage to the main enemy.
-            return parentEnemy.TakeDamage(Mathf.RoundToInt(damage * multiplier), source);
+            int mainDamage = Mathf.RoundToInt(damage * multiplier);
+            if (mainDamage > 0)
+            {
+                // Deal damage to the main enemy.
+                return parentEnemy.TakeDamage(mainDamage, source);
+            }
+            else
+            {
+                // Only deal damage to the main enemy if damage is actually being dealt.
+                return 0;
+            }
         }
 
         /// <summary>

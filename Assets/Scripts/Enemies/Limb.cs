@@ -151,7 +151,7 @@ namespace FoolsBrand.Enemies
         /// </summary>
         /// <param name="animationName"></param>
         /// <returns></returns>
-        public AnimationClip PlayAnimation(string animationName)
+        public AnimationInfo PlayAnimation(string animationName)
         {
             return parentEnemy.PlayAnimation(animationName + limbAnimNameSuffix);
         }

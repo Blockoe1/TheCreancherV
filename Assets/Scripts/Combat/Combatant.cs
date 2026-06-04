@@ -100,7 +100,7 @@ namespace FoolsBrand
             OnDeath();
         }
 
-        public AnimationClip PlayAnimation(string name)
+        public AnimationInfo PlayAnimation(string name)
         {
             if (Animator == null) { return null; }
             return Animator.PlayAnimation(name);

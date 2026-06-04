@@ -48,7 +48,15 @@ namespace FoolsBrand.Enemies
         public int AttackWeight => attackWeight;
         public float Multiplier => multiplier;
         public UnityEvent OnDestroyEvent => onDestroyEvent;
-        public string Description => (attackDice != null ? attackDice.DieDescription : "") + customDescription;
+        public string Description
+        { 
+            get
+            {
+                string diceDescription = attackDice != null ? attackDice.DieDescription : "";
+                string spacer = (diceDescription != "" && customDescription != "" ? "\n\n" : "");
+                return diceDescription + spacer + customDescription;
+            }
+        }
         #endregion
 
         public void Init(Enemy parentEnemy)

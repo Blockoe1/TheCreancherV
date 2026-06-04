@@ -13,7 +13,6 @@ namespace FoolsBrand
         [SerializeField] private PlayerCombatant player;
         [SerializeField] private float selectLimbWaitTime = 0.25f;
 
-        public static HealthData PlayerHealth = null;
         private DiceManager diceManager;
         private LimbUIManager limbUIManager;
         private DiceUIManager diceUI;
@@ -28,7 +27,14 @@ namespace FoolsBrand
 
         public override void Init(GameManager gm, HierarchyManager parentManager)
         {
-            PlayerHealth ??= player.Health;
+            if (RunManager.PlayerHealth == -1)
+            {
+                RunManager.PlayerHealth = player.Health.Value;
+            }
+            else
+            {
+                player.Health.Value = RunManager.PlayerHealth;
+            }
             diceManager = gm.GetManager<DiceManager>();
             limbUIManager = gm.GetManager<UIManager>().GetManager<LimbUIManager>();
             diceUI = gm.GetManager<UIManager>().GetManager<DiceUIManager>();
@@ -37,12 +43,25 @@ namespace FoolsBrand
             PlayerInputManager.OnRollButtonPressed += PlayerInputManager_OnRollButtonPressed;
 
             player.OnDeathEvent.AddListener(PlayerDead);
+            player.Health.HealthChangedEvent += UpdateSavedPlayerHealth;
         }
+
+
 
         private void OnDestroy()
         {
             PlayerInputManager.OnLimbSelectedInput -= PlayerInputManager_OnLimbSelectedInput;
             PlayerInputManager.OnRollButtonPressed -= PlayerInputManager_OnRollButtonPressed;
+            player.Health.HealthChangedEvent -= UpdateSavedPlayerHealth;
+        }
+
+        /// <summary>
+        /// Updates the saved player health for the run.
+        /// </summary>
+        /// <param name="healthChange"></param>
+        private void UpdateSavedPlayerHealth(int healthChange)
+        {
+            RunManager.PlayerHealth = player.Health.Value;
         }
 
         private void PlayerInputManager_OnRollButtonPressed()

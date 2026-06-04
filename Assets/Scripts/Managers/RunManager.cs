@@ -7,6 +7,7 @@ namespace FoolsBrand
     public static class RunManager
     {
         public static int CurrentEncounterNum { get; private set; }
+        public static int PlayerHealth { get; set; } = -1;
 
         /// <summary>
         /// Called when a new combat is started. Switches the scene and selects the new enemy
@@ -53,6 +54,7 @@ namespace FoolsBrand
         /// </summary>
         private static void CleanUpRun()
         {
+            PlayerHealth = -1;
             CurrentEncounterNum = 0;
             DiceManager.ClearDice();
         }

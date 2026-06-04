@@ -19,14 +19,14 @@ public abstract class DiceAction : ScriptableObject
     /// <summary>
     /// Gets the time signature of the Impact event.
     /// </summary>
-    /// <param name="clip"></param>
+    /// <param name="animInfo"></param>
     /// <returns></returns>
-    protected static float GetImpactTime(AnimationClip clip)
+    protected static float GetImpactTime(FoolsBrand.AnimationInfo animInfo)
     {
-        AnimationEvent impactEvent = Array.Find(clip.events, x => x.functionName == IMPACT_ANIM_EVENT_NAME);
+        AnimationEvent impactEvent = Array.Find(animInfo.Clip.events, x => x.functionName == IMPACT_ANIM_EVENT_NAME);
         if (impactEvent != null)
         {
-            return impactEvent.time;
+            return impactEvent.time / animInfo.StateInfo.speed;
         }
         return 0;
     }
@@ -44,14 +44,14 @@ public abstract class DiceAction : ScriptableObject
     {
         if (target.IsDead) { yield break; }
         // Play the animation.
-        AnimationClip clip = source.PlayAnimation(animationName);
+        FoolsBrand.AnimationInfo animInfo = source.PlayAnimation(animationName);
         // Get the animation, impact, and vfx preload time.
         float animationTime = 0, impactTime = 0, effectPreloadTime = 0;
 
-        if (clip != null)
+        if (animInfo != null)
         {
-            animationTime = clip.length;
-            impactTime = GetImpactTime(clip);
+            animationTime = animInfo.Clip.length / animInfo.StateInfo.speed;
+            impactTime = GetImpactTime(animInfo);
         }
         if (actionVFX != null)
         {

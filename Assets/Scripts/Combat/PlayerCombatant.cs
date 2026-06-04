@@ -18,6 +18,7 @@ namespace FoolsBrand
     public class PlayerCombatant : Combatant, IEffectable, IActionSource
     {
         [SerializeField] private int defense;
+        [SerializeField] private float postActDelay;
         [field: SerializeField] public Transform DamageNumberPoint { get; private set; }
         [SerializeField] private Transform effectPoint;
 
@@ -123,6 +124,8 @@ namespace FoolsBrand
             // Clear action data.
             actionQueue = null;
             targetedLimb = null;
+
+            yield return new WaitForSeconds(postActDelay);
         }
 
         /// <summary>

@@ -1,3 +1,11 @@
+/*****************************************************************************
+// File Name : CombatantAnimator.cs
+// Author : Arcadia Koederitz
+// Creation Date : 6/4/2026
+// Last Modified : 6/4/2026
+//
+// Brief Description : Controls playing animations for combatants.
+*****************************************************************************/
 using CustomAttributes;
 using System;
 using UnityEngine;
@@ -49,7 +57,7 @@ namespace FoolsBrand
         /// </summary>
         /// <param name="animationName"></param>
         /// <returns></returns>
-        public AnimationClip PlayAnimation(string animationName)
+        public AnimationInfo PlayAnimation(string animationName)
         {
             if (animator == null || animationName == "") { return null; }
             animator.SetTrigger(animationName);
@@ -57,8 +65,9 @@ namespace FoolsBrand
             // Makes a few assumptions:
             // 1. The clip we want is on layer  0.
             // 2. The clip is in index 0 in the array
+            AnimatorStateInfo info = animator.GetCurrentAnimatorStateInfo(0);
             AnimationClip clip = animator.GetCurrentAnimatorClipInfo(0)[0].clip;
-            return clip;
+            return new AnimationInfo(clip, info);
         }
 
         /// <summary>

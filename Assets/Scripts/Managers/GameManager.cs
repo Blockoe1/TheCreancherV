@@ -36,7 +36,7 @@ public class GameManager : HierarchyManager
         base.GameStart();
 
         EnemyManager enemyManager = GetManager<EnemyManager>();
-        enemyManager.SpawnRandomEnemy();
+        enemyManager.SpawnNextEnemy();
 
         GetManager<CombatManager>().BeginCombat();
 

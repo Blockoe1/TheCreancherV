@@ -12,7 +12,6 @@ namespace FoolsBrand
     {
         [SerializeField] private PlayerCombatant player;
         [SerializeField] private float selectLimbWaitTime = 0.25f;
-        [SerializeField] private GameObject[] reservationButtons;
 
         public static HealthData PlayerHealth = null;
         private DiceManager diceManager;

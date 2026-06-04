@@ -27,6 +27,7 @@ namespace FoolsBrand.UI
         [SerializeField] private TMP_Text nameText;
         [SerializeField] private TMP_Text defenseText;
         [SerializeField] private TMP_Text multiplierText;
+        [SerializeField] private TMP_Text limbDescriptionText;
 
         private LimbUIManager manager;
         private DamageNumberManager dnm;
@@ -80,6 +81,10 @@ namespace FoolsBrand.UI
             if (multiplierText != null)
             {
                 multiplierText.text = currentLimb.Multiplier.ToString() + "x";
+            }
+            if (limbDescriptionText != null)
+            {
+                limbDescriptionText.text = currentLimb.Description;
             }
 
             // Set the multiplier line.

@@ -26,6 +26,7 @@ namespace FoolsBrand.Enemies
         [SerializeField] private float multiplier;
         [SerializeField, ShowIf("HasAttack")] private int attackWeight = 1;
         [SerializeField] private DieBase attackDice;
+        [SerializeField, TextArea] private string customDescription;
         [SerializeField, Tooltip("Adds this string to the end of an animation name for actions perfomed by this limb.  " +
             "Only needs to be set if the limb has a custom animation.")]
         private string limbAnimNameSuffix;
@@ -47,6 +48,7 @@ namespace FoolsBrand.Enemies
         public int AttackWeight => attackWeight;
         public float Multiplier => multiplier;
         public UnityEvent OnDestroyEvent => onDestroyEvent;
+        public string Description => (attackDice != null ? attackDice.DieDescription : "") + customDescription;
         #endregion
 
         public void Init(Enemy parentEnemy)

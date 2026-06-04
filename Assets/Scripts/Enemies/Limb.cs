@@ -133,11 +133,10 @@ namespace FoolsBrand.Enemies
                 }
             }
 
-            int mainDamage = Mathf.RoundToInt(damage * multiplier);
-            if (mainDamage > 0)
+            if (multiplier > 0)
             {
                 // Deal damage to the main enemy.
-                return parentEnemy.TakeDamage(mainDamage, source);
+                return parentEnemy.TakeDamage(Mathf.RoundToInt(damage * multiplier), source);
             }
             else
             {

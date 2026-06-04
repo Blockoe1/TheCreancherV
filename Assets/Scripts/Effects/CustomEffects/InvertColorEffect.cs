@@ -10,6 +10,8 @@ namespace FoolsBrand
         private IEffectable source;
         private InvertColorToggle invertColorToggle;
 
+        public override bool UsesPotency => false;
+
 
         public override void OnEffectAdded(EffectInstance instance, Combatant combatant, IEffectable effectSource, GameObject appliedObj)
         {

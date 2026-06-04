@@ -7,6 +7,7 @@
 // Brief Description : Main combatant for the player.
 *****************************************************************************/
 using FoolsBrand.Enemies;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,9 @@ namespace FoolsBrand
 
         private MinPriorityQueue<DiceActionInfo> actionQueue;
         private Limb targetedLimb;
+
+        public event Action<EffectInstance> EffectAppliedEvent;
+        public event Action PlayerActEvent;
 
         /// <summary>
         /// Player queries any effects for modifying or triggering on damage.
@@ -113,6 +117,7 @@ namespace FoolsBrand
                 if (IsDead) { yield break; }
                 yield return Effects[i].OnActionEnd(this, this);
             }
+            PlayerActEvent?.Invoke();
             FlushEffects();
 
             // Clear action data.
@@ -144,6 +149,7 @@ namespace FoolsBrand
             EffectInstance instance = toApply.CreateInstance(value);
             instance.OnEffectAdded(this, this, gameObject);
             Effects.Add(instance);
+            EffectAppliedEvent?.Invoke(instance);
         }
 
         /// <summary>

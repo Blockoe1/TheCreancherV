@@ -14,6 +14,10 @@ namespace FoolsBrand
 {
     public abstract class Effect : ScriptableObject
     {
+        [SerializeField] private Sprite icon;
+        [SerializeField, TextArea, Tooltip("Use #potency or #duration to insert the potency and duration " +
+            "values of the instance into the description.")] 
+        private string description;
         [SerializeField, Tooltip("Determines what effect the value of the dice face this effect was rolled on has on the effect.")] 
         private ValueUsage valueUsage;
         [SerializeField] private bool hasDuration;
@@ -23,11 +27,15 @@ namespace FoolsBrand
         [SerializeField] private bool allowStacking;
         [SerializeField] protected ParticleSystem visualEffect;
 
+        public Sprite Icon => icon;
         public bool ShowDuration => hasDuration && valueUsage != ValueUsage.Duration;
-        public bool ShowPotency => valueUsage != ValueUsage.Potency;
+        public bool ShowPotency => valueUsage != ValueUsage.Potency && UsesPotency;
         public bool AllowStacking => allowStacking;
         public bool HasDuration => hasDuration;
         public int BaseDuration => baseDuration;
+        public string Description => description;
+
+        public virtual bool UsesPotency => true;
 
         private enum ValueUsage
         {

@@ -10,19 +10,7 @@ namespace FoolsBrand
 
         IEffectable Source;
 
-        private  ParticleSystem vfxInstance;
-
-        public TempModifyAttackEffect(Effect copy) : base(copy) { }
-
-        public override Effect Copy()
-        {
-            TempModifyAttackEffect copy = new TempModifyAttackEffect(this);
-            copy.attackModifier = attackModifier;
-            copy.vfx = vfx;
-            return copy;
-        }
-
-        public override void OnEffectAdded(Combatant combatant, IEffectable effectSource, GameObject appliedObj)
+        public override void OnEffectAdded(EffectInstance instance, Combatant combatant, IEffectable effectSource, GameObject appliedObj)
         {
             //Debug.Log("Attack modifier added");
             Source = effectSource;
@@ -32,7 +20,7 @@ namespace FoolsBrand
             }
         }
 
-        public override void OnEffectRemoved(Combatant combatant, IEffectable effectSource)
+        public override void OnEffectRemoved(EffectInstance instance, Combatant combatant, IEffectable effectSource)
         {
             //Debug.Log("Attack modifier removed");
             if (vfxInstance != null)
@@ -41,7 +29,7 @@ namespace FoolsBrand
             }
         }
 
-        public override int ModifyAttack(int dealtDamage)
+        public override int ModifyAttack(EffectInstance instance, int dealtDamage)
         {
             markRemove = true;
             return dealtDamage + attackModifier;

@@ -7,7 +7,6 @@
 // Brief Description : Inflicts poison on a poisonable target.
 *****************************************************************************/
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace FoolsBrand

@@ -14,55 +14,51 @@ namespace FoolsBrand
 {
     public abstract class Effect : ScriptableObject
     {
-        [SerializeField] private bool hasDuration = true;
-        [SerializeField, ShowIf("hasDuration"), AllowNesting] protected int duration;
+        [SerializeField] private bool hasDuration;
+        [SerializeField, ShowIf("hasDuration"), AllowNesting] private bool useValueAsDuration;
+        [SerializeField, HideIf("useValueAsDuration"), AllowNesting] protected int baseDuration;
+        [SerializeField] protected ParticleSystem visualEffect;
 
-        protected bool markRemove;
-
-        public bool IsExpired => (hasDuration && duration <= 0) || markRemove;
-
-        public Effect(Effect copy)
-        {
-            this.duration = copy.duration;
-            this.hasDuration = copy.hasDuration;
-        }
-
+        public bool HasDuration => hasDuration;
+        public bool UseValueAsDuration => useValueAsDuration;
+        public int BaseDuration => baseDuration;
 
         /// <summary>
-        /// Copies the given effect.
+        /// Spawns the VFX object for this effect on the applied transform.
         /// </summary>
+        /// <param name="parentTransform"></param>
         /// <returns></returns>
-        public abstract Effect Copy();
+        public virtual ParticleSystem SpawnVFX(Transform parentTransform)
+        {
+            if (visualEffect == null) { return null; }
+            return GameObject.Instantiate(visualEffect, parentTransform);
+        }
 
-        public virtual void OnEffectAdded(Combatant combatant, IEffectable effectSource, GameObject appliedObj) { }
+        public virtual void OnEffectAdded(EffectInstance instance, Combatant combatant, IEffectable effectSource, GameObject appliedObj) { }
 
         /// <summary>
         /// Called before damage is dealt to apply any damage modifications.
         /// </summary>
         /// <param name="dealtDamage">The base damage the combatant would deal.</param>
         /// <returns>The modified damage amount.</returns>
-        public virtual int ModifyAttack(int dealtDamage) { return dealtDamage; }
+        public virtual int ModifyAttack(EffectInstance instance, int dealtDamage) { return dealtDamage; }
         /// <summary>
         /// Called before damage is taken.
         /// </summary>
         /// <param name="takenDamage">The base damage the combatant is taking.</param>
         /// <returns>The modified damage from this effect.</returns>
-        public virtual int ModifyDamage(int takenDamage) { return takenDamage; }
-        public virtual IEnumerator OnActionStart(Combatant combatant, IEffectable effectSource) 
+        public virtual int ModifyDamage(EffectInstance instance, int takenDamage) { return takenDamage; }
+        public virtual IEnumerator OnActionStart(EffectInstance instance, Combatant combatant, IEffectable effectSource) 
         {
             yield break;
         }
-        public virtual IEnumerator OnActionEnd(Combatant combatant, IEffectable effectSource)
+        public virtual IEnumerator OnActionEnd(EffectInstance instance, Combatant combatant, IEffectable effectSource)
         {
-            if (hasDuration)
-            {
-                duration--;
-            }
             yield break;
         }
-        public virtual void OnTakeDamage(Combatant combatant, IEffectable effectSource, Combatant attacker, int damageTaken) { }
-        public virtual void OnDealDamage(Combatant combatant, IEffectable effectSource, ITargetable target,int damageDealt) { }
+        public virtual void OnTakeDamage(EffectInstance instance, Combatant combatant, IEffectable effectSource, Combatant attacker, int damageTaken) { }
+        public virtual void OnDealDamage(EffectInstance instance, Combatant combatant, IEffectable effectSource, ITargetable target,int damageDealt) { }
 
-        public virtual void OnEffectRemoved(Combatant combatant, IEffectable effectSource) { }
+        public virtual void OnEffectRemoved(EffectInstance instance, Combatant combatant, IEffectable effectSource) { }
     }
 }

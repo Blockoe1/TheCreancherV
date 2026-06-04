@@ -10,14 +10,8 @@ namespace FoolsBrand
         private IEffectable source;
         private InvertColorToggle invertColorToggle;
 
-        public InvertColorEffect(Effect copy) : base(copy) { }
 
-        public override Effect Copy()
-        {
-            return new InvertColorEffect(this);
-        }
-
-        public override void OnEffectAdded(Combatant combatant, IEffectable effectSource, GameObject appliedObj)
+        public override void OnEffectAdded(EffectInstance instance, Combatant combatant, IEffectable effectSource, GameObject appliedObj)
         {
             invertColorToggle = appliedObj.GetComponent<InvertColorToggle>();
             if (invertColorToggle != null)
@@ -26,12 +20,9 @@ namespace FoolsBrand
             }
         }
 
-        public override void OnEffectRemoved(Combatant combatant, IEffectable effectSource)
+        public override void OnEffectRemoved(EffectInstance instance, Combatant combatant, IEffectable effectSource)
         {
             invertColorToggle.DisableInvert();
         }
-
-
-
     }
 }

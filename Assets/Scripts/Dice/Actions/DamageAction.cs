@@ -11,7 +11,7 @@ using UnityEngine;
 
 namespace FoolsBrand
 {
-    [System.Serializable]
+    [CreateAssetMenu(fileName = "DamageAction", menuName = "Scriptable Objects/Actions/Damage")]
     public class DamageAction : DiceAction
     {
         public override int PriorityValue => 100;

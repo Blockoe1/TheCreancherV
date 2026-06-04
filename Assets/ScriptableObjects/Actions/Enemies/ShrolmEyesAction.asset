@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d18b2a6c60387b4fbce6651526d3aba, type: 3}
-  m_Name: Poison
+  m_Name: ShrolmEyesAction
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.ApplyEffectAction
   animationName: T_ATTACK
-  actionVFX: {fileID: 11400000, guid: b09f03b2c86623f4c8904007971683b2, type: 2}
-  effect: {fileID: 11400000, guid: 4268e432d311cb544a2905e043fb918a, type: 2}
+  actionVFX: {fileID: 0}
+  effect: {fileID: 11400000, guid: 8d37bc02224332c4fa2fb0732401bdde, type: 2}
   targetSelf: 0
-  priority: 101
+  priority: 90

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.ApplyEffectAction
   animationName: T_ATTACK
   actionVFX: {fileID: 0}
-  effect: {fileID: 0}
+  effect: {fileID: 11400000, guid: 16f33c9ceae03fe40ad4e5f7741626f1, type: 2}
   targetSelf: 0
   priority: 90

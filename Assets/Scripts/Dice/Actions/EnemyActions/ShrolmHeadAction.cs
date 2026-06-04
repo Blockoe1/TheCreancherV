@@ -4,16 +4,15 @@ using UnityEngine;
 
 namespace FoolsBrand
 {
-    [System.Serializable]
+    [CreateAssetMenu(fileName = "ShrolmHeadAction", menuName = "Scriptable Objects/Actions/Shrolm/Head")]
     public class ShrolmHeadAction : DiceAction
     {
         public override int PriorityValue => 100;
 
-        DiceManager diceManager;
 
-        public override IEnumerator PerformAction(ITargetable target, IActionSource source, Combatant user)
+        public override IEnumerator PerformAction(ITargetable target, IActionSource source, Combatant user, int value, DieFace sourceFace)
         {
-            diceManager = DiceManager.Instance;
+            DiceManager diceManager = DiceManager.Instance;
             diceManager.ClearReserveSlot();
             yield return null;
         }

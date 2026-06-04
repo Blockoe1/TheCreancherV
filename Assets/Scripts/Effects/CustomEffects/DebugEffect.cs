@@ -11,7 +11,7 @@ using UnityEngine;
 
 namespace FoolsBrand
 {
-    [System.Serializable]
+    [CreateAssetMenu(fileName = "DebugEffect", menuName = "Scriptable Objects/Effects/Debug")]
     public class DebugEffect : Effect
     {
         public DebugEffect(Effect copy) : base(copy)

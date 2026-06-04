@@ -11,7 +11,7 @@ using UnityEngine;
 
 namespace FoolsBrand
 {
-    [System.Serializable]
+    [CreateAssetMenu(fileName = "PoisonEffect", menuName = "Scriptable Objects/Effects/Poison")]
     public class PoisonEffect : Effect
     {
         [SerializeField] private int tickDamage;

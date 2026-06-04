@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace FoolsBrand
 {
-    [System.Serializable]
+    [CreateAssetMenu(fileName = "TempModifyAttackEffect", menuName = "Scriptable Objects/Effects/Temp Modify Attack")]
     public class TempModifyAttackEffect : Effect
     {
         [SerializeField] private int attackModifier;

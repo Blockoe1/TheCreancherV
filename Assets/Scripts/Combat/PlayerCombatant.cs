@@ -22,7 +22,7 @@ namespace FoolsBrand
 
         private List<Effect> Effects = new List<Effect>();
 
-        private MinPriorityQueue<DiceAction> actionQueue;
+        private MinPriorityQueue<DiceActionInfo> actionQueue;
         private Limb targetedLimb;
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace FoolsBrand
         /// </summary>
         /// <param name="actionQueue">The actions that the player will take.</param>
         /// <param name="targetedLimb">The limb the player is targeting.</param>
-        public void SetActData(MinPriorityQueue<DiceAction> actionQueue, Limb targetedLimb)
+        public void SetActData(MinPriorityQueue<DiceActionInfo> actionQueue, Limb targetedLimb)
         {
             this.actionQueue = actionQueue;
             this.targetedLimb = targetedLimb;

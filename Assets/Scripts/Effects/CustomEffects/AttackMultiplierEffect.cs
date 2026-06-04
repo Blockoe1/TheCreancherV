@@ -11,7 +11,7 @@ using UnityEngine;
 
 namespace FoolsBrand
 {
-    [System.Serializable]
+    [CreateAssetMenu(fileName = "AttackMultiplierEffect", menuName = "Scriptable Objects/Effects/Attack Multiplier")]
     public class AttackMultiplierEffect : Effect
     {
         [SerializeField] private float multiplier; 

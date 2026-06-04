@@ -7,32 +7,14 @@ using UnityEngine;
 /// <summary>
 /// Stores types of actions
 /// </summary>
-[System.Serializable]
-public abstract class DiceAction
+public abstract class DiceAction : ScriptableObject
 {
     private const string IMPACT_ANIM_EVENT_NAME = "Impact";
 
-    [SerializeField] protected int value;
     [SerializeField] private string animationName;
     [SerializeField] private ActionVFX actionVFX;
 
-    protected DieFace parentFace;
-
     public abstract int PriorityValue { get; }
-
-    public int Value
-    {
-        get => value;
-        set => this.value = value;
-    }
-
-    /// <summary>
-    /// Initializes this action with a reference to the owned face.
-    /// </summary>
-    public void Initialize(DieFace face)
-    {
-        parentFace = face;
-    }
 
     /// <summary>
     /// Gets the time signature of the Impact event.
@@ -55,8 +37,10 @@ public abstract class DiceAction
     /// <param name="target"></param>
     /// <param name="source"></param>
     /// <param name="user"></param>
+    /// <param name="value"></param>
+    /// <param name="sourceFace"></param>
     /// <returns></returns>
-    public IEnumerator PlayAction(ITargetable target, IActionSource source, Combatant user)
+    public IEnumerator PlayAction(ITargetable target, IActionSource source, Combatant user, int value, DieFace sourceFace)
     {
         if (target.IsDead) { yield break; }
         // Play the animation.
@@ -83,12 +67,12 @@ public abstract class DiceAction
         }
         yield return new WaitForSeconds(effectPreloadTime);
         // Perform the actual action.
-        yield return PerformAction(target, source, user);
+        yield return PerformAction(target, source, user, value, sourceFace);
         // Wait for the animation to finish.
         yield return new WaitForSeconds(animationTime - impactTime);
     }
 
-    public abstract IEnumerator PerformAction(ITargetable target, IActionSource source, Combatant user);
+    public abstract IEnumerator PerformAction(ITargetable target, IActionSource source, Combatant user, int value, DieFace sourceFace);
 
     /// <summary>
     /// By default, effects play at the target.

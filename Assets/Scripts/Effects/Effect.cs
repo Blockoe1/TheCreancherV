@@ -12,8 +12,7 @@ using UnityEngine;
 
 namespace FoolsBrand
 {
-    [System.Serializable]
-    public abstract class Effect
+    public abstract class Effect : ScriptableObject
     {
         [SerializeField] private bool hasDuration = true;
         [SerializeField, ShowIf("hasDuration"), AllowNesting] protected int duration;

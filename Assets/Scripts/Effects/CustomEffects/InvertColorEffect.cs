@@ -4,7 +4,7 @@ using UnityEngine.Rendering.Universal;
 
 namespace FoolsBrand
 {
-    [System.Serializable]
+    [CreateAssetMenu(fileName = "InvertColorsEffect", menuName = "Scriptable Objects/Effects/Invert Colors")]
     public class InvertColorEffect : Effect
     {
         private IEffectable source;

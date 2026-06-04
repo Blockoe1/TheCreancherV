@@ -16,6 +16,7 @@ namespace FoolsBrand.UI
     {
         [SerializeField] private RectTransform barRect;
         [SerializeField] private TMP_Text healthText;
+        [SerializeField] private bool showMax;
         private HealthData referenceHealth;
 
         public void SetTargetHealth(HealthData healthData)
@@ -44,7 +45,7 @@ namespace FoolsBrand.UI
             barRect.anchorMax = new Vector2(referenceHealth.HealthProportion, barRect.anchorMax.y);
             if (healthText != null)
             {
-                healthText.text = referenceHealth.Value + "/" + referenceHealth.Max;
+                healthText.text = referenceHealth.Value + (showMax ? ("/" + referenceHealth.Max) : "");
             }
         }
     }

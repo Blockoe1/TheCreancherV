@@ -7,7 +7,6 @@
 // Brief Description : UI amanger for dice reserving and rolling.
 *****************************************************************************/
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace FoolsBrand
@@ -42,6 +41,11 @@ namespace FoolsBrand
         public void OnRollPressed()
         {
             PlayerInputManager.OnRollPressed();
+        }
+
+        public void OnReservePressed(int index)
+        {
+            PlayerInputManager.ReservePressed(index);
         }
     }
 }

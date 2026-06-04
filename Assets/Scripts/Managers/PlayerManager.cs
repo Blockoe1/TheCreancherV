@@ -116,24 +116,14 @@ namespace FoolsBrand
             //Make reservation buttons appear
             diceUI.ToggleReserveButtons(true);
             diceUI.ToggleRollButton(true);
-            limbUIManager.ToggleTargeting(true);
 
             //TODO - Dice Bonus by not rolling
-
-            //Player rolls dice
-            while (targetedLimb == null)
-            {
-                // When the player rolls, remove ability to reserve.
-                if (actionQueue != null)
-                {
-                    diceUI.ToggleRollButton(false);
-                    diceUI.ToggleReserveButtons(false);
-                }
-                yield return null;
-            }
-
-            diceUI.ToggleReserveButtons(false);
+            yield return new WaitUntil(() => actionQueue != null);
             diceUI.ToggleRollButton(false);
+            diceUI.ToggleReserveButtons(false);
+            limbUIManager.ToggleTargeting(true);
+            //Player rolls dice
+            yield return new WaitUntil(() => targetedLimb != null);
             limbUIManager.ToggleTargeting(false);
 
             // If the player hasn't rolled yet, roll the dice automatically and apply a damage boost.

@@ -14,6 +14,7 @@ namespace FoolsBrand
     {
         public static event Action<int> OnLimbSelectedInput;
         public static event Action OnRollButtonPressed;
+        public static event Action<int> OnReserveInput;
 
         public static void LimbSelected(int limbIndex)
         {
@@ -23,6 +24,11 @@ namespace FoolsBrand
         public static void OnRollPressed()
         {
             OnRollButtonPressed?.Invoke();
+        }
+
+        public static void ReservePressed(int diceIndex)
+        {
+            OnReserveInput?.Invoke(diceIndex);
         }
     }
 }

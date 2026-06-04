@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3be7e098c70206d45a9bbfd6dae871db, type: 3}
   m_Name: PoisonEffect
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.PoisonEffect
+  valueUsage: 1
   hasDuration: 0
-  useValueAsDuration: 0
   baseDuration: 0
+  basePotency: 1
   allowStacking: 0
   visualEffect: {fileID: 7474686967035214249, guid: 6fe5c9ffebec1334aa3c8458b6c4bf82, type: 3}
   tickDelay: 1.5

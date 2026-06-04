@@ -14,20 +14,27 @@ namespace FoolsBrand
 {
     public abstract class Effect : ScriptableObject
     {
-        private const int BASE_POTENCY = 1;
-
+        [SerializeField, Tooltip("Determines what effect the value of the dice face this effect was rolled on has on the effect.")] 
+        private ValueUsage valueUsage;
         [SerializeField] private bool hasDuration;
-        [SerializeField, ShowIf(nameof(hasDuration)), AllowNesting] private bool useValueAsDuration;
         [SerializeField, ShowIf(nameof(ShowDuration)), AllowNesting] 
-        protected int baseDuration;
+        protected int baseDuration = 1;
+        [SerializeField, ShowIf(nameof(ShowPotency)), AllowNesting] protected int basePotency = 1;
         [SerializeField] private bool allowStacking;
         [SerializeField] protected ParticleSystem visualEffect;
 
-        public bool ShowDuration => hasDuration && !useValueAsDuration;
+        public bool ShowDuration => hasDuration && valueUsage != ValueUsage.Duration;
+        public bool ShowPotency => valueUsage != ValueUsage.Potency;
         public bool AllowStacking => allowStacking;
         public bool HasDuration => hasDuration;
-        public bool UseValueAsDuration => useValueAsDuration;
         public int BaseDuration => baseDuration;
+
+        private enum ValueUsage
+        {
+            None,
+            Potency,
+            Duration
+        }
 
         /// <summary>
         /// Creates a new instance of this effect.
@@ -36,8 +43,8 @@ namespace FoolsBrand
         /// <returns></returns>
         public virtual EffectInstance CreateInstance(int value)
         {
-            int potency = (hasDuration && useValueAsDuration) ? BASE_POTENCY : value;
-            int duration = (hasDuration && useValueAsDuration) ? value : baseDuration;
+            int potency = (valueUsage == ValueUsage.Potency) ? value : basePotency;
+            int duration = (valueUsage == ValueUsage.Duration) ? value : baseDuration;
             return new EffectInstance(this, potency, duration);
         }
 

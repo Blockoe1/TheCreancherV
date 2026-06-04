@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df5072794d9e3b44aaf6e4d4636b07af, type: 3}
   m_Name: AttackDebuff
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.TempModifyAttackEffect
+  valueUsage: 1
   hasDuration: 0
-  useValueAsDuration: 0
   baseDuration: 0
+  basePotency: 1
   allowStacking: 0
   visualEffect: {fileID: 6354842147285684386, guid: 7ba3b933e06921a4f829f252927f089f, type: 3}
   modifierMultiplier: -1

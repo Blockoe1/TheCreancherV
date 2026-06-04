@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.ApplyEffectAction
   animationName: 
   actionVFX: {fileID: 0}
-  effect: {fileID: 0}
+  effect: {fileID: 11400000, guid: bd277b69feddaf74094392c5da218568, type: 2}
   targetSelf: 1
   priority: 90

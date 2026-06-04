@@ -29,13 +29,13 @@ namespace FoolsBrand
             {
                 targetEffectable.ApplyEffect(effect, value);
             }
-            if (targetSelf && source is IEffectable selfEffectable)
+            else if (targetSelf && source is IEffectable selfEffectable)
             {
                 selfEffectable.ApplyEffect(effect, value);
             }
             else
             {
-                Debug.Log("Poisoned Failed");
+                Debug.Log("Apply Effect Failed");
             }
             yield return null;
         }

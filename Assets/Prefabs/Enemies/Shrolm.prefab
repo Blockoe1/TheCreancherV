@@ -639,23 +639,23 @@ MonoBehaviour:
     m_RotationOrder: 4
   dieFaces:
   - faceText: '#'
-    faceValue: 0
+    faceValue: 3
     faceTextObj: {fileID: 0}
     faceActions:
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 11400000, guid: 07305115b9da5894984d372af8c39e29, type: 2}
+    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
   - faceText: '#'
-    faceValue: 0
+    faceValue: 4
     faceTextObj: {fileID: 0}
     faceActions:
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 11400000, guid: 07305115b9da5894984d372af8c39e29, type: 2}
+    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
   - faceText: '#'
-    faceValue: 0
+    faceValue: 5
     faceTextObj: {fileID: 0}
     faceActions:
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 11400000, guid: 07305115b9da5894984d372af8c39e29, type: 2}
+    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
 --- !u!1 &3437411820925650430
 GameObject:
   m_ObjectHideFlags: 0
@@ -803,30 +803,30 @@ MonoBehaviour:
     m_RotationOrder: 4
   dieFaces:
   - faceText: '#'
-    faceValue: 0
+    faceValue: 6
     faceTextObj: {fileID: 0}
     faceActions:
-    - {fileID: 0}
+    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
   - faceText: '#'
-    faceValue: 0
+    faceValue: 7
     faceTextObj: {fileID: 0}
     faceActions:
-    - {fileID: 0}
+    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
   - faceText: '#'
-    faceValue: 0
+    faceValue: 8
     faceTextObj: {fileID: 0}
     faceActions:
-    - {fileID: 0}
+    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
   - faceText: '#'
-    faceValue: 0
+    faceValue: 9
     faceTextObj: {fileID: 0}
     faceActions:
-    - {fileID: 0}
+    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
   - faceText: '#'
-    faceValue: 0
+    faceValue: 10
     faceTextObj: {fileID: 0}
     faceActions:
-    - {fileID: 0}
+    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
 --- !u!1 &3951469853241603724
 GameObject:
   m_ObjectHideFlags: 0

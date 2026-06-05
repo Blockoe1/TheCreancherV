@@ -28,7 +28,7 @@ namespace FoolsBrand.UI
 
         public override void Init(GameManager gm, HierarchyManager parentManager)
         {
-            if (RunManager.CurrentEncounterNum < tutorialSequences.Length)
+            if (RunManager.CurrentEncounterNum < tutorialSequences.Length && tutorialSequences[RunManager.CurrentEncounterNum] != null)
             {
                 encounterTutorialData = tutorialSequences[RunManager.CurrentEncounterNum];
 

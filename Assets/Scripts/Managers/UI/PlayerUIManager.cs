@@ -6,6 +6,7 @@
 //
 // Brief Description : Manages all player UI such as health bars.
 *****************************************************************************/
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace FoolsBrand.UI
@@ -13,9 +14,12 @@ namespace FoolsBrand.UI
     public class PlayerUIManager : Manager
     {
         [SerializeField] private HealthBar playerHealthBar;
+        [SerializeField] private ObjectPool<EffectDisplay> effectDisplayPool;
 
         private PlayerCombatant player;
         private DamageNumberManager dnm;
+
+        private readonly List<EffectDisplay> currentEffectDisplays = new();
 
         public override void Init(GameManager gm, HierarchyManager parentManager)
         {
@@ -24,11 +28,40 @@ namespace FoolsBrand.UI
             dnm = parentManager.GetManager<DamageNumberManager>();
 
             dnm.RegisterDamageNumber(player.Health, player.DamageNumberPoint);
+
+            player.EffectAppliedEvent += AddNewEffectDisplay;
+            player.PlayerActEvent += UpdateDisplays;
         }
 
         public override void Deinit()
         {
             dnm.UnregisterDamageNumber(player.Health);
+
+            player.EffectAppliedEvent -= AddNewEffectDisplay;
+            player.PlayerActEvent -= UpdateDisplays;
+        }
+
+        private void UpdateDisplays()
+        {
+            for (int i = 0; i < currentEffectDisplays.Count; i++)
+            {
+                if (currentEffectDisplays[i].IsExpired)
+                {
+                    effectDisplayPool.ReturnObject(currentEffectDisplays[i]);
+                    currentEffectDisplays.RemoveAt(i);
+                    i--;
+                    continue;
+                }
+
+                currentEffectDisplays[i].Refresh();
+            }
+        }
+
+        private void AddNewEffectDisplay(EffectInstance effect)
+        {
+            EffectDisplay display = effectDisplayPool.GetObject();
+            currentEffectDisplays.Add(display);
+            display.SetEffect(effect);
         }
     }
 }

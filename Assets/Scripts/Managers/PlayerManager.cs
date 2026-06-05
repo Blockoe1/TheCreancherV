@@ -19,7 +19,7 @@ namespace FoolsBrand
 
         private int? targetedLimb = null;
         //private DiceAction[] diceActions = null;
-        private MinPriorityQueue<DiceAction> actionQueue;
+        private MinPriorityQueue<DiceActionInfo> actionQueue;
 
         public PlayerCombatant Player => player;
 
@@ -66,7 +66,7 @@ namespace FoolsBrand
 
         private void PlayerInputManager_OnRollButtonPressed()
         {
-            actionQueue = new MinPriorityQueue<DiceAction>();
+            actionQueue = new MinPriorityQueue<DiceActionInfo>();
             foreach (GameObject dice in diceManager.DiceInPlay)
             {
                 DieBase die = dice.GetComponent<DieBase>();
@@ -74,10 +74,10 @@ namespace FoolsBrand
                 {
                     continue;
                 }
-                DiceAction[] actions = die.RollDie();
-                foreach (DiceAction action in actions)
+                DiceActionInfo[] actions = die.RollDie();
+                foreach (DiceActionInfo actionInfo in actions)
                 {
-                    actionQueue.Enqueue(action, action.PriorityValue);
+                    actionQueue.Enqueue(actionInfo, actionInfo.Action.PriorityValue);
                 }
             }
         }

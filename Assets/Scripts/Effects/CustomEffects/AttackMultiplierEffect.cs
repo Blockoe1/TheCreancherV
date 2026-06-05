@@ -11,22 +11,14 @@ using UnityEngine;
 
 namespace FoolsBrand
 {
-    [System.Serializable]
+    [CreateAssetMenu(fileName = "AttackMultiplierEffect", menuName = "Scriptable Objects/Effects/Attack Multiplier")]
     public class AttackMultiplierEffect : Effect
     {
         [SerializeField] private float multiplier; 
-        public AttackMultiplierEffect(Effect copy) : base(copy) { }
 
-        public override Effect Copy()
+        public override int ModifyAttack(EffectInstance instance, int dealtDamage)
         {
-            AttackMultiplierEffect copy = new AttackMultiplierEffect(this);
-            copy.multiplier = multiplier;
-            return copy;
-        }
-
-        public override int ModifyAttack(int dealtDamage)
-        {
-            markRemove = true;
+            instance.MarkRemove = true;
             return Mathf.CeilToInt(dealtDamage * multiplier);
         }
     }

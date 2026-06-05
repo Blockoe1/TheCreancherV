@@ -36,7 +36,7 @@ namespace FoolsBrand.Enemies
 
         protected Enemy parentEnemy;
 
-        private readonly List<Effect> Effects = new List<Effect>();
+        private readonly List<EffectInstance> Effects = new List<EffectInstance>();
 
         #region Properties
         public bool IsDead => (!isBody && health.IsDead) || (parentEnemy != null && parentEnemy.IsDead);
@@ -71,18 +71,18 @@ namespace FoolsBrand.Enemies
         /// </summary>
         /// <remarks>Does not yet apply custom effects.</remarks>
         /// <returns>The damage dealt by this limb.</returns>
-        public MinPriorityQueue<DiceAction> RollAttack()
+        public MinPriorityQueue<DiceActionInfo> RollAttack()
         {
             if (attackDice == null)
             {
                 Debug.LogWarning($"Enemy {transform.parent.gameObject.name} does not have an attack dice assigned to it's {name} limb.");
             }
-            DiceAction[] actions = attackDice.RollDie();
-            MinPriorityQueue<DiceAction> sortedActions = new MinPriorityQueue<DiceAction>();
-            foreach(DiceAction action in actions)
+            DiceActionInfo[] actions = attackDice.RollDie();
+            MinPriorityQueue<DiceActionInfo> sortedActions = new MinPriorityQueue<DiceActionInfo>();
+            foreach(DiceActionInfo actionInfo in actions)
             {
                 // Need to make sure we re-order the type enum to include the execution order.
-                sortedActions.Enqueue(action, action.PriorityValue);
+                sortedActions.Enqueue(actionInfo, actionInfo.Action.PriorityValue);
             }
 
             return sortedActions;
@@ -101,7 +101,7 @@ namespace FoolsBrand.Enemies
             }
 
             // Apply any damage reduction effects.
-            foreach (Effect effect in Effects)
+            foreach (EffectInstance effect in Effects)
             {
                 baseDamage = effect.ModifyDamage(baseDamage);
             }
@@ -133,11 +133,10 @@ namespace FoolsBrand.Enemies
                 }
             }
 
-            int mainDamage = Mathf.RoundToInt(damage * multiplier);
-            if (mainDamage > 0)
+            if (multiplier > 0)
             {
                 // Deal damage to the main enemy.
-                return parentEnemy.TakeDamage(mainDamage, source);
+                return parentEnemy.TakeDamage(Mathf.RoundToInt(damage * multiplier), source);
             }
             else
             {
@@ -170,11 +169,16 @@ namespace FoolsBrand.Enemies
         /// Applie a custom effect to this limb.
         /// </summary>
         /// <param name="toApply"></param>
-        public void ApplyEffect(Effect toApply)
+        public void ApplyEffect(Effect toApply, int value)
         {
-            Effect copy = toApply.Copy();
-            copy.OnEffectAdded(parentEnemy, this, gameObject);
-            Effects.Add(copy);
+            if (!toApply.AllowStacking && Effects.Any(X => X.Effect == toApply))
+            {
+                // Prevent duplicates being added if stacking is not allowed.
+                return;
+            }
+            EffectInstance instance = toApply.CreateInstance(value);
+            instance.OnEffectAdded(parentEnemy, this, gameObject);
+            Effects.Add(instance);
         }
 
         /// <summary>
@@ -206,7 +210,7 @@ namespace FoolsBrand.Enemies
         /// <returns>The modified damage amount.</returns>
         public int QueryAttackModifiers(int damage)
         {
-            foreach (Effect effect in Effects)
+            foreach (EffectInstance effect in Effects)
             {
                 damage = effect.ModifyAttack(damage);
             }
@@ -232,11 +236,11 @@ namespace FoolsBrand.Enemies
         /// Removes an effect by it's type name
         /// </summary>
         /// <param name="className"></param>
-        public void RemoveEffect(string className)
+        public void RemoveEffect(Effect toRemove)
         {
             for (int i = 0; i < Effects.Count; i++)
             {
-                if (Effects[i].GetType().Name == className)
+                if (Effects[i].Effect == toRemove)
                 {
                     Effects[i].OnEffectRemoved(parentEnemy, this);
                     Effects.RemoveAt(i);

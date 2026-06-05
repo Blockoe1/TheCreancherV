@@ -12,8 +12,8 @@ namespace FoolsBrand
 {
     public interface IEffectable
     {
-        void ApplyEffect(Effect toApply);
-        void RemoveEffect(string className);
+        void ApplyEffect(Effect toApply, int value);
+        void RemoveEffect(Effect effect);
         void RemoveAllEffects();
         void FlushEffects();
         Transform GetEffectTransform();

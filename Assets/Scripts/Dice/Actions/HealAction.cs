@@ -11,12 +11,12 @@ using UnityEngine;
 
 namespace FoolsBrand
 {
-    [System.Serializable]
+    [CreateAssetMenu(fileName = "HealAction", menuName = "Scriptable Objects/Actions/Heal")]
     public class HealAction : DiceAction
     {
         public override int PriorityValue => 50;
 
-        public override IEnumerator PerformAction(ITargetable target, IActionSource source, Combatant user)
+        public override IEnumerator PerformAction(ITargetable target, IActionSource source, Combatant user, int value, DieFace sourceFace)
         {
             Debug.Log($"Healed {user} for {value}");
             user.Health.Value += value;

@@ -688,9 +688,25 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1022829902865959319, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+      propertyPath: encounterableEnemies.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1022829902865959319, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: 'encounterableEnemies.Array.data[0]'
       value: 
-      objectReference: {fileID: 3228334127417555230, guid: e2d499724838f914ea7a7d52c4211cac, type: 3}
+      objectReference: {fileID: 3228334127417555230, guid: 6f0f70707c7f3ae40922c4011ba7efa2, type: 3}
+    - target: {fileID: 1022829902865959319, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+      propertyPath: 'encounterableEnemies.Array.data[1]'
+      value: 
+      objectReference: {fileID: 3228334127417555230, guid: 2bdb303ed8021204888ef51430dd82ef, type: 3}
+    - target: {fileID: 1022829902865959319, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+      propertyPath: 'encounterableEnemies.Array.data[2]'
+      value: 
+      objectReference: {fileID: 3228334127417555230, guid: 83cdd138d049b0241bebb3ca45e26207, type: 3}
+    - target: {fileID: 1022829902865959319, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+      propertyPath: 'encounterableEnemies.Array.data[3]'
+      value: 
+      objectReference: {fileID: 3228334127417555230, guid: 13eefa0be9bd3f74b8bac129e828eb94, type: 3}
     - target: {fileID: 1326467615441105993, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

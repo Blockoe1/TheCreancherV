@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-3733787219730266815
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Editor::UnityEditor.Rendering.Universal.AssetVersion
-  version: 10
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -20,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Shrolm_Base
+  m_Name: Mat_Cylime_Base
   m_Shader: {fileID: -6465566751694194690, guid: 39254d89b11f24a4c825288da185b142, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -101,6 +88,7 @@ Material:
     m_Floats:
     - _AddPrecomputedVelocity: 0
     - _AlphaClip: 0
+    - _AlphaLevel: 1
     - _AlphaToMask: 0
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
@@ -136,20 +124,27 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _EmissiveRegion: {r: 0, g: 1, b: 0, a: 1}
-    - _REGION_0: {r: 0.9245283, g: 0.7239231, b: 0.8670441, a: 1}
-    - _REGION_1: {r: 0.17602699, g: 0.7584905, b: 0.5838902, a: 1}
-    - _REGION_2: {r: 1, g: 0, b: 0.48068666, a: 1}
-    - _REGION_3: {r: 0.59415984, g: 1, b: 0, a: 1}
-    - _REGION_4: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissiveRegion: {r: 0, g: 1, b: 1, a: 1}
+    - _REGION_0: {r: 0.6089498, g: 0.83396226, b: 0.75408584, a: 1}
+    - _REGION_1: {r: 0.22767526, g: 0.3735848, b: 0.32120705, a: 1}
+    - _REGION_2: {r: 1, g: 1, b: 1, a: 1}
+    - _REGION_3: {r: 0, g: 0, b: 0, a: 1}
+    - _REGION_4: {r: 0, g: 0, b: 1, a: 1}
     - _REGION_5: {r: 1, g: 0, b: 1, a: 1}
-    - _Region0: {r: 0.9843138, g: 0.8000001, b: 0.96470594, a: 1}
-    - _Region1: {r: 0, g: 0.7490196, b: 0.6156863, a: 1}
-    - _Region2: {r: 1, g: 0, b: 0.35686275, a: 1}
-    - _Region3: {r: 0.69411767, g: 1, b: 0, a: 1}
-    - _Region4: {r: 0, g: 0, b: 1, a: 1}
-    - _Region5: {r: 1, g: 0, b: 1, a: 1}
-    - _Region6: {r: 1, g: 0, b: 1, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _TransparentRegion: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
+--- !u!114 &1570858777379014829
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Editor::UnityEditor.Rendering.Universal.AssetVersion
+  version: 10

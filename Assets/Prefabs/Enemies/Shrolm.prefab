@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 12832507243923747}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: -0.92387956, z: 0, w: 0.38268343}
   m_LocalPosition: {x: -0.66, y: 3.68, z: -2.04}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
@@ -37,7 +37,7 @@ Transform:
   - {fileID: 2488922230475793644}
   - {fileID: 4071422238975535367}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -135, z: 0}
 --- !u!33 &64462308294628878
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -356,6 +356,7 @@ MonoBehaviour:
   multiplier: 1
   attackWeight: 1
   attackDice: {fileID: 9215964055632037927}
+  customDescription: 
   limbAnimNameSuffix: 
   onDamageEvent:
     m_PersistentCalls:
@@ -575,6 +576,7 @@ MonoBehaviour:
   multiplier: 1
   attackWeight: 1
   attackDice: {fileID: 755269475158816666}
+  customDescription: 
   limbAnimNameSuffix: 
   onDamageEvent:
     m_PersistentCalls:
@@ -1092,6 +1094,7 @@ MonoBehaviour:
   multiplier: 1
   attackWeight: 1
   attackDice: {fileID: 7403563786225050731}
+  customDescription: 
   limbAnimNameSuffix: 
   onDamageEvent:
     m_PersistentCalls:
@@ -1318,6 +1321,7 @@ MonoBehaviour:
   multiplier: 1
   attackWeight: 1
   attackDice: {fileID: 753924102905241776}
+  customDescription: 
   limbAnimNameSuffix: 
   onDamageEvent:
     m_PersistentCalls:
@@ -1379,6 +1383,7 @@ MonoBehaviour:
   multiplier: 1
   attackWeight: 1
   attackDice: {fileID: 6187090870116024368}
+  customDescription: 
   limbAnimNameSuffix: 
   onDamageEvent:
     m_PersistentCalls:
@@ -1500,6 +1505,7 @@ MonoBehaviour:
   multiplier: 1.25
   attackWeight: 1
   attackDice: {fileID: 5244673443929920525}
+  customDescription: 
   limbAnimNameSuffix: 
   onDamageEvent:
     m_PersistentCalls:

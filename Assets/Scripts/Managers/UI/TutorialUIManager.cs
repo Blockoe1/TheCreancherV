@@ -102,7 +102,7 @@ namespace FoolsBrand.UI
 
         private string ParseTutorialText(EncounterTutorial tutorial)
         {
-            return tutorial.TutorialText + (tutorial.AdvanceCondition == AdvanceCondition.Click ? "\n\nClick to contiinue." : "");
+            return tutorial.TutorialText + (tutorial.AdvanceCondition == AdvanceCondition.Click ? "\n\n<i>Click to continue.</i>" : "");
         }
     }
 }

@@ -133,6 +133,7 @@ MonoBehaviour:
   health:
     maxHealth: 30
     health: 30
+  <Defense>k__BackingField: 2
   <Animator>k__BackingField: {fileID: 4170622330632973415}
   onDeathEvent:
     m_PersistentCalls:

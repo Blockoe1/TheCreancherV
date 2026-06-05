@@ -154,8 +154,12 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: 'dieFaces.Array.data[0].faceActions.Array.data[1]'
-      value: 7292673129211232334
-      objectReference: {fileID: 0}
+      value: 
+      objectReference: {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: 'dieFaces.Array.data[0].faceActions.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: 'dieFaces.Array.data[1].faceActions.Array.data[0]'
       value: 

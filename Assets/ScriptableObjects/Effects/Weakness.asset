@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df5072794d9e3b44aaf6e4d4636b07af, type: 3}
   m_Name: Weakness
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.TempModifyAttackEffect
-  icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  icon: {fileID: 594041947, guid: 4bc40045db958384c82db5ce835b4f60, type: 3}
   description: Reduces damage dealt by your next attack by #potency.
   valueUsage: 1
   hasDuration: 0

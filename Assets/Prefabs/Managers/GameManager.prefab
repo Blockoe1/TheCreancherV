@@ -161,9 +161,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1326467615441105993}
     m_Modifications:
+    - target: {fileID: 670461532438157272, guid: 2d1d954686a95ff4a9e8045107eb25ff, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 670461532438157272, guid: 2d1d954686a95ff4a9e8045107eb25ff, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 670461532438157272, guid: 2d1d954686a95ff4a9e8045107eb25ff, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 670461532438157272, guid: 2d1d954686a95ff4a9e8045107eb25ff, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 670461532438157272, guid: 2d1d954686a95ff4a9e8045107eb25ff, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 670461532438157272, guid: 2d1d954686a95ff4a9e8045107eb25ff, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2530216855312522027, guid: 2d1d954686a95ff4a9e8045107eb25ff, type: 3}
       propertyPath: m_Name
       value: UIManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473730540124090622, guid: 2d1d954686a95ff4a9e8045107eb25ff, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5175595077385248602, guid: 2d1d954686a95ff4a9e8045107eb25ff, type: 3}
       propertyPath: m_Pivot.x

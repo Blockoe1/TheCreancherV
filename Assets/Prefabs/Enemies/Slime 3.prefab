@@ -138,6 +138,7 @@ MonoBehaviour:
   onDeathEvent:
     m_PersistentCalls:
       m_Calls: []
+  <EnemyName>k__BackingField: Cylime
   <BaseActionValue>k__BackingField: 1
 --- !u!114 &4170622330632973415
 MonoBehaviour:

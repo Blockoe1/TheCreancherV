@@ -879,6 +879,10 @@ PrefabInstance:
       propertyPath: health.maxHealth
       value: 22
       objectReference: {fileID: 0}
+    - target: {fileID: 2967838817283814243, guid: 6d3dc2775201b964b81aa7d26b761b73, type: 3}
+      propertyPath: <EnemyName>k__BackingField
+      value: Mindless Tweasel
+      objectReference: {fileID: 0}
     - target: {fileID: 5866222425643466904, guid: 6d3dc2775201b964b81aa7d26b761b73, type: 3}
       propertyPath: _dieDescription
       value: '1-6

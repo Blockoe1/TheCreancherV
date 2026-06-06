@@ -18,7 +18,6 @@ namespace FoolsBrand
 
         public override IEnumerator PerformAction(ITargetable target, IActionSource source, Combatant user, int value, DieFace sourceFace)
         {
-            Debug.Log($"Healed {user} for {value}");
             user.Health.Value += value;
             yield return null;
         }

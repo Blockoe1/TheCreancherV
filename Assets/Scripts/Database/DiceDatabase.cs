@@ -15,7 +15,13 @@ namespace FoolsBrand
         /// Read Only. All of the dice loaded into the game
         /// </summary>
         public static Dictionary<string, GameObject> AllDiceDict { get => allDiceDict; }
-        public static List<string> RewardDice { get => rewardDice; }
+        public static List<string> RewardDice
+        {
+            get
+            {
+                return new List<string>(rewardDice);
+            }
+        }
 
 
         /// <summary>
@@ -36,7 +42,7 @@ namespace FoolsBrand
                 DieBase dieBase = die.GetComponent<DieBase>();
                 if (dieBase.RewardSelectable)
                 {
-                    RewardDice.Add(dieBase.name);
+                    rewardDice.Add(dieBase.name);
                 }
                 allDiceDict.Add(dieBase.name, die);
             }

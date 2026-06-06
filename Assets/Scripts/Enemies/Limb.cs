@@ -47,7 +47,7 @@ namespace FoolsBrand.Enemies
         public string LimbName => isBody ? BODY_NAME : name;
         public int Defense => isBody ? parentEnemy.Defense : defense;
         public int AttackWeight => attackWeight;
-        public float Multiplier => multiplier;
+        public float Multiplier => isBody ? 1 : multiplier;
         public UnityEvent OnDestroyEvent => onDestroyEvent;
         public string Description
         { 
@@ -134,16 +134,8 @@ namespace FoolsBrand.Enemies
                 }
             }
 
-            if (multiplier > 0 || IsBody)
-            {
-                // Deal damage to the main enemy.
-                return parentEnemy.TakeDamage(Mathf.RoundToInt(damage * multiplier), source);
-            }
-            else
-            {
-                // Only deal damage to the main enemy if damage is actually being dealt.
-                return 0;
-            }
+            // Deal damage to the main enemy.
+            return parentEnemy.TakeDamage(Mathf.RoundToInt(damage * Multiplier), source);
         }
 
         /// <summary>

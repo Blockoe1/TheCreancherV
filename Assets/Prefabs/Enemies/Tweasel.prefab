@@ -257,11 +257,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.DieBase
   _dieName: Basic Die 1-6
-  _dieDescription: 'Forcably adds the following cursed dice to your bag:
+  _dieDescription: 'Adds the following cursed dice to your bag:
 
 
-    Cursed
-    Healing Dice
+    Cursed Healing
+    Dice
 
     1, 2, 2, 3, 3, 4
 

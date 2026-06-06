@@ -12,6 +12,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : HierarchyManager
 {
     [SerializeField] private InputAction mainMenuAction;
+    [SerializeField, Tooltip("Manually sets the current encounter when this manager inits.  Set to -1 to ignore.")]
+    private int debugStartEncounter = -1;
     /// <summary>
     /// Initialize the other managers
     /// </summary>
@@ -20,7 +22,10 @@ public class GameManager : HierarchyManager
         mainMenuAction.Enable();
         mainMenuAction.performed += MainMenuAction_performed;
 
-
+        if (debugStartEncounter >= 0)
+        {
+            RunManager.CurrentEncounterNum = debugStartEncounter;
+        }
         Init(this, this);
 
         GameStart();

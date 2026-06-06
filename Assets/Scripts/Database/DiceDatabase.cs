@@ -9,11 +9,13 @@ namespace FoolsBrand
     public static class DiceDatabase
     {
         private static Dictionary<string, GameObject> allDiceDict;
+        private static List<string> rewardDice;
 
         /// <summary>
         /// Read Only. All of the dice loaded into the game
         /// </summary>
         public static Dictionary<string, GameObject> AllDiceDict { get => allDiceDict; }
+        public static List<string> RewardDice { get => rewardDice; }
 
 
         /// <summary>
@@ -27,10 +29,16 @@ namespace FoolsBrand
             }
 
             allDiceDict = new Dictionary<string, GameObject>();
+            rewardDice = new List<string>();
 
             foreach (GameObject die in allDice)
             {
-                allDiceDict.Add(die.GetComponent<DieBase>().name, die);
+                DieBase dieBase = die.GetComponent<DieBase>();
+                if (dieBase.RewardSelectable)
+                {
+                    RewardDice.Add(dieBase.name);
+                }
+                allDiceDict.Add(dieBase.name, die);
             }
         }
     }

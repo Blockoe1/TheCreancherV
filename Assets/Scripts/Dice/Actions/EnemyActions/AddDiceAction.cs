@@ -20,7 +20,7 @@ namespace FoolsBrand
 
         public override IEnumerator PerformAction(ITargetable target, IActionSource source, Combatant user, int value, DieFace sourceFace)
         {
-            //DiceManager.Instance;
+            DiceManager.Instance.AddDice(diceString);
             yield return null;
         }
     }

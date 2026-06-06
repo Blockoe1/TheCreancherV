@@ -31,6 +31,7 @@ namespace FoolsBrand
 
         [SerializeField] private string _dieName = "Basic Die 1-6";
         [SerializeField, TextArea] private string _dieDescription = "To be revealed in a future milestone...";
+        [SerializeField] private bool rewardSelectable = true;
         [Header("Rolling Animation")]
         [SerializeField] private Vector3 localRotSpeed = new Vector3(400, 400, 400);
         [SerializeField] private Vector3 worldRotSpeed = new Vector3(0, 180, 0);
@@ -43,6 +44,7 @@ namespace FoolsBrand
         private bool isRolling;
         private bool isReserved = false;
 
+        public bool RewardSelectable => rewardSelectable;
         public string DieName { get => _dieName; }
         public string DieDescription
         { 

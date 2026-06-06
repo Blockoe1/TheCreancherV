@@ -48,6 +48,8 @@ MonoBehaviour:
   - {fileID: 4252415728962692394, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
   - {fileID: 4252415728962692394, guid: c95d8592137d9ac4e86d2c4b43100f23, type: 3}
   - {fileID: 4252415728962692394, guid: fe2f9341e3ec2de40a72c7e80773cf19, type: 3}
+  - {fileID: 2080082171191482121, guid: 76dd8becb468e8845a72fa6b818400c4, type: 3}
+  - {fileID: 7655208846581669064, guid: b9b873c15a8583b409f0e8493ac6552e, type: 3}
   _startingDice:
   - BasicDie
   - BasicDie

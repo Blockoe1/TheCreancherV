@@ -268,6 +268,7 @@ MonoBehaviour:
     Heals the enemy.
 
 '
+  rewardSelectable: 1
   localRotSpeed: {x: 0, y: 0, z: 0}
   worldRotSpeed: {x: 0, y: 0, z: 0}
   slerpTime: 0
@@ -572,6 +573,7 @@ MonoBehaviour:
   _dieDescription: '#faces
 
     Deals a volatile amount of damage.'
+  rewardSelectable: 1
   localRotSpeed: {x: 0, y: 0, z: 0}
   worldRotSpeed: {x: 0, y: 0, z: 0}
   slerpTime: 0
@@ -660,6 +662,7 @@ MonoBehaviour:
   _dieDescription: '#faces
 
     Deals high damage.'
+  rewardSelectable: 1
   localRotSpeed: {x: 0, y: 0, z: 0}
   worldRotSpeed: {x: 0, y: 0, z: 0}
   slerpTime: 0
@@ -747,8 +750,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemies.ShellLimb
   isBody: 0
   health:
-    maxHealth: 10
-    health: 10
+    maxHealth: 8
+    health: 8
   defense: 0
   multiplier: 0
   attackWeight: 1

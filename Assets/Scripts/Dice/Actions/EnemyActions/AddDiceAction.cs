@@ -1,0 +1,25 @@
+/*****************************************************************************
+// File Name : AddDiceAction.cs
+// Author : Arcadia Koederitz
+// Creation Date : 6/5/2026
+// Last Modified : 6/5/2026
+//
+// Brief Description : Adds a special dice to the player's bag.
+*****************************************************************************/
+using System.Collections;
+using UnityEngine;
+
+namespace FoolsBrand
+{
+    [CreateAssetMenu(fileName = "ShrolmHeadAction", menuName = "Scriptable Objects/Actions/Shrolm/Head")]
+    public class AddDiceAction : DiceAction
+    {
+        public override int PriorityValue => 80;
+
+        public override IEnumerator PerformAction(ITargetable target, IActionSource source, Combatant user, int value, DieFace sourceFace)
+        {
+            //DiceManager.Instance;
+            yield return null;
+        }
+    }
+}

@@ -32,9 +32,9 @@ namespace FoolsBrand
         [SerializeField] private string _dieName = "Basic Die 1-6";
         [SerializeField, TextArea] private string _dieDescription = "To be revealed in a future milestone...";
         [Header("Rolling Animation")]
-        [SerializeField] private Vector3 localRotSpeed;
-        [SerializeField] private Vector3 worldRotSpeed;
-        [SerializeField] private float slerpTime;
+        [SerializeField] private Vector3 localRotSpeed = new Vector3(400, 400, 400);
+        [SerializeField] private Vector3 worldRotSpeed = new Vector3(0, 180, 0);
+        [SerializeField] private float slerpTime = 0.2f;
         [SerializeField] private AnimationCurve slerpCurve;
         [Header("Faces")]
         [SerializeField, Tooltip("DO NOT CHANGE THE NUMBER OF FACES. The effects of each face")] private DieFace[] dieFaces = new DieFace[6];

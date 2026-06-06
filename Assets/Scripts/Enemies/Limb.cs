@@ -43,6 +43,7 @@ namespace FoolsBrand.Enemies
         public bool IsBody => isBody;
         public bool HasAttack => attackDice != null;
         public HealthData Health => health;
+        public Enemy ParentEnemy => parentEnemy;
         public string LimbName => isBody ? BODY_NAME : name;
         public int Defense => isBody ? parentEnemy.Defense : defense;
         public int AttackWeight => attackWeight;

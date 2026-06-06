@@ -7,5 +7,6 @@ namespace FoolsBrand
         int TakeDamage(int damage, Combatant source);
         Transform GetEffectTransform();
         bool IsDead { get; }
+        HealthData Health { get;  }
     }
 }

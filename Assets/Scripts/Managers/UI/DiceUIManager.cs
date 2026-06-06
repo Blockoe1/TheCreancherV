@@ -8,6 +8,7 @@
 *****************************************************************************/
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace FoolsBrand
 {
@@ -16,6 +17,9 @@ namespace FoolsBrand
         [SerializeField] private CanvasGroup reserveButtons;
         [SerializeField] private CanvasGroup rollButton;
         [SerializeField, Range(0, 1)] private float disabledAlpha;
+
+        [SerializeField] private Camera overlayCamera;
+        [SerializeField] private LayerMask UI;
 
         public void ToggleReserveButtons(bool isVisible)
         {
@@ -46,6 +50,17 @@ namespace FoolsBrand
         public void OnReservePressed(int index)
         {
             PlayerInputManager.ReservePressed(index);
+        }
+
+        /// <summary>
+        /// Do some mousecasting
+        /// </summary>
+        private void FixedUpdate()
+        {
+            Ray ray = overlayCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
+            Debug.DrawRay(ray.origin, ray.direction, Color.red);
+            Physics.Raycast(ray, out RaycastHit hit, 999, LayerMask.GetMask("UI"));
+            Debug.Log(hit.collider);
         }
     }
 }

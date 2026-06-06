@@ -133,6 +133,7 @@ MonoBehaviour:
   health:
     maxHealth: 15
     health: 15
+  <Defense>k__BackingField: 0
   <Animator>k__BackingField: {fileID: 4170622330632973415}
   onDeathEvent:
     m_PersistentCalls:
@@ -364,6 +365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
   _dieName: Spear Die
   _dieDescription: To be revealed in a future milestone...
+  rewardSelectable: 1
   localRotSpeed: {x: 0, y: 0, z: 0}
   worldRotSpeed: {x: 0, y: 0, z: 0}
   slerpTime: 0
@@ -442,7 +444,7 @@ MonoBehaviour:
   isBody: 0
   health:
     maxHealth: 1
-    health: 20
+    health: 1
   defense: 0
   multiplier: 4
   attackWeight: 1

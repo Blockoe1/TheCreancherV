@@ -22,8 +22,8 @@ namespace FoolsBrand.Enemies
         #endregion
         [SerializeField] private bool isBody;
         [SerializeField, HideIf("isBody")] private HealthData health;
-        [SerializeField] private int defense;
-        [SerializeField] private float multiplier;
+        [SerializeField, HideIf("isBody")] private int defense;
+        [SerializeField, HideIf("isBody")] private float multiplier = 1;
         [SerializeField, ShowIf("HasAttack")] private int attackWeight = 1;
         [SerializeField] private DieBase attackDice;
         [SerializeField, TextArea] private string customDescription;
@@ -43,10 +43,11 @@ namespace FoolsBrand.Enemies
         public bool IsBody => isBody;
         public bool HasAttack => attackDice != null;
         public HealthData Health => health;
+        public Enemy ParentEnemy => parentEnemy;
         public string LimbName => isBody ? BODY_NAME : name;
-        public int Defense => defense;
+        public int Defense => isBody ? parentEnemy.Defense : defense;
         public int AttackWeight => attackWeight;
-        public float Multiplier => multiplier;
+        public float Multiplier => isBody ? 1 : multiplier;
         public UnityEvent OnDestroyEvent => onDestroyEvent;
         public string Description
         { 
@@ -133,16 +134,8 @@ namespace FoolsBrand.Enemies
                 }
             }
 
-            if (multiplier > 0)
-            {
-                // Deal damage to the main enemy.
-                return parentEnemy.TakeDamage(Mathf.RoundToInt(damage * multiplier), source);
-            }
-            else
-            {
-                // Only deal damage to the main enemy if damage is actually being dealt.
-                return 0;
-            }
+            // Deal damage to the main enemy.
+            return parentEnemy.TakeDamage(Mathf.RoundToInt(damage * Multiplier), source);
         }
 
         /// <summary>

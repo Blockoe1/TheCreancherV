@@ -259,5 +259,29 @@ namespace FoolsBrand
         {
             DiceGoingToCombat.Clear();
         }
+
+        /// <summary>
+        /// Adds a dice to the player's draw bag.
+        /// </summary>
+        /// <param name="die"></param>
+        public void AddDice(string die)
+        {
+            _drawBag.Add(die);
+            if (!diceLookup.ContainsKey(die))
+            {
+                diceLookup.Add(die, new GameObject[3]);
+            }
+
+            //Forgive me for this
+            for (int i = 0; i < diceLookup[die].Length; i++)
+            {
+                if (diceLookup[die][i] == null)
+                {
+                    diceLookup[die][i] = Instantiate(DiceDatabase.AllDiceDict[die], transform);
+                    diceLookup[die][i].SetActive(false);
+                    break;
+                }
+            }
+        }
     }
 }

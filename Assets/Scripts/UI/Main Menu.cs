@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject _diceDatabaseReference;
+    [SerializeField] private int startingEncounter;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,7 +16,7 @@ public class MainMenu : MonoBehaviour
     }
     public void StartGame()
     {
-        RunManager.BeginNewGame(DiceDatabaseSetup.Instance.StartingDice);
+        RunManager.BeginNewGame(DiceDatabaseSetup.Instance.StartingDice, startingEncounter);
     }
     public void Credit()
     {

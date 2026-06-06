@@ -1006,7 +1006,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1811907564}
-        m_TargetAssemblyTypeName: FoolsBrand.ReturnToMainMenuandPauseMenu, Assembly-CSharp
+        m_TargetAssemblyTypeName: FoolsBrand.MainMenuReturnNotForPauseMenu, Assembly-CSharp
         m_MethodName: ReturnToMainMenu
         m_Mode: 1
         m_Arguments:
@@ -1754,11 +1754,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1811907559}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68b25899b1840134bb30baf79d51a49e, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d12bf22a18ba004890af900fe1422be, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.ReturnToMainMenuandPauseMenu
-  pauseScreen: {fileID: 0}
-  pauseScreenText: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.MainMenuReturnNotForPauseMenu
 --- !u!1 &1868419550
 GameObject:
   m_ObjectHideFlags: 0

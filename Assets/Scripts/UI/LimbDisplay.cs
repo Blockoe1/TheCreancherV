@@ -68,8 +68,7 @@ namespace FoolsBrand.UI
         public void RefreshDisplay()
         {
             gameObject.SetActive(!currentLimb.IsDead);
-            transform.position = Camera.main.WorldToScreenPoint(currentLimb.gameObject.transform.position);
-            SetAlignment(CheckScreenSide());
+            
             if (nameText != null)
             {
                 nameText.text = currentLimb.LimbName;
@@ -121,6 +120,8 @@ namespace FoolsBrand.UI
                     healthBar.SetTargetHealth(currentLimb.Health);
                 }
                 dnm.RegisterDamageNumber(currentLimb.Health, currentLimb.transform);
+                transform.position = Camera.main.WorldToScreenPoint(currentLimb.gameObject.transform.position);
+                SetAlignment(CheckScreenSide());
                 RefreshDisplay();
             }
             else
@@ -171,6 +172,7 @@ namespace FoolsBrand.UI
         {
             // Always render the selected limb on top.
             transform.SetAsLastSibling();
+            RefreshDisplay();
             infoGroup.alpha = 1;   
         }
         public void OnPointerExit(PointerEventData eventData)

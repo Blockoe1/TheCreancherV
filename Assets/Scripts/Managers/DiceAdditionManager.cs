@@ -31,7 +31,7 @@ namespace FoolsBrand
                 }
             }
 
-            List<string> validDice = DiceDatabase.AllDiceDict.Keys.ToList();
+            List<string> validDice = DiceDatabase.RewardDice;
             for (int i = 0; i < diceRewards.Length; i++)
             {
                 diceRewards[i] = validDice[Random.Range(0, validDice.Count)];

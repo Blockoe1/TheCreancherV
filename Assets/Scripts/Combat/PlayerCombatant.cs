@@ -17,7 +17,6 @@ namespace FoolsBrand
 {
     public class PlayerCombatant : Combatant, IEffectable, IActionSource
     {
-        [SerializeField] private int defense;
         [SerializeField] private float postActDelay;
         [field: SerializeField] public Transform DamageNumberPoint { get; private set; }
         [SerializeField] private Transform effectPoint;
@@ -65,7 +64,7 @@ namespace FoolsBrand
                 damage = effect.ModifyDamage(damage);
             }
             // Apply defense.
-            damage = Mathf.Max(damage - defense, 0);
+            damage = Mathf.Max(damage - Defense, 0);
 
             int damageTaken = base.TakeDamage(damage, source);
 

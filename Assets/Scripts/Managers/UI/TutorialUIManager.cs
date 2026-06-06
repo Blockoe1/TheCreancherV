@@ -6,10 +6,7 @@
 //
 // Brief Description : Manages what tutorial popus to show on the player's screen.
 *****************************************************************************/
-using NaughtyAttributes;
-using System;
 using TMPro;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.InputSystem;
 

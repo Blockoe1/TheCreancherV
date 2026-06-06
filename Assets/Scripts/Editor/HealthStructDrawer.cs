@@ -38,7 +38,7 @@ namespace FoolsBrand.Editor
             float healthHeight = EditorGUI.GetPropertyHeight(health);
             Rect healthRect = new Rect(position.x, yOffset, position.width, healthHeight);
 
-            //EditorGUI.BeginDisabledGroup(true);
+            EditorGUI.BeginDisabledGroup(true);
             EditorGUI.PropertyField(healthRect, health);
             EditorGUI.EndDisabledGroup();
         }

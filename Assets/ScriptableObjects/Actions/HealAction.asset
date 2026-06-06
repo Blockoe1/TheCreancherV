@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23c968c8f1eefc9479deecbaab08d456, type: 3}
   m_Name: HealAction
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.HealAction
-  animationName: T_ATTACK
+  animationName: T_CAST
   actionVFX: {fileID: 11400000, guid: aa0ee82cd2a0f2744af5fc049fc54742, type: 2}

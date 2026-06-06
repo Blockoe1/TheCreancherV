@@ -6,9 +6,7 @@
 //
 // Brief Description : Base script any entity that can deal and recieve damage in combat.
 *****************************************************************************/
-using CustomAttributes;
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -17,6 +15,7 @@ namespace FoolsBrand
     public abstract class Combatant : MonoBehaviour, ITargetable
     {
         [SerializeField] private HealthData health;
+        [field: SerializeField] public int Defense { get; set; }
         [field: SerializeField] public CombatantAnimator Animator { get; private set; }
         [SerializeField] private UnityEvent onDeathEvent;
 
@@ -47,7 +46,7 @@ namespace FoolsBrand
             }
 
             int preHealth = health.Value;
-            health.Value -= damage;
+            health.Value -= Mathf.Max(damage - Defense, 0);
             int damageTaken = preHealth - health.Value;
 
             CheckForDeath();

@@ -80,14 +80,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1326467615441105993}
     m_Modifications:
-    - target: {fileID: 385501993974718800, guid: 25141d51a103fd24299c5b3fe70bc7fe, type: 3}
-      propertyPath: encounterableEnemies.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 385501993974718800, guid: 25141d51a103fd24299c5b3fe70bc7fe, type: 3}
-      propertyPath: 'encounterableEnemies.Array.data[1]'
-      value: 
-      objectReference: {fileID: 3228334127417555230, guid: 7e76060c0d819e34388f1e728208ad2e, type: 3}
     - target: {fileID: 4593091179357826195, guid: 25141d51a103fd24299c5b3fe70bc7fe, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

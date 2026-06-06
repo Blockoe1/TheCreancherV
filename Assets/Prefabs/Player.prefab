@@ -52,11 +52,11 @@ MonoBehaviour:
   health:
     maxHealth: 30
     health: 30
+  <Defense>k__BackingField: 0
   <Animator>k__BackingField: {fileID: 1331040891389375334}
   onDeathEvent:
     m_PersistentCalls:
       m_Calls: []
-  defense: 0
   postActDelay: 0.5
   <DamageNumberPoint>k__BackingField: {fileID: 5608584918391360693}
   effectPoint: {fileID: 1875791562299834991}
@@ -112,7 +112,7 @@ Transform:
   m_GameObject: {fileID: 5770376317699931839}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.15, y: 0.4, z: 2.5}
+  m_LocalPosition: {x: 1.2, y: 0.5, z: 2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -338,7 +338,7 @@ Animator:
   m_GameObject: {fileID: 9176450224407929859}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2fb131896e1d746439864e10c579466f, type: 2}
+  m_Controller: {fileID: 9100000, guid: b515a4f44d464964db40d59ddaa20b16, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

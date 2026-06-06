@@ -1,3 +1,4 @@
+using FoolsBrand;
 using NaughtyAttributes;
 using System.Collections;
 using UnityEngine;
@@ -29,6 +30,7 @@ public class DieBase : MonoBehaviour
 
     [SerializeField] private string _dieName = "Basic Die 1-6";
     [SerializeField, TextArea] private string _dieDescription = "To be revealed in a future milestone...";
+    [SerializeField] private bool rewardSelectable = true;
     [Header("Rolling Animation")]
     [SerializeField] private Vector3 localRotSpeed;
     [SerializeField] private Vector3 worldRotSpeed;
@@ -41,6 +43,7 @@ public class DieBase : MonoBehaviour
     private bool isRolling;
     private bool isReserved = false;
 
+    public bool RewardSelectable => rewardSelectable;
     public string DieName { get => _dieName; }
     public string DieDescription { get => _dieDescription; }
 
@@ -114,7 +117,7 @@ public class DieBase : MonoBehaviour
     /// <summary>
     /// The actual rolling of this die
     /// </summary>
-    public DiceAction[] RollDie()
+    public DiceActionInfo[] RollDie()
     {
         //Don't tell anyone that I'm not going to make the game break if there are more or less faces. Don't do it...maybe
         dieIndex = Random.Range(0, dieFaces.Length);

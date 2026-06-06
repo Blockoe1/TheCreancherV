@@ -142,14 +142,4 @@ public class DieBase : MonoBehaviour
             face.RefreshText();
         }
     }
-
-    private void OnMouseEnter()
-    {
-        Debug.Log("I am a mouse");
-    }
-
-    private void OnMouseExit()
-    {
-        Debug.Log("I am not a mouse");
-    }
 }

@@ -834,6 +834,7 @@ GameObject:
   - component: {fileID: 8515666554259804188}
   - component: {fileID: 8379926788483874655}
   - component: {fileID: 8211095562742428727}
+  - component: {fileID: 4242948026355418658}
   m_Layer: 5
   m_Name: DiceUIManager
   m_TagString: Untagged
@@ -850,7 +851,7 @@ RectTransform:
   m_GameObject: {fileID: 7968734924793847173}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.10691672, y: 0.10691672, z: 0.10691672}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1863141417781320118}
@@ -877,6 +878,7 @@ MonoBehaviour:
   reserveButtons: {fileID: 709278287480456156}
   rollButton: {fileID: 6595627360476319046}
   disabledAlpha: 0.5
+  overlayCamera: {fileID: 0}
   UI:
     serializedVersion: 2
     m_Bits: 32
@@ -903,6 +905,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!225 &4242948026355418658
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7968734924793847173}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &9218445761632747372
 GameObject:
   m_ObjectHideFlags: 0

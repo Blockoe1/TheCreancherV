@@ -11,64 +11,56 @@ using UnityEngine;
 
 namespace FoolsBrand
 {
-    [System.Serializable]
+    [CreateAssetMenu(fileName = "DebugEffect", menuName = "Scriptable Objects/Effects/Debug")]
     public class DebugEffect : Effect
     {
-        public DebugEffect(Effect copy) : base(copy)
-        {
-        }
 
-        public override Effect Copy()
-        {
-            return new DebugEffect(this);
-        }
-
-        public override int ModifyAttack(int dealtDamage)
+        public override int ModifyAttack(EffectInstance instance, int dealtDamage)
         {
             Debug.Log("Effect modified attack of damage " + dealtDamage);
-            return base.ModifyAttack(dealtDamage);
+            return base.ModifyAttack(instance, dealtDamage);
         }
 
-        public override int ModifyDamage(int takenDamage)
+        public override int ModifyDamage(EffectInstance instance, int takenDamage)
         {
             Debug.Log("Effect modified attack of damage " + takenDamage);
-            return base.ModifyDamage(takenDamage);
+            return base.ModifyDamage(instance, takenDamage);
         }
 
-        public override void OnEffectAdded(Combatant combatant, IEffectable effectSource, GameObject appliedObj)
+        public override void OnEffectAdded(EffectInstance instance, Combatant combatant, IEffectable effectSource, GameObject appliedObj)
         {
             Debug.Log("Debug Effect Added");
-            base.OnEffectAdded(combatant, effectSource, appliedObj);
+            base.OnEffectAdded(instance, combatant, effectSource, appliedObj);
         }
 
-        public override void OnEffectRemoved(Combatant combatant, IEffectable effectSource)
+        public override void OnEffectRemoved(EffectInstance instance, Combatant combatant, IEffectable effectSource)
         {
             Debug.Log("Debug Effect Removed");
-            base.OnEffectRemoved(combatant, effectSource);
+            base.OnEffectRemoved(instance, combatant, effectSource);
         }
 
-        public override IEnumerator OnActionStart(Combatant combatant, IEffectable effectSource)
+        public override IEnumerator OnActionStart(EffectInstance instance, Combatant combatant, IEffectable effectSource)
         {
             Debug.Log("Debug action start");
-            yield return base.OnActionStart(combatant, effectSource);
+            yield return base.OnActionStart(instance, combatant, effectSource);
         }
 
-        public override IEnumerator OnActionEnd(Combatant combatant, IEffectable effectSource)
+        public override IEnumerator OnActionEnd(EffectInstance instance, Combatant combatant, IEffectable effectSource)
         {
             Debug.Log("Debut Action End");
-            yield return base.OnActionEnd(combatant, effectSource);
+            yield return base.OnActionEnd(instance, combatant, effectSource);
         }
 
-        public override void OnDealDamage(Combatant combatant, IEffectable effectSource, ITargetable target, int damageDealt)
+        public override void OnDealDamage(EffectInstance instance, Combatant combatant, IEffectable effectSource, ITargetable target, int damageDealt)
         {
             Debug.Log("Debug Damage dealt " + damageDealt);
-            base.OnDealDamage(combatant, effectSource, target, damageDealt);
+            base.OnDealDamage(instance, combatant, effectSource, target, damageDealt);
         }
 
-        public override void OnTakeDamage(Combatant combatant, IEffectable effectSource, Combatant attacker, int damageTaken)
+        public override void OnTakeDamage(EffectInstance instance, Combatant combatant, IEffectable effectSource, Combatant attacker, int damageTaken)
         {
             Debug.Log("Debut Damage Taken " + damageTaken);
-            base.OnTakeDamage(combatant, effectSource, attacker, damageTaken);
+            base.OnTakeDamage(instance, combatant, effectSource, attacker, damageTaken);
         }
     }
 }

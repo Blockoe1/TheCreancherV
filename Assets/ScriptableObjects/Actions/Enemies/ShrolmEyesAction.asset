@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d18b2a6c60387b4fbce6651526d3aba, type: 3}
+  m_Name: ShrolmEyesAction
+  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.ApplyEffectAction
+  animationName: T_ATTACK
+  actionVFX: {fileID: 0}
+  effect: {fileID: 11400000, guid: 8d37bc02224332c4fa2fb0732401bdde, type: 2}
+  targetSelf: 0
+  priority: 90

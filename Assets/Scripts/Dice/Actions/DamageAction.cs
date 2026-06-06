@@ -11,12 +11,12 @@ using UnityEngine;
 
 namespace FoolsBrand
 {
-    [System.Serializable]
+    [CreateAssetMenu(fileName = "DamageAction", menuName = "Scriptable Objects/Actions/Damage")]
     public class DamageAction : DiceAction
     {
         public override int PriorityValue => 100;
 
-        public override IEnumerator PerformAction(ITargetable target, IActionSource source, Combatant user)
+        public override IEnumerator PerformAction(ITargetable target, IActionSource source, Combatant user, int value, DieFace sourceFace)
         {
             user.Attack(value, target);
             yield return null;

@@ -6,9 +6,7 @@
 //
 // Brief Description : Base script any entity that can deal and recieve damage in combat.
 *****************************************************************************/
-using CustomAttributes;
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -17,6 +15,7 @@ namespace FoolsBrand
     public abstract class Combatant : MonoBehaviour, ITargetable
     {
         [SerializeField] private HealthData health;
+        [field: SerializeField] public int Defense { get; set; }
         [field: SerializeField] public CombatantAnimator Animator { get; private set; }
         [SerializeField] private UnityEvent onDeathEvent;
 
@@ -47,7 +46,7 @@ namespace FoolsBrand
             }
 
             int preHealth = health.Value;
-            health.Value -= damage;
+            health.Value -= Mathf.Max(damage - Defense, 0);
             int damageTaken = preHealth - health.Value;
 
             CheckForDeath();
@@ -70,7 +69,7 @@ namespace FoolsBrand
         /// Makes this combatant perform a certain list of combat actions.
         /// </summary>
         /// <param name="actions">The actions to perform.</param>
-        public IEnumerator ProcessActions(MinPriorityQueue<DiceAction> actions, IActionSource source, ITargetable target)
+        public IEnumerator ProcessActions(MinPriorityQueue<DiceActionInfo> actions, IActionSource source, ITargetable target)
         {
             //MinPriorityQueue<DiceAction> sortedActions = new MinPriorityQueue<DiceAction>();
             //foreach(DiceAction action in actions)
@@ -83,8 +82,8 @@ namespace FoolsBrand
             {
                 // Stop performing actions if either side dies.
                 if (target.IsDead || IsDead) { break; }
-                DiceAction action = actions.Dequeue();
-                yield return StartCoroutine(action.PlayAction(target, source, this));
+                DiceActionInfo action = actions.Dequeue();
+                yield return StartCoroutine(action.Action.PlayAction(target, source, this, action.Face.FaceValue, action.Face));
 
             }
         }

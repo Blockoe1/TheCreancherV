@@ -14,12 +14,14 @@ public class DieFace
     private const string VALUE_CHAR = "#";
 
     [SerializeField] private string faceText = "#";
+    [SerializeField] private int faceValue;
     [SerializeField] private TMP_Text faceTextObj;
-    [SerializeReference, ClassDropdown(typeof(DiceAction))] private DiceAction[] faceActions;
+    [SerializeField] private DiceAction[] faceActions;
 
     private DieBase parentDice;
 
     public DieBase ParentDice => parentDice;
+    public int FaceValue => faceValue;
 
     public bool IsInitialized { get; private set; }
 
@@ -31,20 +33,21 @@ public class DieFace
     public void Initialize(DieBase dieBase)
     {
         parentDice = dieBase;
-        foreach (var action in faceActions)
-        {
-            action.Initialize(this);
-        }
     }
 
-    public DiceAction[] GetActions()
+    public DiceActionInfo[] GetActions()
     {
-        return faceActions;
+        DiceActionInfo[] actionInfo = new DiceActionInfo[faceActions.Length];
+        for(int i = 0; i < faceActions.Length; i++)
+        {
+            actionInfo[i] = new DiceActionInfo(this, faceActions[i]);
+        }
+        return actionInfo;
     }
 
     private string GetFaceText()
     {
-        return faceText.Replace(VALUE_CHAR, (faceActions.Length > 0 ? faceActions[0].Value.ToString() : ""));
+        return faceText.Replace(VALUE_CHAR, (faceActions.Length > 0 ? faceValue.ToString() : ""));
     }
 
     /// <summary>

@@ -22,8 +22,8 @@ namespace FoolsBrand.Enemies
         #endregion
         [SerializeField] private bool isBody;
         [SerializeField, HideIf("isBody")] private HealthData health;
-        [SerializeField] private int defense;
-        [SerializeField] private float multiplier;
+        [SerializeField, HideIf("isBody")] private int defense;
+        [SerializeField, HideIf("isBody")] private float multiplier = 1;
         [SerializeField, ShowIf("HasAttack")] private int attackWeight = 1;
         [SerializeField] private DieBase attackDice;
         [SerializeField, TextArea] private string customDescription;
@@ -36,17 +36,18 @@ namespace FoolsBrand.Enemies
 
         protected Enemy parentEnemy;
 
-        private readonly List<Effect> Effects = new List<Effect>();
+        private readonly List<EffectInstance> Effects = new List<EffectInstance>();
 
         #region Properties
         public bool IsDead => (!isBody && health.IsDead) || (parentEnemy != null && parentEnemy.IsDead);
         public bool IsBody => isBody;
         public bool HasAttack => attackDice != null;
         public HealthData Health => health;
+        public Enemy ParentEnemy => parentEnemy;
         public string LimbName => isBody ? BODY_NAME : name;
-        public int Defense => defense;
+        public int Defense => isBody ? parentEnemy.Defense : defense;
         public int AttackWeight => attackWeight;
-        public float Multiplier => multiplier;
+        public float Multiplier => isBody ? 1 : multiplier;
         public UnityEvent OnDestroyEvent => onDestroyEvent;
         public string Description
         { 
@@ -71,18 +72,18 @@ namespace FoolsBrand.Enemies
         /// </summary>
         /// <remarks>Does not yet apply custom effects.</remarks>
         /// <returns>The damage dealt by this limb.</returns>
-        public MinPriorityQueue<DiceAction> RollAttack()
+        public MinPriorityQueue<DiceActionInfo> RollAttack()
         {
             if (attackDice == null)
             {
                 Debug.LogWarning($"Enemy {transform.parent.gameObject.name} does not have an attack dice assigned to it's {name} limb.");
             }
-            DiceAction[] actions = attackDice.RollDie();
-            MinPriorityQueue<DiceAction> sortedActions = new MinPriorityQueue<DiceAction>();
-            foreach(DiceAction action in actions)
+            DiceActionInfo[] actions = attackDice.RollDie();
+            MinPriorityQueue<DiceActionInfo> sortedActions = new MinPriorityQueue<DiceActionInfo>();
+            foreach(DiceActionInfo actionInfo in actions)
             {
                 // Need to make sure we re-order the type enum to include the execution order.
-                sortedActions.Enqueue(action, action.PriorityValue);
+                sortedActions.Enqueue(actionInfo, actionInfo.Action.PriorityValue);
             }
 
             return sortedActions;
@@ -101,7 +102,7 @@ namespace FoolsBrand.Enemies
             }
 
             // Apply any damage reduction effects.
-            foreach (Effect effect in Effects)
+            foreach (EffectInstance effect in Effects)
             {
                 baseDamage = effect.ModifyDamage(baseDamage);
             }
@@ -133,17 +134,8 @@ namespace FoolsBrand.Enemies
                 }
             }
 
-            int mainDamage = Mathf.RoundToInt(damage * multiplier);
-            if (mainDamage > 0)
-            {
-                // Deal damage to the main enemy.
-                return parentEnemy.TakeDamage(mainDamage, source);
-            }
-            else
-            {
-                // Only deal damage to the main enemy if damage is actually being dealt.
-                return 0;
-            }
+            // Deal damage to the main enemy.
+            return parentEnemy.TakeDamage(Mathf.RoundToInt(damage * Multiplier), source);
         }
 
         /// <summary>
@@ -170,11 +162,16 @@ namespace FoolsBrand.Enemies
         /// Applie a custom effect to this limb.
         /// </summary>
         /// <param name="toApply"></param>
-        public void ApplyEffect(Effect toApply)
+        public void ApplyEffect(Effect toApply, int value)
         {
-            Effect copy = toApply.Copy();
-            copy.OnEffectAdded(parentEnemy, this, gameObject);
-            Effects.Add(copy);
+            if (!toApply.AllowStacking && Effects.Any(X => X.Effect == toApply))
+            {
+                // Prevent duplicates being added if stacking is not allowed.
+                return;
+            }
+            EffectInstance instance = toApply.CreateInstance(value);
+            instance.OnEffectAdded(parentEnemy, this, gameObject);
+            Effects.Add(instance);
         }
 
         /// <summary>
@@ -206,7 +203,7 @@ namespace FoolsBrand.Enemies
         /// <returns>The modified damage amount.</returns>
         public int QueryAttackModifiers(int damage)
         {
-            foreach (Effect effect in Effects)
+            foreach (EffectInstance effect in Effects)
             {
                 damage = effect.ModifyAttack(damage);
             }
@@ -232,11 +229,11 @@ namespace FoolsBrand.Enemies
         /// Removes an effect by it's type name
         /// </summary>
         /// <param name="className"></param>
-        public void RemoveEffect(string className)
+        public void RemoveEffect(Effect toRemove)
         {
             for (int i = 0; i < Effects.Count; i++)
             {
-                if (Effects[i].GetType().Name == className)
+                if (Effects[i].Effect == toRemove)
                 {
                     Effects[i].OnEffectRemoved(parentEnemy, this);
                     Effects.RemoveAt(i);

@@ -6,7 +6,7 @@ namespace FoolsBrand
 {
     public static class RunManager
     {
-        public static int CurrentEncounterNum { get; private set; }
+        public static int CurrentEncounterNum { get; internal set; }
         public static int PlayerHealth { get; set; } = -1;
 
         /// <summary>
@@ -63,9 +63,9 @@ namespace FoolsBrand
         /// Called when the game is started from the main menu
         /// </summary>
         /// <param name="startingDice"></param>
-        public static void BeginNewGame(List<string> startingDice)
+        public static void BeginNewGame(List<string> startingDice, int startingEncounter)
         {
-            CurrentEncounterNum = 0;
+            CurrentEncounterNum = startingEncounter;
             foreach (string die in startingDice)
             {
                 DiceManager.DiceGoingToCombat.Add(die);

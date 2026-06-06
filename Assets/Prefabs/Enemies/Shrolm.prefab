@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 12832507243923747}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: -0.92387956, z: 0, w: 0.38268343}
   m_LocalPosition: {x: -0.66, y: 3.68, z: -2.04}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
@@ -37,7 +37,7 @@ Transform:
   - {fileID: 2488922230475793644}
   - {fileID: 4071422238975535367}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -135, z: 0}
 --- !u!33 &64462308294628878
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -133,6 +133,7 @@ MonoBehaviour:
   health:
     maxHealth: 30
     health: 30
+  <Defense>k__BackingField: 0
   <Animator>k__BackingField: {fileID: 4170622330632973415}
   onDeathEvent:
     m_PersistentCalls:
@@ -197,7 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
   _dieName: Head Die
-  _dieDescription: To be revealed in a future milestone...
+  _dieDescription: Eats the dice stored in your reserve slot.
   localRotSpeed: {x: 0, y: 0, z: 0}
   worldRotSpeed: {x: 0, y: 0, z: 0}
   slerpTime: 0
@@ -209,18 +210,10 @@ MonoBehaviour:
     m_RotationOrder: 4
   dieFaces:
   - faceText: '#'
+    faceValue: 0
     faceTextObj: {fileID: 0}
     faceActions:
-    - rid: 8473927358700060738
-  references:
-    version: 2
-    RefIds:
-    - rid: 8473927358700060738
-      type: {class: ShrolmHeadAction, ns: FoolsBrand, asm: Assembly-CSharp}
-      data:
-        value: 0
-        animationName: T_ATTACK
-        actionVFX: {fileID: 0}
+    - {fileID: 11400000, guid: b8f8e062243270544b936c526fe87148, type: 2}
 --- !u!1 &826302926243069942
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,6 +357,7 @@ MonoBehaviour:
   multiplier: 1
   attackWeight: 1
   attackDice: {fileID: 9215964055632037927}
+  customDescription: 
   limbAnimNameSuffix: 
   onDamageEvent:
     m_PersistentCalls:
@@ -583,6 +577,7 @@ MonoBehaviour:
   multiplier: 1
   attackWeight: 1
   attackDice: {fileID: 755269475158816666}
+  customDescription: 
   limbAnimNameSuffix: 
   onDamageEvent:
     m_PersistentCalls:
@@ -635,7 +630,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
   _dieName: Club Die
-  _dieDescription: To be revealed in a future milestone...
+  _dieDescription: '#faces (all +4)
+
+    Buffs itself, then deals high damage.'
   localRotSpeed: {x: 0, y: 0, z: 0}
   worldRotSpeed: {x: 0, y: 0, z: 0}
   slerpTime: 0
@@ -647,74 +644,23 @@ MonoBehaviour:
     m_RotationOrder: 4
   dieFaces:
   - faceText: '#'
+    faceValue: 3
     faceTextObj: {fileID: 0}
     faceActions:
-    - rid: 4868126913438416966
-    - rid: 4868126888777744456
+    - {fileID: 11400000, guid: 07305115b9da5894984d372af8c39e29, type: 2}
+    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
   - faceText: '#'
+    faceValue: 4
     faceTextObj: {fileID: 0}
     faceActions:
-    - rid: 4868126913438416967
-    - rid: 4868126888777744457
+    - {fileID: 11400000, guid: 07305115b9da5894984d372af8c39e29, type: 2}
+    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
   - faceText: '#'
+    faceValue: 5
     faceTextObj: {fileID: 0}
     faceActions:
-    - rid: 4868126913438416968
-    - rid: 4868126888777744458
-  references:
-    version: 2
-    RefIds:
-    - rid: 4868126888777744456
-      type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
-      data:
-        value: 3
-        animationName: T_ATTACK
-        actionVFX: {fileID: 11400000, guid: 4d68bc7bc40edc34ca9e270cd39a7fb5, type: 2}
-    - rid: 4868126888777744457
-      type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
-      data:
-        value: 4
-        animationName: T_ATTACK
-        actionVFX: {fileID: 11400000, guid: 4d68bc7bc40edc34ca9e270cd39a7fb5, type: 2}
-    - rid: 4868126888777744458
-      type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
-      data:
-        value: 5
-        animationName: T_ATTACK
-        actionVFX: {fileID: 11400000, guid: 4d68bc7bc40edc34ca9e270cd39a7fb5, type: 2}
-    - rid: 4868126913438416966
-      type: {class: SelfModifyAttackAction, ns: FoolsBrand, asm: Assembly-CSharp}
-      data:
-        value: 0
-        animationName: 
-        actionVFX: {fileID: 0}
-        modifyAttackEffect:
-          hasDuration: 0
-          duration: 0
-          attackModifier: 4
-          vfx: {fileID: 0}
-    - rid: 4868126913438416967
-      type: {class: SelfModifyAttackAction, ns: FoolsBrand, asm: Assembly-CSharp}
-      data:
-        value: 0
-        animationName: 
-        actionVFX: {fileID: 0}
-        modifyAttackEffect:
-          hasDuration: 0
-          duration: 0
-          attackModifier: 4
-          vfx: {fileID: 0}
-    - rid: 4868126913438416968
-      type: {class: SelfModifyAttackAction, ns: FoolsBrand, asm: Assembly-CSharp}
-      data:
-        value: 0
-        animationName: 
-        actionVFX: {fileID: 0}
-        modifyAttackEffect:
-          hasDuration: 0
-          duration: 0
-          attackModifier: 4
-          vfx: {fileID: 0}
+    - {fileID: 11400000, guid: 07305115b9da5894984d372af8c39e29, type: 2}
+    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
 --- !u!1 &3437411820925650430
 GameObject:
   m_ObjectHideFlags: 0
@@ -850,7 +796,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
   _dieName: Spear Die
-  _dieDescription: To be revealed in a future milestone...
+  _dieDescription: '#faces
+
+    Deals high damage.'
   localRotSpeed: {x: 0, y: 0, z: 0}
   worldRotSpeed: {x: 0, y: 0, z: 0}
   slerpTime: 0
@@ -862,58 +810,30 @@ MonoBehaviour:
     m_RotationOrder: 4
   dieFaces:
   - faceText: '#'
+    faceValue: 6
     faceTextObj: {fileID: 0}
     faceActions:
-    - rid: 4868126888777744456
+    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
   - faceText: '#'
+    faceValue: 7
     faceTextObj: {fileID: 0}
     faceActions:
-    - rid: 4868126888777744457
+    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
   - faceText: '#'
+    faceValue: 8
     faceTextObj: {fileID: 0}
     faceActions:
-    - rid: 4868126888777744458
+    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
   - faceText: '#'
+    faceValue: 9
     faceTextObj: {fileID: 0}
     faceActions:
-    - rid: 4868126888777744459
+    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
   - faceText: '#'
+    faceValue: 10
     faceTextObj: {fileID: 0}
     faceActions:
-    - rid: 4868126888777744460
-  references:
-    version: 2
-    RefIds:
-    - rid: 4868126888777744456
-      type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
-      data:
-        value: 6
-        animationName: T_ATTACK
-        actionVFX: {fileID: 11400000, guid: 4d68bc7bc40edc34ca9e270cd39a7fb5, type: 2}
-    - rid: 4868126888777744457
-      type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
-      data:
-        value: 7
-        animationName: T_ATTACK
-        actionVFX: {fileID: 11400000, guid: 4d68bc7bc40edc34ca9e270cd39a7fb5, type: 2}
-    - rid: 4868126888777744458
-      type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
-      data:
-        value: 8
-        animationName: T_ATTACK
-        actionVFX: {fileID: 11400000, guid: 4d68bc7bc40edc34ca9e270cd39a7fb5, type: 2}
-    - rid: 4868126888777744459
-      type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
-      data:
-        value: 9
-        animationName: T_ATTACK
-        actionVFX: {fileID: 11400000, guid: 4d68bc7bc40edc34ca9e270cd39a7fb5, type: 2}
-    - rid: 4868126888777744460
-      type: {class: DamageAction, ns: FoolsBrand, asm: Assembly-CSharp}
-      data:
-        value: 10
-        animationName: T_ATTACK
-        actionVFX: {fileID: 11400000, guid: 4d68bc7bc40edc34ca9e270cd39a7fb5, type: 2}
+    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
 --- !u!1 &3951469853241603724
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,6 +1099,7 @@ MonoBehaviour:
   multiplier: 1
   attackWeight: 1
   attackDice: {fileID: 7403563786225050731}
+  customDescription: 
   limbAnimNameSuffix: 
   onDamageEvent:
     m_PersistentCalls:
@@ -1405,6 +1326,7 @@ MonoBehaviour:
   multiplier: 1
   attackWeight: 1
   attackDice: {fileID: 753924102905241776}
+  customDescription: 
   limbAnimNameSuffix: 
   onDamageEvent:
     m_PersistentCalls:
@@ -1466,6 +1388,7 @@ MonoBehaviour:
   multiplier: 1
   attackWeight: 1
   attackDice: {fileID: 6187090870116024368}
+  customDescription: 
   limbAnimNameSuffix: 
   onDamageEvent:
     m_PersistentCalls:
@@ -1518,7 +1441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
   _dieName: Tail Die
-  _dieDescription: To be revealed in a future milestone...
+  _dieDescription: Reduces damage dealt by your next attack by <b>5</b>.
   localRotSpeed: {x: 0, y: 0, z: 0}
   worldRotSpeed: {x: 0, y: 0, z: 0}
   slerpTime: 0
@@ -1530,23 +1453,10 @@ MonoBehaviour:
     m_RotationOrder: 4
   dieFaces:
   - faceText: '#'
+    faceValue: 5
     faceTextObj: {fileID: 0}
     faceActions:
-    - rid: 4868126913438416962
-  references:
-    version: 2
-    RefIds:
-    - rid: 4868126913438416962
-      type: {class: ModifyAttackAction, ns: FoolsBrand, asm: Assembly-CSharp}
-      data:
-        value: 0
-        animationName: T_ATTACK
-        actionVFX: {fileID: 0}
-        modifyAttackEffect:
-          hasDuration: 0
-          duration: 1
-          attackModifier: -5
-          vfx: {fileID: 6354842147285684386, guid: 7ba3b933e06921a4f829f252927f089f, type: 3}
+    - {fileID: 11400000, guid: 975d3bb7c0a55da479b01e47d6a490e5, type: 2}
 --- !u!1 &8573259134017079087
 GameObject:
   m_ObjectHideFlags: 0
@@ -1600,6 +1510,7 @@ MonoBehaviour:
   multiplier: 1.25
   attackWeight: 1
   attackDice: {fileID: 5244673443929920525}
+  customDescription: 
   limbAnimNameSuffix: 
   onDamageEvent:
     m_PersistentCalls:
@@ -1664,7 +1575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
   _dieName: Eyes Die
-  _dieDescription: To be revealed in a future milestone...
+  _dieDescription: Inverts the colors on your screen for <b>3</b> turns.
   localRotSpeed: {x: 0, y: 0, z: 0}
   worldRotSpeed: {x: 0, y: 0, z: 0}
   slerpTime: 0
@@ -1676,21 +1587,10 @@ MonoBehaviour:
     m_RotationOrder: 4
   dieFaces:
   - faceText: '#'
+    faceValue: 0
     faceTextObj: {fileID: 0}
     faceActions:
-    - rid: 4868126913438416965
-  references:
-    version: 2
-    RefIds:
-    - rid: 4868126913438416965
-      type: {class: ShrolmEyeAction, ns: FoolsBrand, asm: Assembly-CSharp}
-      data:
-        value: 0
-        animationName: T_ATTACK
-        actionVFX: {fileID: 0}
-        invertColorEffect:
-          hasDuration: 1
-          duration: 3
+    - {fileID: 11400000, guid: 5c9cf12766b10154ba70d57363a58242, type: 2}
 --- !u!1001 &4096809414524639723
 PrefabInstance:
   m_ObjectHideFlags: 0

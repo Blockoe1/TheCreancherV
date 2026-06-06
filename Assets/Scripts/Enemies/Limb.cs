@@ -135,7 +135,7 @@ namespace FoolsBrand.Enemies
             }
 
             // Deal damage to the main enemy.
-            return parentEnemy.TakeDamage(Mathf.RoundToInt(damage * Multiplier), source);
+            return parentEnemy.TakeDamage(Mathf.CeilToInt(damage * Multiplier), source);
         }
 
         /// <summary>

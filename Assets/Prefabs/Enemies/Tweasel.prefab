@@ -279,7 +279,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   dieFaces:
   - faceText: '#'
-    faceValue: 1
+    faceValue: 0
     faceTextObj: {fileID: 0}
     faceActions:
     - {fileID: 11400000, guid: faf5ae4cd1df0044496e6cd7f2a89c7b, type: 2}
@@ -569,7 +569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.DieBase
   _dieName: Tail
-  _dieDescription: '1, 2, 3, 7, 8, 9
+  _dieDescription: '#faces
 
     Deals a volatile amount of damage.'
   localRotSpeed: {x: 0, y: 0, z: 0}
@@ -657,7 +657,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.DieBase
   _dieName: Claws
-  _dieDescription: '5, 6, 6, 7, 7, 8
+  _dieDescription: '#faces
 
     Deals high damage.'
   localRotSpeed: {x: 0, y: 0, z: 0}
@@ -671,32 +671,32 @@ MonoBehaviour:
     m_RotationOrder: 4
   dieFaces:
   - faceText: '#'
+    faceValue: 3
+    faceTextObj: {fileID: 0}
+    faceActions:
+    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
+  - faceText: '#'
+    faceValue: 4
+    faceTextObj: {fileID: 0}
+    faceActions:
+    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
+  - faceText: '#'
+    faceValue: 4
+    faceTextObj: {fileID: 0}
+    faceActions:
+    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
+  - faceText: '#'
+    faceValue: 5
+    faceTextObj: {fileID: 0}
+    faceActions:
+    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
+  - faceText: '#'
     faceValue: 5
     faceTextObj: {fileID: 0}
     faceActions:
     - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
   - faceText: '#'
     faceValue: 6
-    faceTextObj: {fileID: 0}
-    faceActions:
-    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
-  - faceText: '#'
-    faceValue: 6
-    faceTextObj: {fileID: 0}
-    faceActions:
-    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
-  - faceText: '#'
-    faceValue: 7
-    faceTextObj: {fileID: 0}
-    faceActions:
-    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
-  - faceText: '#'
-    faceValue: 7
-    faceTextObj: {fileID: 0}
-    faceActions:
-    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
-  - faceText: '#'
-    faceValue: 8
     faceTextObj: {fileID: 0}
     faceActions:
     - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}

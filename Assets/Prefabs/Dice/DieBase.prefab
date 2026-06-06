@@ -495,7 +495,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
   _dieName: DieBase
-  _dieDescription: To be revealed in a future milestone...
+  _dieDescription: '#faces
+
+    To be revealed in a future milestone...'
   localRotSpeed: {x: 400, y: 400, z: 400}
   worldRotSpeed: {x: 0, y: 180, z: 0}
   slerpTime: 0.2
@@ -525,26 +527,29 @@ MonoBehaviour:
     m_RotationOrder: 4
   dieFaces:
   - faceText: '#'
+    faceValue: 0
     faceTextObj: {fileID: 4546455380314813136}
     faceActions: []
   - faceText: '#'
+    faceValue: 0
     faceTextObj: {fileID: 8707945380945595831}
     faceActions: []
   - faceText: '#'
+    faceValue: 0
     faceTextObj: {fileID: 5813998263862499600}
     faceActions: []
   - faceText: '#'
+    faceValue: 0
     faceTextObj: {fileID: 7439938388762458822}
     faceActions: []
   - faceText: '#'
+    faceValue: 0
     faceTextObj: {fileID: 4236132167956338783}
     faceActions: []
   - faceText: '#'
+    faceValue: 0
     faceTextObj: {fileID: 824878528498425248}
     faceActions: []
-  references:
-    version: 2
-    RefIds: []
 --- !u!1 &2881102808344166740
 GameObject:
   m_ObjectHideFlags: 0

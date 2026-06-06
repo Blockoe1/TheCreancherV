@@ -16,6 +16,7 @@ namespace FoolsBrand.Enemies
 {
     public class Enemy : Combatant
     {
+        [field: SerializeField] public string EnemyName { get; private set; }
         [field: SerializeField, Tooltip("Determines how many actions the combatant gets in a turn.  " +
 "Use decimals to make enemies move every other turn.")]
         public float BaseActionValue { get; set; } = 1;

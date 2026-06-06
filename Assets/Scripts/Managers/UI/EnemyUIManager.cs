@@ -55,7 +55,7 @@ namespace FoolsBrand.UI
                 ToggleEnemyUI(true);
                 currentEnemy.OnDeathEvent.AddListener(OnEnemyDeath);
                 enemyHealthBar.SetTargetHealth(currentEnemy.Health);
-                enemyNameText.text = currentEnemy.name;
+                enemyNameText.text = currentEnemy.EnemyName;
                 dnm.RegisterDamageNumber(enemy.Health, enemy.transform);
             }
             else

@@ -374,6 +374,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioListener
   nonRigidbodyVelocity: 0
   attenuationObject: {fileID: 0}
+--- !u!223 &382007242 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 6500124583397329018, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+  m_PrefabInstance: {fileID: 1720034303772323422}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,7 +733,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 2000
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -896,6 +901,18 @@ PrefabInstance:
       propertyPath: '_diePositions.Array.data[1]'
       value: 
       objectReference: {fileID: 63183094}
+    - target: {fileID: 1992663782918714754, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299730591113773778, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+      propertyPath: _myCanvas
+      value: 
+      objectReference: {fileID: 382007242}
+    - target: {fileID: 2683534143353413537, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3600498993147574641, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -952,32 +969,12 @@ PrefabInstance:
       propertyPath: overlayCamera
       value: 
       objectReference: {fileID: 1099459663}
-    - target: {fileID: 6220317262130460715, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0
+    - target: {fileID: 6787610369707941851, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6220317262130460715, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220317262130460715, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220317262130460715, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220317262130460715, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220317262130460715, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220317262130460715, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
-      propertyPath: m_LocalScale.z
+    - target: {fileID: 6886223316173166427, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9162447572662120486, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}

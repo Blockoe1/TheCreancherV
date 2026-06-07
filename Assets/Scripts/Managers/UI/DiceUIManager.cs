@@ -7,6 +7,7 @@
 // Brief Description : UI amanger for dice reserving and rolling.
 *****************************************************************************/
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,6 +21,12 @@ namespace FoolsBrand
 
         [SerializeField] private Camera overlayCamera;
         [SerializeField] private LayerMask UI;
+
+        [SerializeField] private GameObject _hoveredObject;
+        [Header("InfoBox")]
+        [SerializeField] private GameObject _infoBox;
+        [SerializeField] private TMP_Text _dieNameText;
+        [SerializeField] private TMP_Text _dieDescText;
 
         public void ToggleReserveButtons(bool isVisible)
         {
@@ -58,9 +65,18 @@ namespace FoolsBrand
         private void FixedUpdate()
         {
             Ray ray = overlayCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
-            Debug.DrawRay(ray.origin, ray.direction, Color.red);
-            Physics.Raycast(ray, out RaycastHit hit, 999, LayerMask.GetMask("UI"));
-            Debug.Log(hit.collider);
+            if(Physics.Raycast(ray, out RaycastHit hit, 999, LayerMask.GetMask("UI")))
+            {
+                _hoveredObject = hit.collider.gameObject;
+                _infoBox.SetActive(true);
+                _dieNameText.text = hit.collider.GetComponent<DieBase>().DieName;
+                _dieDescText.text = hit.collider.GetComponent<DieBase>().DieDescription;
+            }
+            else
+            {
+                _hoveredObject = null;
+                _infoBox.SetActive(false);
+            }
         }
     }
 }

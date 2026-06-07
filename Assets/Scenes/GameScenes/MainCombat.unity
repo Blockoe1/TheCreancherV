@@ -975,6 +975,14 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1022829902865959319, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+      propertyPath: encounterableEnemies.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1022829902865959319, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+      propertyPath: 'encounterableEnemies.Array.data[1]'
+      value: 
+      objectReference: {fileID: 3228334127417555230, guid: 7e76060c0d819e34388f1e728208ad2e, type: 3}
     - target: {fileID: 1326467615441105993, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1051,13 +1059,33 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3984553946779500829, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 95
+      objectReference: {fileID: 0}
+    - target: {fileID: 3984553946779500829, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -130
+      objectReference: {fileID: 0}
     - target: {fileID: 4557808712105358376, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
+      propertyPath: m_AnchoredPosition.x
+      value: 325
+      objectReference: {fileID: 0}
+    - target: {fileID: 4557808712105358376, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -207
       objectReference: {fileID: 0}
     - target: {fileID: 5441532517234996568, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 9162447572662120486, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 9162447572662120486, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -130
       objectReference: {fileID: 0}
     - target: {fileID: 9192090825351714869, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: player

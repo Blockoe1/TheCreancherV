@@ -72,6 +72,7 @@ MonoBehaviour:
       m_Action: Main Menu
       m_Flags: 0
     m_Flags: 0
+  debugStartEncounter: -1
 --- !u!1001 &821984334870767815
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -265,16 +266,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7940127308206512893, guid: 2d1d954686a95ff4a9e8045107eb25ff, type: 3}
+      propertyPath: bodyDisplayPrefab
+      value: 
+      objectReference: {fileID: 7148077236440832681, guid: 2fbf47ebf1cc4864890841fc674a83e4, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d1d954686a95ff4a9e8045107eb25ff, type: 3}
---- !u!1 &425883078910460674 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4419004934850276779, guid: 2d1d954686a95ff4a9e8045107eb25ff, type: 3}
-  m_PrefabInstance: {fileID: 4087720298415926953}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3317608462264096799 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1635084452502238902, guid: 2d1d954686a95ff4a9e8045107eb25ff, type: 3}
@@ -286,11 +286,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22b9d0d19f87c0940b088a7b61223cb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.UI.UIManager
---- !u!1 &8560720173687656095 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5654188312002322486, guid: 2d1d954686a95ff4a9e8045107eb25ff, type: 3}
-  m_PrefabInstance: {fileID: 4087720298415926953}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &9180895398723777011 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5175595077385248602, guid: 2d1d954686a95ff4a9e8045107eb25ff, type: 3}
@@ -307,11 +302,11 @@ PrefabInstance:
     - target: {fileID: 2305473154639124694, guid: 3ac39ecbcb9958d4e829f8edf1662af1, type: 3}
       propertyPath: 'reservationButtons.Array.data[0]'
       value: 
-      objectReference: {fileID: 425883078910460674}
+      objectReference: {fileID: 0}
     - target: {fileID: 2305473154639124694, guid: 3ac39ecbcb9958d4e829f8edf1662af1, type: 3}
       propertyPath: 'reservationButtons.Array.data[1]'
       value: 
-      objectReference: {fileID: 8560720173687656095}
+      objectReference: {fileID: 0}
     - target: {fileID: 5502762961167347462, guid: 3ac39ecbcb9958d4e829f8edf1662af1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

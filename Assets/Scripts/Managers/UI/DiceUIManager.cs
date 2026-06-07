@@ -7,7 +7,9 @@
 // Brief Description : UI amanger for dice reserving and rolling.
 *****************************************************************************/
 using System;
+using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace FoolsBrand
 {
@@ -16,6 +18,40 @@ namespace FoolsBrand
         [SerializeField] private CanvasGroup reserveButtons;
         [SerializeField] private CanvasGroup rollButton;
         [SerializeField, Range(0, 1)] private float disabledAlpha;
+
+        [SerializeField] private Camera overlayCamera;
+        [SerializeField] private LayerMask UI;
+
+        [SerializeField] private GameObject _hoveredObject;
+        [Header("InfoBox")]
+        [SerializeField] private GameObject _infoBox;
+        [SerializeField] private TMP_Text _dieNameText;
+        [SerializeField] private TMP_Text _dieDescText;
+
+        private InputAction click;
+
+        public override void Init(GameManager gm, HierarchyManager parentManager)
+        {
+            Debug.Log("Run");
+            click = InputSystem.actions.FindAction("ClickInput");
+            Debug.Log(click);
+            click.started += Click_started;
+        }
+
+        private void OnDestroy()
+        {
+            click.started -= Click_started;
+        }
+
+        private void Click_started(InputAction.CallbackContext obj)
+        {
+            if (_hoveredObject == null || _hoveredObject.GetComponent<DieBase>().IsReserved)
+            {
+                return;
+            }
+
+            OnReservePressed(DiceManager.Instance.DiceInPlay.IndexOf(_hoveredObject));
+        }
 
         public void ToggleReserveButtons(bool isVisible)
         {
@@ -46,6 +82,26 @@ namespace FoolsBrand
         public void OnReservePressed(int index)
         {
             PlayerInputManager.ReservePressed(index);
+        }
+
+        /// <summary>
+        /// Do some mousecasting
+        /// </summary>
+        private void FixedUpdate()
+        {
+            Ray ray = overlayCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
+            if(Physics.Raycast(ray, out RaycastHit hit, 999, LayerMask.GetMask("UI")))
+            {
+                _hoveredObject = hit.collider.gameObject;
+                _infoBox.SetActive(true);
+                _dieNameText.text = hit.collider.GetComponent<DieBase>().DieName;
+                _dieDescText.text = hit.collider.GetComponent<DieBase>().DieDescription;
+            }
+            else
+            {
+                _hoveredObject = null;
+                _infoBox.SetActive(false);
+            }
         }
     }
 }

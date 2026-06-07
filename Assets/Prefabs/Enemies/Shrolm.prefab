@@ -138,6 +138,7 @@ MonoBehaviour:
   onDeathEvent:
     m_PersistentCalls:
       m_Calls: []
+  <EnemyName>k__BackingField: Hunter Shrolm
   <BaseActionValue>k__BackingField: 1
 --- !u!114 &4170622330632973415
 MonoBehaviour:
@@ -199,6 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
   _dieName: Head Die
   _dieDescription: Eats the dice stored in your reserve slot.
+  rewardSelectable: 1
   localRotSpeed: {x: 0, y: 0, z: 0}
   worldRotSpeed: {x: 0, y: 0, z: 0}
   slerpTime: 0
@@ -633,6 +635,7 @@ MonoBehaviour:
   _dieDescription: '#faces (all +4)
 
     Buffs itself, then deals high damage.'
+  rewardSelectable: 1
   localRotSpeed: {x: 0, y: 0, z: 0}
   worldRotSpeed: {x: 0, y: 0, z: 0}
   slerpTime: 0
@@ -799,6 +802,7 @@ MonoBehaviour:
   _dieDescription: '#faces
 
     Deals high damage.'
+  rewardSelectable: 1
   localRotSpeed: {x: 0, y: 0, z: 0}
   worldRotSpeed: {x: 0, y: 0, z: 0}
   slerpTime: 0
@@ -1441,7 +1445,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
   _dieName: Tail Die
-  _dieDescription: Reduces damage dealt by your next attack by <b>5</b>.
+  _dieDescription: Reduces damage dealt by your next attack by <b>#faces</b>.
+  rewardSelectable: 1
   localRotSpeed: {x: 0, y: 0, z: 0}
   worldRotSpeed: {x: 0, y: 0, z: 0}
   slerpTime: 0
@@ -1576,6 +1581,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
   _dieName: Eyes Die
   _dieDescription: Inverts the colors on your screen for <b>3</b> turns.
+  rewardSelectable: 1
   localRotSpeed: {x: 0, y: 0, z: 0}
   worldRotSpeed: {x: 0, y: 0, z: 0}
   slerpTime: 0

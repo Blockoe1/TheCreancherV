@@ -28,6 +28,31 @@ namespace FoolsBrand
         [SerializeField] private TMP_Text _dieNameText;
         [SerializeField] private TMP_Text _dieDescText;
 
+        private InputAction click;
+
+        public override void Init(GameManager gm, HierarchyManager parentManager)
+        {
+            Debug.Log("Run");
+            click = InputSystem.actions.FindAction("ClickInput");
+            Debug.Log(click);
+            click.started += Click_started;
+        }
+
+        private void OnDestroy()
+        {
+            click.started -= Click_started;
+        }
+
+        private void Click_started(InputAction.CallbackContext obj)
+        {
+            if (_hoveredObject == null || _hoveredObject.GetComponent<DieBase>().IsReserved)
+            {
+                return;
+            }
+
+            OnReservePressed(DiceManager.Instance.DiceInPlay.IndexOf(_hoveredObject));
+        }
+
         public void ToggleReserveButtons(bool isVisible)
         {
             ToggleGroup(reserveButtons, isVisible);

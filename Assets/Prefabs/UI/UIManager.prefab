@@ -39,6 +39,7 @@ RectTransform:
   - {fileID: 7497479317433914155}
   - {fileID: 7864188726717496444}
   - {fileID: 8443646541965960219}
+  - {fileID: 7992057981568554626}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -126,7 +127,7 @@ MonoBehaviour:
   - {fileID: 7940127308206512893}
   - {fileID: 2323756014679833424}
   - {fileID: 8949570215330355610}
-  - {fileID: 7668125107225918568}
+  - {fileID: 7822678872053316033}
   - {fileID: 8801800705543410424}
 --- !u!1 &8128474457164323766
 GameObject:
@@ -320,6 +321,131 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fc1a2422ae641f4c98df55d02a06718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.UI.LimbUIManager
+--- !u!1001 &1784771250643306142
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5175595077385248602}
+    m_Modifications:
+    - target: {fileID: 7968734924793847173, guid: 2ad2c3a1a0d2e6747807c2ae3cf72cda, type: 3}
+      propertyPath: m_Name
+      value: DiceUIManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8515666554259804188, guid: 2ad2c3a1a0d2e6747807c2ae3cf72cda, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8515666554259804188, guid: 2ad2c3a1a0d2e6747807c2ae3cf72cda, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8515666554259804188, guid: 2ad2c3a1a0d2e6747807c2ae3cf72cda, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8515666554259804188, guid: 2ad2c3a1a0d2e6747807c2ae3cf72cda, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8515666554259804188, guid: 2ad2c3a1a0d2e6747807c2ae3cf72cda, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8515666554259804188, guid: 2ad2c3a1a0d2e6747807c2ae3cf72cda, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8515666554259804188, guid: 2ad2c3a1a0d2e6747807c2ae3cf72cda, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 8515666554259804188, guid: 2ad2c3a1a0d2e6747807c2ae3cf72cda, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 8515666554259804188, guid: 2ad2c3a1a0d2e6747807c2ae3cf72cda, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8515666554259804188, guid: 2ad2c3a1a0d2e6747807c2ae3cf72cda, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8515666554259804188, guid: 2ad2c3a1a0d2e6747807c2ae3cf72cda, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8515666554259804188, guid: 2ad2c3a1a0d2e6747807c2ae3cf72cda, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8515666554259804188, guid: 2ad2c3a1a0d2e6747807c2ae3cf72cda, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8515666554259804188, guid: 2ad2c3a1a0d2e6747807c2ae3cf72cda, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8515666554259804188, guid: 2ad2c3a1a0d2e6747807c2ae3cf72cda, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8515666554259804188, guid: 2ad2c3a1a0d2e6747807c2ae3cf72cda, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8515666554259804188, guid: 2ad2c3a1a0d2e6747807c2ae3cf72cda, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8515666554259804188, guid: 2ad2c3a1a0d2e6747807c2ae3cf72cda, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8515666554259804188, guid: 2ad2c3a1a0d2e6747807c2ae3cf72cda, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 960
+      objectReference: {fileID: 0}
+    - target: {fileID: 8515666554259804188, guid: 2ad2c3a1a0d2e6747807c2ae3cf72cda, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 540
+      objectReference: {fileID: 0}
+    - target: {fileID: 8515666554259804188, guid: 2ad2c3a1a0d2e6747807c2ae3cf72cda, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8515666554259804188, guid: 2ad2c3a1a0d2e6747807c2ae3cf72cda, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8515666554259804188, guid: 2ad2c3a1a0d2e6747807c2ae3cf72cda, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2ad2c3a1a0d2e6747807c2ae3cf72cda, type: 3}
+--- !u!114 &7822678872053316033 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8379926788483874655, guid: 2ad2c3a1a0d2e6747807c2ae3cf72cda, type: 3}
+  m_PrefabInstance: {fileID: 1784771250643306142}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa1708bb04fdf147b1905faddfa1aa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.DiceUIManager
+--- !u!224 &7992057981568554626 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8515666554259804188, guid: 2ad2c3a1a0d2e6747807c2ae3cf72cda, type: 3}
+  m_PrefabInstance: {fileID: 1784771250643306142}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2171258575734178615
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -584,17 +710,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8515666554259804188, guid: 2ad2c3a1a0d2e6747807c2ae3cf72cda, type: 3}
   m_PrefabInstance: {fileID: 2171258575734178615}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7668125107225918568 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8379926788483874655, guid: 2ad2c3a1a0d2e6747807c2ae3cf72cda, type: 3}
-  m_PrefabInstance: {fileID: 2171258575734178615}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fa1708bb04fdf147b1905faddfa1aa2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.DiceUIManager
 --- !u!1001 &4795178956265948948
 PrefabInstance:
   m_ObjectHideFlags: 0

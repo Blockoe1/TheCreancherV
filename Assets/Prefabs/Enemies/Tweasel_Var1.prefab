@@ -1,0 +1,147 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &849719312320072632
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 150678045897934776, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: _dieName
+      value: Tail
+      objectReference: {fileID: 0}
+    - target: {fileID: 2548360809282276096, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: health.health
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2548360809282276096, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: health.maxHealth
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2548360809282276096, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: <EnemyName>k__BackingField
+      value: Injured Tweasel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2581629057923305726, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: defense
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2581629057923305726, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: health.health
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2581629057923305726, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: health.maxHealth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3007989142969634317, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: m_Name
+      value: Tweasel_Var1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085342625758238471, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: defenseBoost
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085342625758238471, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: health.health
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085342625758238471, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: health.maxHealth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085342625758238471, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: customDescription
+      value: Reduces damage taken by the main body by <b>1</b>.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6884097244328271279, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: _dieName
+      value: Head
+      objectReference: {fileID: 0}
+    - target: {fileID: 6884097244328271279, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: _dieDescription
+      value: 'Adds the following cursed dice to your bag:
+
+
+        Cursed Weakened
+        Dice
+
+        0, 0, 0, 1, 1, 2
+
+        Deals low damage to the enemy.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6884097244328271279, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: 'dieFaces.Array.data[0].faceActions.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 914638c34a7b2c84f9d94a8752abfbea, type: 2}
+    - target: {fileID: 8119940975614833375, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: health.health
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8119940975614833375, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: health.maxHealth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180461191078144821, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: dieFaces.Array.data[1].faceValue
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180461191078144821, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: dieFaces.Array.data[3].faceValue
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180461191078144821, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: dieFaces.Array.data[5].faceValue
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8545730069304428136, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8545730069304428136, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8545730069304428136, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8545730069304428136, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 8545730069304428136, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8545730069304428136, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: 8545730069304428136, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8545730069304428136, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8545730069304428136, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -135
+      objectReference: {fileID: 0}
+    - target: {fileID: 8545730069304428136, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 3657879480617548933, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+    - {fileID: 7065331272968585681, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}

@@ -133,10 +133,12 @@ MonoBehaviour:
   health:
     maxHealth: 15
     health: 15
+  <Defense>k__BackingField: 0
   <Animator>k__BackingField: {fileID: 4170622330632973415}
   onDeathEvent:
     m_PersistentCalls:
       m_Calls: []
+  <EnemyName>k__BackingField: Cylime
   <BaseActionValue>k__BackingField: 1
 --- !u!114 &4170622330632973415
 MonoBehaviour:
@@ -364,6 +366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
   _dieName: Spear Die
   _dieDescription: To be revealed in a future milestone...
+  rewardSelectable: 1
   localRotSpeed: {x: 0, y: 0, z: 0}
   worldRotSpeed: {x: 0, y: 0, z: 0}
   slerpTime: 0

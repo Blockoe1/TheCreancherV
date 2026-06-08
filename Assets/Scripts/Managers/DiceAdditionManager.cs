@@ -80,5 +80,10 @@ namespace FoolsBrand
 
             RunManager.StartNewCombat();
         }
+
+        public void SkipDie()
+        {
+            RunManager.StartNewCombat();
+        }
     }
 }

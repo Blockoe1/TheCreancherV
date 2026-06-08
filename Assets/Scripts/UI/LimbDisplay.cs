@@ -22,7 +22,9 @@ namespace FoolsBrand.UI
         [SerializeField] private HealthBar healthBar;
         [Header("Multiplier")]
         [SerializeField] private LineUI multiplierLine;
-        [SerializeField] private Transform multiplierTransform;
+        [SerializeField] private Image multiplier;
+        [SerializeField] private Sprite defaultIcon;
+        [SerializeField] private Sprite weakPointIcon;
         [Header("Info Fields")]
         [SerializeField] private TMP_Text nameText;
         [SerializeField] private TMP_Text defenseText;
@@ -90,9 +92,10 @@ namespace FoolsBrand.UI
             if (multiplierLine != null)
             {
                 multiplierLine.SetPoints(transform.position, bodyDisplay.position);
-                if (multiplierTransform != null)
+                if (multiplier != null)
                 {
-                    multiplierTransform.position = multiplierLine.transform.position;
+                    multiplier.transform.position = multiplierLine.transform.position;
+                    multiplier.sprite = currentLimb.Multiplier > 1 ? weakPointIcon : defaultIcon;
                 }
             }
         }

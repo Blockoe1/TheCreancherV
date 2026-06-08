@@ -33,9 +33,7 @@ namespace FoolsBrand
 
         public override void Init(GameManager gm, HierarchyManager parentManager)
         {
-            Debug.Log("Run");
             click = InputSystem.actions.FindAction("ClickInput");
-            Debug.Log(click);
             click.started += Click_started;
         }
 

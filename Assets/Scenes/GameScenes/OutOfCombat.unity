@@ -575,6 +575,7 @@ RectTransform:
   m_Children:
   - {fileID: 897619741}
   - {fileID: 56863794}
+  - {fileID: 286918231}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1712,7 +1713,7 @@ MonoBehaviour:
   - {fileID: 1705872060}
   - {fileID: 1524776835}
   _diceDatabaseReference: {fileID: 9130035646642930121, guid: ee0b0317b101e4c4aba3fc96f9c5d4bb, type: 3}
-  rotationSpeed: 0.5
+  rotationSpeed: 120
   _diceSelectionInfoBoxes:
   - {fileID: 1827293603}
   - {fileID: 1723278278}

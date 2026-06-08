@@ -11,7 +11,6 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class GameManager : HierarchyManager
 {
-    [SerializeField] private InputAction mainMenuAction;
     [SerializeField, Tooltip("Manually sets the current encounter when this manager inits.  Set to -1 to ignore.")]
     private int debugStartEncounter = -1;
     /// <summary>
@@ -19,9 +18,6 @@ public class GameManager : HierarchyManager
     /// </summary>
     private void Awake()
     {
-        mainMenuAction.Enable();
-        mainMenuAction.performed += MainMenuAction_performed;
-
         if (debugStartEncounter >= 0)
         {
             RunManager.CurrentEncounterNum = debugStartEncounter;
@@ -29,11 +25,6 @@ public class GameManager : HierarchyManager
         Init(this, this);
 
         GameStart();
-    }
-
-    private void MainMenuAction_performed(InputAction.CallbackContext obj)
-    {
-        RunManager.CombatLose();
     }
 
     public override void GameStart()
@@ -44,15 +35,10 @@ public class GameManager : HierarchyManager
         enemyManager.SpawnNextEnemy();
 
         GetManager<CombatManager>().BeginCombat();
-
-        // Debug start.
-
-        //GetManager<UIManager>().GetManager<LimbUIManager>().SetDisplays(enemyManager.CurrentEnemy);
     } 
 
     private void OnDestroy()
     {
-        mainMenuAction.performed -= MainMenuAction_performed;
         Deinit();
     }
 }

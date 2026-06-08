@@ -21,7 +21,7 @@ namespace FoolsBrand
             set
             {
                 isGamePaused = value;
-                Time.timeScale = isGamePaused ? 0f : 1f;
+                //Time.timeScale = isGamePaused ? 0f : 1f;
             }
         }
 

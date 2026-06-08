@@ -374,7 +374,7 @@ GameObject:
   - component: {fileID: 2329756603007393648}
   - component: {fileID: 8735584197218931135}
   - component: {fileID: 2299449444861537981}
-  - component: {fileID: 1284305405158457743}
+  - component: {fileID: 8207341177514950525}
   m_Layer: 5
   m_Name: DieBase
   m_TagString: Untagged
@@ -475,6 +475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
   _dieName: DieBase
   _dieDescription: To be revealed in a future milestone...
+  rewardSelectable: 1
   localRotSpeed: {x: 400, y: 400, z: 400}
   worldRotSpeed: {x: 0, y: 180, z: 0}
   slerpTime: 0.2
@@ -504,28 +505,31 @@ MonoBehaviour:
     m_RotationOrder: 4
   dieFaces:
   - faceText: '#'
+    faceValue: 0
     faceTextObj: {fileID: 4546455380314813136}
     faceActions: []
   - faceText: '#'
+    faceValue: 0
     faceTextObj: {fileID: 8707945380945595831}
     faceActions: []
   - faceText: '#'
+    faceValue: 0
     faceTextObj: {fileID: 5813998263862499600}
     faceActions: []
   - faceText: '#'
+    faceValue: 0
     faceTextObj: {fileID: 7439938388762458822}
     faceActions: []
   - faceText: '#'
+    faceValue: 0
     faceTextObj: {fileID: 4236132167956338783}
     faceActions: []
   - faceText: '#'
+    faceValue: 0
     faceTextObj: {fileID: 824878528498425248}
     faceActions: []
-  references:
-    version: 2
-    RefIds: []
---- !u!65 &1284305405158457743
-BoxCollider:
+--- !u!135 &8207341177514950525
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -543,7 +547,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2881102808344166740
 GameObject:

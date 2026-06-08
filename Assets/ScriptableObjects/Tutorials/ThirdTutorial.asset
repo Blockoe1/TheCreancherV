@@ -20,11 +20,11 @@ MonoBehaviour:
   - <AdvanceCondition>k__BackingField: 0
     <TutorialText>k__BackingField: Attacking different parts can affect how much
       damage you deal to the enemy. This is because parts can have different defenses
-      or be a weak spot of an enemy.
+      <sprite name="Defense"> or be a weak spot of an enemy.
   - <AdvanceCondition>k__BackingField: 0
     <TutorialText>k__BackingField: If a part has defense it will reduce the amount
-      of damage you deal. Whereas if it's a weak point it will cause you to deal
-      more damage to the monster's main body.
+      of damage you deal by it's defense. Whereas if it's a weak point it will multiply
+      the   damage dealt to the monster's main body but not to the limb
   - <AdvanceCondition>k__BackingField: 0
     <TutorialText>k__BackingField: Try it for yourself on this slime, and if you
       don't die I'll see you in the next fight.

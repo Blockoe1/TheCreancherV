@@ -58,4 +58,10 @@ public class DieFace
         if (faceTextObj == null) { return; }
         faceTextObj.text = GetFaceText();
     }
+
+    public void IncreaseValue(int valueIncrease = 1)
+    {
+        faceValue += valueIncrease;
+        RefreshText();
+    }
 }

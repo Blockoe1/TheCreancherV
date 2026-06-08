@@ -1005,6 +1005,10 @@ PrefabInstance:
       propertyPath: overlayCamera
       value: 
       objectReference: {fileID: 1099459663}
+    - target: {fileID: 6495533709985400535, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+      propertyPath: debugStartEncounter
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6787610369707941851, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: m_IsActive
       value: 1

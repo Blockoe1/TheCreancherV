@@ -1,5 +1,6 @@
 using NaughtyAttributes;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace FoolsBrand
@@ -28,8 +29,16 @@ namespace FoolsBrand
         [SerializeField] private GameObject _reserveSlotPosition;
 
         //private Dictionary<string, GameObject[]> diceLookup = new();
-
-        public List<GameObject> DiceInPlay => _rollingDice;
+        public List<GameObject> DiceInPlay 
+        {
+            get
+            {
+                //Easily the stupidest thing I've ever done
+                List<GameObject> diceInPlay = new List<GameObject>();
+                diceInPlay.AddRange(_rollingDice);
+                return diceInPlay;
+            }
+        }
         public int NumDiceLeft => _drawBag.Count + _discardBag.Count + _rollingDice.Count + (_reservedDie == null ? 0 : 1);
 
         /// <summary>

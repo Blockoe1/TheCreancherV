@@ -64,7 +64,7 @@ namespace FoolsBrand
             {
                 foreach (Transform t in _dicePositions)
                 {
-                    t.Rotate(Vector3.up, rotationSpeed, Space.World);
+                    t.Rotate(Vector3.up, rotationSpeed * Time.deltaTime, Space.World);
                 }
                 yield return null;
             }

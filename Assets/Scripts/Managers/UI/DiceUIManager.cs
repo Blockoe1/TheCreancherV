@@ -6,6 +6,7 @@
 //
 // Brief Description : UI amanger for dice reserving and rolling.
 *****************************************************************************/
+using NaughtyAttributes;
 using System;
 using TMPro;
 using UnityEngine;
@@ -15,26 +16,24 @@ namespace FoolsBrand
 {
     public class DiceUIManager : Manager
     {
-        [SerializeField] private CanvasGroup reserveButtons;
         [SerializeField] private CanvasGroup rollButton;
         [SerializeField, Range(0, 1)] private float disabledAlpha;
 
         [SerializeField] private Camera overlayCamera;
         [SerializeField] private LayerMask UI;
 
-        [SerializeField] private GameObject _hoveredObject;
+        [ShowNonSerializedField, ReadOnly] private GameObject _hoveredObject;
         [Header("InfoBox")]
         [SerializeField] private GameObject _infoBox;
         [SerializeField] private TMP_Text _dieNameText;
         [SerializeField] private TMP_Text _dieDescText;
 
         private InputAction click;
+        private bool canReserve;
 
         public override void Init(GameManager gm, HierarchyManager parentManager)
         {
-            Debug.Log("Run");
             click = InputSystem.actions.FindAction("ClickInput");
-            Debug.Log(click);
             click.started += Click_started;
         }
 
@@ -53,9 +52,9 @@ namespace FoolsBrand
             OnReservePressed(DiceManager.Instance.DiceInPlay.IndexOf(_hoveredObject));
         }
 
-        public void ToggleReserveButtons(bool isVisible)
+        public void SetCanReserve(bool canReserve)
         {
-            ToggleGroup(reserveButtons, isVisible);
+            this.canReserve = canReserve;
         }
 
         public void ToggleRollButton(bool isVisible)
@@ -81,7 +80,10 @@ namespace FoolsBrand
 
         public void OnReservePressed(int index)
         {
-            PlayerInputManager.ReservePressed(index);
+            if (canReserve)
+            {
+                PlayerInputManager.ReservePressed(index);
+            }
         }
 
         /// <summary>
@@ -94,8 +96,10 @@ namespace FoolsBrand
             {
                 _hoveredObject = hit.collider.gameObject;
                 _infoBox.SetActive(true);
-                _dieNameText.text = hit.collider.GetComponent<DieBase>().DieName;
-                _dieDescText.text = hit.collider.GetComponent<DieBase>().DieDescription;
+                DieBase die = hit.collider.GetComponent<DieBase>();
+                _dieNameText.text = die.DieName;
+                _dieDescText.text = die.DieDescription + 
+                    (canReserve && !die.IsReserved ? "\n\n<i>Click to reserve.</i>" : "");
             }
             else
             {

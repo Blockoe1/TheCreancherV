@@ -45,7 +45,18 @@ public class DieBase : MonoBehaviour
 
     public bool RewardSelectable => rewardSelectable;
     public string DieName { get => _dieName; }
-    public string DieDescription { get => _dieDescription; }
+    public string DieDescription
+    { 
+        get
+        {
+            string facesString = "";
+            for(int i = 0; i < dieFaces.Length; i++)
+            {
+                facesString += dieFaces[i].FaceValue + (i == dieFaces.Length - 1 ? "" : ", ");
+            }
+            return _dieDescription.Replace("#faces", facesString);
+        }
+    }
 
     public ReadOnlyArray<DieFace> Faces => dieFaces;
 

@@ -78,6 +78,8 @@ namespace FoolsBrand.UI
 
         private void HandleInput(AdvanceCondition inputType)
         {
+            if (PauseMenu.IsGamePaused) { return; }
+            if (currentTutorialIndex >= encounterTutorialData.Tutorials.Length) { return; }
             if (encounterTutorialData.Tutorials[currentTutorialIndex].AdvanceCondition == inputType)
             {
                 currentTutorialIndex++;

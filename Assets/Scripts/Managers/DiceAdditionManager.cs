@@ -2,6 +2,7 @@ using System.Linq;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using NaughtyAttributes;
 
 namespace FoolsBrand
 {
@@ -10,11 +11,23 @@ namespace FoolsBrand
     /// </summary>
     public class DiceAdditionManager : Manager
     {
+        private const int DEFAULT_DICE_SELECTION_NUM = 3;
+
         private string[] diceRewards = new string[3];
         [SerializeField] private Transform[] _dicePositions;
         [SerializeField] private GameObject _diceDatabaseReference;
         [SerializeField] private float rotationSpeed;
         [SerializeField] private DieSelectionInfo[] _diceSelectionInfoBoxes;
+        [SerializeField] private SelectionOverride[] overrides;
+
+        [System.Serializable]
+        private struct SelectionOverride
+        {
+            [SerializeField] private bool use;
+            [SerializeField, Range(1, 3), ShowIf(nameof(use)), AllowNesting] private int selectionNum;
+            [SerializeField, ShowIf(nameof(use)), AllowNesting] private string[] validDice;
+        }
+
         public void Start()
         {
             if (DiceDatabaseSetup.Instance == null)
@@ -51,7 +64,7 @@ namespace FoolsBrand
             {
                 foreach (Transform t in _dicePositions)
                 {
-                    t.Rotate(Vector3.up, rotationSpeed, Space.World);
+                    t.Rotate(Vector3.up, rotationSpeed * Time.deltaTime, Space.World);
                 }
                 yield return null;
             }

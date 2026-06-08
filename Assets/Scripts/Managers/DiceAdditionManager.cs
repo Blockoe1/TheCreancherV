@@ -44,7 +44,7 @@ namespace FoolsBrand
                 }
             }
 
-            SelectionOverride currentOverride = RunManager.CurrentEncounterNum < overrides.Length ? overrides[RunManager.CurrentEncounterNum] : null;
+            SelectionOverride currentOverride = RunManager.CurrentEncounterNum - 1 < overrides.Length ? overrides[RunManager.CurrentEncounterNum - 1] : null;
 
             List<string> validDice = currentOverride != null && currentOverride.use ? currentOverride.validDice.ToList() : DiceDatabase.RewardDice;
             diceRewards = currentOverride != null && currentOverride.use ? new string[currentOverride.selectionNum] : new string[3];

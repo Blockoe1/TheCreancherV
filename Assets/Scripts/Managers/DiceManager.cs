@@ -1,5 +1,6 @@
 using NaughtyAttributes;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace FoolsBrand
@@ -14,29 +15,37 @@ namespace FoolsBrand
         [SerializeField] private GameObject _diceDatabaseReference;
 
         //Dice bags
-        [SerializeField] private List<string> _drawBag;
-        [SerializeField] private List<string> _discardBag;
-        public string _reservedDie = "";
-        [SerializeField] private List<string> _rollingDice;
-        private List<GameObject> diceInPlay = new();
-        private GameObject reservedDieGO;
+        //RIP THIS WHOLE THING OUT AND REPLACE IT.
+        [SerializeField] private List<GameObject> _drawBag;
+        [SerializeField] private List<GameObject> _discardBag;
+        public GameObject _reservedDie = null;
+        [SerializeField] private List<GameObject> _rollingDice;
+        //private List<GameObject> diceInPlay = new();
+        //private GameObject reservedDieGO;
 
         public static List<string> DiceGoingToCombat = new();
 
         [SerializeField] private List<GameObject> _diePositions;
         [SerializeField] private GameObject _reserveSlotPosition;
 
-        private Dictionary<string, GameObject[]> diceLookup = new();
-
-        public List<GameObject> DiceInPlay => diceInPlay;
-        public int NumDiceLeft => _drawBag.Count + _discardBag.Count + _rollingDice.Count + (_reservedDie == "" ? 0 : 1);
+        //private Dictionary<string, GameObject[]> diceLookup = new();
+        public List<GameObject> DiceInPlay 
+        {
+            get
+            {
+                //Easily the stupidest thing I've ever done
+                List<GameObject> diceInPlay = new List<GameObject>();
+                diceInPlay.AddRange(_rollingDice);
+                return diceInPlay;
+            }
+        }
+        public int NumDiceLeft => _drawBag.Count + _discardBag.Count + _rollingDice.Count + (_reservedDie == null ? 0 : 1);
 
         /// <summary>
         /// Initialize the dice bags
         /// </summary>
         public override void Init(GameManager gm, HierarchyManager parentManager)
         {
-            diceInPlay.Clear();
             Instance = this;
 
             if (DiceDatabaseSetup.Instance == null)
@@ -54,34 +63,11 @@ namespace FoolsBrand
                 }
             }
 
-            foreach (string die in DiceGoingToCombat)
+            foreach(string die in DiceGoingToCombat)
             {
-                _drawBag.Add(die);
-            }
-
-            //Grab the persistent data list of our dice and put it into the draw bag
-            //Initialize the diceLookup - probably should gather a universal lookup table somewhere in a static. We can put that on the main menu
-            //But for now, we'll keep that in here
-
-            //Setup the lookup table
-            diceLookup = new();
-            foreach (string die in _drawBag)
-            {
-                if (!diceLookup.ContainsKey(die))
-                {
-                    diceLookup.Add(die, new GameObject[3]);
-                }
-
-                //Forgive me for this
-                for (int i = 0; i < diceLookup[die].Length; i++)
-                {
-                    if (diceLookup[die][i] == null)
-                    {
-                        diceLookup[die][i] = Instantiate(DiceDatabase.AllDiceDict[die], transform);
-                        diceLookup[die][i].SetActive(false);
-                        break;
-                    }
-                }
+                GameObject dieObject = Instantiate(DiceDatabase.AllDiceDict[die], transform);
+                dieObject.SetActive(false);
+                _drawBag.Add(dieObject);
             }
 
             PlayerInputManager.OnReserveInput += ReserveDie;
@@ -109,13 +95,13 @@ namespace FoolsBrand
         /// <param name="index">Index of which die is getting reserved</param>
         public void ReserveDie(int index)
         {
-            if(_reservedDie == "")
+            if(_reservedDie == null)
             {
                 //If there's no die reserved, draw a new one
                 _reservedDie = _rollingDice[index];
-                diceInPlay[index].transform.position = _reserveSlotPosition.transform.position;
-                diceInPlay[index].transform.localScale = _reserveSlotPosition.transform.localScale;
-                diceInPlay[index].GetComponent<DieBase>().IsReserved = true;
+                _reservedDie.transform.position = _reserveSlotPosition.transform.position;
+                _reservedDie.transform.localScale = _reserveSlotPosition.transform.localScale;
+                _reservedDie.GetComponent<DieBase>().IsReserved = true;
 
                 _rollingDice.RemoveAt(index);
 
@@ -126,23 +112,25 @@ namespace FoolsBrand
                 _rollingDice.Insert(index, _drawBag[0]);
                 _drawBag.RemoveAt(0);
 
-                reservedDieGO = diceInPlay[index];
-                diceInPlay.RemoveAt(index);
+                //string dice = _rollingDice[index].ToString();
 
-                string dice = _rollingDice[index].ToString();
+                //for (int j = 0; j < diceLookup[dice].Length; j++)
+                //{
+                //    if (!diceLookup[dice][j].activeSelf)
+                //    {
+                //        diceLookup[dice][j].transform.position = _diePositions[index].transform.position;
+                //        diceLookup[dice][j].transform.localScale = _diePositions[index].transform.localScale;
+                //        diceLookup[dice][j].SetActive(true);
+                //        diceLookup[dice][j].GetComponent<DieBase>().StartRolling();
+                //        diceInPlay.Insert(index, diceLookup[dice][j]);
+                //        break;
+                //    }
+                //}
 
-                for (int j = 0; j < diceLookup[dice].Length; j++)
-                {
-                    if (!diceLookup[dice][j].activeSelf)
-                    {
-                        diceLookup[dice][j].transform.position = _diePositions[index].transform.position;
-                        diceLookup[dice][j].transform.localScale = _diePositions[index].transform.localScale;
-                        diceLookup[dice][j].SetActive(true);
-                        diceLookup[dice][j].GetComponent<DieBase>().StartRolling();
-                        diceInPlay.Insert(index, diceLookup[dice][j]);
-                        break;
-                    }
-                }
+                _rollingDice[index].transform.position = _diePositions[index].transform.position;
+                _rollingDice[index].transform.localScale = _diePositions[index].transform.localScale;
+                _rollingDice[index].SetActive(true);
+                _rollingDice[index].GetComponent<DieBase>().StartRolling();
 
                 return;
             }
@@ -151,26 +139,22 @@ namespace FoolsBrand
             //GameObject reservation = reservedDieGO;
             //string reservationString = _reservedDie;
 
-            (reservedDieGO, diceInPlay[index]) = (diceInPlay[index], reservedDieGO);
+            //(reservedDieGO, diceInPlay[index]) = (diceInPlay[index], reservedDieGO);
             (_rollingDice[index], _reservedDie) = (_reservedDie, _rollingDice[index]);
 
-            reservedDieGO.transform.position = _reserveSlotPosition.transform.position;
-            reservedDieGO.transform.localScale = _reserveSlotPosition.transform.localScale;
-            reservedDieGO.GetComponent<DieBase>().IsReserved = true;
+            _reservedDie.transform.position = _reserveSlotPosition.transform.position;
+            _reservedDie.transform.localScale = _reserveSlotPosition.transform.localScale;
+            _reservedDie.GetComponent<DieBase>().IsReserved = true;
 
-            diceInPlay[index].transform.position = _diePositions[index].transform.position;
-            diceInPlay[index].transform.localScale = _diePositions[index].transform.localScale;
-            diceInPlay[index].GetComponent<DieBase>().IsReserved = false;
+            _rollingDice[index].transform.position = _diePositions[index].transform.position;
+            _rollingDice[index].transform.localScale = _diePositions[index].transform.localScale;
+            _rollingDice[index].GetComponent<DieBase>().IsReserved = false;
         }
 
         public void DiscardDice(int index)
         {
             _discardBag.Add(_rollingDice[index]);
             _rollingDice.RemoveAt(index);
-        }
-        public void ClearDiceInPlay()
-        {
-            diceInPlay.Clear();
         }
 
         /// <summary>
@@ -179,7 +163,7 @@ namespace FoolsBrand
         [Button("Delete Reserve Slot")]
         public void ClearReserveSlot()
         {
-            if(_reservedDie == "")
+            if(_reservedDie == null)
             {
                 Debug.Log("No Die in slot");
                 return;
@@ -192,10 +176,8 @@ namespace FoolsBrand
                 return;
             }
 
-            reservedDieGO.SetActive(false);
-            reservedDieGO = null;
-
-            _reservedDie = "";
+            _reservedDie.SetActive(false);
+            _reservedDie = null;
         }
 
         /// <summary>
@@ -218,20 +200,25 @@ namespace FoolsBrand
             //Now make those dice appear
             for (int i = 0; i < _rollingDice.Count; i++)
             {
-                string dice = _rollingDice[i].ToString();
+                //string dice = _rollingDice[i].ToString();
 
-                for (int j = 0; j < diceLookup[dice].Length; j++)
-                {
-                    if (!diceLookup[dice][j].activeSelf)
-                    {
-                        diceLookup[dice][j].transform.position = _diePositions[i].transform.position;
-                        diceLookup[dice][j].transform.localScale = _diePositions[i].transform.localScale;
-                        diceLookup[dice][j].SetActive(true);
-                        diceLookup[dice][j].GetComponent<DieBase>().StartRolling();
-                        diceInPlay.Add(diceLookup[dice][j]);
-                        break;
-                    }
-                }
+                _rollingDice[i].SetActive(true);
+                _rollingDice[i].transform.position = _diePositions[i].transform.position;
+                _rollingDice[i].transform.localScale = _diePositions[i].transform.localScale;
+                _rollingDice[i].GetComponent<DieBase>().StartRolling();
+
+                //for (int j = 0; j < diceLookup[dice].Length; j++)
+                //{
+                //    if (!diceLookup[dice][j].activeSelf)
+                //    {
+                //        diceLookup[dice][j].transform.position = _diePositions[i].transform.position;
+                //        diceLookup[dice][j].transform.localScale = _diePositions[i].transform.localScale;
+                //        diceLookup[dice][j].SetActive(true);
+                //        diceLookup[dice][j].GetComponent<DieBase>().StartRolling();
+                //        diceInPlay.Add(diceLookup[dice][j]);
+                //        break;
+                //    }
+                //}
             }
         }
 
@@ -266,22 +253,25 @@ namespace FoolsBrand
         /// <param name="die"></param>
         public void AddDice(string die)
         {
-            _drawBag.Add(die);
-            if (!diceLookup.ContainsKey(die))
-            {
-                diceLookup.Add(die, new GameObject[3]);
-            }
+            GameObject dieObject = Instantiate(DiceDatabase.AllDiceDict[die], transform);
+            dieObject.SetActive(false);
+            _drawBag.Add(dieObject);
 
-            //Forgive me for this
-            for (int i = 0; i < diceLookup[die].Length; i++)
-            {
-                if (diceLookup[die][i] == null)
-                {
-                    diceLookup[die][i] = Instantiate(DiceDatabase.AllDiceDict[die], transform);
-                    diceLookup[die][i].SetActive(false);
-                    break;
-                }
-            }
+            //if (!diceLookup.ContainsKey(die))
+            //{
+            //    diceLookup.Add(die, new GameObject[3]);
+            //}
+
+            ////Forgive me for this
+            //for (int i = 0; i < diceLookup[die].Length; i++)
+            //{
+            //    if (diceLookup[die][i] == null)
+            //    {
+            //        diceLookup[die][i] = Instantiate(DiceDatabase.AllDiceDict[die], transform);
+            //        diceLookup[die][i].SetActive(false);
+            //        break;
+            //    }
+            //}
         }
     }
 }

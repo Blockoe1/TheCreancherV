@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.UI.TutorialSequence
   <Tutorials>k__BackingField:
   - <AdvanceCondition>k__BackingField: 0
-    <TutorialText>k__BackingField: Looks like you lived, good for you.  Good for
-      me too since I'm not required to help you anymore. This is the last easy monster
+    <TutorialText>k__BackingField: Looks like you lived. Good for you.  Good for
+      me too, since I'm not required to help you anymore. This is the last easy monster,
       and the last you'll hear from me for the rest of your stay at the arena.
   - <AdvanceCondition>k__BackingField: 0
-    <TutorialText>k__BackingField: Might congradulate you if you make it to the end
-      though. Anyways bye!
+    <TutorialText>k__BackingField: Might congratulate you if you make it to the end
+      though. Anyways, bye!

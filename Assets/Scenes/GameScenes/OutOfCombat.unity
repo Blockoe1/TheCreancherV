@@ -410,7 +410,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &370286439
 RectTransform:
@@ -1430,6 +1430,10 @@ MonoBehaviour:
   - {fileID: 1827293603}
   - {fileID: 1723278278}
   - {fileID: 1476885349}
+  overrides:
+  - use: 0
+    selectionNum: 0
+    validDice: []
 --- !u!114 &2076034436 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1008382265555005817, guid: 7b98ab521d562e944a09ef4800c082c9, type: 3}
@@ -1565,6 +1569,58 @@ PrefabInstance:
       propertyPath: _myCanvas
       value: 
       objectReference: {fileID: 370286438}
+    - target: {fileID: 5695277192744431247, guid: 7b98ab521d562e944a09ef4800c082c9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5695277192744431247, guid: 7b98ab521d562e944a09ef4800c082c9, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5695277192744431247, guid: 7b98ab521d562e944a09ef4800c082c9, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5695277192744431247, guid: 7b98ab521d562e944a09ef4800c082c9, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5695277192744431247, guid: 7b98ab521d562e944a09ef4800c082c9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5695277192744431247, guid: 7b98ab521d562e944a09ef4800c082c9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5761603867480523005, guid: 7b98ab521d562e944a09ef4800c082c9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5761603867480523005, guid: 7b98ab521d562e944a09ef4800c082c9, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5761603867480523005, guid: 7b98ab521d562e944a09ef4800c082c9, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5761603867480523005, guid: 7b98ab521d562e944a09ef4800c082c9, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5761603867480523005, guid: 7b98ab521d562e944a09ef4800c082c9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5761603867480523005, guid: 7b98ab521d562e944a09ef4800c082c9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7647953335056438705, guid: 7b98ab521d562e944a09ef4800c082c9, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9145038633431691213, guid: 7b98ab521d562e944a09ef4800c082c9, type: 3}
       propertyPath: m_Name
       value: InfoBox

@@ -114,13 +114,13 @@ namespace FoolsBrand
             actionQueue = null;
             diceManager.DrawDice();
             //Make reservation buttons appear
-            diceUI.ToggleReserveButtons(true);
+            diceUI.SetCanReserve(true);
             diceUI.ToggleRollButton(true);
 
             //TODO - Dice Bonus by not rolling
             yield return new WaitUntil(() => actionQueue != null);
             diceUI.ToggleRollButton(false);
-            diceUI.ToggleReserveButtons(false);
+            diceUI.SetCanReserve(false);
             limbUIManager.ToggleTargeting(true);
             //Player rolls dice
             yield return new WaitUntil(() => targetedLimb != null);

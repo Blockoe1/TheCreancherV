@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3228334127417555230}
   - component: {fileID: 4170622330632973415}
   m_Layer: 0
-  m_Name: Scary Slime
+  m_Name: Cylime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -131,8 +131,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemy
   health:
-    maxHealth: 20
-    health: 20
+    maxHealth: 15
+    health: 15
   <Defense>k__BackingField: 0
   <Animator>k__BackingField: {fileID: 4170622330632973415}
   onDeathEvent:
@@ -204,9 +204,9 @@ MonoBehaviour:
     maxHealth: 0
     health: 0
   defense: 0
-  multiplier: 1.25
+  multiplier: 1
   attackWeight: 1
-  attackDice: {fileID: 755269475158816666}
+  attackDice: {fileID: 1659061376105478859}
   customDescription: 
   limbAnimNameSuffix: 
   onDamageEvent:
@@ -245,9 +245,81 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7556873663942866683}
-  - {fileID: 8005932903431030565}
+  - {fileID: 2802131092797391290}
   m_Father: {fileID: 8022761948814560252}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2443424537188359096
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2802131092797391290}
+  - component: {fileID: 1659061376105478859}
+  m_Layer: 0
+  m_Name: BodyDie
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2802131092797391290
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2443424537188359096}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.92387956, z: -0, w: 0.38268343}
+  m_LocalPosition: {x: -4.2081175, y: -0.028789997, z: -11.052001}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4071422238975535367}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1659061376105478859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2443424537188359096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b264e17d8aa6d5459bc864dd3c692f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DieBase
+  _dieName: Basic Die 1-6
+  _dieDescription: To be revealed in a future milestone...
+  rewardSelectable: 1
+  localRotSpeed: {x: 0, y: 0, z: 0}
+  worldRotSpeed: {x: 0, y: 0, z: 0}
+  slerpTime: 0
+  slerpCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  dieFaces:
+  - faceText: '#'
+    faceValue: 1
+    faceTextObj: {fileID: 0}
+    faceActions:
+    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
+  - faceText: '#'
+    faceValue: 2
+    faceTextObj: {fileID: 0}
+    faceActions:
+    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
+  - faceText: '#'
+    faceValue: 3
+    faceTextObj: {fileID: 0}
+    faceActions:
+    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
 --- !u!1 &7173650780824901471
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,83 +392,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!1 &7919740717052587850
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8005932903431030565}
-  - component: {fileID: 6723437583122014592}
-  m_Layer: 0
-  m_Name: EyeDie
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8005932903431030565
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7919740717052587850}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.0267375, y: 0.87731004, z: 0.78521895}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4071422238975535367}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6723437583122014592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7919740717052587850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b264e17d8aa6d5459bc864dd3c692f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DieBase
-  _dieName: Spear Die
-  _dieDescription: To be revealed in a future milestone...
-  rewardSelectable: 1
-  localRotSpeed: {x: 0, y: 0, z: 0}
-  worldRotSpeed: {x: 0, y: 0, z: 0}
-  slerpTime: 0
-  slerpCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  dieFaces:
-  - faceText: '#'
-    faceValue: 3
-    faceTextObj: {fileID: 0}
-    faceActions:
-    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
-  - faceText: '#'
-    faceValue: 4
-    faceTextObj: {fileID: 0}
-    faceActions:
-    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
-  - faceText: '#'
-    faceValue: 5
-    faceTextObj: {fileID: 0}
-    faceActions:
-    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
-  - faceText: '#'
-    faceValue: 6
-    faceTextObj: {fileID: 0}
-    faceActions:
-    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
 --- !u!1 &8377491497927192847
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,12 +439,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemies.Limb
   isBody: 0
   health:
-    maxHealth: 10
-    health: 10
-  defense: 1
+    maxHealth: 1
+    health: 1
+  defense: 0
   multiplier: 1
   attackWeight: 1
-  attackDice: {fileID: 6723437583122014592}
+  attackDice: {fileID: 755269475158816666}
   customDescription: 
   limbAnimNameSuffix: 
   onDamageEvent:
@@ -521,7 +516,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: 5b9b866b54a3c1c4a8918c24ecc2f326, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 3b204e9b7daa8f5468c89a1026d0597d, type: 2}
+      objectReference: {fileID: 2100000, guid: 5a17a1ddc942bdc41bad1dbc6f5f65bf, type: 2}
     - target: {fileID: 919132149155446097, guid: 5b9b866b54a3c1c4a8918c24ecc2f326, type: 3}
       propertyPath: m_Name
       value: Mo_Cylime_Eye
@@ -720,7 +715,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: 1bd83f0795fc01b4d9da1d865e665ccd, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 3b204e9b7daa8f5468c89a1026d0597d, type: 2}
+      objectReference: {fileID: 2100000, guid: 5a17a1ddc942bdc41bad1dbc6f5f65bf, type: 2}
     - target: {fileID: 919132149155446097, guid: 1bd83f0795fc01b4d9da1d865e665ccd, type: 3}
       propertyPath: m_Name
       value: Mo_Cylime_Body

@@ -18,16 +18,19 @@ namespace FoolsBrand
 
         public static void LimbSelected(int limbIndex)
         {
+            if (PauseMenu.IsGamePaused) { return;  }
             OnLimbSelectedInput?.Invoke(limbIndex);
         }
 
         public static void OnRollPressed()
         {
+            if (PauseMenu.IsGamePaused) { return; }
             OnRollButtonPressed?.Invoke();
         }
 
         public static void ReservePressed(int diceIndex)
         {
+            if (PauseMenu.IsGamePaused) { return; }
             OnReserveInput?.Invoke(diceIndex);
         }
     }

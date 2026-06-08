@@ -16,11 +16,12 @@ MonoBehaviour:
   - <AdvanceCondition>k__BackingField: 3
     <TutorialText>k__BackingField: You might have noticed that you can reserve a
       die. This stores one for later if you don't need it now and you can swap which
-      die you have reserved at any time. Try reserving one now.
+      die you have reserved at any time. Try reserving one now by interacting with
+      one of your die. If you want your dice back just reserve another die.
   - <AdvanceCondition>k__BackingField: 1
     <TutorialText>k__BackingField: Most enemies have more than one part you can choose
       to attack. Deciding which part to go for is crucial if you want to live until
-      the end. Pick which limb you want to attack.
+      the end. Pick which limb you want to attack, I'd suggest the eye.
   - <AdvanceCondition>k__BackingField: 1
     <TutorialText>k__BackingField: Interesting choice, hope it was a good one. Good
       luck on killing this one!

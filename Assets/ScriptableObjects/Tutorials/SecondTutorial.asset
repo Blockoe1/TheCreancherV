@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0e06f179b05a9346a618d4dc0a79844, type: 3}
+  m_Name: SecondTutorial
+  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.UI.TutorialSequence
+  <Tutorials>k__BackingField:
+  - <AdvanceCondition>k__BackingField: 3
+    <TutorialText>k__BackingField: You might have noticed that you can reserve a
+      dice. This stores them for later if you don't need one now and you can swap
+      which dice you have reserved at any time. Try reserving one now.
+  - <AdvanceCondition>k__BackingField: 1
+    <TutorialText>k__BackingField: Most enemies have more than one part you can choose
+      to attack. Deciding which part to go for is crucial if you want to live until
+      the end. Pick which limb you want tro attack.
+  - <AdvanceCondition>k__BackingField: 1
+    <TutorialText>k__BackingField: Interesting choice, hope it was a good one. Good
+      luck on killing this one.

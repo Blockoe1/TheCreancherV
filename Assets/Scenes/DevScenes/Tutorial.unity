@@ -855,6 +855,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4799773905198693457, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+      propertyPath: tutorialSequences.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4799773905198693457, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+      propertyPath: 'tutorialSequences.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 3043854f783e13648819dc083e08e0b2, type: 2}
+    - target: {fileID: 4799773905198693457, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+      propertyPath: 'tutorialSequences.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 4e49973225e4c234a97266c5f12f6e1e, type: 2}
+    - target: {fileID: 4799773905198693457, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+      propertyPath: 'tutorialSequences.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 8470faeb86d4b0644a8f7515ef3afec6, type: 2}
+    - target: {fileID: 4799773905198693457, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+      propertyPath: 'tutorialSequences.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 960f475aa7dfc334591208cbc3869e18, type: 2}
     - target: {fileID: 5441532517234996568, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: m_Name
       value: GameManager

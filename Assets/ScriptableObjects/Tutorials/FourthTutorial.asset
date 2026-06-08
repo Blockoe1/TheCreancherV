@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0e06f179b05a9346a618d4dc0a79844, type: 3}
+  m_Name: FourthTutorial
+  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.UI.TutorialSequence
+  <Tutorials>k__BackingField:
+  - <AdvanceCondition>k__BackingField: 0
+    <TutorialText>k__BackingField: Looks like you lived, good for you.  Good for
+      me too since I'm not required to help you anymore. This is the last easy monster
+      and the last you'll hear from me for the rest of your stay at the arena.
+  - <AdvanceCondition>k__BackingField: 0
+    <TutorialText>k__BackingField: Might congradulate you if you make it to the end
+      though. Anyways bye!

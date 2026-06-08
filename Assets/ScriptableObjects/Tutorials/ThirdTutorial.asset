@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0e06f179b05a9346a618d4dc0a79844, type: 3}
+  m_Name: ThirdTutorial
+  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.UI.TutorialSequence
+  <Tutorials>k__BackingField:
+  - <AdvanceCondition>k__BackingField: 0
+    <TutorialText>k__BackingField: Good job on that last slime, dying to it would
+      have been really embarrassing. I'm going to tell you a couple tips that will
+      help you live a little longer.
+  - <AdvanceCondition>k__BackingField: 0
+    <TutorialText>k__BackingField: Attacking different parts can affect how much
+      damage you deal to the enemy. This is because parts can have different defenses
+      or be a weakspot of an enemy.
+  - <AdvanceCondition>k__BackingField: 0
+    <TutorialText>k__BackingField: If a part has defense it will reduce the amount
+      of damage you deal. Whereas if it's a weakpoint it will cause you to deal more
+      damage to the monster's main body.
+  - <AdvanceCondition>k__BackingField: 0
+    <TutorialText>k__BackingField: Try it for yourself on this slime and if you don't
+      die I'll see you in the next fight.

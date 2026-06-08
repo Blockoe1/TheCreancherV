@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3228334127417555230}
   - component: {fileID: 4170622330632973415}
   m_Layer: 0
-  m_Name: Slime 2
+  m_Name: Metal Slime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -133,6 +133,7 @@ MonoBehaviour:
   health:
     maxHealth: 15
     health: 15
+  <Defense>k__BackingField: 0
   <Animator>k__BackingField: {fileID: 4170622330632973415}
   onDeathEvent:
     m_PersistentCalls:
@@ -197,11 +198,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4539ebab66eab5840bb9d4342752f4d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemies.Limb
-  isBody: 1
+  isBody: 0
   health:
     maxHealth: 0
     health: 0
-  defense: 0
+  defense: 6
   multiplier: 1
   attackWeight: 1
   attackDice: {fileID: 755269475158816666}
@@ -364,6 +365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
   _dieName: Spear Die
   _dieDescription: To be revealed in a future milestone...
+  rewardSelectable: 1
   localRotSpeed: {x: 0, y: 0, z: 0}
   worldRotSpeed: {x: 0, y: 0, z: 0}
   slerpTime: 0
@@ -444,7 +446,7 @@ MonoBehaviour:
     maxHealth: 1
     health: 1
   defense: 0
-  multiplier: 1
+  multiplier: 20
   attackWeight: 1
   attackDice: {fileID: 6723437583122014592}
   customDescription: 
@@ -518,7 +520,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: 5b9b866b54a3c1c4a8918c24ecc2f326, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 5a17a1ddc942bdc41bad1dbc6f5f65bf, type: 2}
+      objectReference: {fileID: 2100000, guid: e985069f4649e1d4792109895404d588, type: 2}
     - target: {fileID: 919132149155446097, guid: 5b9b866b54a3c1c4a8918c24ecc2f326, type: 3}
       propertyPath: m_Name
       value: Mo_Cylime_Eye
@@ -717,7 +719,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: 1bd83f0795fc01b4d9da1d865e665ccd, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 5a17a1ddc942bdc41bad1dbc6f5f65bf, type: 2}
+      objectReference: {fileID: 2100000, guid: e985069f4649e1d4792109895404d588, type: 2}
     - target: {fileID: 919132149155446097, guid: 1bd83f0795fc01b4d9da1d865e665ccd, type: 3}
       propertyPath: m_Name
       value: Mo_Cylime_Body

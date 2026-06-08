@@ -141,7 +141,6 @@ namespace FoolsBrand
                 dice.SetActive(false);
                 diceManager.DiscardDice(0);
             }
-            diceManager.ClearDiceInPlay();
 
             yield return null;
         }

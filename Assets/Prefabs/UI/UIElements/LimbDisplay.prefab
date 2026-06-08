@@ -776,7 +776,9 @@ MonoBehaviour:
   mainInfoTransform: {fileID: 5173904599790100132}
   healthBar: {fileID: 7805827336916749762}
   multiplierLine: {fileID: 6107912258839642098}
-  multiplierTransform: {fileID: 7621428806391273586}
+  multiplier: {fileID: 7963089320366158881}
+  defaultIcon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  weakPointIcon: {fileID: 173075402, guid: 9a2044f6d65a5934fbfc6b9db72bafdc, type: 3}
   nameText: {fileID: 8490373475418199630}
   defenseText: {fileID: 6308805611378498333}
   multiplierText: {fileID: 125104430675198126}

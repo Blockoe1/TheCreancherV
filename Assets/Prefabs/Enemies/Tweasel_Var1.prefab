@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2548360809282276096, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
       propertyPath: <EnemyName>k__BackingField
-      value: Tweasel
+      value: Injured Tweasel
       objectReference: {fileID: 0}
     - target: {fileID: 2581629057923305726, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
       propertyPath: defense

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3228334127417555230}
   - component: {fileID: 4170622330632973415}
   m_Layer: 0
-  m_Name: Slime 3
+  m_Name: Scary Slime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0.92387956, z: 0, w: 0.38268343}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2488922230475793644}
   - {fileID: 4071422238975535367}
@@ -131,8 +131,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemy
   health:
-    maxHealth: 15
-    health: 15
+    maxHealth: 20
+    health: 20
   <Defense>k__BackingField: 0
   <Animator>k__BackingField: {fileID: 4170622330632973415}
   onDeathEvent:
@@ -203,8 +203,8 @@ MonoBehaviour:
   health:
     maxHealth: 0
     health: 0
-  defense: 6
-  multiplier: 0
+  defense: 0
+  multiplier: 1.25
   attackWeight: 1
   attackDice: {fileID: 755269475158816666}
   customDescription: 
@@ -444,10 +444,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemies.Limb
   isBody: 0
   health:
-    maxHealth: 1
-    health: 1
-  defense: 0
-  multiplier: 4
+    maxHealth: 10
+    health: 10
+  defense: 1
+  multiplier: 1
   attackWeight: 1
   attackDice: {fileID: 6723437583122014592}
   customDescription: 
@@ -521,7 +521,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: 5b9b866b54a3c1c4a8918c24ecc2f326, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: e985069f4649e1d4792109895404d588, type: 2}
+      objectReference: {fileID: 2100000, guid: 3b204e9b7daa8f5468c89a1026d0597d, type: 2}
     - target: {fileID: 919132149155446097, guid: 5b9b866b54a3c1c4a8918c24ecc2f326, type: 3}
       propertyPath: m_Name
       value: Mo_Cylime_Eye
@@ -720,7 +720,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: 1bd83f0795fc01b4d9da1d865e665ccd, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: e985069f4649e1d4792109895404d588, type: 2}
+      objectReference: {fileID: 2100000, guid: 3b204e9b7daa8f5468c89a1026d0597d, type: 2}
     - target: {fileID: 919132149155446097, guid: 1bd83f0795fc01b4d9da1d865e665ccd, type: 3}
       propertyPath: m_Name
       value: Mo_Cylime_Body

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3228334127417555230}
   - component: {fileID: 4170622330632973415}
   m_Layer: 0
-  m_Name: Scary Slime
+  m_Name: Scary Cylime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

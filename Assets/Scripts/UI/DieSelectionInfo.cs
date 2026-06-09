@@ -6,29 +6,27 @@ namespace FoolsBrand
 {
     public class DieSelectionInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
-        [SerializeField] private GameObject _infoBox;
-        [SerializeField] private TMP_Text _infoBoxName;
-        [SerializeField] private TMP_Text _infoBoxDescription;
+        [SerializeField] private InfoBox _infoBox;
 
-        private string dieName;
-        private string dieDescription;
+        private IDiceInfo diceInfo;
 
-        public void SetupInfo(string name, string description)
+        public void SetupInfo(IDiceInfo diceInfo)
         {
-            dieName = name;
-            dieDescription = description;
+            this.diceInfo = diceInfo;
         }
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            _infoBox.SetActive(true);
-            _infoBoxName.text = dieName;
-            _infoBoxDescription.text = dieDescription;
+            _infoBox.SetDisplayDice(diceInfo);
+            //_infoBox.SetActive(true);
+            //_infoBoxName.text = dieName;
+            //_infoBoxDescription.text = dieDescription;
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            _infoBox.SetActive(false);
+            //_infoBox.SetActive(false);
+            _infoBox.SetDisplayDice(null);
         }
     }
 }

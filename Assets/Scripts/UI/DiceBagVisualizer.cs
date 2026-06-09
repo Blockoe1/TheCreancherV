@@ -7,6 +7,7 @@
 // Brief Description : Controls viewing dice information on the pause menu.
 *****************************************************************************/
 using NaughtyAttributes;
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -15,18 +16,15 @@ namespace FoolsBrand.UI
 {
     public class DiceBagVisualizer : MonoBehaviour, IPointerMoveHandler
     {
-        [SerializeField] private DiceGridManager diceGrid;
+        [SerializeField] private Canvas offsetCanvas;
+        [SerializeField] private DiceGrid diceGrid;
         [SerializeField] private InfoBox infoBox;
 
         private RectTransform rTrans => transform as RectTransform;
 
-        public void ToggleBag(bool canSee)
-        {
-            diceGrid.ToggleCamera(canSee);
-        }
-
         public void HandlePauseToggled(bool isPaused)
         {
+            diceGrid.ToggleCamera(isPaused);
             if (isPaused)
             {
 
@@ -39,9 +37,21 @@ namespace FoolsBrand.UI
 
         public void OnPointerMove(PointerEventData eventData)
         {
-            Vector2 mousePos = Mouse.current.position.ReadValue() - (Vector2)rTrans.position;
-            
-            if(rTrans.rect.Contains(mousePos))
+            Vector2 mousePos;
+            mousePos = Mouse.current.position.ReadValue();
+            if (offsetCanvas != null)
+            {
+                Vector2 gridOffset = rTrans.position - offsetCanvas.transform.position;
+                Vector2 scaledGridOffset = new Vector2(gridOffset.x / offsetCanvas.transform.localScale.x, gridOffset.y / offsetCanvas.transform.localScale.y);
+                // Calculate the screen position for the rect since it's always centered at 0,0,0
+                mousePos = mousePos - scaledGridOffset - new Vector2(offsetCanvas.pixelRect.width / 2, offsetCanvas.pixelRect.height / 2);
+            }
+            else
+            {
+                mousePos = mousePos - (Vector2)rTrans.position;
+            }
+            //Debug.Log(mousePos);
+            if (rTrans.rect.Contains(mousePos))
             {
                 Vector2 normalizedPos = Rect.PointToNormalized(rTrans.rect, mousePos);
                 //Debug.Log(normalizedPos);

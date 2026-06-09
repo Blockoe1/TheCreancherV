@@ -14,7 +14,7 @@ namespace FoolsBrand
         public static DiceManager Instance;
 
         [SerializeField] private GameObject _diceDatabaseReference;
-        [SerializeField] private DiceGridManager diceGrid;
+        [SerializeField] private DiceGrid diceGrid;
         [SerializeField] private int maxBagSize;
 
         //Dice bags
@@ -63,7 +63,7 @@ namespace FoolsBrand
         }
 
         public int NumDiceLeft => _drawBag.Count + _discardBag.Count + _rollingDice.Count + (_reservedDie == null ? 0 : 1);
-        public DiceGridManager DiceGrid => diceGrid;
+        public DiceGrid DiceGrid => diceGrid;
 
         /// <summary>
         /// Initialize the dice bags

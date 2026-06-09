@@ -13,7 +13,7 @@ using UnityEngine;
 
 namespace FoolsBrand
 {
-    public class DiceGridManager : Manager
+    public class DiceGrid : Manager
     {
         [SerializeField] private Camera diceGridCam;
         [SerializeField] private ObjectPool<DiceImposter> proxyPool;

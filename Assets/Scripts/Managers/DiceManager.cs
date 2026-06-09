@@ -72,7 +72,10 @@ namespace FoolsBrand
         {
             Instance = this;
 
-            diceGrid.Init(gm, parentManager);
+            if (diceGrid != null)
+            {
+                diceGrid.Init(gm, parentManager);
+            }
 
             if (DiceDatabaseSetup.Instance == null)
             {

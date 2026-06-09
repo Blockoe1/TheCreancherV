@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DiceManager
   _diceDatabaseReference: {fileID: 9130035646642930121, guid: ee0b0317b101e4c4aba3fc96f9c5d4bb, type: 3}
-  diceGrid: {fileID: 0}
+  diceGrid: {fileID: 1944104478890028466}
   maxBagSize: 16
   _drawBag: []
   _discardBag: []

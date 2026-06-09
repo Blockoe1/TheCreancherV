@@ -693,8 +693,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 2519872050
+  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 0.5882353}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1495,7 +1495,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 696444546025098380}
   m_OnClick:
     m_PersistentCalls:
@@ -1620,6 +1620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9116c1307f8b2824097e6779a9d856d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.UI.DiceBagVisualizer
+  offsetCanvas: {fileID: 0}
   diceGrid: {fileID: 0}
   infoBox: {fileID: 0}
 --- !u!1 &8447809443694049108

@@ -172,7 +172,7 @@ PrefabInstance:
     - target: {fileID: 3967560184707004619, guid: 2d1d954686a95ff4a9e8045107eb25ff, type: 3}
       propertyPath: diceGrid
       value: 
-      objectReference: {fileID: 7910666936904247904}
+      objectReference: {fileID: 8489437611196857844}
     - target: {fileID: 4159055026431201518, guid: 2d1d954686a95ff4a9e8045107eb25ff, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -284,7 +284,7 @@ PrefabInstance:
     - target: {fileID: 6212952125643657384, guid: 2d1d954686a95ff4a9e8045107eb25ff, type: 3}
       propertyPath: diceGrid
       value: 
-      objectReference: {fileID: 7910666936904247904}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -460,17 +460,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1065709436716793467, guid: 021549abce5b37f4498529770a5b6e11, type: 3}
   m_PrefabInstance: {fileID: 8010305315088552006}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7910666936904247904 stripped
+--- !u!114 &8489437611196857844 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 207736868385339942, guid: 021549abce5b37f4498529770a5b6e11, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1944104478890028466, guid: 021549abce5b37f4498529770a5b6e11, type: 3}
   m_PrefabInstance: {fileID: 8010305315088552006}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c38cc2693aff94143883394368542e78, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ec3e9f9dba6d2a448a3c0f8811192e6, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.DiceGridManager
+  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.DiceGrid
 --- !u!1001 &9218420962460713565
 PrefabInstance:
   m_ObjectHideFlags: 0

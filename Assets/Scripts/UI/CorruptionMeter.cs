@@ -14,6 +14,7 @@ namespace FoolsBrand
 {
     public class CorruptionMeter : MonoBehaviour
     {
+        [SerializeField] private CanvasGroup corruptionGroup;
         [SerializeField] private RectTransform meterFill;
         [SerializeField] private TMP_Text corruptedText;
         [SerializeField] private float minAnchor;
@@ -37,11 +38,19 @@ namespace FoolsBrand
         /// </summary>
         public void UpdateBar()
         {
-            int corruptionThreshold = DiceManager.Instance.NumDiceHeld / 2 + 1;
-            corruptedText.text = corruptedDiceCount + "/" + corruptionThreshold;
-            float normalizedProgress = (float)corruptedDiceCount / corruptionThreshold;
-            meterFill.anchorMax = new Vector2(referenceHealth.HealthProportion > 0 && minAnchor > 0 ?
-                Mathf.Max(referenceHealth.HealthProportion, minAnchor) : referenceHealth.HealthProportion,
+            if (corruptedDiceCount > 0)
+            {
+                corruptionGroup.alpha = 1;
+                int corruptionThreshold = DiceManager.Instance.NumDiceHeld / 2 + 1;
+                corruptedText.text = corruptedDiceCount + "/" + corruptionThreshold;
+                float normalizedProgress = (float)corruptedDiceCount / corruptionThreshold;
+                meterFill.anchorMax = new Vector2(normalizedProgress > 0 && minAnchor > 0 ?
+                    Mathf.Max(normalizedProgress, minAnchor) : normalizedProgress, meterFill.anchorMax.y);
+            }
+            else
+            {
+                corruptionGroup.alpha = 0;
+            }
 
         }
 

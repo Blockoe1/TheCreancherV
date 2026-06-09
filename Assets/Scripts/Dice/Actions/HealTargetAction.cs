@@ -22,8 +22,15 @@ namespace FoolsBrand
             if (target is Limb targetLimb)
             {
                 targetLimb.ParentEnemy.Health.Value += value;
+                if (!targetLimb.IsBody)
+                {
+                    target.Health.Value += value;
+                }
             }
-            target.Health.Value += value;
+            else
+            {
+                target.Health.Value += value;
+            }
 
             yield return null;
         }

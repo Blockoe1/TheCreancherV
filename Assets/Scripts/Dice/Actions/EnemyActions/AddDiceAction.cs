@@ -8,6 +8,7 @@
 *****************************************************************************/
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace FoolsBrand
@@ -16,11 +17,15 @@ namespace FoolsBrand
     public class AddDiceAction : DiceAction
     {
         [SerializeField] private string diceString;
+        [SerializeField] private int maxAddNum;
         public override int PriorityValue => 80;
 
         public override IEnumerator PerformAction(ITargetable target, IActionSource source, Combatant user, int value, DieFace sourceFace)
         {
-            DiceManager.Instance.AddDice(diceString);
+            if (DiceManager.Instance.CountDiceNum(diceString) < maxAddNum)
+            {
+                DiceManager.Instance.AddDice(diceString);
+            }
             yield return null;
         }
     }

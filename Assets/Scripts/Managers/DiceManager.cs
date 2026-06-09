@@ -1,5 +1,6 @@
 using NaughtyAttributes;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using UnityEngine;
 
@@ -13,6 +14,8 @@ namespace FoolsBrand
         public static DiceManager Instance;
 
         [SerializeField] private GameObject _diceDatabaseReference;
+        [SerializeField] private DiceGrid diceGrid;
+        [SerializeField] private int maxBagSize;
 
         //Dice bags
         //RIP THIS WHOLE THING OUT AND REPLACE IT.
@@ -24,9 +27,12 @@ namespace FoolsBrand
         //private GameObject reservedDieGO;
 
         public static List<string> DiceGoingToCombat = new();
+        private readonly List<string> allDice = new();
 
         [SerializeField] private List<GameObject> _diePositions;
         [SerializeField] private GameObject _reserveSlotPosition;
+
+        private int numDiceHeld;
 
         //private Dictionary<string, GameObject[]> diceLookup = new();
         public List<GameObject> DiceInPlay 
@@ -39,7 +45,25 @@ namespace FoolsBrand
                 return diceInPlay;
             }
         }
+
+        public List<GameObject> AllDice
+        {
+            get
+            {
+                List<GameObject> allDice = new List<GameObject>();
+                allDice.AddRange(_rollingDice);
+                if (_reservedDie != null)
+                {
+                    allDice.Add(_reservedDie);
+                }
+                allDice.AddRange(_discardBag);
+                allDice.AddRange(_drawBag);
+                return allDice;
+            }
+        }
+
         public int NumDiceLeft => _drawBag.Count + _discardBag.Count + _rollingDice.Count + (_reservedDie == null ? 0 : 1);
+        public DiceGrid DiceGrid => diceGrid;
 
         /// <summary>
         /// Initialize the dice bags
@@ -47,6 +71,11 @@ namespace FoolsBrand
         public override void Init(GameManager gm, HierarchyManager parentManager)
         {
             Instance = this;
+
+            if (diceGrid != null)
+            {
+                diceGrid.Init(gm, parentManager);
+            }
 
             if (DiceDatabaseSetup.Instance == null)
             {
@@ -65,9 +94,7 @@ namespace FoolsBrand
 
             foreach(string die in DiceGoingToCombat)
             {
-                GameObject dieObject = Instantiate(DiceDatabase.AllDiceDict[die], transform);
-                dieObject.SetActive(false);
-                _drawBag.Add(dieObject);
+                AddDice(die);
             }
 
             PlayerInputManager.OnReserveInput += ReserveDie;
@@ -129,8 +156,10 @@ namespace FoolsBrand
 
                 _rollingDice[index].transform.position = _diePositions[index].transform.position;
                 _rollingDice[index].transform.localScale = _diePositions[index].transform.localScale;
-                _rollingDice[index].SetActive(true);
-                _rollingDice[index].GetComponent<DieBase>().StartRolling();
+                DieBase dice = _rollingDice[index].GetComponent<DieBase>();
+                diceGrid.CheckOutDice(dice);
+                //_rollingDice[index].SetActive(true);
+                dice.StartRolling();
 
                 return;
             }
@@ -153,6 +182,7 @@ namespace FoolsBrand
 
         public void DiscardDice(int index)
         {
+            diceGrid.ReturnDice(_rollingDice[index].GetComponent<DieBase>());
             _discardBag.Add(_rollingDice[index]);
             _rollingDice.RemoveAt(index);
         }
@@ -176,6 +206,7 @@ namespace FoolsBrand
                 return;
             }
 
+            diceGrid.RemoveDice(_reservedDie.GetComponent<DieBase>());
             _reservedDie.SetActive(false);
             _reservedDie = null;
         }
@@ -201,11 +232,12 @@ namespace FoolsBrand
             for (int i = 0; i < _rollingDice.Count; i++)
             {
                 //string dice = _rollingDice[i].ToString();
-
-                _rollingDice[i].SetActive(true);
+                DieBase dice = _rollingDice[i].GetComponent<DieBase>();
+                //_rollingDice[i].SetActive(true);
+                diceGrid.CheckOutDice(dice);
                 _rollingDice[i].transform.position = _diePositions[i].transform.position;
                 _rollingDice[i].transform.localScale = _diePositions[i].transform.localScale;
-                _rollingDice[i].GetComponent<DieBase>().StartRolling();
+                dice.StartRolling();
 
                 //for (int j = 0; j < diceLookup[dice].Length; j++)
                 //{
@@ -253,9 +285,15 @@ namespace FoolsBrand
         /// <param name="die"></param>
         public void AddDice(string die)
         {
-            GameObject dieObject = Instantiate(DiceDatabase.AllDiceDict[die], transform);
-            dieObject.SetActive(false);
-            _drawBag.Add(dieObject);
+            if (numDiceHeld < maxBagSize)
+            {
+                GameObject dieObject = Instantiate(DiceDatabase.AllDiceDict[die], transform);
+                //dieObject.SetActive(false);
+                diceGrid.RegisterDice(dieObject.GetComponent<DieBase>());
+                _drawBag.Add(dieObject);
+                numDiceHeld++;
+                allDice.Add(die);
+            }
 
             //if (!diceLookup.ContainsKey(die))
             //{
@@ -272,6 +310,19 @@ namespace FoolsBrand
             //        break;
             //    }
             //}
+        }
+
+        public int CountDiceNum(string diceName)
+        {
+            int count = 0;
+            foreach(string dice in allDice)
+            {
+                if(diceName == dice)
+                {
+                    count++;
+                }
+            }
+            return count;
         }
     }
 }

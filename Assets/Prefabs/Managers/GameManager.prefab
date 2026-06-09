@@ -55,23 +55,6 @@ MonoBehaviour:
   - {fileID: 3440638476070191939}
   - {fileID: 9192090825351714869}
   - {fileID: 3317608462264096799}
-  mainMenuAction:
-    m_Name: Main Menu
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: f4c6a3c5-1781-49ce-9f36-ba38758413a0
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 4214fe74-e94c-41b7-925c-66c55b87e50c
-      m_Path: <Keyboard>/escape
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Main Menu
-      m_Flags: 0
-    m_Flags: 0
   debugStartEncounter: -1
 --- !u!1001 &821984334870767815
 PrefabInstance:
@@ -186,6 +169,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3967560184707004619, guid: 2d1d954686a95ff4a9e8045107eb25ff, type: 3}
+      propertyPath: diceGrid
+      value: 
+      objectReference: {fileID: 8489437611196857844}
     - target: {fileID: 4159055026431201518, guid: 2d1d954686a95ff4a9e8045107eb25ff, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -294,10 +281,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7940127308206512893, guid: 2d1d954686a95ff4a9e8045107eb25ff, type: 3}
-      propertyPath: bodyDisplayPrefab
+    - target: {fileID: 6212952125643657384, guid: 2d1d954686a95ff4a9e8045107eb25ff, type: 3}
+      propertyPath: diceGrid
       value: 
-      objectReference: {fileID: 7148077236440832681, guid: 2fbf47ebf1cc4864890841fc674a83e4, type: 3}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -418,7 +405,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1065709436716793467, guid: 021549abce5b37f4498529770a5b6e11, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 1065709436716793467, guid: 021549abce5b37f4498529770a5b6e11, type: 3}
       propertyPath: m_LocalRotation.w
@@ -473,6 +460,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1065709436716793467, guid: 021549abce5b37f4498529770a5b6e11, type: 3}
   m_PrefabInstance: {fileID: 8010305315088552006}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8489437611196857844 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1944104478890028466, guid: 021549abce5b37f4498529770a5b6e11, type: 3}
+  m_PrefabInstance: {fileID: 8010305315088552006}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec3e9f9dba6d2a448a3c0f8811192e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.DiceGrid
 --- !u!1001 &9218420962460713565
 PrefabInstance:
   m_ObjectHideFlags: 0

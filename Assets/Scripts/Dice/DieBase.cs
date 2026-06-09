@@ -7,7 +7,7 @@ using UnityEngine.InputSystem.Utilities;
 /// <summary>
 /// The base class for all dice. Can also be used as the basic die variant
 /// </summary>
-public class DieBase : MonoBehaviour
+public class DieBase : MonoBehaviour, IDiceInfo
 {
     private static readonly Vector3[] FACE_AXES = 
     { 
@@ -31,6 +31,8 @@ public class DieBase : MonoBehaviour
     [SerializeField] private string _dieName = "Basic Die 1-6";
     [SerializeField, TextArea] private string _dieDescription = "To be revealed in a future milestone...";
     [SerializeField] private bool rewardSelectable = true;
+    [SerializeField] private MeshRenderer dieRenderer;
+    [SerializeField] private MeshRenderer borderRenderer;
     [Header("Rolling Animation")]
     [SerializeField] private Vector3 localRotSpeed;
     [SerializeField] private Vector3 worldRotSpeed;
@@ -42,6 +44,7 @@ public class DieBase : MonoBehaviour
     private int dieIndex = 0;
     private bool isRolling;
     private bool isReserved = false;
+    [SerializeField] private bool corrupted = false;
 
     public bool RewardSelectable => rewardSelectable;
     public string DieName { get => _dieName; }
@@ -58,9 +61,13 @@ public class DieBase : MonoBehaviour
         }
     }
 
+    public Material DieMaterial => dieRenderer.sharedMaterial;
+    public Material BorderMaterial => borderRenderer.sharedMaterial;
+
     public ReadOnlyArray<DieFace> Faces => dieFaces;
 
     public bool IsReserved { get => isReserved; set => isReserved = value; }
+    public bool Corrupted { get => corrupted; }
 
     /// <summary>
     /// Starts the dice's rolling animation.
@@ -76,10 +83,12 @@ public class DieBase : MonoBehaviour
 
     private Quaternion ApplyRollRotation(Quaternion rotation, float strength = 1)
     {
-        rotation *= Quaternion.Euler(strength * Time.deltaTime * localRotSpeed);
+        rotation = QuaternionHelpers.RotateLocal(rotation, strength * Time.deltaTime * localRotSpeed);
+        //rotation *= Quaternion.Euler(strength * Time.deltaTime * localRotSpeed);
 
         // Apply world rotation.
-        rotation *= Quaternion.Inverse(rotation) * Quaternion.Euler(strength * Time.deltaTime * worldRotSpeed) * rotation;
+        rotation = QuaternionHelpers.RotateWorld(rotation, strength * Time.deltaTime * worldRotSpeed);
+        //rotation *= Quaternion.Inverse(rotation) * Quaternion.Euler(strength * Time.deltaTime * worldRotSpeed) * rotation;
         return rotation;
     }
 
@@ -151,6 +160,15 @@ public class DieBase : MonoBehaviour
         foreach(var face in dieFaces)
         {
             face.RefreshText();
+        }
+    }
+
+    public void Corrupt()
+    {
+        corrupted = true;
+        foreach(DieFace face in dieFaces)
+        {
+            face.IncreaseValue();
         }
     }
 }

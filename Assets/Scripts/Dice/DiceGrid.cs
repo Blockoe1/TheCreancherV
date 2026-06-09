@@ -25,7 +25,7 @@ namespace FoolsBrand
 
         private readonly List<DieBase> registeredDice = new();
         private readonly Dictionary<DieBase, DiceImposter> diceProxies = new();
-        [SerializeField, ReadOnly] private Transform[] controlledTransforms;
+        [SerializeField, ReadOnly] private readonly List<Transform> controlledTransforms = new();
 
         private Quaternion currentRotationQuat;
         private bool isSpinning;
@@ -46,7 +46,6 @@ namespace FoolsBrand
         /// <param name="parentManager"></param>
         public override void Init(GameManager gm, HierarchyManager parentManager)
         {
-            controlledTransforms = new Transform[maxGridSize.x * maxGridSize.y];
             isSpinning = true;
             currentRotationQuat = Quaternion.Euler(baseRotation);
             StartCoroutine(RotateDice());
@@ -116,7 +115,14 @@ namespace FoolsBrand
                 dice.transform.localScale = baseScale;
 
                 // Start the dice spinning.
-                controlledTransforms[diceIndex] = dice.transform;
+                if (diceIndex < controlledTransforms.Count)
+                {
+                    controlledTransforms[diceIndex] = dice.transform;
+                }
+                else
+                {
+                    controlledTransforms.Insert(diceIndex, dice.transform);
+                }    
 
                 // Return any dice proxies used to replace the dice while it was checked out.
                 if (diceProxies.ContainsKey(dice))
@@ -137,7 +143,7 @@ namespace FoolsBrand
             ReturnDice(dice);
             int diceIndex = registeredDice.IndexOf(dice);
             registeredDice.Remove(dice);
-            controlledTransforms[diceIndex] = null;
+            controlledTransforms.Remove(dice.transform);
             RefreshGrid();
         }
         #endregion
@@ -162,7 +168,7 @@ namespace FoolsBrand
 
         private void RefreshGrid()
         {
-            for(int i = 0; i < controlledTransforms.Length; i++)
+            for(int i = 0; i < controlledTransforms.Count; i++)
             {
                 if (controlledTransforms[i] == null) { break; }
                 GoToIndexPosition(controlledTransforms[i], i);

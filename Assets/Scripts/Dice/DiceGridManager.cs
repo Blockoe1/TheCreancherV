@@ -87,6 +87,14 @@ namespace FoolsBrand
                 // Create a dice proxy for this dice.
                 DiceImposter proxy = proxyPool.GetObject();
                 proxy.SetDice(dice);
+                if (diceProxies.ContainsKey(dice))
+                {
+                    diceProxies[dice] = proxy;
+                }
+                else
+                {
+                    diceProxies.Add(dice, proxy);
+                }
 
                 GoToIndexPosition(proxy.transform, diceIndex);
 
@@ -117,6 +125,7 @@ namespace FoolsBrand
                 {
                     DiceImposter proxy = diceProxies[dice];
                     proxyPool.ReturnObject(proxy);
+                    diceProxies.Remove(dice);
                 }
             }
         }

@@ -38,6 +38,7 @@ namespace FoolsBrand
             for(int i = 0; i < faceTexts.Length; i++)
             {
                 faceTexts[i].text = referenceDie.Faces[i].GetFaceText();
+                faceTexts[i].color = referenceDie.Faces[i].FaceColor;
             }
         }
     }

@@ -22,6 +22,7 @@ public class DieFace
 
     public DieBase ParentDice => parentDice;
     public int FaceValue => faceValue;
+    public Color FaceColor => faceTextObj == null ? Color.black : faceTextObj.color;
 
     public bool IsInitialized { get; private set; }
 

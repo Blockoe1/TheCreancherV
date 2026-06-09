@@ -81,7 +81,6 @@ namespace FoolsBrand
         {
             if (registeredDice.Contains(dice))
             {
-                Debug.Log("Checked out " + dice);
                 int diceIndex = registeredDice.IndexOf(dice);
                 
                 // Create a dice proxy for this dice.
@@ -111,7 +110,6 @@ namespace FoolsBrand
         {
             if (registeredDice.Contains(dice))
             {
-                Debug.Log("returned " + dice);
                 int diceIndex = registeredDice.IndexOf(dice);
                 // Snap the dice to the grid.
                 GoToIndexPosition(dice.transform, diceIndex);

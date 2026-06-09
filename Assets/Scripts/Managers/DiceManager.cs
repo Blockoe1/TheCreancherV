@@ -1,5 +1,6 @@
 using NaughtyAttributes;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using UnityEngine;
 
@@ -14,6 +15,7 @@ namespace FoolsBrand
 
         [SerializeField] private GameObject _diceDatabaseReference;
         [SerializeField] private DiceGridManager diceGrid;
+        [SerializeField] private int maxBagSize;
 
         //Dice bags
         //RIP THIS WHOLE THING OUT AND REPLACE IT.
@@ -25,9 +27,12 @@ namespace FoolsBrand
         //private GameObject reservedDieGO;
 
         public static List<string> DiceGoingToCombat = new();
+        private readonly List<string> allDice = new();
 
         [SerializeField] private List<GameObject> _diePositions;
         [SerializeField] private GameObject _reserveSlotPosition;
+
+        private int numDiceHeld;
 
         //private Dictionary<string, GameObject[]> diceLookup = new();
         public List<GameObject> DiceInPlay 
@@ -277,10 +282,15 @@ namespace FoolsBrand
         /// <param name="die"></param>
         public void AddDice(string die)
         {
-            GameObject dieObject = Instantiate(DiceDatabase.AllDiceDict[die], transform);
-            //dieObject.SetActive(false);
-            diceGrid.RegisterDice(dieObject.GetComponent<DieBase>());
-            _drawBag.Add(dieObject);
+            if (numDiceHeld < maxBagSize)
+            {
+                GameObject dieObject = Instantiate(DiceDatabase.AllDiceDict[die], transform);
+                //dieObject.SetActive(false);
+                diceGrid.RegisterDice(dieObject.GetComponent<DieBase>());
+                _drawBag.Add(dieObject);
+                numDiceHeld++;
+                allDice.Add(die);
+            }
 
             //if (!diceLookup.ContainsKey(die))
             //{
@@ -297,6 +307,19 @@ namespace FoolsBrand
             //        break;
             //    }
             //}
+        }
+
+        public int CountDiceNum(string diceName)
+        {
+            int count = 0;
+            foreach(string dice in allDice)
+            {
+                if(diceName == dice)
+                {
+                    count++;
+                }
+            }
+            return count;
         }
     }
 }

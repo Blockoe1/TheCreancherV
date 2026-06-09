@@ -530,6 +530,7 @@ MonoBehaviour:
     faceValue: 0
     faceTextObj: {fileID: 824878528498425248}
     faceActions: []
+  corrupted: 0
 --- !u!135 &8207341177514950525
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -549,7 +550,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 0.75
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2881102808344166740
 GameObject:

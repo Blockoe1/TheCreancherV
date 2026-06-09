@@ -55,7 +55,7 @@ MonoBehaviour:
   - {fileID: 3440638476070191939}
   - {fileID: 9192090825351714869}
   - {fileID: 3317608462264096799}
-  debugStartEncounter: 8
+  debugStartEncounter: -1
 --- !u!1001 &821984334870767815
 PrefabInstance:
   m_ObjectHideFlags: 0

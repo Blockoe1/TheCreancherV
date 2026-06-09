@@ -13,7 +13,7 @@ using UnityEngine.InputSystem;
 
 namespace FoolsBrand.UI
 {
-    public class DiceBagVisualizer : MonoBehaviour, IPointerMoveHandler, IPointerExitHandler
+    public class DiceBagVisualizer : MonoBehaviour, IPointerMoveHandler
     {
         [SerializeField] private DiceGridManager diceGrid;
         [SerializeField] private InfoBox infoBox;
@@ -23,6 +23,18 @@ namespace FoolsBrand.UI
         public void ToggleBag(bool canSee)
         {
             diceGrid.ToggleCamera(canSee);
+        }
+
+        public void HandlePauseToggled(bool isPaused)
+        {
+            if (isPaused)
+            {
+
+            }
+            else
+            {
+                infoBox.SetDisplayDice(null);
+            }
         }
 
         public void OnPointerMove(PointerEventData eventData)
@@ -49,16 +61,6 @@ namespace FoolsBrand.UI
             {
                 infoBox.SetDisplayDice(null);
             }
-        }
-
-        /// <summary>
-        /// Stop showing dice info when the mouse leaves the grid.
-        /// </summary>
-        /// <param name="eventData"></param>
-        public void OnPointerExit(PointerEventData eventData)
-        {
-            
-            Debug.Log("Exit");
         }
     }
 }

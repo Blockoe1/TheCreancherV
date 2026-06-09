@@ -19,11 +19,18 @@ namespace FoolsBrand
 
         public override IEnumerator PerformAction(ITargetable target, IActionSource source, Combatant user, int value, DieFace sourceFace)
         {
-            if (target is Limb targetLimb && !targetLimb.IsBody)
+            if (target is Limb targetLimb)
             {
                 targetLimb.ParentEnemy.Health.Value += value;
+                if (!targetLimb.IsBody)
+                {
+                    target.Health.Value += value;
+                }
             }
-            target.Health.Value += value;
+            else
+            {
+                target.Health.Value += value;
+            }
 
             yield return null;
         }

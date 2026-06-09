@@ -859,6 +859,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7681091777279207426}
   - component: {fileID: 6662931636624573746}
+  - component: {fileID: 6734080873801285735}
   m_Layer: 0
   m_Name: PlayerCorruption
   m_TagString: Untagged
@@ -895,10 +896,26 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5713351903102770115}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &6734080873801285735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5713351903102770115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5088c9ca24824a4da7b6eb397767942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.CorruptionMeter
+  corruptionGroup: {fileID: 6662931636624573746}
+  meterFill: {fileID: 7734979368783693937}
+  corruptedText: {fileID: 6023261322096919790}
+  minAnchor: 0.1
 --- !u!1 &6693768847265803457
 GameObject:
   m_ObjectHideFlags: 0
@@ -1227,6 +1244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.UI.PlayerUIManager
   playerHealthBar: {fileID: 3573572578346350637}
+  corruptionMeter: {fileID: 6734080873801285735}
   effectDisplayPool:
     prefab: {fileID: 9145243321931278865, guid: 1e696edb423a1944b85e41d39b892076, type: 3}
     parentTransform: {fileID: 5650064154419591176}

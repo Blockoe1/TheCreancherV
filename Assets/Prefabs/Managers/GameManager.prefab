@@ -165,6 +165,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3013980293867163493, guid: 2d1d954686a95ff4a9e8045107eb25ff, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3473730540124090622, guid: 2d1d954686a95ff4a9e8045107eb25ff, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
@@ -279,6 +283,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5467685337087319846, guid: 2d1d954686a95ff4a9e8045107eb25ff, type: 3}
       propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715429971619353119, guid: 2d1d954686a95ff4a9e8045107eb25ff, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6212952125643657384, guid: 2d1d954686a95ff4a9e8045107eb25ff, type: 3}

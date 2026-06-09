@@ -28,7 +28,10 @@ namespace FoolsBrand.UI
             playerHealthBar.SetTargetHealth(player.Health);
             dnm = parentManager.GetManager<DamageNumberManager>();
 
-            corruptionMeter.Init();
+            if (corruptionMeter != null)
+            {
+                corruptionMeter.Init();
+            }
 
             dnm.RegisterDamageNumber(player.Health, player.DamageNumberPoint);
 
@@ -40,7 +43,10 @@ namespace FoolsBrand.UI
         {
             dnm.UnregisterDamageNumber(player.Health);
 
-            corruptionMeter.Deinit();
+            if (corruptionMeter != null)
+            {
+                corruptionMeter.Deinit();
+            }
 
             player.EffectAppliedEvent -= AddNewEffectDisplay;
             player.PlayerActEvent -= UpdateDisplays;

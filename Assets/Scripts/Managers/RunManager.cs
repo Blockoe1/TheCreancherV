@@ -6,8 +6,10 @@ namespace FoolsBrand
 {
     public static class RunManager
     {
+        private static bool win = false;
         public static int CurrentEncounterNum { get; internal set; }
         public static int PlayerHealth { get; set; } = -1;
+        public static bool Win { get => win; set => win = value; }
 
         /// <summary>
         /// Called when a new combat is started. Switches the scene and selects the new enemy
@@ -34,9 +36,9 @@ namespace FoolsBrand
         public static void WinRun()
         {
             // TODO: Implement winning.
-            Debug.Log("Win!");
+            win = true;
             CleanUpRun();
-            SceneManager.LoadScene("Main Menu");
+            SceneManager.LoadScene("EndScreen");
         }
 
         /// <summary>
@@ -45,8 +47,9 @@ namespace FoolsBrand
         public static void CombatLose()
         {
             //Debug.Log("Combat Lose");
+            win = false;
             CleanUpRun();
-            SceneManager.LoadScene("Main Menu");
+            SceneManager.LoadScene("EndScreen");
         }
 
         /// <summary>

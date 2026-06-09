@@ -5,19 +5,17 @@ namespace FoolsBrand
 {
     public class MainMenuReturnNotForPauseMenu : MonoBehaviour
     {
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
+        [SerializeField] private GameObject _winScreen;
+        [SerializeField] private GameObject _loseScreen;
         void Start()
         {
-        
+            _winScreen.SetActive(RunManager.Win);
+            _loseScreen.SetActive(!RunManager.Win);
         }
+
         public void ReturnToMainMenu()
         {
             SceneManager.LoadScene("Main Menu");
-        }
-        // Update is called once per frame
-        void Update()
-        {
-        
         }
     }
 }

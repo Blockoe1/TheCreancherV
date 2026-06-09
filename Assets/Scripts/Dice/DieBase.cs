@@ -42,6 +42,7 @@ public class DieBase : MonoBehaviour
     private int dieIndex = 0;
     private bool isRolling;
     private bool isReserved = false;
+    [SerializeField] private bool corrupted = false;
 
     public bool RewardSelectable => rewardSelectable;
     public string DieName { get => _dieName; }
@@ -61,6 +62,7 @@ public class DieBase : MonoBehaviour
     public ReadOnlyArray<DieFace> Faces => dieFaces;
 
     public bool IsReserved { get => isReserved; set => isReserved = value; }
+    public bool Corrupted { get => corrupted; }
 
     /// <summary>
     /// Starts the dice's rolling animation.
@@ -151,6 +153,15 @@ public class DieBase : MonoBehaviour
         foreach(var face in dieFaces)
         {
             face.RefreshText();
+        }
+    }
+
+    public void Corrupt()
+    {
+        corrupted = true;
+        foreach(DieFace face in dieFaces)
+        {
+            face.IncreaseValue();
         }
     }
 }

@@ -329,6 +329,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5175595077385248602}
     m_Modifications:
+    - target: {fileID: 4581551440811469541, guid: 2ad2c3a1a0d2e6747807c2ae3cf72cda, type: 3}
+      propertyPath: _myCanvas
+      value: 
+      objectReference: {fileID: 7102012968691476179}
     - target: {fileID: 7968734924793847173, guid: 2ad2c3a1a0d2e6747807c2ae3cf72cda, type: 3}
       propertyPath: m_Name
       value: DiceUIManager
@@ -364,18 +368,6 @@ PrefabInstance:
     - target: {fileID: 8515666554259804188, guid: 2ad2c3a1a0d2e6747807c2ae3cf72cda, type: 3}
       propertyPath: m_SizeDelta.y
       value: 1080
-      objectReference: {fileID: 0}
-    - target: {fileID: 8515666554259804188, guid: 2ad2c3a1a0d2e6747807c2ae3cf72cda, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8515666554259804188, guid: 2ad2c3a1a0d2e6747807c2ae3cf72cda, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8515666554259804188, guid: 2ad2c3a1a0d2e6747807c2ae3cf72cda, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8515666554259804188, guid: 2ad2c3a1a0d2e6747807c2ae3cf72cda, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1003,6 +995,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 721456572735625966, guid: 4bfe504ace347dc4abb21c468725a45c, type: 3}
+      propertyPath: tutorialSequences.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 721456572735625966, guid: 4bfe504ace347dc4abb21c468725a45c, type: 3}
+      propertyPath: 'tutorialSequences.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 3043854f783e13648819dc083e08e0b2, type: 2}
+    - target: {fileID: 721456572735625966, guid: 4bfe504ace347dc4abb21c468725a45c, type: 3}
+      propertyPath: 'tutorialSequences.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 4e49973225e4c234a97266c5f12f6e1e, type: 2}
+    - target: {fileID: 721456572735625966, guid: 4bfe504ace347dc4abb21c468725a45c, type: 3}
+      propertyPath: 'tutorialSequences.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 8470faeb86d4b0644a8f7515ef3afec6, type: 2}
+    - target: {fileID: 721456572735625966, guid: 4bfe504ace347dc4abb21c468725a45c, type: 3}
+      propertyPath: 'tutorialSequences.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 960f475aa7dfc334591208cbc3869e18, type: 2}
     - target: {fileID: 3032510675462261120, guid: 4bfe504ace347dc4abb21c468725a45c, type: 3}
       propertyPath: m_Name
       value: TutorialManager

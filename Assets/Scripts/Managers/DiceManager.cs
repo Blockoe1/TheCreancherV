@@ -39,6 +39,23 @@ namespace FoolsBrand
                 return diceInPlay;
             }
         }
+
+        public List<GameObject> AllDice
+        {
+            get
+            {
+                List<GameObject> allDice = new List<GameObject>();
+                allDice.AddRange(_rollingDice);
+                if (_reservedDie != null)
+                {
+                    allDice.Add(_reservedDie);
+                }
+                allDice.AddRange(_discardBag);
+                allDice.AddRange(_drawBag);
+                return allDice;
+            }
+        }
+
         public int NumDiceLeft => _drawBag.Count + _discardBag.Count + _rollingDice.Count + (_reservedDie == null ? 0 : 1);
 
         /// <summary>

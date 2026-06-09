@@ -96,10 +96,10 @@ namespace FoolsBrand
             {
                 _hoveredObject = hit.collider.gameObject;
                 _infoBox.SetActive(true);
-                DieBase die = hit.collider.GetComponent<DieBase>();
+                IDiceInfo die = hit.collider.GetComponent<IDiceInfo>();
                 _dieNameText.text = die.DieName;
                 _dieDescText.text = die.DieDescription + 
-                    (canReserve && !die.IsReserved ? "\n\n<i>Click to reserve.</i>" : "");
+                    (canReserve && !die.IsReserved && die is DieBase ? "\n\n<i>Click to reserve.</i>" : "");
             }
             else
             {

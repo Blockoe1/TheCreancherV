@@ -138,7 +138,6 @@ namespace FoolsBrand
 
             foreach (GameObject dice in diceManager.DiceInPlay)
             {
-                dice.SetActive(false);
                 diceManager.DiscardDice(0);
             }
 

@@ -45,7 +45,7 @@ public class DieFace
         return actionInfo;
     }
 
-    private string GetFaceText()
+    public string GetFaceText()
     {
         return faceText.Replace(VALUE_CHAR, (faceActions.Length > 0 ? faceValue.ToString() : ""));
     }

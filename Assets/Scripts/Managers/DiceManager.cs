@@ -13,6 +13,7 @@ namespace FoolsBrand
         public static DiceManager Instance;
 
         [SerializeField] private GameObject _diceDatabaseReference;
+        [SerializeField] private DiceGridManager diceGrid;
 
         //Dice bags
         //RIP THIS WHOLE THING OUT AND REPLACE IT.
@@ -48,6 +49,8 @@ namespace FoolsBrand
         {
             Instance = this;
 
+            diceGrid.Init(gm, parentManager);
+
             if (DiceDatabaseSetup.Instance == null)
             {
                 GameObject ddRef = Instantiate(_diceDatabaseReference);
@@ -65,9 +68,7 @@ namespace FoolsBrand
 
             foreach(string die in DiceGoingToCombat)
             {
-                GameObject dieObject = Instantiate(DiceDatabase.AllDiceDict[die], transform);
-                dieObject.SetActive(false);
-                _drawBag.Add(dieObject);
+                AddDice(die);
             }
 
             PlayerInputManager.OnReserveInput += ReserveDie;
@@ -129,8 +130,10 @@ namespace FoolsBrand
 
                 _rollingDice[index].transform.position = _diePositions[index].transform.position;
                 _rollingDice[index].transform.localScale = _diePositions[index].transform.localScale;
-                _rollingDice[index].SetActive(true);
-                _rollingDice[index].GetComponent<DieBase>().StartRolling();
+                DieBase dice = _rollingDice[index].GetComponent<DieBase>();
+                diceGrid.CheckOutDice(dice);
+                //_rollingDice[index].SetActive(true);
+                dice.StartRolling();
 
                 return;
             }
@@ -153,6 +156,7 @@ namespace FoolsBrand
 
         public void DiscardDice(int index)
         {
+            diceGrid.ReturnDice(_rollingDice[index].GetComponent<DieBase>());
             _discardBag.Add(_rollingDice[index]);
             _rollingDice.RemoveAt(index);
         }
@@ -176,6 +180,7 @@ namespace FoolsBrand
                 return;
             }
 
+            diceGrid.RemoveDice(_reservedDie.GetComponent<DieBase>());
             _reservedDie.SetActive(false);
             _reservedDie = null;
         }
@@ -201,11 +206,12 @@ namespace FoolsBrand
             for (int i = 0; i < _rollingDice.Count; i++)
             {
                 //string dice = _rollingDice[i].ToString();
-
-                _rollingDice[i].SetActive(true);
+                DieBase dice = _rollingDice[i].GetComponent<DieBase>();
+                //_rollingDice[i].SetActive(true);
+                diceGrid.CheckOutDice(dice);
                 _rollingDice[i].transform.position = _diePositions[i].transform.position;
                 _rollingDice[i].transform.localScale = _diePositions[i].transform.localScale;
-                _rollingDice[i].GetComponent<DieBase>().StartRolling();
+                dice.StartRolling();
 
                 //for (int j = 0; j < diceLookup[dice].Length; j++)
                 //{
@@ -254,7 +260,8 @@ namespace FoolsBrand
         public void AddDice(string die)
         {
             GameObject dieObject = Instantiate(DiceDatabase.AllDiceDict[die], transform);
-            dieObject.SetActive(false);
+            //dieObject.SetActive(false);
+            diceGrid.RegisterDice(dieObject.GetComponent<DieBase>());
             _drawBag.Add(dieObject);
 
             //if (!diceLookup.ContainsKey(die))

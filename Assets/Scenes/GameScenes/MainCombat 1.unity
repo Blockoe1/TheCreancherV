@@ -860,14 +860,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1022829902865959319, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
-      propertyPath: encounterableEnemies.Array.size
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1022829902865959319, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
-      propertyPath: 'encounterableEnemies.Array.data[8]'
-      value: 
-      objectReference: {fileID: 3228334127417555230, guid: efa3a40d90e6d0a4f916e1b2a50cc655, type: 3}
     - target: {fileID: 1326467615441105993, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

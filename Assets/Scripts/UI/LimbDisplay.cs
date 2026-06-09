@@ -123,7 +123,8 @@ namespace FoolsBrand.UI
                     healthBar.SetTargetHealth(currentLimb.Health);
                 }
                 dnm.RegisterDamageNumber(currentLimb.Health, currentLimb.transform);
-                transform.position = Camera.main.WorldToScreenPoint(currentLimb.gameObject.transform.position);
+
+                transform.position = UIManager.GameCamera.WorldToScreenPoint(currentLimb.gameObject.transform.position);
                 SetAlignment(CheckScreenSide());
                 RefreshDisplay();
             }

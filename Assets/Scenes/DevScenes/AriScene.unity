@@ -309,7 +309,6 @@ GameObject:
   - component: {fileID: 199501085}
   - component: {fileID: 199501084}
   - component: {fileID: 199501083}
-  - component: {fileID: 199501082}
   m_Layer: 0
   m_Name: DiceGridCamera
   m_TagString: MainCamera
@@ -317,20 +316,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &199501082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 199501081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioListener
-  nonRigidbodyVelocity: 0
-  attenuationObject: {fileID: 0}
 --- !u!114 &199501083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,7 +396,7 @@ Camera:
   field of view: 60
   orthographic: 1
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: -2
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 32
@@ -1434,6 +1419,10 @@ PrefabInstance:
       propertyPath: '_diePositions.Array.data[1]'
       value: 
       objectReference: {fileID: 63183094}
+    - target: {fileID: 3317608462264096799, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+      propertyPath: gameCamera
+      value: 
+      objectReference: {fileID: 330585545}
     - target: {fileID: 3600498993147574641, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1518,6 +1507,10 @@ PrefabInstance:
       propertyPath: overlayCamera
       value: 
       objectReference: {fileID: 1099459663}
+    - target: {fileID: 6495533709985400535, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+      propertyPath: debugStartEncounter
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7052772430222192189, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: m_LocalPosition.z
       value: -20

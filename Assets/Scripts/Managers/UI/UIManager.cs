@@ -13,6 +13,14 @@ namespace FoolsBrand.UI
 {
     public class UIManager : HierarchyManager
     {
-        
+        [SerializeField] private Camera gameCamera;
+
+        internal static Camera GameCamera { get; private set; }
+
+        public override void Init(GameManager gm, HierarchyManager parentManager)
+        {
+            GameCamera = gameCamera;
+            base.Init(gm, parentManager);
+        }
     }
 }

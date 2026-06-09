@@ -21,11 +21,11 @@ namespace FoolsBrand
         [SerializeField] private SelectionOverride[] overrides;
 
         [System.Serializable]
-        private struct SelectionOverride
+        private class SelectionOverride
         {
-            [SerializeField] private bool use;
-            [SerializeField, Range(1, 3), ShowIf(nameof(use)), AllowNesting] private int selectionNum;
-            [SerializeField, ShowIf(nameof(use)), AllowNesting] private string[] validDice;
+            [SerializeField] internal bool use;
+            [SerializeField, Range(1, 3), ShowIf(nameof(use)), AllowNesting] internal int selectionNum;
+            [SerializeField, ShowIf(nameof(use)), AllowNesting] internal string[] validDice;
         }
 
         public void Start()
@@ -44,15 +44,27 @@ namespace FoolsBrand
                 }
             }
 
-            List<string> validDice = DiceDatabase.RewardDice;
-            for (int i = 0; i < diceRewards.Length; i++)
-            {
-                diceRewards[i] = validDice[Random.Range(0, validDice.Count)];
-                validDice.Remove(diceRewards[i]);
+            SelectionOverride currentOverride = RunManager.CurrentEncounterNum - 1 < overrides.Length ? overrides[RunManager.CurrentEncounterNum - 1] : null;
 
-                GameObject die = Instantiate(DiceDatabase.AllDiceDict[diceRewards[i]], _dicePositions[i]);
-                DieBase dieBase = die.GetComponent<DieBase>();
-                _diceSelectionInfoBoxes[i].SetupInfo(dieBase.DieName, dieBase.DieDescription);
+            List<string> validDice = currentOverride != null && currentOverride.use ? currentOverride.validDice.ToList() : DiceDatabase.RewardDice;
+            diceRewards = currentOverride != null && currentOverride.use ? new string[currentOverride.selectionNum] : new string[3];
+            for (int i = 0; i < _diceSelectionInfoBoxes.Length; i++)
+            {
+                if (i < diceRewards.Length)
+                {
+                    _diceSelectionInfoBoxes[i].gameObject.SetActive(true);
+
+                    diceRewards[i] = validDice[Random.Range(0, validDice.Count)];
+                    validDice.Remove(diceRewards[i]);
+
+                    GameObject die = Instantiate(DiceDatabase.AllDiceDict[diceRewards[i]], _dicePositions[i]);
+                    DieBase dieBase = die.GetComponent<DieBase>();
+                    _diceSelectionInfoBoxes[i].SetupInfo(dieBase.DieName, dieBase.DieDescription);
+                }
+                else
+                {
+                    _diceSelectionInfoBoxes[i].gameObject.SetActive(false);
+                }
             }
 
             StartCoroutine(RotateDice());
@@ -64,7 +76,7 @@ namespace FoolsBrand
             {
                 foreach (Transform t in _dicePositions)
                 {
-                    t.Rotate(Vector3.up, rotationSpeed, Space.World);
+                    t.Rotate(Vector3.up, rotationSpeed * Time.deltaTime, Space.World);
                 }
                 yield return null;
             }
@@ -78,6 +90,11 @@ namespace FoolsBrand
             //    Debug.Log(die);
             //}
 
+            RunManager.StartNewCombat();
+        }
+
+        public void SkipDie()
+        {
             RunManager.StartNewCombat();
         }
     }

@@ -112,8 +112,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4777fa605de7165468bd9abece62d1c4
+      spriteID: 4adc704e5abc0194b919f309001c30bb
       internalID: -443488173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Multiplier
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c818f01b11622544a8b83ac6d04ad65c
+      internalID: 173075402
       vertices: []
       indices: 
       edges: []
@@ -134,7 +156,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 036177fe3ec172f4a8a807279fc0b31a
+      spriteID: e6f7926296aaa2c4898ce0e7c15d7af9
       internalID: 448603680
       vertices: []
       indices: 
@@ -156,7 +178,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 243b72cb070ce534eaf05d35210f621c
+      spriteID: c5001d5f839abd44a85d785e1913fb0c
       internalID: 771676686
       vertices: []
       indices: 
@@ -180,6 +202,7 @@ TextureImporter:
     nameFileIdTable:
       Defense: -443488173
       InvertedColors: 771676686
+      Multiplier: 173075402
       Weakness: 448603680
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

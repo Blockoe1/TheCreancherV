@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3228334127417555230}
   - component: {fileID: 4170622330632973415}
   m_Layer: 0
-  m_Name: Slime
+  m_Name: Cylime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -308,15 +308,18 @@ MonoBehaviour:
   - faceText: '#'
     faceValue: 1
     faceTextObj: {fileID: 0}
-    faceActions: []
+    faceActions:
+    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
   - faceText: '#'
     faceValue: 2
     faceTextObj: {fileID: 0}
-    faceActions: []
+    faceActions:
+    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
   - faceText: '#'
     faceValue: 3
     faceTextObj: {fileID: 0}
-    faceActions: []
+    faceActions:
+    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
 --- !u!1 &7173650780824901471
 GameObject:
   m_ObjectHideFlags: 0

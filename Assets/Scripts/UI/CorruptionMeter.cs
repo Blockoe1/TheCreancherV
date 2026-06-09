@@ -26,6 +26,16 @@ namespace FoolsBrand
             DiceManager.DiceChangedEvent += HandleDiceChanged;
             DieBase.DiceCorruptedEvent += HandleDiceCorrupted;
 
+            // Log all corrupted dice already added on init.
+            foreach(GameObject diceGO in DiceManager.Instance.DrawBag)
+            {
+                DieBase dice = diceGO.GetComponent<DieBase>();
+                if (dice.Corrupted)
+                {
+                    corruptedDiceCount++;
+                }
+            }
+
             UpdateBar();
         }
 
@@ -62,8 +72,13 @@ namespace FoolsBrand
             UpdateBar();
         }
 
-        private void HandleDiceChanged(int diceNum, DieBase addedDice, bool wasAdded)
+        private void HandleDiceChanged(int diceNum, DieBase changedDice, bool wasAdded)
         {
+            Debug.Log(changedDice);
+            if (changedDice.Corrupted)
+            {
+                corruptedDiceCount += wasAdded ? 1 : -1;
+            }
             UpdateBar();
         }
     }

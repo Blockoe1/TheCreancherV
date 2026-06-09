@@ -27,14 +27,26 @@ namespace FoolsBrand
 
         public bool IsReserved => referenceDie != null ? referenceDie.IsReserved : false;
 
-        public void SetDice(DieBase referenceDie)
+        private void Awake()
         {
-            this.referenceDie = referenceDie;
+            DieBase.DiceCorruptedEvent += CheckBecomeCorrupted;
+        }
 
-            // Set the proper materials.
-            diceRenderer.sharedMaterial = referenceDie.DieMaterial;
-            borderRenderer.sharedMaterial = referenceDie.BorderMaterial;
+        private void OnDestroy()
+        {
+            DieBase.DiceCorruptedEvent -= CheckBecomeCorrupted;
+        }
 
+        private void CheckBecomeCorrupted(DieBase affectedDice, bool isCorrupt)
+        {
+            if (affectedDice == referenceDie)
+            {
+                UpdateCorruptParticles();
+            }
+        }
+
+        private void UpdateCorruptParticles()
+        {
             if (corruptedParticles != null)
             {
                 if (referenceDie.Corrupted)
@@ -46,6 +58,17 @@ namespace FoolsBrand
                     corruptedParticles.Stop();
                 }
             }
+        }
+
+        public void SetDice(DieBase referenceDie)
+        {
+            this.referenceDie = referenceDie;
+
+            // Set the proper materials.
+            diceRenderer.sharedMaterial = referenceDie.DieMaterial;
+            borderRenderer.sharedMaterial = referenceDie.BorderMaterial;
+
+            UpdateCorruptParticles();
 
             // Set the text displayed on the dice.
             for(int i = 0; i < faceTexts.Length; i++)

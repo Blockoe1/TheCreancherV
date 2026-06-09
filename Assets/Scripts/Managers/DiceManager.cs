@@ -68,6 +68,7 @@ namespace FoolsBrand
         public int NumDiceLeft => _drawBag.Count + _discardBag.Count + _rollingDice.Count + (_reservedDie == null ? 0 : 1);
         public DiceGrid DiceGrid => diceGrid;
         public int NumDiceHeld => numDiceHeld;
+        public List<GameObject> DrawBag => _drawBag;
 
         /// <summary>
         /// Initialize the dice bags

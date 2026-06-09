@@ -6,6 +6,7 @@
 //
 // Brief Description : Buff's the face's value
 *****************************************************************************/
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -14,11 +15,12 @@ namespace FoolsBrand
     [CreateAssetMenu(fileName = "DamageAction", menuName = "Scriptable Objects/Actions/BuffFace")]
     public class BuffFaceAction : DiceAction
     {
+        [SerializeField] private int faceBuff;
         public override int PriorityValue => 1;
 
         public override IEnumerator PerformAction(ITargetable target, IActionSource source, Combatant user, int value, DieFace sourceFace)
         {
-            sourceFace.AddValue();
+            sourceFace.AddValue(faceBuff);
             Debug.Log(value);
             yield return null;
         }

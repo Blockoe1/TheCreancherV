@@ -302,6 +302,8 @@ MonoBehaviour:
 
 '
   rewardSelectable: 1
+  dieRenderer: {fileID: 0}
+  borderRenderer: {fileID: 0}
   localRotSpeed: {x: 0, y: 0, z: 0}
   worldRotSpeed: {x: 0, y: 0, z: 0}
   slerpTime: 0
@@ -317,6 +319,8 @@ MonoBehaviour:
     faceTextObj: {fileID: 0}
     faceActions:
     - {fileID: 11400000, guid: faf5ae4cd1df0044496e6cd7f2a89c7b, type: 2}
+  corrupted: 0
+  corruptedParticles: {fileID: 0}
 --- !u!1 &4379145534996671159
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,6 +765,8 @@ MonoBehaviour:
 
     Deals a volatile amount of damage.'
   rewardSelectable: 1
+  dieRenderer: {fileID: 0}
+  borderRenderer: {fileID: 0}
   localRotSpeed: {x: 0, y: 0, z: 0}
   worldRotSpeed: {x: 0, y: 0, z: 0}
   slerpTime: 0
@@ -801,6 +807,8 @@ MonoBehaviour:
     faceTextObj: {fileID: 0}
     faceActions:
     - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
+  corrupted: 0
+  corruptedParticles: {fileID: 0}
 --- !u!1 &7733497569022054728
 GameObject:
   m_ObjectHideFlags: 0
@@ -850,6 +858,8 @@ MonoBehaviour:
 
     Deals high damage.'
   rewardSelectable: 1
+  dieRenderer: {fileID: 0}
+  borderRenderer: {fileID: 0}
   localRotSpeed: {x: 0, y: 0, z: 0}
   worldRotSpeed: {x: 0, y: 0, z: 0}
   slerpTime: 0
@@ -890,6 +900,8 @@ MonoBehaviour:
     faceTextObj: {fileID: 0}
     faceActions:
     - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
+  corrupted: 0
+  corruptedParticles: {fileID: 0}
 --- !u!1 &7734941191422038998
 GameObject:
   m_ObjectHideFlags: 0
@@ -1059,8 +1071,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Enemies.ShellLimb
   isBody: 0
   health:
-    maxHealth: 8
-    health: 8
+    maxHealth: 6
+    health: 6
   defense: 0
   multiplier: 0
   attackWeight: 1

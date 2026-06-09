@@ -16,7 +16,7 @@ namespace FoolsBrand
     public class DiceGridManager : Manager
     {
         [SerializeField] private Camera diceGridCam;
-        [SerializeField] private ObjectPool<DiceProxy> proxyPool;
+        [SerializeField] private ObjectPool<DiceImposter> proxyPool;
         [SerializeField] private Grid parentGrid;
         [SerializeField] private Vector3 baseRotation;
         [SerializeField] private Vector3 spinSpeed;
@@ -24,7 +24,7 @@ namespace FoolsBrand
         [SerializeField] private Vector2Int maxGridSize = new Vector2Int(4, 4);
 
         private readonly List<DieBase> registeredDice = new();
-        private readonly Dictionary<DieBase, DiceProxy> diceProxies = new();
+        private readonly Dictionary<DieBase, DiceImposter> diceProxies = new();
         [SerializeField, ReadOnly] private Transform[] controlledTransforms;
 
         private Quaternion currentRotationQuat;
@@ -84,7 +84,7 @@ namespace FoolsBrand
                 int diceIndex = registeredDice.IndexOf(dice);
                 
                 // Create a dice proxy for this dice.
-                DiceProxy proxy = proxyPool.GetObject();
+                DiceImposter proxy = proxyPool.GetObject();
                 proxy.SetDice(dice);
 
                 GoToIndexPosition(proxy.transform, diceIndex);
@@ -114,7 +114,7 @@ namespace FoolsBrand
                 // Return any dice proxies used to replace the dice while it was checked out.
                 if (diceProxies.ContainsKey(dice))
                 {
-                    DiceProxy proxy = diceProxies[dice];
+                    DiceImposter proxy = diceProxies[dice];
                     proxyPool.ReturnObject(proxy);
                 }
             }

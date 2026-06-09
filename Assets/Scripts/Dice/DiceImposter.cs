@@ -12,7 +12,7 @@ using UnityEngine;
 
 namespace FoolsBrand
 {
-    public class DiceProxy : MonoBehaviour, IDiceInfo
+    public class DiceImposter : MonoBehaviour, IDiceInfo
     {
         [SerializeField, ShowIfNull] private MeshRenderer diceRenderer;
         [SerializeField, ShowIfNull] private MeshRenderer borderRenderer;

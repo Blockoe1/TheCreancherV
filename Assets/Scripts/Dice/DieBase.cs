@@ -73,6 +73,8 @@ public class DieBase : MonoBehaviour, IDiceInfo
     public bool IsReserved { get => isReserved; set => isReserved = value; }
     public bool Corrupted { get => corrupted; }
 
+    public static event Action<DieBase, bool> DiceCorruptedEvent;
+
     /// <summary>
     /// Starts the dice's rolling animation.
     /// </summary>
@@ -171,6 +173,7 @@ public class DieBase : MonoBehaviour, IDiceInfo
     {
         if (corrupted == isCorrupt) { return; }
         corrupted = isCorrupt;
+        DiceCorruptedEvent?.Invoke(this, corrupted);
         if (isCorrupt)
         {
             corruptedParticles.Play();

@@ -60,7 +60,7 @@ public class DieFace
         faceTextObj.text = GetFaceText();
     }
 
-    public void IncreaseValue(int valueIncrease = 1)
+    public void AddValue(int valueIncrease = 1)
     {
         faceValue += valueIncrease;
         RefreshText();

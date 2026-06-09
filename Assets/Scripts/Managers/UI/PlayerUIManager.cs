@@ -14,6 +14,7 @@ namespace FoolsBrand.UI
     public class PlayerUIManager : Manager
     {
         [SerializeField] private HealthBar playerHealthBar;
+        [SerializeField] private CorruptionMeter corruptionMeter;
         [SerializeField] private ObjectPool<EffectDisplay> effectDisplayPool;
 
         private PlayerCombatant player;
@@ -27,6 +28,8 @@ namespace FoolsBrand.UI
             playerHealthBar.SetTargetHealth(player.Health);
             dnm = parentManager.GetManager<DamageNumberManager>();
 
+            corruptionMeter.Init();
+
             dnm.RegisterDamageNumber(player.Health, player.DamageNumberPoint);
 
             player.EffectAppliedEvent += AddNewEffectDisplay;
@@ -36,6 +39,8 @@ namespace FoolsBrand.UI
         public override void Deinit()
         {
             dnm.UnregisterDamageNumber(player.Health);
+
+            corruptionMeter.Deinit();
 
             player.EffectAppliedEvent -= AddNewEffectDisplay;
             player.PlayerActEvent -= UpdateDisplays;

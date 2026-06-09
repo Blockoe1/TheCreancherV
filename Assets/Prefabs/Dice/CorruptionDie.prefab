@@ -41,6 +41,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: _dieDescription
+      value: '#faces
+
+        Deals damage and Corrupts a dice.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: dieFaces.Array.data[4].faceText
       value: '#'
       objectReference: {fileID: 0}
@@ -54,24 +60,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: dieFaces.Array.data[1].faceValue
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
-      propertyPath: dieFaces.Array.data[2].faceValue
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
-      propertyPath: dieFaces.Array.data[3].faceValue
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
-      propertyPath: dieFaces.Array.data[4].faceValue
+      propertyPath: dieFaces.Array.data[2].faceValue
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: dieFaces.Array.data[3].faceValue
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: dieFaces.Array.data[4].faceValue
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: dieFaces.Array.data[5].faceValue
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: dieFaces.Array.data[1].faceTextObj
+      value: 
+      objectReference: {fileID: 5365821799893596682}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: dieFaces.Array.data[2].faceTextObj
+      value: 
+      objectReference: {fileID: 6165450822186044795}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: dieFaces.Array.data[3].faceTextObj
+      value: 
+      objectReference: {fileID: 1693636274611198099}
+    - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: dieFaces.Array.data[4].faceTextObj
+      value: 
+      objectReference: {fileID: 9072424935838521820}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: 'managedReferences[7292673129211232369]'
       value: Assembly-CSharp FoolsBrand.CorruptionAction
@@ -364,8 +386,56 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9053750629144915401, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+--- !u!114 &1693636274611198099 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4236132167956338783, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+  m_PrefabInstance: {fileID: 3263072286114971852}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshPro
+--- !u!114 &5365821799893596682 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7439938388762458822, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+  m_PrefabInstance: {fileID: 3263072286114971852}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshPro
+--- !u!114 &6165450822186044795 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8707945380945595831, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+  m_PrefabInstance: {fileID: 3263072286114971852}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshPro
+--- !u!114 &9072424935838521820 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5813998263862499600, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+  m_PrefabInstance: {fileID: 3263072286114971852}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshPro

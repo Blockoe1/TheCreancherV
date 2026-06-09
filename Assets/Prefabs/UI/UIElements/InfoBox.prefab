@@ -444,4 +444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcaea0def437874b9c69fa4ab9c27bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.InfoBox
+  panel: {fileID: 7647953335056438705}
   _myCanvas: {fileID: 0}
+  _dieNameText: {fileID: 1008382265555005817}
+  _dieDescText: {fileID: 3257725948441286978}

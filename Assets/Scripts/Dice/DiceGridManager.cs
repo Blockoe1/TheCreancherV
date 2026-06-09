@@ -31,6 +31,7 @@ namespace FoolsBrand
         private bool isSpinning;
 
         public List<DieBase> RegisteredDice => registeredDice;
+        public Vector2Int MaxGridSize => maxGridSize;
 
 
         public void ToggleCamera(bool isEnabled)
@@ -168,14 +169,18 @@ namespace FoolsBrand
         }
 
         #region Position Calculating
-        private Vector3Int IndexToGridPoint(int index)
+        public Vector3Int IndexToGridPoint(int index)
         {
-            return new Vector3Int(index % maxGridSize.x, index / maxGridSize.x);
+            return new Vector3Int(index % maxGridSize.x, 0, index / maxGridSize.x);
+        }
+        public int GridPointToIndex(Vector3Int gridPoint)
+        {
+            return gridPoint.z * maxGridSize.x + gridPoint.x;
         }
 
         private Vector3 GetWorldPos(Vector3Int gridPos)
         {
-            (gridPos.y, gridPos.z) = (gridPos.z, -gridPos.y);
+            gridPos.z *= -1;
             Vector3 worldPos = parentGrid.CellToWorld(gridPos)
                 - new Vector3(maxGridSize.x * (parentGrid.cellSize.x + parentGrid.cellGap.x) / 2, 0, -maxGridSize.y * (parentGrid.cellSize.z + parentGrid.cellGap.z) / 2)
                 + new Vector3((parentGrid.cellSize.x + parentGrid.cellGap.x) / 2, 0, -(parentGrid.cellSize.z + parentGrid.cellGap.z) / 2);

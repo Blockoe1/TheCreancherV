@@ -24,9 +24,7 @@ namespace FoolsBrand
 
         [ShowNonSerializedField, ReadOnly] private GameObject _hoveredObject;
         [Header("InfoBox")]
-        [SerializeField] private GameObject _infoBox;
-        [SerializeField] private TMP_Text _dieNameText;
-        [SerializeField] private TMP_Text _dieDescText;
+        [SerializeField] private InfoBox _infoBox;
 
         private InputAction click;
         private bool canReserve;
@@ -92,19 +90,16 @@ namespace FoolsBrand
         private void FixedUpdate()
         {
             Ray ray = overlayCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
-            if(Physics.Raycast(ray, out RaycastHit hit, 999, LayerMask.GetMask("UI")))
+            if(Physics.Raycast(ray, out RaycastHit hit, 5, LayerMask.GetMask("UI")) && !PauseMenu.IsGamePaused)
             {
                 _hoveredObject = hit.collider.gameObject;
-                _infoBox.SetActive(true);
-                IDiceInfo die = hit.collider.GetComponent<IDiceInfo>();
-                _dieNameText.text = die.DieName;
-                _dieDescText.text = die.DieDescription + 
-                    (canReserve && !die.IsReserved && die is DieBase ? "\n\n<i>Click to reserve.</i>" : "");
+                IDiceInfo diceInfo = hit.collider.GetComponent<IDiceInfo>();
+                _infoBox.SetDisplayDice(diceInfo, canReserve);
             }
-            else
+            else if (_hoveredObject != null)
             {
+                _infoBox.SetDisplayDice(null, canReserve);
                 _hoveredObject = null;
-                _infoBox.SetActive(false);
             }
         }
     }

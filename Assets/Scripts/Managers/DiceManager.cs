@@ -41,6 +41,7 @@ namespace FoolsBrand
             }
         }
         public int NumDiceLeft => _drawBag.Count + _discardBag.Count + _rollingDice.Count + (_reservedDie == null ? 0 : 1);
+        public DiceGridManager DiceGrid => diceGrid;
 
         /// <summary>
         /// Initialize the dice bags

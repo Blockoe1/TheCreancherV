@@ -6,6 +6,7 @@
 //
 // Brief Description : Organizes all spawned dice into a grid.
 *****************************************************************************/
+using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,7 @@ namespace FoolsBrand
 {
     public class DiceGridManager : Manager
     {
+        [SerializeField] private Camera diceGridCam;
         [SerializeField] private ObjectPool<DiceProxy> proxyPool;
         [SerializeField] private Grid parentGrid;
         [SerializeField] private Vector3 baseRotation;
@@ -23,10 +25,18 @@ namespace FoolsBrand
 
         private readonly List<DieBase> registeredDice = new();
         private readonly Dictionary<DieBase, DiceProxy> diceProxies = new();
-        private readonly List<Transform> rotatedObjects = new();
+        [SerializeField, ReadOnly] private Transform[] controlledTransforms;
 
         private Quaternion currentRotationQuat;
         private bool isSpinning;
+
+        public List<DieBase> RegisteredDice => registeredDice;
+
+
+        public void ToggleCamera(bool isEnabled)
+        {
+            diceGridCam.gameObject.SetActive(isEnabled);
+        }
 
         /// <summary>
         /// Initialize the dice grid.
@@ -35,6 +45,7 @@ namespace FoolsBrand
         /// <param name="parentManager"></param>
         public override void Init(GameManager gm, HierarchyManager parentManager)
         {
+            controlledTransforms = new Transform[maxGridSize.x * maxGridSize.y];
             isSpinning = true;
             currentRotationQuat = Quaternion.Euler(baseRotation);
             StartCoroutine(RotateDice());
@@ -52,7 +63,8 @@ namespace FoolsBrand
         /// <param name="dice"></param>
         public void RegisterDice(DieBase dice)
         {
-            if(!registeredDice.Contains(dice))
+            
+            if (!registeredDice.Contains(dice) && registeredDice.Count < maxGridSize.x * maxGridSize.y)
             {
                 registeredDice.Add(dice);
                 dice.transform.localScale = baseScale;
@@ -68,17 +80,17 @@ namespace FoolsBrand
         {
             if (registeredDice.Contains(dice))
             {
-                // Stop the dice spinning.
-                rotatedObjects.Remove(dice.transform);
-
+                Debug.Log("Checked out " + dice);
+                int diceIndex = registeredDice.IndexOf(dice);
+                
                 // Create a dice proxy for this dice.
                 DiceProxy proxy = proxyPool.GetObject();
                 proxy.SetDice(dice);
 
-                GoToIndexPosition(proxy.transform, registeredDice.IndexOf(dice));
+                GoToIndexPosition(proxy.transform, diceIndex);
 
-                // Start the proxy spinning.
-                rotatedObjects.Add(proxy.transform);
+                // Stop the dice spinning & start proxy spinning.
+                controlledTransforms[diceIndex] = proxy.transform;
             }
         }
 
@@ -90,19 +102,20 @@ namespace FoolsBrand
         {
             if (registeredDice.Contains(dice))
             {
+                Debug.Log("returned " + dice);
+                int diceIndex = registeredDice.IndexOf(dice);
                 // Snap the dice to the grid.
-                GoToIndexPosition(dice.transform, registeredDice.IndexOf(dice));
+                GoToIndexPosition(dice.transform, diceIndex);
                 dice.transform.localScale = baseScale;
 
                 // Start the dice spinning.
-                rotatedObjects.Add(dice.transform);
+                controlledTransforms[diceIndex] = dice.transform;
 
                 // Return any dice proxies used to replace the dice while it was checked out.
                 if (diceProxies.ContainsKey(dice))
                 {
                     DiceProxy proxy = diceProxies[dice];
                     proxyPool.ReturnObject(proxy);
-                    rotatedObjects.Remove(proxy.transform);
                 }
             }
         }
@@ -113,7 +126,9 @@ namespace FoolsBrand
         /// <param name="dice"></param>
         public void RemoveDice(DieBase dice)
         {
+            int diceIndex = registeredDice.IndexOf(dice);
             registeredDice.Remove(dice);
+            controlledTransforms[diceIndex] = null;
             RefreshGrid();
         }
         #endregion
@@ -122,12 +137,14 @@ namespace FoolsBrand
         {
             while (isSpinning)
             {
-                Debug.Log(currentRotationQuat);
                 // Dice spinning should not scale with deltatime.
-                currentRotationQuat = QuaternionHelpers.RotateWorld(currentRotationQuat, spinSpeed * Time.unscaledDeltaTime);
-                foreach(Transform transform in rotatedObjects)
+                currentRotationQuat = Quaternion.Normalize(QuaternionHelpers.RotateWorld(currentRotationQuat, spinSpeed * Time.unscaledDeltaTime));
+                foreach (Transform transform in controlledTransforms)
                 {
-                    transform.rotation = currentRotationQuat;
+                    if (transform != null)
+                    {
+                        transform.rotation = currentRotationQuat;
+                    }
                 }
                 
                 yield return null;
@@ -136,9 +153,10 @@ namespace FoolsBrand
 
         private void RefreshGrid()
         {
-            for(int i = 0; i < registeredDice.Count; i++)
+            for(int i = 0; i < controlledTransforms.Length; i++)
             {
-                GoToIndexPosition(registeredDice[i].transform, i);
+                if (controlledTransforms[i] == null) { break; }
+                GoToIndexPosition(controlledTransforms[i], i);
             }
         }
 

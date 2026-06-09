@@ -60,23 +60,23 @@ PrefabInstance:
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: dieFaces.Array.data[0].faceTextObj
       value: 
-      objectReference: {fileID: 6165450822186044795}
+      objectReference: {fileID: 1319699689462690332}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: dieFaces.Array.data[1].faceTextObj
       value: 
-      objectReference: {fileID: 1319699689462690332}
+      objectReference: {fileID: 6165450822186044795}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: dieFaces.Array.data[3].faceTextObj
       value: 
-      objectReference: {fileID: 2754598037491866988}
+      objectReference: {fileID: 5365821799893596682}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: dieFaces.Array.data[4].faceTextObj
       value: 
-      objectReference: {fileID: 5365821799893596682}
+      objectReference: {fileID: 1693636274611198099}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: dieFaces.Array.data[5].faceTextObj
       value: 
-      objectReference: {fileID: 1693636274611198099}
+      objectReference: {fileID: 2754598037491866988}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: 'managedReferences[3144939765870886997]'
       value: Assembly-CSharp FoolsBrand.DamageAction

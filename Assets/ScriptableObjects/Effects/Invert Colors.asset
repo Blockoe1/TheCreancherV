@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17b695566d6e36b4ba7633e6f487e171, type: 3}
   m_Name: Invert Colors
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.InvertColorEffect
-  icon: {fileID: -115647630, guid: 4bc40045db958384c82db5ce835b4f60, type: 3}
+  icon: {fileID: 771676686, guid: 9a2044f6d65a5934fbfc6b9db72bafdc, type: 3}
   description: Inverts the colors on your screen for the next #duration turns.
   valueUsage: 0
   hasDuration: 1

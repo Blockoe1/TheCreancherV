@@ -23,7 +23,7 @@ namespace FoolsBrand
 
         public void Init()
         {
-            DiceManager.DiceAddedEvent += HandleDiceAdded;
+            DiceManager.DiceChangedEvent += HandleDiceChanged;
             DieBase.DiceCorruptedEvent += HandleDiceCorrupted;
 
             UpdateBar();
@@ -31,7 +31,7 @@ namespace FoolsBrand
 
         public void Deinit()
         {
-            DiceManager.DiceAddedEvent -= HandleDiceAdded;
+            DiceManager.DiceChangedEvent -= HandleDiceChanged;
             DieBase.DiceCorruptedEvent -= HandleDiceCorrupted;
         }
 
@@ -62,7 +62,7 @@ namespace FoolsBrand
             UpdateBar();
         }
 
-        private void HandleDiceAdded(int diceNum, DieBase addedDice)
+        private void HandleDiceChanged(int diceNum, DieBase addedDice, bool wasAdded)
         {
             UpdateBar();
         }

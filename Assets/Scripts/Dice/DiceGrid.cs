@@ -134,6 +134,7 @@ namespace FoolsBrand
         /// <param name="dice"></param>
         public void RemoveDice(DieBase dice)
         {
+            ReturnDice(dice);
             int diceIndex = registeredDice.IndexOf(dice);
             registeredDice.Remove(dice);
             controlledTransforms[diceIndex] = null;

@@ -364,9 +364,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b264e17d8aa6d5459bc864dd3c692f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
-  _dieName: Spear Die
-  _dieDescription: To be revealed in a future milestone...
+  _dieName: Eye Die
+  _dieDescription: '#faces
+
+    Deals high damage.'
   rewardSelectable: 1
+  dieRenderer: {fileID: 0}
+  borderRenderer: {fileID: 0}
   localRotSpeed: {x: 0, y: 0, z: 0}
   worldRotSpeed: {x: 0, y: 0, z: 0}
   slerpTime: 0
@@ -397,6 +401,8 @@ MonoBehaviour:
     faceTextObj: {fileID: 0}
     faceActions:
     - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
+  corrupted: 0
+  corruptedParticles: {fileID: 0}
 --- !u!1 &8377491497927192847
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,9 +562,19 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3648350979713068657, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
+      propertyPath: _dieDescription
+      value: '#faces
+
+        Deals damage.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3648350979713068657, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
+      propertyPath: dieFaces.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4252415728962692394, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
       propertyPath: m_Name
-      value: BasicDie
+      value: BodyDie
       objectReference: {fileID: 0}
     - target: {fileID: 5624660768217607680, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
       propertyPath: m_Enabled

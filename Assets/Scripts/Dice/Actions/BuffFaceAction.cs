@@ -18,7 +18,7 @@ namespace FoolsBrand
 
         public override IEnumerator PerformAction(ITargetable target, IActionSource source, Combatant user, int value, DieFace sourceFace)
         {
-            sourceFace.IncreaseValue();
+            sourceFace.AddValue();
             Debug.Log(value);
             yield return null;
         }

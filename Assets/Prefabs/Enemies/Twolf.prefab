@@ -551,7 +551,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
   _dieName: Basic Die 1-6
-  _dieDescription: To be revealed in a future milestone...
+  _dieDescription: '#faces
+
+    Deals damage and corrupts one of your dice.'
   rewardSelectable: 1
   dieRenderer: {fileID: 0}
   borderRenderer: {fileID: 0}
@@ -602,6 +604,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
     - {fileID: 11400000, guid: aeff90a0b929abf4f8b76ce968bfd4fd, type: 2}
   corrupted: 0
+  corruptedParticles: {fileID: 0}
 --- !u!1 &3666328996636705054
 GameObject:
   m_ObjectHideFlags: 0
@@ -926,7 +929,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
   _dieName: Basic Die 1-6
-  _dieDescription: To be revealed in a future milestone...
+  _dieDescription: '#faces
+
+    Heals this enemy.'
   rewardSelectable: 1
   dieRenderer: {fileID: 0}
   borderRenderer: {fileID: 0}
@@ -971,6 +976,7 @@ MonoBehaviour:
     faceActions:
     - {fileID: 11400000, guid: 65251d99c3a92934ead76ebda2082b1a, type: 2}
   corrupted: 0
+  corruptedParticles: {fileID: 0}
 --- !u!1 &5783503621167091089
 GameObject:
   m_ObjectHideFlags: 0
@@ -1199,7 +1205,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
   _dieName: Basic Die 1-6
-  _dieDescription: To be revealed in a future milestone...
+  _dieDescription: '#faces
+
+    Deals damage and heals this enemy.'
   rewardSelectable: 1
   dieRenderer: {fileID: 0}
   borderRenderer: {fileID: 0}
@@ -1238,6 +1246,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 65251d99c3a92934ead76ebda2082b1a, type: 2}
     - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
   corrupted: 0
+  corruptedParticles: {fileID: 0}
 --- !u!1 &6504960768346475518
 GameObject:
   m_ObjectHideFlags: 0
@@ -1559,7 +1568,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
   _dieName: Basic Die 1-6
-  _dieDescription: To be revealed in a future milestone...
+  _dieDescription: Corrupts <b>2</b> of your dice.
   rewardSelectable: 1
   dieRenderer: {fileID: 0}
   borderRenderer: {fileID: 0}
@@ -1580,6 +1589,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: aeff90a0b929abf4f8b76ce968bfd4fd, type: 2}
     - {fileID: 11400000, guid: aeff90a0b929abf4f8b76ce968bfd4fd, type: 2}
   corrupted: 0
+  corruptedParticles: {fileID: 0}
 --- !u!1 &7624578719877542461
 GameObject:
   m_ObjectHideFlags: 0

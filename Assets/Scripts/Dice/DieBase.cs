@@ -1,5 +1,6 @@
 using FoolsBrand;
 using NaughtyAttributes;
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem.Utilities;
@@ -9,6 +10,8 @@ using UnityEngine.InputSystem.Utilities;
 /// </summary>
 public class DieBase : MonoBehaviour, IDiceInfo
 {
+    private const string CORRUPTION_DESCRIPTION = "\n\nCorrupted.\nIncreases the value of all faces by 1.\nIf more than half of your dice are corrupted, you die.";
+
     private static readonly Vector3[] FACE_AXES = 
     { 
         Vector3.up, 
@@ -45,6 +48,7 @@ public class DieBase : MonoBehaviour, IDiceInfo
     private bool isRolling;
     private bool isReserved = false;
     [SerializeField] private bool corrupted = false;
+    [SerializeField] private ParticleSystem corruptedParticles;
 
     public bool RewardSelectable => rewardSelectable;
     public string DieName { get => _dieName; }
@@ -57,7 +61,7 @@ public class DieBase : MonoBehaviour, IDiceInfo
             {
                 facesString += dieFaces[i].FaceValue + (i == dieFaces.Length - 1 ? "" : ", ");
             }
-            return _dieDescription.Replace("#faces", facesString);
+            return _dieDescription.Replace("#faces", facesString) + (corrupted ? CORRUPTION_DESCRIPTION : "");
         }
     }
 
@@ -97,7 +101,7 @@ public class DieBase : MonoBehaviour, IDiceInfo
         isRolling = true;
 
         // Set a random starting rotation.
-        transform.eulerAngles = new Vector3(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360));
+        transform.eulerAngles = new Vector3(UnityEngine.Random.Range(0, 360), UnityEngine.Random.Range(0, 360), UnityEngine.Random.Range(0, 360));
 
         while(dieIndex < 0)
         {
@@ -140,7 +144,7 @@ public class DieBase : MonoBehaviour, IDiceInfo
     public DiceActionInfo[] RollDie()
     {
         //Don't tell anyone that I'm not going to make the game break if there are more or less faces. Don't do it...maybe
-        dieIndex = Random.Range(0, dieFaces.Length);
+        dieIndex = UnityEngine.Random.Range(0, dieFaces.Length);
         if (!dieFaces[dieIndex].IsInitialized)
         {
             dieFaces[dieIndex].Initialize(this);
@@ -163,12 +167,21 @@ public class DieBase : MonoBehaviour, IDiceInfo
         }
     }
 
-    public void Corrupt()
+    public void SetCorruption(bool isCorrupt)
     {
-        corrupted = true;
+        if (corrupted == isCorrupt) { return; }
+        corrupted = isCorrupt;
+        if (isCorrupt)
+        {
+            corruptedParticles.Play();
+        }
+        else
+        {
+            corruptedParticles.Stop();
+        }
         foreach(DieFace face in dieFaces)
         {
-            face.IncreaseValue();
+            face.AddValue(isCorrupt ? 1 : -1);
         }
     }
 }

@@ -28,7 +28,7 @@ namespace FoolsBrand
             [SerializeField, ShowIf(nameof(use)), AllowNesting] internal string[] validDice;
         }
 
-        public void Start()
+        public void Awake()
         {
             if (DiceDatabaseSetup.Instance == null)
             {
@@ -44,7 +44,8 @@ namespace FoolsBrand
                 }
             }
 
-            SelectionOverride currentOverride = RunManager.CurrentEncounterNum - 1 < overrides.Length ? overrides[RunManager.CurrentEncounterNum - 1] : null;
+            SelectionOverride currentOverride = RunManager.CurrentEncounterNum - 1 < overrides.Length ? 
+                overrides[Mathf.Max(RunManager.CurrentEncounterNum - 1, 0)] : null;
 
             List<string> validDice = currentOverride != null && currentOverride.use ? currentOverride.validDice.ToList() : DiceDatabase.RewardDice;
             diceRewards = currentOverride != null && currentOverride.use ? new string[currentOverride.selectionNum] : new string[3];
@@ -59,7 +60,7 @@ namespace FoolsBrand
 
                     GameObject die = Instantiate(DiceDatabase.AllDiceDict[diceRewards[i]], _dicePositions[i]);
                     DieBase dieBase = die.GetComponent<DieBase>();
-                    _diceSelectionInfoBoxes[i].SetupInfo(dieBase.DieName, dieBase.DieDescription);
+                    _diceSelectionInfoBoxes[i].SetupInfo(dieBase);
                 }
                 else
                 {

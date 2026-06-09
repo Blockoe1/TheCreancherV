@@ -22,6 +22,7 @@ public class DieFace
 
     public DieBase ParentDice => parentDice;
     public int FaceValue => faceValue;
+    public Color FaceColor => faceTextObj == null ? Color.black : faceTextObj.color;
 
     public bool IsInitialized { get; private set; }
 
@@ -45,7 +46,7 @@ public class DieFace
         return actionInfo;
     }
 
-    private string GetFaceText()
+    public string GetFaceText()
     {
         return faceText.Replace(VALUE_CHAR, (faceActions.Length > 0 ? faceValue.ToString() : ""));
     }

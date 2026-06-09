@@ -96,7 +96,7 @@ namespace FoolsBrand.Enemies
         /// <returns></returns>
         public int TakeDamage(int baseDamage, Combatant source)
         {
-            if (health.IsDead)
+            if (IsDead)
             {
                 return 0;
             }

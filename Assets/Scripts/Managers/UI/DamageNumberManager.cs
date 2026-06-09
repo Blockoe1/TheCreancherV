@@ -90,7 +90,7 @@ namespace FoolsBrand.UI
 
         private static Vector3 GetScreenPos(Vector3 worldPos)
         {
-            return Camera.main.WorldToScreenPoint(worldPos);
+            return UIManager.GameCamera.WorldToScreenPoint(worldPos);
         }
     }
 }

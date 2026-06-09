@@ -138,7 +138,7 @@ MonoBehaviour:
   onDeathEvent:
     m_PersistentCalls:
       m_Calls: []
-  <EnemyName>k__BackingField: Hunter Shrolm
+  <EnemyName>k__BackingField: Twolf
   <BaseActionValue>k__BackingField: 1
 --- !u!114 &4170622330632973415
 MonoBehaviour:
@@ -553,6 +553,8 @@ MonoBehaviour:
   _dieName: Basic Die 1-6
   _dieDescription: To be revealed in a future milestone...
   rewardSelectable: 1
+  dieRenderer: {fileID: 0}
+  borderRenderer: {fileID: 0}
   localRotSpeed: {x: 0, y: 0, z: 0}
   worldRotSpeed: {x: 0, y: 0, z: 0}
   slerpTime: 0
@@ -769,7 +771,7 @@ GameObject:
   - component: {fileID: 651565114619168227}
   - component: {fileID: 7930056233851303465}
   m_Layer: 0
-  m_Name: ShadowHead
+  m_Name: Shadow Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -926,6 +928,8 @@ MonoBehaviour:
   _dieName: Basic Die 1-6
   _dieDescription: To be revealed in a future milestone...
   rewardSelectable: 1
+  dieRenderer: {fileID: 0}
+  borderRenderer: {fileID: 0}
   localRotSpeed: {x: 0, y: 0, z: 0}
   worldRotSpeed: {x: 0, y: 0, z: 0}
   slerpTime: 0
@@ -1197,6 +1201,8 @@ MonoBehaviour:
   _dieName: Basic Die 1-6
   _dieDescription: To be revealed in a future milestone...
   rewardSelectable: 1
+  dieRenderer: {fileID: 0}
+  borderRenderer: {fileID: 0}
   localRotSpeed: {x: 0, y: 0, z: 0}
   worldRotSpeed: {x: 0, y: 0, z: 0}
   slerpTime: 0
@@ -1333,7 +1339,7 @@ GameObject:
   - component: {fileID: 9138432812467857832}
   - component: {fileID: 2170912227985986912}
   m_Layer: 0
-  m_Name: ShadowArm
+  m_Name: Shadow Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1555,6 +1561,8 @@ MonoBehaviour:
   _dieName: Basic Die 1-6
   _dieDescription: To be revealed in a future milestone...
   rewardSelectable: 1
+  dieRenderer: {fileID: 0}
+  borderRenderer: {fileID: 0}
   localRotSpeed: {x: 0, y: 0, z: 0}
   worldRotSpeed: {x: 0, y: 0, z: 0}
   slerpTime: 0
@@ -1737,7 +1745,7 @@ GameObject:
   - component: {fileID: 3683088919210731759}
   - component: {fileID: 543045556896295712}
   m_Layer: 0
-  m_Name: LightArm
+  m_Name: Light Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

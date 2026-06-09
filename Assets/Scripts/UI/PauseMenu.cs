@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
@@ -10,6 +11,8 @@ namespace FoolsBrand
         [SerializeField] private GameObject pauseScreen;
         [SerializeField] private TMP_Text pauseScreenText;
         [SerializeField] private InputAction paused;
+
+        [SerializeField] private UnityEvent<bool> PauseToggledEvent;
 
         private bool disablePause;
 
@@ -51,6 +54,7 @@ namespace FoolsBrand
         {
             pauseScreen.SetActive(isPaused);
             IsGamePaused = isPaused;
+            PauseToggledEvent?.Invoke(isPaused);
         }
 
         #region Buttons

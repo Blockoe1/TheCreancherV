@@ -1,4 +1,5 @@
 using NaughtyAttributes;
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
@@ -34,6 +35,8 @@ namespace FoolsBrand
 
         private int numDiceHeld;
 
+        public static event Action<int, DieBase> DiceAddedEvent; 
+
         //private Dictionary<string, GameObject[]> diceLookup = new();
         public List<GameObject> DiceInPlay 
         {
@@ -64,6 +67,7 @@ namespace FoolsBrand
 
         public int NumDiceLeft => _drawBag.Count + _discardBag.Count + _rollingDice.Count + (_reservedDie == null ? 0 : 1);
         public DiceGrid DiceGrid => diceGrid;
+        public int NumDiceHeld => numDiceHeld;
 
         /// <summary>
         /// Initialize the dice bags
@@ -266,7 +270,7 @@ namespace FoolsBrand
             int index = _drawBag.Count;
             while (index-- > 0)
             {
-                int swapPosition = Random.Range(0, _drawBag.Count);
+                int swapPosition = UnityEngine.Random.Range(0, _drawBag.Count);
                 (_drawBag[swapPosition], _drawBag[index]) = (_drawBag[index], _drawBag[swapPosition]);
             }
         }
@@ -289,10 +293,12 @@ namespace FoolsBrand
             {
                 GameObject dieObject = Instantiate(DiceDatabase.AllDiceDict[die], transform);
                 //dieObject.SetActive(false);
-                diceGrid.RegisterDice(dieObject.GetComponent<DieBase>());
+                DieBase dice = dieObject.GetComponent<DieBase>();
+                diceGrid.RegisterDice(dice);
                 _drawBag.Add(dieObject);
                 numDiceHeld++;
                 allDice.Add(die);
+                DiceAddedEvent?.Invoke(numDiceHeld, dice);
             }
 
             //if (!diceLookup.ContainsKey(die))

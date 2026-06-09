@@ -43,7 +43,7 @@ namespace FoolsBrand
 
             GameObject die = corruptableDice[Random.Range(0, corruptableDice.Count)];
             corruptableDice.Remove(die);
-            die.GetComponent<DieBase>().Corrupt();
+            die.GetComponent<DieBase>().SetCorruption(true);
 
             if(corruptableDice.Count < allDice.Count / 2)
             {

@@ -293,8 +293,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
   _dieName: Basic Die 1-6
-  _dieDescription: To be revealed in a future milestone...
+  _dieDescription: '#faces
+
+    Deals damage.'
   rewardSelectable: 1
+  dieRenderer: {fileID: 0}
+  borderRenderer: {fileID: 0}
   localRotSpeed: {x: 0, y: 0, z: 0}
   worldRotSpeed: {x: 0, y: 0, z: 0}
   slerpTime: 0
@@ -320,6 +324,8 @@ MonoBehaviour:
     faceTextObj: {fileID: 0}
     faceActions:
     - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
+  corrupted: 0
+  corruptedParticles: {fileID: 0}
 --- !u!1 &7173650780824901471
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,9 +557,59 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3648350979713068657, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
+      propertyPath: _dieDescription
+      value: '#faces
+
+        Deals high damage.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3648350979713068657, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
+      propertyPath: dieFaces.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3648350979713068657, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
+      propertyPath: dieFaces.Array.data[0].faceValue
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3648350979713068657, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
+      propertyPath: dieFaces.Array.data[1].faceValue
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3648350979713068657, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
+      propertyPath: dieFaces.Array.data[2].faceValue
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3648350979713068657, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
+      propertyPath: dieFaces.Array.data[3].faceValue
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3648350979713068657, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
+      propertyPath: dieFaces.Array.data[4].faceValue
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3648350979713068657, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
+      propertyPath: dieFaces.Array.data[0].faceTextObj
+      value: 
+      objectReference: {fileID: 4989267235160358967}
+    - target: {fileID: 3648350979713068657, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
+      propertyPath: dieFaces.Array.data[1].faceTextObj
+      value: 
+      objectReference: {fileID: 8263524823737820129}
+    - target: {fileID: 3648350979713068657, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
+      propertyPath: dieFaces.Array.data[2].faceTextObj
+      value: 
+      objectReference: {fileID: 3412544631418454392}
+    - target: {fileID: 3648350979713068657, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
+      propertyPath: dieFaces.Array.data[3].faceTextObj
+      value: 
+      objectReference: {fileID: 2224925717891073159}
+    - target: {fileID: 3648350979713068657, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
+      propertyPath: dieFaces.Array.data[4].faceTextObj
+      value: 
+      objectReference: {fileID: 2224925717891073159}
     - target: {fileID: 4252415728962692394, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
       propertyPath: m_Name
-      value: BasicDie
+      value: EyeDie
       objectReference: {fileID: 0}
     - target: {fileID: 5624660768217607680, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
       propertyPath: m_Enabled
@@ -647,11 +703,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b264e17d8aa6d5459bc864dd3c692f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
+--- !u!114 &2224925717891073159 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2754598037491866988, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
+  m_PrefabInstance: {fileID: 4096809414524639723}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshPro
+--- !u!114 &3412544631418454392 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1693636274611198099, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
+  m_PrefabInstance: {fileID: 4096809414524639723}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshPro
+--- !u!114 &4989267235160358967 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9072424935838521820, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
+  m_PrefabInstance: {fileID: 4096809414524639723}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshPro
 --- !u!4 &7556873663942866683 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5766194100175253264, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
   m_PrefabInstance: {fileID: 4096809414524639723}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8263524823737820129 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5365821799893596682, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
+  m_PrefabInstance: {fileID: 4096809414524639723}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshPro
 --- !u!1001 &5941014196811122588
 PrefabInstance:
   m_ObjectHideFlags: 0

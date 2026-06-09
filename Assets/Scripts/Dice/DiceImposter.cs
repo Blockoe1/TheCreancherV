@@ -16,6 +16,7 @@ namespace FoolsBrand
     {
         [SerializeField, ShowIfNull] private MeshRenderer diceRenderer;
         [SerializeField, ShowIfNull] private MeshRenderer borderRenderer;
+        [SerializeField] private ParticleSystem corruptedParticles;
         [SerializeField] private TMP_Text[] faceTexts;
 
         private DieBase referenceDie;
@@ -33,6 +34,18 @@ namespace FoolsBrand
             // Set the proper materials.
             diceRenderer.sharedMaterial = referenceDie.DieMaterial;
             borderRenderer.sharedMaterial = referenceDie.BorderMaterial;
+
+            if (corruptedParticles != null)
+            {
+                if (referenceDie.Corrupted)
+                {
+                    corruptedParticles.Play();
+                }
+                else
+                {
+                    corruptedParticles.Stop();
+                }
+            }
 
             // Set the text displayed on the dice.
             for(int i = 0; i < faceTexts.Length; i++)

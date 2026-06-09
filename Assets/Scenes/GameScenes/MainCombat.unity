@@ -922,6 +922,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1254728515765854668, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1326467615441105993, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1018,6 +1022,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8641060453084183734, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9192090825351714869, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: player
       value: 
@@ -1025,8 +1033,47 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3852967366839972478, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1720034303772323426}
   m_SourcePrefab: {fileID: 100100000, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+--- !u!114 &1720034303772323423 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3001497885016255827, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+  m_PrefabInstance: {fileID: 1720034303772323422}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!224 &1720034303772323424 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1254728515765854668, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+  m_PrefabInstance: {fileID: 1720034303772323422}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1720034303772323425 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3852967366839972478, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+  m_PrefabInstance: {fileID: 1720034303772323422}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1720034303772323426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720034303772323425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5088c9ca24824a4da7b6eb397767942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.CorruptionMeter
+  meterFill: {fileID: 1720034303772323424}
+  corruptedText: {fileID: 1720034303772323423}
+  minAnchor: 0.1
 --- !u!1001 &2984211772716764235
 PrefabInstance:
   m_ObjectHideFlags: 0

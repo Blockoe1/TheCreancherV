@@ -238,6 +238,10 @@ PrefabInstance:
       propertyPath: dieFaces.Array.data[5]._rollDie.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3163244847732584417, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4236132167956338783, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: m_text
       value: 4

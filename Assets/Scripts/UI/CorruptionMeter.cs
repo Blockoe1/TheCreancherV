@@ -25,6 +25,8 @@ namespace FoolsBrand
         {
             DiceManager.DiceAddedEvent += HandleDiceAdded;
             DieBase.DiceCorruptedEvent += HandleDiceCorrupted;
+
+            UpdateBar();
         }
 
         public void Deinit()

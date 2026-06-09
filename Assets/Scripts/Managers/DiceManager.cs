@@ -35,7 +35,7 @@ namespace FoolsBrand
 
         private int numDiceHeld;
 
-        public static event Action<int, DieBase> DiceAddedEvent; 
+        public static event Action<int, DieBase, bool> DiceChangedEvent; 
 
         //private Dictionary<string, GameObject[]> diceLookup = new();
         public List<GameObject> DiceInPlay 
@@ -210,7 +210,11 @@ namespace FoolsBrand
                 return;
             }
 
-            diceGrid.RemoveDice(_reservedDie.GetComponent<DieBase>());
+            DieBase die = _reservedDie.GetComponent<DieBase>();
+            diceGrid.RemoveDice(die);
+            numDiceHeld--;
+            allDice.Remove(die.name);
+            DiceChangedEvent?.Invoke(numDiceHeld, die, false);
             _reservedDie.SetActive(false);
             _reservedDie = null;
         }
@@ -298,7 +302,7 @@ namespace FoolsBrand
                 _drawBag.Add(dieObject);
                 numDiceHeld++;
                 allDice.Add(die);
-                DiceAddedEvent?.Invoke(numDiceHeld, dice);
+                DiceChangedEvent?.Invoke(numDiceHeld, dice, true);
             }
 
             //if (!diceLookup.ContainsKey(die))

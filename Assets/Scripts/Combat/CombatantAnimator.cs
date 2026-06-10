@@ -16,7 +16,7 @@ namespace FoolsBrand
     public class CombatantAnimator : MonoBehaviour
     {
         private const string HURT_ANIM_NAME = "T_HURT";
-        private const string DEATH_ANIM_NAME = "T_DEAD";
+        private const string DEATH_ANIM_NAME = "T_DIE";
 
         [SerializeField] protected Animator animator;
         [SerializeField, ShowIfNull] private Combatant combatant;

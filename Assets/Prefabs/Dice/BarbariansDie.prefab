@@ -25,7 +25,7 @@ PrefabInstance:
       value: '#faces
 
         Deals damage, and increases the value of the face rolled
-        by 1.
+        by 2.
 
 '
       objectReference: {fileID: 0}

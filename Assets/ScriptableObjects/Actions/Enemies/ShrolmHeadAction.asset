@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4a53a16f5b7af840a8b2dff3a1265da, type: 3}
   m_Name: ShrolmHeadAction
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.ShrolmHeadAction
-  animationName: T_ATTACK
+  animationName: T_Cast
   actionVFX: {fileID: 0}

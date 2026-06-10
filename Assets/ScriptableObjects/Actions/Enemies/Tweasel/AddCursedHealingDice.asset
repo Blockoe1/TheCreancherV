@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfa5e198d5312f9478bc659d72eb415d, type: 3}
   m_Name: AddCursedHealingDice
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.AddDiceAction
-  animationName: T_ATTACK
+  animationName: T_Cast
   actionVFX: {fileID: 0}
   diceString: CursedHealingDie
   maxAddNum: 3

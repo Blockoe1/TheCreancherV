@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d18b2a6c60387b4fbce6651526d3aba, type: 3}
   m_Name: SelfBuffClub
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.ApplyEffectAction
-  animationName: T_Cast
+  animationName: T_CAST
   actionVFX: {fileID: 0}
   effect: {fileID: 11400000, guid: bd277b69feddaf74094392c5da218568, type: 2}
   targetSelf: 1

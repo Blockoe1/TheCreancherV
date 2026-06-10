@@ -9,6 +9,7 @@ namespace FoolsBrand
     {
         private IEffectable source;
         private InvertColorToggle invertColorToggle;
+        public bool isInverted;
 
         public override bool UsesPotency => false;
 
@@ -19,12 +20,14 @@ namespace FoolsBrand
             if (invertColorToggle != null)
             {
                 invertColorToggle.EnableInvert();
+                isInverted = true;
             }
         }
 
         public override void OnEffectRemoved(EffectInstance instance, Combatant combatant, IEffectable effectSource)
         {
             invertColorToggle.DisableInvert();
+            isInverted = false;
         }
     }
 }

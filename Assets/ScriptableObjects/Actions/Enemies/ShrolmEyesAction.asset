@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d18b2a6c60387b4fbce6651526d3aba, type: 3}
   m_Name: ShrolmEyesAction
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.ApplyEffectAction
-  animationName: T_ATTACK
+  animationName: T_CAST
   actionVFX: {fileID: 0}
   effect: {fileID: 11400000, guid: 8d37bc02224332c4fa2fb0732401bdde, type: 2}
   targetSelf: 0

@@ -533,6 +533,10 @@ MonoBehaviour:
     faceActions: []
   corrupted: 0
   corruptedParticles: {fileID: 3163244847732584417}
+  outlineMaterial: {fileID: 2100000, guid: 97736ec638ad51b488cb83d26f883a69, type: 2}
+  outlinedMeshes:
+  - {fileID: 8735584197218931135}
+  - {fileID: 6321815844968549345}
 --- !u!135 &8207341177514950525
 SphereCollider:
   m_ObjectHideFlags: 0

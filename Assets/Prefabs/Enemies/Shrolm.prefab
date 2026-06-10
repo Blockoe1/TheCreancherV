@@ -220,6 +220,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: b8f8e062243270544b936c526fe87148, type: 2}
   corrupted: 0
   corruptedParticles: {fileID: 0}
+  outlineMaterial: {fileID: 0}
+  outlinedMeshes: []
 --- !u!1 &826302926243069942
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,6 +671,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
   corrupted: 0
   corruptedParticles: {fileID: 0}
+  outlineMaterial: {fileID: 0}
+  outlinedMeshes: []
 --- !u!1 &3437411820925650430
 GameObject:
   m_ObjectHideFlags: 0
@@ -847,6 +851,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
   corrupted: 0
   corruptedParticles: {fileID: 0}
+  outlineMaterial: {fileID: 0}
+  outlinedMeshes: []
 --- !u!1 &3951469853241603724
 GameObject:
   m_ObjectHideFlags: 0
@@ -1264,6 +1270,8 @@ MonoBehaviour:
   _tick: 0.01
   _hurtColor: {r: 1, g: 0, b: 0, a: 1}
   _toHurtFlashDuration: 0.1
+  _castColor: {r: 1, g: 1, b: 1, a: 1}
+  _toCastFlashDuration: 0.1
 --- !u!95 &2398837441177270996
 Animator:
   serializedVersion: 7
@@ -1337,7 +1345,7 @@ MonoBehaviour:
     health: 7
   defense: 0
   multiplier: 1
-  attackWeight: 1
+  attackWeight: 100
   attackDice: {fileID: 753924102905241776}
   customDescription: 
   limbAnimNameSuffix: 
@@ -1475,6 +1483,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 975d3bb7c0a55da479b01e47d6a490e5, type: 2}
   corrupted: 0
   corruptedParticles: {fileID: 0}
+  outlineMaterial: {fileID: 0}
+  outlinedMeshes: []
 --- !u!1 &8573259134017079087
 GameObject:
   m_ObjectHideFlags: 0
@@ -1614,6 +1624,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 5c9cf12766b10154ba70d57363a58242, type: 2}
   corrupted: 0
   corruptedParticles: {fileID: 0}
+  outlineMaterial: {fileID: 0}
+  outlinedMeshes: []
 --- !u!1001 &4096809414524639723
 PrefabInstance:
   m_ObjectHideFlags: 0

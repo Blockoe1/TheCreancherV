@@ -8,6 +8,7 @@
 *****************************************************************************/
 using NaughtyAttributes;
 using System;
+using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -95,8 +96,13 @@ namespace FoolsBrand
             if(Physics.Raycast(ray, out RaycastHit hit, 5, LayerMask.GetMask("UI")) && !PauseMenu.IsGamePaused)
             {
                 _hoveredObject = hit.collider.gameObject;
-                IDiceInfo diceInfo = hit.collider.GetComponent<IDiceInfo>();
-                _infoBox.SetDisplayDice(diceInfo, canReserve);
+               
+                InvertColorEffect invertColorEffect = UnityEngine.Object.FindFirstObjectByType<InvertColorEffect>();
+                if (invertColorEffect != null && !invertColorEffect.isInverted)
+                {
+                    IDiceInfo diceInfo = hit.collider.GetComponent<IDiceInfo>();
+                    _infoBox.SetDisplayDice(diceInfo, canReserve);
+                } 
 
                 if (!hasOutline)
                 {

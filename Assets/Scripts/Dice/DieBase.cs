@@ -51,6 +51,9 @@ public class DieBase : MonoBehaviour, IDiceInfo
     [SerializeField] private bool corrupted = false;
     [SerializeField] private ParticleSystem corruptedParticles;
 
+    [SerializeField] private Material outlineMaterial;
+    [SerializeField] private MeshRenderer[] outlinedMeshes;
+
     public bool RewardSelectable => rewardSelectable;
     public string DieName { get => _dieName; }
     public string DieDescription
@@ -187,5 +190,14 @@ public class DieBase : MonoBehaviour, IDiceInfo
         {
             face.AddValue(isCorrupt ? CORRUPTION_AMOUNT : -CORRUPTION_AMOUNT);
         }
+    }
+
+    public void ShowHoverOutline()
+    {
+        MaterialChange.AddOverlayMaterial(outlinedMeshes, outlineMaterial);
+    }
+    public void HideHoverOutline()
+    {
+        MaterialChange.RemoveOverlayMaterial(outlinedMeshes);
     }
 }

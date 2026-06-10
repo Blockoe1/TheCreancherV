@@ -29,6 +29,8 @@ namespace FoolsBrand
         private InputAction click;
         private bool canReserve;
 
+        private bool hasOutline = false;
+
         public override void Init(GameManager gm, HierarchyManager parentManager)
         {
             click = InputSystem.actions.FindAction("ClickInput");
@@ -95,11 +97,20 @@ namespace FoolsBrand
                 _hoveredObject = hit.collider.gameObject;
                 IDiceInfo diceInfo = hit.collider.GetComponent<IDiceInfo>();
                 _infoBox.SetDisplayDice(diceInfo, canReserve);
+
+                if (!hasOutline)
+                {
+                    _hoveredObject.GetComponent<DieBase>().ShowHoverOutline();
+                    hasOutline = true;
+                }
             }
             else if (_hoveredObject != null)
             {
                 _infoBox.SetDisplayDice(null, canReserve);
+                _hoveredObject.GetComponent<DieBase>().HideHoverOutline();
+
                 _hoveredObject = null;
+                hasOutline = false;
             }
         }
     }

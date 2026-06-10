@@ -26,7 +26,10 @@ namespace FoolsBrand
         public void OnPointerExit(PointerEventData eventData)
         {
             //_infoBox.SetActive(false);
-            _infoBox.SetDisplayDice(null);
+            if (_infoBox != null)
+            {
+                _infoBox.SetDisplayDice(null);
+            }
         }
     }
 }

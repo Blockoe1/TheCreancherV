@@ -7,7 +7,6 @@
 // Brief Description : Set of centralized helper functions for managing quaternions.
 *****************************************************************************/
 using UnityEngine;
-using static UnityEditor.FilePathAttribute;
 
 namespace FoolsBrand
 {

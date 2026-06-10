@@ -8,6 +8,7 @@
 *****************************************************************************/
 using NaughtyAttributes;
 using System;
+using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -28,6 +29,8 @@ namespace FoolsBrand
 
         private InputAction click;
         private bool canReserve;
+
+        private bool hasOutline = false;
 
         public override void Init(GameManager gm, HierarchyManager parentManager)
         {
@@ -93,13 +96,27 @@ namespace FoolsBrand
             if(Physics.Raycast(ray, out RaycastHit hit, 5, LayerMask.GetMask("UI")) && !PauseMenu.IsGamePaused)
             {
                 _hoveredObject = hit.collider.gameObject;
-                IDiceInfo diceInfo = hit.collider.GetComponent<IDiceInfo>();
-                _infoBox.SetDisplayDice(diceInfo, canReserve);
+               
+                InvertColorEffect invertColorEffect = UnityEngine.Object.FindFirstObjectByType<InvertColorEffect>();
+                if (invertColorEffect != null && !invertColorEffect.isInverted)
+                {
+                    IDiceInfo diceInfo = hit.collider.GetComponent<IDiceInfo>();
+                    _infoBox.SetDisplayDice(diceInfo, canReserve);
+                } 
+
+                if (!hasOutline)
+                {
+                    _hoveredObject.GetComponent<DieBase>().ShowHoverOutline();
+                    hasOutline = true;
+                }
             }
             else if (_hoveredObject != null)
             {
                 _infoBox.SetDisplayDice(null, canReserve);
+                _hoveredObject.GetComponent<DieBase>().HideHoverOutline();
+
                 _hoveredObject = null;
+                hasOutline = false;
             }
         }
     }

@@ -5,14 +5,24 @@ namespace FoolsBrand
 {
     public class EnemyAnimatorEvents : AnimatorEvents
     {
+        [Header("Hurt")]
         [SerializeField] private Color _hurtColor = Color.red;
         [SerializeField] private float _toHurtFlashDuration = 0.1f;
 
+        [Header("Cast")]
+        [SerializeField] private Color _castColor = Color.white;
+        [SerializeField] private float _toCastFlashDuration = 0.1f;
+
         public void ToHurtColorFlash()
         {
-            try
-            { ColorChangeAllRegions(_hurtColor, _toHurtFlashDuration); }
+            try { ColorChangeAllRegions(_hurtColor, _toHurtFlashDuration); }
             catch (NullReferenceException) {}
+        }
+
+        public void ToCastColorFlash()
+        {
+            try { ColorChangeAllRegions(_castColor, _toCastFlashDuration); }
+            catch (NullReferenceException) { }
         }
     }
 }

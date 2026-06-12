@@ -15,5 +15,8 @@ namespace FoolsBrand
         string DieName { get; }
         string DieDescription { get; }
         bool IsReserved { get; }
+
+        void ShowHoverOutline();
+        void HideHoverOutline();
     }
 }

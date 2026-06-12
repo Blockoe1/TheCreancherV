@@ -776,6 +776,10 @@ MonoBehaviour:
   - {fileID: 3389213457280167364}
   - {fileID: 2142847396766113852}
   - {fileID: 1812099522869024558}
+  outlineMaterial: {fileID: 2100000, guid: 97736ec638ad51b488cb83d26f883a69, type: 2}
+  outlinedMeshes:
+  - {fileID: 5394336542268689289}
+  - {fileID: 6377162121459870026}
 --- !u!1 &4902408632896084701
 GameObject:
   m_ObjectHideFlags: 0

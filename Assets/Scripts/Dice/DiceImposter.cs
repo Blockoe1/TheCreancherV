@@ -18,6 +18,8 @@ namespace FoolsBrand
         [SerializeField, ShowIfNull] private MeshRenderer borderRenderer;
         [SerializeField] private ParticleSystem corruptedParticles;
         [SerializeField] private TMP_Text[] faceTexts;
+        [SerializeField] private Material outlineMaterial;
+        [SerializeField] private MeshRenderer[] outlinedMeshes;
 
         private DieBase referenceDie;
 
@@ -76,6 +78,15 @@ namespace FoolsBrand
                 faceTexts[i].text = referenceDie.Faces[i].GetFaceText();
                 faceTexts[i].color = referenceDie.Faces[i].FaceColor;
             }
+        }
+
+        public void ShowHoverOutline()
+        {
+            MaterialChange.AddOverlayMaterial(outlinedMeshes, outlineMaterial);
+        }
+        public void HideHoverOutline()
+        {
+            MaterialChange.RemoveOverlayMaterial(outlinedMeshes);
         }
     }
 }

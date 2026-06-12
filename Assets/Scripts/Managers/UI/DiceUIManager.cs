@@ -38,6 +38,7 @@ namespace FoolsBrand
             click.started += Click_started;
         }
 
+
         private void OnDestroy()
         {
             click.started -= Click_started;
@@ -95,28 +96,27 @@ namespace FoolsBrand
             Ray ray = overlayCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
             if(Physics.Raycast(ray, out RaycastHit hit, 5, LayerMask.GetMask("UI")) && !PauseMenu.IsGamePaused)
             {
-                _hoveredObject = hit.collider.gameObject;
-               
-                InvertColorEffect invertColorEffect = UnityEngine.Object.FindFirstObjectByType<InvertColorEffect>();
-                if (invertColorEffect != null && !invertColorEffect.isInverted)
-                {
-                    IDiceInfo diceInfo = hit.collider.GetComponent<IDiceInfo>();
-                    _infoBox.SetDisplayDice(diceInfo, canReserve);
-                } 
+                GameObject hitObj = hit.collider.gameObject;
+                IDiceInfo diceInfo = hit.collider.GetComponent<IDiceInfo>();
 
-                if (!hasOutline)
+                if (hitObj != _hoveredObject && !diceInfo.IsReserved)
                 {
-                    _hoveredObject.GetComponent<DieBase>().ShowHoverOutline();
-                    hasOutline = true;
+                    _hoveredObject = hitObj;
+
+                    InvertColorEffect invertColorEffect = UnityEngine.Object.FindFirstObjectByType<InvertColorEffect>();
+                    if (!(invertColorEffect != null && invertColorEffect.isInverted))
+                    {
+
+                        _infoBox.SetDisplayDice(diceInfo, (canReserve && !diceInfo.IsReserved && diceInfo is DieBase ? "\n\n<i>Click to reserve.</i>" : ""));
+                    }
                 }
+                
             }
             else if (_hoveredObject != null)
             {
-                _infoBox.SetDisplayDice(null, canReserve);
-                _hoveredObject.GetComponent<DieBase>().HideHoverOutline();
+                _infoBox.SetDisplayDice(null);
 
                 _hoveredObject = null;
-                hasOutline = false;
             }
         }
     }

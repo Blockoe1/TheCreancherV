@@ -9,6 +9,7 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using static UnityEngine.Rendering.DebugUI;
 
 namespace FoolsBrand.UI
 {
@@ -33,6 +34,14 @@ namespace FoolsBrand.UI
             SetSettingValue(brightness);
             slider.SetValueWithoutNotify(brightness);
         }
+
+#if UNITY_EDITOR
+        private void OnDestroy()
+        {
+            // Reset brightness in editor as it saves to the asset.
+            colorAdjustments.postExposure.value = 0;
+        }
+#endif
 
         /// <summary>
         /// Sets the brightness and saves it to PlayerPrefs;

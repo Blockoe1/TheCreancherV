@@ -10,7 +10,7 @@ using UnityEngine.InputSystem.Utilities;
 /// </summary>
 public class DieBase : MonoBehaviour, IDiceInfo
 {
-    private const string CORRUPTION_DESCRIPTION = "\n\nCorrupted.\nIncreases the value of all faces by <b>2</b>.\nIf more than half of your dice are corrupted, you die.";
+    private const string CORRUPTION_DESCRIPTION = "\n\nCorrupt.\nIncreases the value of all faces by <b>2</b>.\nIf more than half of your dice are corrupt, you die.";
     private const int CORRUPTION_AMOUNT = 2;
 
     private static readonly Vector3[] FACE_AXES = 

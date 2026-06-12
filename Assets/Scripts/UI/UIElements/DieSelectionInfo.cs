@@ -11,6 +11,8 @@ namespace FoolsBrand
 
         private IDiceInfo diceInfo;
 
+        public IDiceInfo DiceInfo => diceInfo;
+
         public void SetupInfo(IDiceInfo diceInfo)
         {
             this.diceInfo = diceInfo;

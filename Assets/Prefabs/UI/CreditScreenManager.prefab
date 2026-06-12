@@ -715,7 +715,8 @@ GameObject:
   - component: {fileID: 91342406174515386}
   - component: {fileID: 4945099140299500105}
   - component: {fileID: 7016210513661303080}
-  - component: {fileID: 2913602901047550784}
+  - component: {fileID: 8331460732966413923}
+  - component: {fileID: 8383771568392287116}
   m_Layer: 5
   m_Name: CreditScreenManager
   m_TagString: Untagged
@@ -732,7 +733,7 @@ RectTransform:
   m_GameObject: {fileID: 3948115443625594949}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5010636570945357371}
@@ -813,7 +814,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &2913602901047550784
+--- !u!225 &8331460732966413923
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3948115443625594949}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &8383771568392287116
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -822,11 +835,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3948115443625594949}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d12bf22a18ba004890af900fe1422be, type: 3}
+  m_Script: {fileID: 11500000, guid: 92336dc2d93526640b0548077e677f69, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.MainMenuReturnNotForPauseMenu
-  _winScreen: {fileID: 0}
-  _loseScreen: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.UI.MenuToggle
+  canvasGroup: {fileID: 8331460732966413923}
 --- !u!1 &4333631907559929276
 GameObject:
   m_ObjectHideFlags: 0
@@ -1299,10 +1311,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2913602901047550784}
-        m_TargetAssemblyTypeName: FoolsBrand.MainMenuReturnNotForPauseMenu, Assembly-CSharp
-        m_MethodName: ReturnToMainMenu
-        m_Mode: 1
+      - m_Target: {fileID: 8383771568392287116}
+        m_TargetAssemblyTypeName: FoolsBrand.UI.MenuToggle, Assembly-CSharp
+        m_MethodName: ToggleMenu
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

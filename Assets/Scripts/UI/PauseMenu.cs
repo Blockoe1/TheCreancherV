@@ -1,3 +1,4 @@
+using FoolsBrand.UI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -8,7 +9,7 @@ namespace FoolsBrand
 {
     public class PauseMenu : MonoBehaviour
     {
-        [SerializeField] private GameObject pauseScreen;
+        [SerializeField] private MenuToggle pauseScreen;
         [SerializeField] private TMP_Text pauseScreenText;
         [SerializeField] private InputAction paused;
 
@@ -52,7 +53,7 @@ namespace FoolsBrand
         /// <param name="isPaused"></param>
         public void TogglePause(bool isPaused)
         {
-            pauseScreen.SetActive(isPaused);
+            pauseScreen.ToggleMenu(isPaused);
             IsGamePaused = isPaused;
             PauseToggledEvent?.Invoke(isPaused);
         }

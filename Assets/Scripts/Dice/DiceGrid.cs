@@ -30,8 +30,8 @@ namespace FoolsBrand
         private Quaternion currentRotationQuat;
         private bool isSpinning;
 
-        public List<DieBase> RegisteredDice => registeredDice;
         public Vector2Int MaxGridSize => maxGridSize;
+        public int RegisteredDiceCount => registeredDice.Count;
 
 
         public void ToggleCamera(bool isEnabled)
@@ -145,6 +145,21 @@ namespace FoolsBrand
             registeredDice.Remove(dice);
             controlledTransforms.Remove(dice.transform);
             RefreshGrid();
+        }
+
+        /// <summary>
+        /// Gets the correct dice info interface from the grid.
+        /// </summary>
+        /// <param name="diceIndex"></param>
+        /// <returns></returns>
+        public IDiceInfo GetDice(int diceIndex)
+        {
+            DieBase dice = registeredDice[diceIndex];
+            if (diceProxies.ContainsKey(dice) && diceProxies[dice] != null)
+            {
+                return diceProxies[dice];
+            }
+            return dice;
         }
         #endregion
 

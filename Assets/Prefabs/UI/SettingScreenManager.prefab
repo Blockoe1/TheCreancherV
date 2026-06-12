@@ -564,6 +564,8 @@ GameObject:
   - component: {fileID: 2291346920260360731}
   - component: {fileID: 1574715195584954713}
   - component: {fileID: 6889584344188794640}
+  - component: {fileID: 956737893886958846}
+  - component: {fileID: 1851960309081979519}
   m_Layer: 5
   m_Name: SettingScreenManager
   m_TagString: Untagged
@@ -674,6 +676,31 @@ MonoBehaviour:
   - {fileID: 5409684435283408180}
   - {fileID: 687539767711434921}
   - {fileID: 4398443793588772087}
+--- !u!225 &956737893886958846
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162742930964628949}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &1851960309081979519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162742930964628949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92336dc2d93526640b0548077e677f69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.UI.MenuToggle
+  canvasGroup: {fileID: 956737893886958846}
 --- !u!1 &1164283783813474763
 GameObject:
   m_ObjectHideFlags: 0
@@ -1909,7 +1936,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 6852061361061383426}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.81333333
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4543,9 +4570,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1162742930964628949}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
+      - m_Target: {fileID: 1851960309081979519}
+        m_TargetAssemblyTypeName: FoolsBrand.UI.MenuToggle, Assembly-CSharp
+        m_MethodName: ToggleMenu
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

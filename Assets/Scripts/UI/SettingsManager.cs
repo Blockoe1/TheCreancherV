@@ -8,13 +8,14 @@
 *****************************************************************************/
 using FMOD.Studio;
 using FMODUnity;
+using FoolsBrand.UI;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
-namespace FoolsBrand
+namespace FoolsBrand.UI
 {
     public class SettingsManager : MonoBehaviour
     {
@@ -22,12 +23,12 @@ namespace FoolsBrand
         private static string MASTER_VOLUME_KEY = "MasterVolume";
         private static string MUSIC_VOLUME_KEY = "MusicVolume";
         private static string SFX_VOLUME_KEY = "SFXVolume";
-        private static string FULLSCREEEN_KEY = "Fullscreen";
         private static string RESOLUTION_KEY = "Resolution";
         private static string BRIGHTNESS_KEY = "Brightness";
         #endregion
 
-        [SerializeField] private VolumeProfile mainVolumeProfile;
+        [SerializeField] private UISetting[] settings;
+
         [SerializeField] private Dropdown resolutionDropdown;
 
         private Bus masterBus;
@@ -36,16 +37,32 @@ namespace FoolsBrand
 
         private ColorAdjustments colorAdjustments;
 
+        private void Awake()
+        {
+            foreach(var setting in settings)
+            {
+                setting.Init();
+            }
+        }
+
         public void Init()
         {
-            mainVolumeProfile.TryGet(out colorAdjustments);
+            
 
             // Get Busses.
             masterBus = RuntimeManager.GetBus("bus:/");
             musicBus = RuntimeManager.GetBus("bus:/SFX Bus");
             sfxBus = RuntimeManager.GetBus("bus:/Music Bus");
-            
+
             // Pull all saved settings from PlayerPrefs.
+            LoadSettings();
+        }
+
+        private void LoadSettings()
+        {
+            // Volume
+            float masterVolume = PlayerPrefs.GetFloat(MASTER_VOLUME_KEY);
+            SetMasterVolume(masterVolume);
 
         }
 
@@ -73,13 +90,6 @@ namespace FoolsBrand
             PlayerPrefs.SetFloat(playerPrefsKey, volume);
         }
         #endregion
-
-        public void ToggleFulscreen(bool isFullscreen)
-        {
-            Screen.fullScreen = isFullscreen;
-
-            // Save to playerprefs.
-        }
 
         public void SetResolution(int resolution)
         {

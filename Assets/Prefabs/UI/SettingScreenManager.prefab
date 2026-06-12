@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5071314494291750540}
+  - component: {fileID: 4398443793588772087}
   m_Layer: 5
   m_Name: Toggle Full Screen
   m_TagString: Untagged
@@ -36,6 +37,19 @@ RectTransform:
   m_AnchoredPosition: {x: 356, y: -335}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &4398443793588772087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243153159402826530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df3c60b9cc738294ca2617842288e853, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.UI.FullscreenSetting
+  toggle: {fileID: 5541519538723984081}
 --- !u!1 &254604948983551759
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,6 +433,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1206256631445860170}
+  - component: {fileID: 5409684435283408180}
   m_Layer: 5
   m_Name: Brightness
   m_TagString: Untagged
@@ -447,6 +462,20 @@ RectTransform:
   m_AnchoredPosition: {x: 531, y: 202}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5409684435283408180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027142251694805435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f716301581b64f34fa0afac741d50846, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.UI.BrightnessSlider
+  slider: {fileID: 5563055845730346938}
+  mainVolumeProfile: {fileID: 11400000, guid: ab09877e2e707104187f6f83e2f62510, type: 2}
 --- !u!1 &1128904600751424391
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,6 +563,7 @@ GameObject:
   - component: {fileID: 5432226009376407698}
   - component: {fileID: 2291346920260360731}
   - component: {fileID: 1574715195584954713}
+  - component: {fileID: 6889584344188794640}
   m_Layer: 5
   m_Name: SettingScreenManager
   m_TagString: Untagged
@@ -625,6 +655,20 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &6889584344188794640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162742930964628949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b96f8a45d86c95d4d84bdd1fd2556be7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.SettingsManager
+  settings: []
+  resolutionDropdown: {fileID: 0}
 --- !u!1 &1164283783813474763
 GameObject:
   m_ObjectHideFlags: 0
@@ -1172,7 +1216,19 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4398443793588772087}
+        m_TargetAssemblyTypeName: FoolsBrand.UI.FullscreenSetting, Assembly-CSharp
+        m_MethodName: ToggleFullscreen
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!1 &1731102212837248310
 GameObject:
@@ -1672,13 +1728,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 3881010915255341378}
   m_HandleRect: {fileID: 2048529226086773876}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 10
+  m_MinValue: -5
+  m_MaxValue: 5
   m_WholeNumbers: 1
-  m_Value: 5
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5409684435283408180}
+        m_TargetAssemblyTypeName: FoolsBrand.UI.BrightnessSlider, Assembly-CSharp
+        m_MethodName: SetSettingValue
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2971557711200064410
 GameObject:
   m_ObjectHideFlags: 0

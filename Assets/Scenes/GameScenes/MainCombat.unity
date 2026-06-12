@@ -1178,7 +1178,7 @@ PrefabInstance:
       objectReference: {fileID: 1099459663}
     - target: {fileID: 6495533709985400535, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: debugStartEncounter
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7626589222122896039, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: m_AnchoredPosition.y

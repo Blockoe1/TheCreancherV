@@ -646,7 +646,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: -1
   m_TargetDisplay: 0
 --- !u!224 &370286439
 RectTransform:
@@ -911,7 +911,19 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 290152977}
     m_Modifications:
+    - target: {fileID: 2499904299377526802, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2499904299377526802, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2546323579408701354, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2814044401908618146, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
@@ -1467,6 +1479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.DieSelectionInfo
   _infoBox: {fileID: 1535443911}
+  suffix: 
 --- !u!1 &1506050443
 GameObject:
   m_ObjectHideFlags: 0
@@ -2134,6 +2147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.DieSelectionInfo
   _infoBox: {fileID: 1535443911}
+  suffix: 
 --- !u!1 &1827293598
 GameObject:
   m_ObjectHideFlags: 0
@@ -2281,6 +2295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.DieSelectionInfo
   _infoBox: {fileID: 1535443911}
+  suffix: 
 --- !u!1 &1886749876
 GameObject:
   m_ObjectHideFlags: 0

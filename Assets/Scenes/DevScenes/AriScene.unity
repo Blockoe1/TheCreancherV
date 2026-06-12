@@ -512,6 +512,7 @@ GameObject:
   - component: {fileID: 410093363}
   - component: {fileID: 410093365}
   - component: {fileID: 410093364}
+  - component: {fileID: 410093366}
   m_Layer: 5
   m_Name: ReserveDice
   m_TagString: Untagged
@@ -578,6 +579,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410093362}
   m_CullTransparentMesh: 1
+--- !u!114 &410093366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410093362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39f100c302e0c034c8b7c1aab3b97bb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.DieSelectionInfo
+  _infoBox: {fileID: 0}
+  suffix: 
 --- !u!114 &532085168 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2464578056025293647, guid: 33302e20b5c44154797f95a77cdb7fbe, type: 3}

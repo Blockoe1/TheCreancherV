@@ -10,6 +10,9 @@ namespace FoolsBrand
         [SerializeField] private Canvas _myCanvas;
         [SerializeField] private TMP_Text _dieNameText;
         [SerializeField] private TMP_Text _dieDescText;
+
+        private IDiceInfo currentDice;
+
         void Update()
         {
             RectTransformUtility.ScreenPointToLocalPointInRectangle(_myCanvas.transform as RectTransform, Mouse.current.position.ReadValue(),
@@ -19,14 +22,20 @@ namespace FoolsBrand
             transform.position = _myCanvas.transform.TransformPoint(pos);
         }
 
-        public void SetDisplayDice(IDiceInfo die, bool canReserve = false)
+        public void SetDisplayDice(IDiceInfo die, string suffix = "")
         {
-            if (die != null)
+            if (currentDice != null)
+            {
+                currentDice.HideHoverOutline();
+            }
+
+            currentDice = die;
+            if (currentDice != null)
             {
                 gameObject.SetActive(true);
-                _dieNameText.text = die.DieName;
-                _dieDescText.text = die.DieDescription +
-                    (canReserve && !die.IsReserved && die is DieBase ? "\n\n<i>Click to reserve.</i>" : "");
+                _dieNameText.text = currentDice.DieName;
+                _dieDescText.text = currentDice.DieDescription + suffix;
+                currentDice.ShowHoverOutline();
             }
             else
             {

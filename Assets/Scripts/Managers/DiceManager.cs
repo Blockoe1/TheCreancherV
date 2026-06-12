@@ -35,7 +35,8 @@ namespace FoolsBrand
 
         private int numDiceHeld;
 
-        public static event Action<int, DieBase, bool> DiceChangedEvent; 
+        public static event Action<int, DieBase, bool> DiceChangedEvent;
+        public static event Action<DieBase> DiceReservedEvent;
 
         //private Dictionary<string, GameObject[]> diceLookup = new();
         public List<GameObject> DiceInPlay 
@@ -133,7 +134,10 @@ namespace FoolsBrand
                 _reservedDie = _rollingDice[index];
                 _reservedDie.transform.position = _reserveSlotPosition.transform.position;
                 _reservedDie.transform.localScale = _reserveSlotPosition.transform.localScale;
-                _reservedDie.GetComponent<DieBase>().IsReserved = true;
+                DieBase reservedDice = _reservedDie.GetComponent<DieBase>();
+                reservedDice.IsReserved = true;
+                DiceReservedEvent?.Invoke(reservedDice);
+
 
                 _rollingDice.RemoveAt(index);
 

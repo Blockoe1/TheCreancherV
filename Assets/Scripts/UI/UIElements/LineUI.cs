@@ -27,7 +27,6 @@ namespace FoolsBrand
 
             Vector2 dirVector = startPoint - endPoint;
             rectTransform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(dirVector.y, dirVector.x) * Mathf.Rad2Deg);
-            Debug.Log(dirVector.magnitude);
             rectTransform.sizeDelta = new Vector2(dirVector.magnitude, rectTransform.sizeDelta.y);
         }
     }

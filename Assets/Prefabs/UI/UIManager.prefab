@@ -661,6 +661,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerUIManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7734979368783693937, guid: a929d9be08ec8c74a98ef646ef5d3c94, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -831,14 +835,50 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5175595077385248602}
     m_Modifications:
+    - target: {fileID: 2499904299377526802, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2499904299377526802, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5265746050275383801, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
       propertyPath: m_Name
       value: PauseMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5317211461750987052, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5317211461750987052, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5317211461750987052, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5425164576299461943, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5425164576299461943, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5425164576299461943, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7147906335947114100, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
       propertyPath: infoBox
       value: 
       objectReference: {fileID: 7060274210412017230}
+    - target: {fileID: 8266193289577953649, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
+      propertyPath: m_Size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8900819589536811428, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1150,6 +1190,10 @@ PrefabInstance:
       propertyPath: 'tutorialSequences.Array.data[3]'
       value: 
       objectReference: {fileID: 11400000, guid: 960f475aa7dfc334591208cbc3869e18, type: 2}
+    - target: {fileID: 2398182731461467160, guid: 4bfe504ace347dc4abb21c468725a45c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -250
+      objectReference: {fileID: 0}
     - target: {fileID: 3032510675462261120, guid: 4bfe504ace347dc4abb21c468725a45c, type: 3}
       propertyPath: m_Name
       value: TutorialManager

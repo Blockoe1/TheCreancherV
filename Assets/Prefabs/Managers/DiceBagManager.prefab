@@ -107,7 +107,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -251,4 +251,3 @@ MonoBehaviour:
   spinSpeed: {x: 0, y: 0, z: 120}
   baseScale: {x: 1, y: 1, z: 1}
   maxGridSize: {x: 4, y: 4}
-  controlledTransforms: []

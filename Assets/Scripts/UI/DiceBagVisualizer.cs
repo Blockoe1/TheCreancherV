@@ -52,14 +52,13 @@ namespace FoolsBrand.UI
             if (RectTransformUtility.RectangleContainsScreenPoint(rTrans, mousePos))
             {
                 Vector2 localPoint = rTrans.InverseTransformPoint(mousePos);
-                Debug.Log(localPoint);
                 Vector2 normalizedPos = Rect.PointToNormalized(rTrans.rect, localPoint);
                 //Debug.Log(normalizedPos);
                 Vector3Int coordinates = new Vector3Int((int)(normalizedPos.x * diceGrid.MaxGridSize.x), 0, (int)((1 - normalizedPos.y) * diceGrid.MaxGridSize.y));
                 int index = diceGrid.GridPointToIndex(coordinates);
-                if (index < diceGrid.RegisteredDice.Count)
+                if (index < diceGrid.RegisteredDiceCount)
                 {
-                    infoBox.SetDisplayDice(diceGrid.RegisteredDice[index]);
+                    infoBox.SetDisplayDice(diceGrid.GetDice(index));
                 }
                 else
                 {

@@ -30,8 +30,6 @@ namespace FoolsBrand
         private InputAction click;
         private bool canReserve;
 
-        private bool hasOutline = false;
-
         public override void Init(GameManager gm, HierarchyManager parentManager)
         {
             click = InputSystem.actions.FindAction("ClickInput");

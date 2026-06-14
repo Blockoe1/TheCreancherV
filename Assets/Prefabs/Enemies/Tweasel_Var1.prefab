@@ -36,10 +36,22 @@ PrefabInstance:
       propertyPath: health.maxHealth
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2694168505154980525, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4e0ff0d4c25df6d4ea9040086213c39d, type: 2}
     - target: {fileID: 3007989142969634317, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
       propertyPath: m_Name
       value: Tweasel_Var1
       objectReference: {fileID: 0}
+    - target: {fileID: 5185317399845853541, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4e0ff0d4c25df6d4ea9040086213c39d, type: 2}
+    - target: {fileID: 5814545475099150686, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4e0ff0d4c25df6d4ea9040086213c39d, type: 2}
     - target: {fileID: 6085342625758238471, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
       propertyPath: defenseBoost
       value: 1
@@ -56,6 +68,10 @@ PrefabInstance:
       propertyPath: customDescription
       value: Reduces damage taken by the main body by <b>1</b>.
       objectReference: {fileID: 0}
+    - target: {fileID: 6251753510387150735, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4e0ff0d4c25df6d4ea9040086213c39d, type: 2}
     - target: {fileID: 6884097244328271279, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
       propertyPath: _dieName
       value: Head
@@ -78,6 +94,18 @@ PrefabInstance:
       propertyPath: 'dieFaces.Array.data[0].faceActions.Array.data[0]'
       value: 
       objectReference: {fileID: 11400000, guid: 914638c34a7b2c84f9d94a8752abfbea, type: 2}
+    - target: {fileID: 7029411530355329441, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4e0ff0d4c25df6d4ea9040086213c39d, type: 2}
+    - target: {fileID: 7509348758655935318, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4e0ff0d4c25df6d4ea9040086213c39d, type: 2}
+    - target: {fileID: 8071845955668404343, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4e0ff0d4c25df6d4ea9040086213c39d, type: 2}
     - target: {fileID: 8119940975614833375, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
       propertyPath: health.health
       value: 5

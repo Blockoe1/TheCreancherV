@@ -63,7 +63,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 9188797940574970798}
   - component: {fileID: 1008382265555005817}
   m_Layer: 5
-  m_Name: Name
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -184,9 +184,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Name
-
-'
+  m_text: Corruption
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -323,7 +321,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Description
+  m_text: This indicates how many of your dice are corrupted. As well as how many
+    need to be corrupted before you die.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -404,9 +403,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1268082855557571320}
-  - component: {fileID: 4917412868849316542}
+  - component: {fileID: 4969305183229012170}
   m_Layer: 5
-  m_Name: InfoBox
+  m_Name: CorruptionInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -432,7 +431,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &4917412868849316542
+--- !u!114 &4969305183229012170
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -441,10 +440,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 9145038633431691213}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fcaea0def437874b9c69fa4ab9c27bb, type: 3}
+  m_Script: {fileID: 11500000, guid: ce13f21c765f51f4fa757c004453fd18, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.InfoBox
+  m_EditorClassIdentifier: Assembly-CSharp::CorruptionInfo
   panel: {fileID: 7647953335056438705}
-  _myCanvas: {fileID: 0}
-  _dieNameText: {fileID: 1008382265555005817}
-  _dieDescText: {fileID: 3257725948441286978}
+  canvas: {fileID: 0}
+  titleText: {fileID: 1008382265555005817}
+  descText: {fileID: 3257725948441286978}

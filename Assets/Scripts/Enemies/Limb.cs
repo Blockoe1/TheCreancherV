@@ -29,7 +29,7 @@ namespace FoolsBrand.Enemies
         [SerializeField, TextArea] private string customDescription;
         [SerializeField, Tooltip("Adds this string to the end of an animation name for actions perfomed by this limb.  " +
             "Only needs to be set if the limb has a custom animation.")]
-        private string limbAnimNameSuffix;
+        private string limbAnimName;
         [Header("Events")]
         [SerializeField] private UnityEvent<int> onDamageEvent;
         [SerializeField] private UnityEvent onDestroyEvent;
@@ -145,7 +145,7 @@ namespace FoolsBrand.Enemies
         /// <returns></returns>
         public AnimationInfo PlayAnimation(string animationName)
         {
-            return parentEnemy.PlayAnimation(animationName + limbAnimNameSuffix);
+            return parentEnemy.PlayAnimation(IsBody ? animationName :  limbAnimName);
         }
 
         /// <summary>

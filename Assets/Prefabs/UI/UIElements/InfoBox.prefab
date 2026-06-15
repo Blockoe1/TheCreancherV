@@ -448,3 +448,4 @@ MonoBehaviour:
   _myCanvas: {fileID: 0}
   _dieNameText: {fileID: 1008382265555005817}
   _dieDescText: {fileID: 3257725948441286978}
+  infoPadding: {x: 10, y: 10}

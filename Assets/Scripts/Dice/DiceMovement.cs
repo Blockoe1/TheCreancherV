@@ -13,6 +13,8 @@ namespace FoolsBrand
 {
     public class DiceMovement : MonoBehaviour
     {
+        [SerializeField] private AnimationCurve movementCurve;
+
         private SingletonCoroutine moveRoutine;
 
         private void Awake()
@@ -36,7 +38,17 @@ namespace FoolsBrand
         }
         private IEnumerator MoveRoutine(Vector3 targetPosition, float moveTime)
         {
-            yield return null;
+            Vector3 startPos = transform.position;
+            float timer = 0;
+            while(timer < moveTime)
+            {
+                float normalizedTime = timer / moveTime;
+
+                transform.position = Vector3.Lerp(startPos, targetPosition, normalizedTime);
+
+                timer += Time.deltaTime;
+                yield return null;
+            }
         }
     }
 }

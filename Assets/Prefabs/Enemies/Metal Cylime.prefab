@@ -298,6 +298,8 @@ MonoBehaviour:
   _tick: 0.01
   _hurtColor: {r: 1, g: 0, b: 0, a: 1}
   _toHurtFlashDuration: 0.1
+  _castColor: {r: 1, g: 1, b: 1, a: 1}
+  _toCastFlashDuration: 0.1
 --- !u!95 &2398837441177270996
 Animator:
   serializedVersion: 7
@@ -403,6 +405,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
   corrupted: 0
   corruptedParticles: {fileID: 0}
+  outlineMaterial: {fileID: 0}
+  outlinedMeshes: []
 --- !u!1 &8377491497927192847
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,7 +461,7 @@ MonoBehaviour:
   attackWeight: 1
   attackDice: {fileID: 6723437583122014592}
   customDescription: 
-  limbAnimNameSuffix: 
+  limbAnimNameSuffix: T_ACTION_CYLIME_EYE
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []

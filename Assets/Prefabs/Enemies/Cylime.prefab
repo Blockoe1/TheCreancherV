@@ -456,7 +456,7 @@ MonoBehaviour:
   attackWeight: 1
   attackDice: {fileID: 755269475158816666}
   customDescription: 
-  limbAnimNameSuffix: _EYE
+  limbAnimNameSuffix: T_ACTION_CYLIME_EYE
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []

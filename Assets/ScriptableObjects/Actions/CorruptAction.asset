@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: CorruptAction
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.CorruptionAction
   animationName: T_CAST
-  actionVFX: {fileID: 11400000, guid: 4d68bc7bc40edc34ca9e270cd39a7fb5, type: 2}
+  actionVFX: {fileID: 11400000, guid: 859d52baba8bb79439ddf1f510701f9a, type: 2}

@@ -10,6 +10,7 @@ namespace FoolsBrand
         [SerializeField] private Canvas _myCanvas;
         [SerializeField] private TMP_Text _dieNameText;
         [SerializeField] private TMP_Text _dieDescText;
+        [SerializeField] private Vector2 infoPadding;
 
         private IDiceInfo currentDice;
 
@@ -18,7 +19,9 @@ namespace FoolsBrand
             RectTransformUtility.ScreenPointToLocalPointInRectangle(_myCanvas.transform as RectTransform, Mouse.current.position.ReadValue(),
                 _myCanvas.worldCamera, out Vector2 pos);
 
-            panel.pivot = new Vector2(pos.x > _myCanvas.pixelRect.width - panel.rect.width ? 1 : 0, pos.y < -_myCanvas.pixelRect.height + panel.rect.height ? 0 : 1);
+            Debug.Log($"Pos: {pos}.  Canvas: {_myCanvas.pixelRect.width}");
+            panel.pivot = new Vector2(pos.x > _myCanvas.pixelRect.width / 2 - (panel.rect.width + infoPadding.x) ? 1 : 0, 
+                pos.y < -_myCanvas.pixelRect.height / 2 + (panel.rect.height + infoPadding.y) ? 0 : 1);
             transform.position = _myCanvas.transform.TransformPoint(pos);
         }
 

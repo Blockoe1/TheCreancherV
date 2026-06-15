@@ -32,6 +32,10 @@ namespace FoolsBrand
 
         [SerializeField] private List<GameObject> _diePositions;
         [SerializeField] private GameObject _reserveSlotPosition;
+        [SerializeField] private GameObject _drawPosition;
+
+        [SerializeField] private float diceReserveMoveTime = 1f;
+        [SerializeField] private float diceDrawMoveTime = 1f;
 
         private int numDiceHeld;
 
@@ -132,8 +136,9 @@ namespace FoolsBrand
             {
                 //If there's no die reserved, draw a new one
                 _reservedDie = _rollingDice[index];
-                _reservedDie.transform.position = _reserveSlotPosition.transform.position;
-                _reservedDie.transform.localScale = _reserveSlotPosition.transform.localScale;
+                _reservedDie.GetComponent<DiceMovement>().MoveToPoint(_reserveSlotPosition.transform, diceReserveMoveTime);
+                //_reservedDie.transform.position = _reserveSlotPosition.transform.position;
+                //_reservedDie.transform.localScale = _reserveSlotPosition.transform.localScale;
                 DieBase reservedDice = _reservedDie.GetComponent<DieBase>();
                 reservedDice.IsReserved = true;
                 DiceReservedEvent?.Invoke(reservedDice);
@@ -163,8 +168,9 @@ namespace FoolsBrand
                 //    }
                 //}
 
-                _rollingDice[index].transform.position = _diePositions[index].transform.position;
-                _rollingDice[index].transform.localScale = _diePositions[index].transform.localScale;
+                //_rollingDice[index].transform.position = _diePositions[index].transform.position;
+                _rollingDice[index].GetComponent<DiceMovement>().MoveToPoint(_diePositions[index].transform, diceReserveMoveTime);
+                //_rollingDice[index].transform.localScale = _diePositions[index].transform.localScale;
                 DieBase dice = _rollingDice[index].GetComponent<DieBase>();
                 diceGrid.CheckOutDice(dice);
                 //_rollingDice[index].SetActive(true);
@@ -180,14 +186,16 @@ namespace FoolsBrand
             //(reservedDieGO, diceInPlay[index]) = (diceInPlay[index], reservedDieGO);
             (_rollingDice[index], _reservedDie) = (_reservedDie, _rollingDice[index]);
 
-            _reservedDie.transform.position = _reserveSlotPosition.transform.position;
-            _reservedDie.transform.localScale = _reserveSlotPosition.transform.localScale;
+            //_reservedDie.transform.position = _reserveSlotPosition.transform.position;
+            _reservedDie.GetComponent<DiceMovement>().MoveToPoint(_reserveSlotPosition.transform, diceReserveMoveTime);
+            //_reservedDie.transform.localScale = _reserveSlotPosition.transform.localScale;
             DieBase reservedDiceComp = _reservedDie.GetComponent<DieBase>();
             reservedDiceComp.IsReserved = true;
             DiceReservedEvent?.Invoke(reservedDiceComp);
 
-            _rollingDice[index].transform.position = _diePositions[index].transform.position;
-            _rollingDice[index].transform.localScale = _diePositions[index].transform.localScale;
+            //_rollingDice[index].transform.position = _diePositions[index].transform.position;
+            _rollingDice[index].GetComponent<DiceMovement>().MoveToPoint(_diePositions[index].transform, diceReserveMoveTime);
+            //_rollingDice[index].transform.localScale = _diePositions[index].transform.localScale;
             _rollingDice[index].GetComponent<DieBase>().IsReserved = false;
         }
 
@@ -250,8 +258,10 @@ namespace FoolsBrand
                 DieBase dice = _rollingDice[i].GetComponent<DieBase>();
                 //_rollingDice[i].SetActive(true);
                 diceGrid.CheckOutDice(dice);
-                _rollingDice[i].transform.position = _diePositions[i].transform.position;
-                _rollingDice[i].transform.localScale = _diePositions[i].transform.localScale;
+                //_rollingDice[i].transform.position = _diePositions[i].transform.position;
+                DiceMovement drawnDiceMovement = _rollingDice[i].GetComponent<DiceMovement>();
+                drawnDiceMovement.MoveImmediate(_drawPosition.transform);
+                drawnDiceMovement.MoveToPoint(_diePositions[i].transform, diceDrawMoveTime);
                 dice.StartRolling();
 
                 //for (int j = 0; j < diceLookup[dice].Length; j++)

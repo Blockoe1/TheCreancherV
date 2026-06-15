@@ -7,12 +7,16 @@
 // Brief Description : Aniamtes dice movements between designated points.
 *****************************************************************************/
 using System.Collections;
+using UnityEditor.Experimental;
 using UnityEngine;
 
 namespace FoolsBrand
 {
     public class DiceMovement : MonoBehaviour
     {
+        [SerializeField] private AnimationCurve movementCurve;
+        [SerializeField] private AnimationCurve scaleCurve;
+
         private SingletonCoroutine moveRoutine;
 
         private void Awake()
@@ -20,23 +24,38 @@ namespace FoolsBrand
             moveRoutine = new SingletonCoroutine(SingletonCoroutine.InterruptMode.Cancel, this);
         }
 
-        public void MoveImmediate(Vector3 position)
+        public void MoveImmediate(Transform targetTransform)
         {
-            transform.position = position;
+            transform.position = targetTransform.position;
+            transform.localScale = targetTransform.localScale;
         }
         
         /// <summary>
         /// Lerps the dice's position from it's current position to a given position.
         /// </summary>
-        /// <param name="position"></param>
+        /// <param name="targetTransform"></param>
         /// <param name="moveTime"></param>
-        public void MoveToPoint(Vector3 position, float moveTime)
+        public void MoveToPoint(Transform targetTransform, float moveTime)
         {
-            moveRoutine.StartCoroutine(MoveRoutine(position, moveTime));
+            moveRoutine.StartCoroutine(MoveRoutine(targetTransform, moveTime));
         }
-        private IEnumerator MoveRoutine(Vector3 targetPosition, float moveTime)
+        private IEnumerator MoveRoutine(Transform targetTransform, float moveTime)
         {
-            yield return null;
+            Vector3 startPos = transform.position;
+            Vector3 startScale = transform.localScale;
+            float timer = 0;
+            while(timer < moveTime)
+            {
+                float normalizedTime = timer / moveTime;
+
+                transform.position = Vector3.LerpUnclamped(startPos, targetTransform.position, normalizedTime);
+                transform.localScale = Vector3.LerpUnclamped(startScale, targetTransform.localScale, normalizedTime);
+
+                timer += Time.deltaTime;
+                yield return null;
+            }
+
+            MoveImmediate(targetTransform);
         }
     }
 }

@@ -8,6 +8,7 @@ public class CorruptionInfo : MonoBehaviour
     [SerializeField] private Canvas canvas;
     [SerializeField] private TMP_Text titleText;
     [SerializeField] private TMP_Text descText;
+    [SerializeField] private Vector2 infoPadding;
 
     private bool isVisible;
 
@@ -27,8 +28,8 @@ public class CorruptionInfo : MonoBehaviour
             out Vector2 pos);
 
         panel.pivot = new Vector2(
-            pos.x > canvas.pixelRect.width - panel.rect.width ? 1 : 0,
-            pos.y < -canvas.pixelRect.height + panel.rect.height ? 0 : 1);
+            pos.x > canvas.pixelRect.width / 2 - panel.rect.width ? 1 : 0,
+            pos.y < -canvas.pixelRect.height / 2 + panel.rect.height ? 0 : 1);
 
         transform.position = canvas.transform.TransformPoint(pos);
     }

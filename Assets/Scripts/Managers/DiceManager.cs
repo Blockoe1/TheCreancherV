@@ -182,7 +182,9 @@ namespace FoolsBrand
 
             _reservedDie.transform.position = _reserveSlotPosition.transform.position;
             _reservedDie.transform.localScale = _reserveSlotPosition.transform.localScale;
-            _reservedDie.GetComponent<DieBase>().IsReserved = true;
+            DieBase reservedDiceComp = _reservedDie.GetComponent<DieBase>();
+            reservedDiceComp.IsReserved = true;
+            DiceReservedEvent?.Invoke(reservedDiceComp);
 
             _rollingDice[index].transform.position = _diePositions[index].transform.position;
             _rollingDice[index].transform.localScale = _diePositions[index].transform.localScale;

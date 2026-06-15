@@ -18,6 +18,7 @@ namespace FoolsBrand.UI
         private const float DEFAULT_BRIGHTNESS = 0f;
 
         [SerializeField] private VolumeProfile mainVolumeProfile;
+        [SerializeField] private float brightnessScale = 1f;
 
         private ColorAdjustments colorAdjustments;
 
@@ -49,7 +50,7 @@ namespace FoolsBrand.UI
         /// <param name="value"></param>
         public override void SetSettingValue(float value)
         {
-            colorAdjustments.postExposure.value = value;
+            colorAdjustments.postExposure.value = value * brightnessScale;
             PlayerPrefs.SetFloat(PlayerPrefsKey, value);
         }
     }

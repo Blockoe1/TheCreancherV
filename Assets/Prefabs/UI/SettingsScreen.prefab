@@ -476,6 +476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.UI.BrightnessSlider
   slider: {fileID: 5597340923827837027}
   mainVolumeProfile: {fileID: 11400000, guid: ab09877e2e707104187f6f83e2f62510, type: 2}
+  brightnessScale: 0.25
 --- !u!1 &1095750180864457822
 GameObject:
   m_ObjectHideFlags: 0

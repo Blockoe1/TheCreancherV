@@ -184,6 +184,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   _reserveSlotPosition: {fileID: 0}
+  _drawPosition: {fileID: 0}
+  diceReserveMoveTime: 1
+  diceDrawMoveTime: 0.25
 --- !u!1 &8479987674168147657
 GameObject:
   m_ObjectHideFlags: 0

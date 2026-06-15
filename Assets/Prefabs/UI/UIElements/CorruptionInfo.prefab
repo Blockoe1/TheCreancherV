@@ -447,3 +447,4 @@ MonoBehaviour:
   canvas: {fileID: 0}
   titleText: {fileID: 1008382265555005817}
   descText: {fileID: 3257725948441286978}
+  infoPadding: {x: 10, y: 10}

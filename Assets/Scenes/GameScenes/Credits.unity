@@ -505,9 +505,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2481275720454494849, guid: 9040d1dcb52cebe41b4161561e825cbf, type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2481275720454494849, guid: 9040d1dcb52cebe41b4161561e825cbf, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 3948115443625594949, guid: 9040d1dcb52cebe41b4161561e825cbf, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6818135521756635348, guid: 9040d1dcb52cebe41b4161561e825cbf, type: 3}
+      propertyPath: m_text
+      value: 'Alex Lindsey
+
+        Lead Game Design'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

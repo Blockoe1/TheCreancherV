@@ -843,6 +843,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4540749860324223171, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540749860324223171, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540749860324223171, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5265746050275383801, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
       propertyPath: m_Name
       value: PauseMenu
@@ -869,6 +881,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5425164576299461943, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
       propertyPath: m_BlocksRaycasts
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5891836613096022605, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.000017166138
+      objectReference: {fileID: 0}
+    - target: {fileID: 6086630154985323005, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6086630154985323005, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7147906335947114100, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}

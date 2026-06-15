@@ -208,7 +208,7 @@ MonoBehaviour:
   attackWeight: 1
   attackDice: {fileID: 755269475158816666}
   customDescription: 
-  limbAnimNameSuffix: 
+  limbAnimName: 
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -387,22 +387,22 @@ MonoBehaviour:
     faceValue: 3
     faceTextObj: {fileID: 0}
     faceActions:
-    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
+    - {fileID: 11400000, guid: a3a5c4b6242294c41997277923e9d290, type: 2}
   - faceText: '#'
     faceValue: 4
     faceTextObj: {fileID: 0}
     faceActions:
-    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
+    - {fileID: 11400000, guid: a3a5c4b6242294c41997277923e9d290, type: 2}
   - faceText: '#'
     faceValue: 5
     faceTextObj: {fileID: 0}
     faceActions:
-    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
+    - {fileID: 11400000, guid: a3a5c4b6242294c41997277923e9d290, type: 2}
   - faceText: '#'
     faceValue: 6
     faceTextObj: {fileID: 0}
     faceActions:
-    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
+    - {fileID: 11400000, guid: a3a5c4b6242294c41997277923e9d290, type: 2}
   corrupted: 0
   corruptedParticles: {fileID: 0}
   outlineMaterial: {fileID: 0}
@@ -461,7 +461,7 @@ MonoBehaviour:
   attackWeight: 1
   attackDice: {fileID: 6723437583122014592}
   customDescription: 
-  limbAnimNameSuffix: T_ACTION_CYLIME_EYE
+  limbAnimName: 
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []

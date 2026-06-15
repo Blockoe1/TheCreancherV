@@ -208,7 +208,7 @@ MonoBehaviour:
   attackWeight: 1
   attackDice: {fileID: 1659061376105478859}
   customDescription: 
-  limbAnimNameSuffix: 
+  limbAnimName: 
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -390,7 +390,7 @@ Animator:
   m_GameObject: {fileID: 7173650780824901471}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 706205c68bdd1e5448ef3eacc5919b69, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2fb131896e1d746439864e10c579466f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -456,7 +456,7 @@ MonoBehaviour:
   attackWeight: 1
   attackDice: {fileID: 755269475158816666}
   customDescription: 
-  limbAnimNameSuffix: T_ACTION_1
+  limbAnimName: 
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -611,6 +611,22 @@ PrefabInstance:
       propertyPath: dieFaces.Array.data[4].faceTextObj
       value: 
       objectReference: {fileID: 2224925717891073159}
+    - target: {fileID: 3648350979713068657, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
+      propertyPath: 'dieFaces.Array.data[0].faceActions.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: a3a5c4b6242294c41997277923e9d290, type: 2}
+    - target: {fileID: 3648350979713068657, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
+      propertyPath: 'dieFaces.Array.data[1].faceActions.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: a3a5c4b6242294c41997277923e9d290, type: 2}
+    - target: {fileID: 3648350979713068657, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
+      propertyPath: 'dieFaces.Array.data[2].faceActions.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: a3a5c4b6242294c41997277923e9d290, type: 2}
+    - target: {fileID: 3648350979713068657, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
+      propertyPath: 'dieFaces.Array.data[3].faceActions.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: a3a5c4b6242294c41997277923e9d290, type: 2}
     - target: {fileID: 4252415728962692394, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
       propertyPath: m_Name
       value: EyeDie

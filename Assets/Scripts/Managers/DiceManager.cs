@@ -32,6 +32,7 @@ namespace FoolsBrand
 
         [SerializeField] private List<GameObject> _diePositions;
         [SerializeField] private GameObject _reserveSlotPosition;
+        [SerializeField] private GameObject _drawPosition;
 
         private int numDiceHeld;
 

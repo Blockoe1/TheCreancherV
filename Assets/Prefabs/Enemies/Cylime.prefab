@@ -390,7 +390,7 @@ Animator:
   m_GameObject: {fileID: 7173650780824901471}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2fb131896e1d746439864e10c579466f, type: 2}
+  m_Controller: {fileID: 22100000, guid: 706205c68bdd1e5448ef3eacc5919b69, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -456,7 +456,7 @@ MonoBehaviour:
   attackWeight: 1
   attackDice: {fileID: 755269475158816666}
   customDescription: 
-  limbAnimNameSuffix: T_ACTION_CYLIME_EYE
+  limbAnimNameSuffix: T_ACTION_1
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []

@@ -24,10 +24,8 @@ PrefabInstance:
       propertyPath: _dieDescription
       value: '<sprite name="Damage">#faces
 
-        Deals damage<sprite name="Damage">,
-        and increases the value of the face rolled by <sprite name="Rage"> <b>2</b>.
-
-'
+        Deals damage, and increases the
+        value of the face rolled by <sprite name="Rage"> <b>2</b>.'
       objectReference: {fileID: 0}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: 'managedReferences[-2]'

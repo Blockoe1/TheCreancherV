@@ -308,8 +308,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
-  m_RaycastTarget: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -771,7 +771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1121,6 +1121,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1008382265555005817, guid: 43220e1a739357c43b6711c3e3f8566f, type: 3}
+      propertyPath: m_text
+      value: Corruption <sprite name="Corruption">
+      objectReference: {fileID: 0}
     - target: {fileID: 1268082855557571320, guid: 43220e1a739357c43b6711c3e3f8566f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1163,7 +1167,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1268082855557571320, guid: 43220e1a739357c43b6711c3e3f8566f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 34.650345
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1268082855557571320, guid: 43220e1a739357c43b6711c3e3f8566f, type: 3}
       propertyPath: m_LocalRotation.w

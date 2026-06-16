@@ -36,6 +36,7 @@ namespace FoolsBrand
 
         [SerializeField] private float diceReserveMoveTime = 1f;
         [SerializeField] private float diceDrawMoveTime = 1f;
+        [SerializeField] private ParticleSystem dicePoofEffect;
 
         private int numDiceHeld;
 
@@ -201,6 +202,7 @@ namespace FoolsBrand
 
         public void DiscardDice(int index)
         {
+            Instantiate(dicePoofEffect, _rollingDice[index].transform.position, Quaternion.identity);
             diceGrid.ReturnDice(_rollingDice[index].GetComponent<DieBase>());
             _discardBag.Add(_rollingDice[index]);
             _rollingDice.RemoveAt(index);

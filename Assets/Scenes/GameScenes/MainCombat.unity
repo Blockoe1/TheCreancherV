@@ -1457,6 +1457,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 823796477}
     - target: {fileID: 1345140468486814719, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+      propertyPath: dicePoofEffect
+      value: 
+      objectReference: {fileID: 741647560736607677, guid: a61023a7cbe1abf47b2ad43ca7ea24e7, type: 3}
+    - target: {fileID: 1345140468486814719, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: diceReserveMoveTime
       value: 0.5
       objectReference: {fileID: 0}

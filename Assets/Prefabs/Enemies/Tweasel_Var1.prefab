@@ -68,6 +68,34 @@ PrefabInstance:
       propertyPath: customDescription
       value: Reduces damage taken by the main body by <b>1</b>.
       objectReference: {fileID: 0}
+    - target: {fileID: 6085342625758238471, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: onDestroyEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085342625758238471, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: onDestroyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085342625758238471, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: onDestroyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8921915591527686333}
+    - target: {fileID: 6085342625758238471, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: onDestroyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085342625758238471, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: onDestroyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085342625758238471, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: onDestroyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.ParticleSystem, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085342625758238471, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      propertyPath: onDestroyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6251753510387150735, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -171,6 +199,82 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 3657879480617548933, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
     - {fileID: 7065331272968585681, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
-    m_AddedGameObjects: []
+    - {fileID: 7120582951593522799, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5570883503748501629, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 323635551035668935}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+--- !u!4 &5081483360583539653 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5570883503748501629, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+  m_PrefabInstance: {fileID: 849719312320072632}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5968624210842259171
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5081483360583539653}
+    m_Modifications:
+    - target: {fileID: 2150824695317900824, guid: 3f533f16e00a1314e846e9951c57781b, type: 3}
+      propertyPath: m_Name
+      value: ShellSmashBlue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6244549610248320804, guid: 3f533f16e00a1314e846e9951c57781b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6244549610248320804, guid: 3f533f16e00a1314e846e9951c57781b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 6244549610248320804, guid: 3f533f16e00a1314e846e9951c57781b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6244549610248320804, guid: 3f533f16e00a1314e846e9951c57781b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6244549610248320804, guid: 3f533f16e00a1314e846e9951c57781b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6244549610248320804, guid: 3f533f16e00a1314e846e9951c57781b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.00000005960463
+      objectReference: {fileID: 0}
+    - target: {fileID: 6244549610248320804, guid: 3f533f16e00a1314e846e9951c57781b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6244549610248320804, guid: 3f533f16e00a1314e846e9951c57781b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6244549610248320804, guid: 3f533f16e00a1314e846e9951c57781b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6244549610248320804, guid: 3f533f16e00a1314e846e9951c57781b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3f533f16e00a1314e846e9951c57781b, type: 3}
+--- !u!4 &323635551035668935 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6244549610248320804, guid: 3f533f16e00a1314e846e9951c57781b, type: 3}
+  m_PrefabInstance: {fileID: 5968624210842259171}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &8921915591527686333 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2956000647667412574, guid: 3f533f16e00a1314e846e9951c57781b, type: 3}
+  m_PrefabInstance: {fileID: 5968624210842259171}
+  m_PrefabAsset: {fileID: 0}

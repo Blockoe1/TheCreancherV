@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: AddCursedHealingDice
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.AddDiceAction
   animationName: T_CAST
-  actionVFX: {fileID: 0}
+  actionVFX: {fileID: 11400000, guid: 2599aea927e8dc9449e0bf022577f29d, type: 2}
   diceString: CursedHealingDie
   maxAddNum: 3

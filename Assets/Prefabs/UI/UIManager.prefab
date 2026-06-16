@@ -33,12 +33,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6366123826555831071}
-  - {fileID: 7684214779967904027}
   - {fileID: 1310654843317354546}
   - {fileID: 5495808254237431204}
+  - {fileID: 7992057981568554626}
+  - {fileID: 7684214779967904027}
   - {fileID: 7864188726717496444}
   - {fileID: 8443646541965960219}
-  - {fileID: 7992057981568554626}
   - {fileID: 3439620115450820379}
   - {fileID: 3772938609364215304}
   m_Father: {fileID: 0}
@@ -887,6 +887,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5175595077385248602}
     m_Modifications:
+    - target: {fileID: 323721888294029470, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
+      propertyPath: m_Size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2499904299377526802, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

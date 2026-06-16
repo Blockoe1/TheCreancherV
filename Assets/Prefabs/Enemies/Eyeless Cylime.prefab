@@ -208,7 +208,7 @@ MonoBehaviour:
   attackWeight: 1
   attackDice: {fileID: 1378748715924703261}
   customDescription: 
-  limbAnimNameSuffix: 
+  limbAnimName: 
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -292,7 +292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
   _dieName: Basic Die 1-6
-  _dieDescription: '#faces
+  _dieDescription: '<sprite name="Damage">#faces
 
     Deals damage.'
   rewardSelectable: 1
@@ -325,6 +325,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
   corrupted: 0
   corruptedParticles: {fileID: 0}
+  outlineMaterial: {fileID: 0}
+  outlinedMeshes: []
 --- !u!1 &7173650780824901471
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,6 +376,8 @@ MonoBehaviour:
   _tick: 0.01
   _hurtColor: {r: 1, g: 0, b: 0, a: 1}
   _toHurtFlashDuration: 0.1
+  _castColor: {r: 1, g: 1, b: 1, a: 1}
+  _toCastFlashDuration: 0.1
 --- !u!95 &2398837441177270996
 Animator:
   serializedVersion: 7

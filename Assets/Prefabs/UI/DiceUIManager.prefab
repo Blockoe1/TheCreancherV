@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 8427757981001858086}
   - component: {fileID: 1563759882409879173}
   - component: {fileID: 3381980318096251353}
+  - component: {fileID: 5476641748247619948}
   m_Layer: 5
   m_Name: RollButton (1)
   m_TagString: Untagged
@@ -268,6 +269,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5476641748247619948}
+        m_TargetAssemblyTypeName: FoolsBrand.Audio.AudioRelay, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: RollDice
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!225 &1563759882409879173
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -302,6 +315,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5476641748247619948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2834256052226721975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f956f767637dd7c4aac091bacf3c3a3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Audio.AudioRelay
 --- !u!1 &4646965682164295726
 GameObject:
   m_ObjectHideFlags: 0

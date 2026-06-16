@@ -108,7 +108,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -35, y: 110}
+  m_AnchoredPosition: {x: -35, y: 130}
   m_SizeDelta: {x: 575, y: 75}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &4251238678835780513
@@ -308,8 +308,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
-  m_RaycastTarget: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -528,7 +528,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 5, y: 10}
-  m_SizeDelta: {x: 500, y: 80}
+  m_SizeDelta: {x: 520, y: 80}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!225 &6662931636624573746
 CanvasGroup:
@@ -746,7 +746,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 5, y: -2}
+  m_AnchoredPosition: {x: 30, y: -2}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &1943069155254236807
@@ -771,7 +771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -779,8 +779,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0/0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5f9a2c9de2574a1449fcae5b7e1d6387, type: 2}
+  m_sharedMaterial: {fileID: 6399879020935135422, guid: 5f9a2c9de2574a1449fcae5b7e1d6387, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -994,7 +994,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 5, y: 0}
+  m_AnchoredPosition: {x: 5, y: -2.5}
   m_SizeDelta: {x: 100, y: 43.63}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &3932271714648230836
@@ -1121,6 +1121,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1008382265555005817, guid: 43220e1a739357c43b6711c3e3f8566f, type: 3}
+      propertyPath: m_text
+      value: Corruption <sprite name="Corruption">
+      objectReference: {fileID: 0}
     - target: {fileID: 1268082855557571320, guid: 43220e1a739357c43b6711c3e3f8566f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1163,7 +1167,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1268082855557571320, guid: 43220e1a739357c43b6711c3e3f8566f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 34.650345
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1268082855557571320, guid: 43220e1a739357c43b6711c3e3f8566f, type: 3}
       propertyPath: m_LocalRotation.w

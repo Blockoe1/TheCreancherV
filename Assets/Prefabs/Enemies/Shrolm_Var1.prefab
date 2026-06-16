@@ -45,12 +45,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 0303272ff1154454993eb540db1a8012, type: 2}
     - target: {fileID: 6187090870116024368, guid: e2d499724838f914ea7a7d52c4211cac, type: 3}
-      propertyPath: _dieDescription
-      value: '#faces
-
-        Deals high damage.'
-      objectReference: {fileID: 0}
-    - target: {fileID: 6187090870116024368, guid: e2d499724838f914ea7a7d52c4211cac, type: 3}
       propertyPath: dieFaces.Array.data[0].faceValue
       value: 5
       objectReference: {fileID: 0}
@@ -153,10 +147,6 @@ PrefabInstance:
     - target: {fileID: 8022761948814560252, guid: e2d499724838f914ea7a7d52c4211cac, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9215964055632037927, guid: e2d499724838f914ea7a7d52c4211cac, type: 3}
-      propertyPath: _dieDescription
-      value: Reduces damage dealt by your next attack by <b>#faces</b>.
       objectReference: {fileID: 0}
     - target: {fileID: 9215964055632037927, guid: e2d499724838f914ea7a7d52c4211cac, type: 3}
       propertyPath: dieFaces.Array.data[0].faceValue

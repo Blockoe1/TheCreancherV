@@ -27,7 +27,7 @@ public class CorruptionBarHover : MonoBehaviour, IPointerEnterHandler, IPointerE
             return;
         }
 
-        popup.Show("Corruption", description);
+        popup.Show("Corruption<sprite name=\"Corruption\">", description);
     }
 
     public void OnPointerExit(PointerEventData eventData)

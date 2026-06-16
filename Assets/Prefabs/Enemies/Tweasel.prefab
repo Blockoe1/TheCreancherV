@@ -55,7 +55,7 @@ MonoBehaviour:
   attackWeight: 1
   attackDice: {fileID: 8180461191078144821}
   customDescription: 
-  limbAnimNameSuffix: 
+  limbAnimName: T_ACTION_2
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -210,7 +210,7 @@ Transform:
   m_GameObject: {fileID: 3657879480617548933}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.800003, y: -2.06, z: 0}
+  m_LocalPosition: {x: 12.8, y: -2.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -238,7 +238,7 @@ MonoBehaviour:
   attackWeight: 1
   attackDice: {fileID: 150678045897934776}
   customDescription: 
-  limbAnimNameSuffix: 
+  limbAnimName: T_ACTION_4
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -321,6 +321,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: faf5ae4cd1df0044496e6cd7f2a89c7b, type: 2}
   corrupted: 0
   corruptedParticles: {fileID: 0}
+  outlineMaterial: {fileID: 0}
+  outlinedMeshes: []
 --- !u!1 &4379145534996671159
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,7 +683,7 @@ Transform:
   m_GameObject: {fileID: 6182031220867650000}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.5500016, y: 2.54, z: 0}
+  m_LocalPosition: {x: -7.550002, y: 2.54, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -709,7 +711,7 @@ MonoBehaviour:
   attackWeight: 1
   attackDice: {fileID: 6884097244328271279}
   customDescription: 
-  limbAnimNameSuffix: 
+  limbAnimName: T_ACTION_1
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -809,6 +811,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
   corrupted: 0
   corruptedParticles: {fileID: 0}
+  outlineMaterial: {fileID: 0}
+  outlinedMeshes: []
 --- !u!1 &7733497569022054728
 GameObject:
   m_ObjectHideFlags: 0
@@ -902,6 +906,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
   corrupted: 0
   corruptedParticles: {fileID: 0}
+  outlineMaterial: {fileID: 0}
+  outlinedMeshes: []
 --- !u!1 &7734941191422038998
 GameObject:
   m_ObjectHideFlags: 0
@@ -1078,7 +1084,7 @@ MonoBehaviour:
   attackWeight: 1
   attackDice: {fileID: 0}
   customDescription: Reduces damage taken by the main body by <b>2</b>.
-  limbAnimNameSuffix: 
+  limbAnimName: T_ACTION_3
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1280,6 +1286,14 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: deb666aca724b2b4ebb7e2005da8f40f, type: 2}
+    - target: {fileID: 7568053090975227658, guid: 6d3dc2775201b964b81aa7d26b761b73, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: edee889ded109664da763ed40a52bb03, type: 2}
+    - target: {fileID: 7803467855228213725, guid: 6d3dc2775201b964b81aa7d26b761b73, type: 3}
+      propertyPath: m_Name
+      value: ModelRoation
+      objectReference: {fileID: 0}
     - target: {fileID: 7886605385319000836, guid: 6d3dc2775201b964b81aa7d26b761b73, type: 3}
       propertyPath: m_Mesh
       value: 

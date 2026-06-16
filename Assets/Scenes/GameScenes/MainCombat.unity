@@ -1457,6 +1457,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 823796477}
     - target: {fileID: 1345140468486814719, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+      propertyPath: dicePoofEffect
+      value: 
+      objectReference: {fileID: 741647560736607677, guid: a61023a7cbe1abf47b2ad43ca7ea24e7, type: 3}
+    - target: {fileID: 1345140468486814719, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: diceReserveMoveTime
       value: 0.5
       objectReference: {fileID: 0}
@@ -1582,7 +1586,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4414532441173357147, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000005722046
+      value: 0.0000038146973
       objectReference: {fileID: 0}
     - target: {fileID: 4934823604475791925, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1648,6 +1652,10 @@ PrefabInstance:
       propertyPath: overlayCamera
       value: 
       objectReference: {fileID: 1099459663}
+    - target: {fileID: 6495533709985400535, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+      propertyPath: debugStartEncounter
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 6558335021527034578, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

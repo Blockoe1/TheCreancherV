@@ -208,6 +208,8 @@ MonoBehaviour:
   _tick: 0.01
   _hurtColor: {r: 1, g: 0, b: 0, a: 1}
   _toHurtFlashDuration: 0.1
+  _castColor: {r: 1, g: 1, b: 1, a: 1}
+  _toCastFlashDuration: 0.1
 --- !u!95 &5150539514345344745
 Animator:
   serializedVersion: 7
@@ -218,7 +220,7 @@ Animator:
   m_GameObject: {fileID: 71788268195839183}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2fb131896e1d746439864e10c579466f, type: 2}
+  m_Controller: {fileID: 22100000, guid: ab2510f4cfc89b44cb0d9554f48ee5d8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -379,9 +381,9 @@ Transform:
   m_GameObject: {fileID: 1459793081320524516}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7098835602048411783}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -467,9 +469,9 @@ Transform:
   m_GameObject: {fileID: 2036938519778210167}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.99229014, y: -1.7539997, z: -2.5685635}
+  m_LocalPosition: {x: 0.9922901, y: -1.7539997, z: -2.568563}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2269616663169981077}
   m_Father: {fileID: 651565114619168227}
@@ -605,6 +607,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: aeff90a0b929abf4f8b76ce968bfd4fd, type: 2}
   corrupted: 0
   corruptedParticles: {fileID: 0}
+  outlineMaterial: {fileID: 0}
+  outlinedMeshes: []
 --- !u!1 &3666328996636705054
 GameObject:
   m_ObjectHideFlags: 0
@@ -789,7 +793,7 @@ Transform:
   m_GameObject: {fileID: 4617688717013559070}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.3222898, y: 3.5, z: 1.5485637}
+  m_LocalPosition: {x: -1.32229, y: 3.5, z: 1.548564}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -817,7 +821,7 @@ MonoBehaviour:
   attackWeight: 1
   attackDice: {fileID: 92538933030797158}
   customDescription: 
-  limbAnimNameSuffix: 
+  limbAnimName: T_ACTION_3
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -877,7 +881,7 @@ MonoBehaviour:
   attackWeight: 1
   attackDice: {fileID: 6455914676996752947}
   customDescription: 
-  limbAnimNameSuffix: 
+  limbAnimName: 
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -977,6 +981,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 65251d99c3a92934ead76ebda2082b1a, type: 2}
   corrupted: 0
   corruptedParticles: {fileID: 0}
+  outlineMaterial: {fileID: 0}
+  outlinedMeshes: []
 --- !u!1 &5783503621167091089
 GameObject:
   m_ObjectHideFlags: 0
@@ -1121,7 +1127,7 @@ MonoBehaviour:
   attackWeight: 1
   attackDice: {fileID: 1685373729666274294}
   customDescription: 
-  limbAnimNameSuffix: 
+  limbAnimName: T_ACTION_1
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1247,6 +1253,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
   corrupted: 0
   corruptedParticles: {fileID: 0}
+  outlineMaterial: {fileID: 0}
+  outlinedMeshes: []
 --- !u!1 &6504960768346475518
 GameObject:
   m_ObjectHideFlags: 0
@@ -1391,7 +1399,7 @@ MonoBehaviour:
   attackWeight: 1
   attackDice: {fileID: 9025569531312439319}
   customDescription: 
-  limbAnimNameSuffix: 
+  limbAnimName: T_ACTION_4
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1590,6 +1598,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: aeff90a0b929abf4f8b76ce968bfd4fd, type: 2}
   corrupted: 0
   corruptedParticles: {fileID: 0}
+  outlineMaterial: {fileID: 0}
+  outlinedMeshes: []
 --- !u!1 &7624578719877542461
 GameObject:
   m_ObjectHideFlags: 0
@@ -1649,7 +1659,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.013300583, y: 1.6741253, z: -0.31687254}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6559758158106580779}
   m_Father: {fileID: 9138432812467857832}
@@ -1772,7 +1782,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.66750896, y: 0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2455890064847640873}
   m_Father: {fileID: 1508039002666899215}
@@ -1798,7 +1808,7 @@ MonoBehaviour:
   attackWeight: 1
   attackDice: {fileID: 9054244784925847532}
   customDescription: 
-  limbAnimNameSuffix: 
+  limbAnimName: T_ACTION_2
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []

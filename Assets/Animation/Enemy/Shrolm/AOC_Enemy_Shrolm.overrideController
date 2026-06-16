@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AOC_Enemy_Shrolm
+  m_Controller: {fileID: 9100000, guid: 2fb131896e1d746439864e10c579466f, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 46d76627a7f941240be22687104d6088, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 0ffff2f847f398f4d926d63f7bbebf12, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 37bcc32d5d900154bb6801facb032c62, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 9024827a380a3eb44a7c7d999940b22d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: edec6de96b6b78c47bb52f5b891a2cce, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7df4f0e5d7a02734caf407d000a246a3, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 1bf479e0ec90c5c4abc691aaf9c3f1af, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 767474b4afa5c0241a32ece3da16d577, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 8a8162da176bd8543a5b9e8b61441c09, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f77a8f0615184a544a9212b144087ad5, type: 2}

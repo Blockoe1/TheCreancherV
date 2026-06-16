@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AOC_Enemy_Tweasel
+  m_Controller: {fileID: 9100000, guid: 2fb131896e1d746439864e10c579466f, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 46d76627a7f941240be22687104d6088, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 22013e0cc7395014fad0ccceb5073ef8, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 37bcc32d5d900154bb6801facb032c62, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8f953ad4be10aad4badd802b6da713de, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: edec6de96b6b78c47bb52f5b891a2cce, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2577561b57e0c914896028d1ca0a3e4b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 1bf479e0ec90c5c4abc691aaf9c3f1af, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 08d8236c1ef786343a7d8f5acc24dfd5, type: 2}

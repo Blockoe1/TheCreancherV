@@ -339,7 +339,7 @@ Transform:
   m_GameObject: {fileID: 826302926243069942}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: -0.63, z: -2.24}
+  m_LocalPosition: {x: 0, y: -0.63, z: -2.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -456,7 +456,7 @@ MonoBehaviour:
   attackWeight: 1
   attackDice: {fileID: 9215964055632037927}
   customDescription: 
-  limbAnimNameSuffix: 
+  limbAnimName: T_ACTION_5
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -559,7 +559,7 @@ Transform:
   m_GameObject: {fileID: 2173882990315071443}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: -0.947, z: -2.579}
+  m_LocalPosition: {x: 0, y: -0.947, z: -2.579}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -676,7 +676,7 @@ MonoBehaviour:
   attackWeight: 1
   attackDice: {fileID: 755269475158816666}
   customDescription: 
-  limbAnimNameSuffix: 
+  limbAnimName: 
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1209,7 +1209,7 @@ MonoBehaviour:
   attackWeight: 1
   attackDice: {fileID: 7403563786225050731}
   customDescription: 
-  limbAnimNameSuffix: 
+  limbAnimName: T_ACTION_3
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1372,7 +1372,7 @@ Animator:
   m_GameObject: {fileID: 7173650780824901471}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2fb131896e1d746439864e10c579466f, type: 2}
+  m_Controller: {fileID: 22100000, guid: a6542fa9b16c17f479d06137cc1c3cff, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1438,7 +1438,7 @@ MonoBehaviour:
   attackWeight: 1
   attackDice: {fileID: 753924102905241776}
   customDescription: 
-  limbAnimNameSuffix: 
+  limbAnimName: T_ACTION_1
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1500,7 +1500,7 @@ MonoBehaviour:
   attackWeight: 1
   attackDice: {fileID: 6187090870116024368}
   customDescription: 
-  limbAnimNameSuffix: 
+  limbAnimName: T_ACTION_4
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1629,7 +1629,7 @@ MonoBehaviour:
   attackWeight: 1
   attackDice: {fileID: 5244673443929920525}
   customDescription: 
-  limbAnimNameSuffix: 
+  limbAnimName: T_ACTION_2
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1675,7 +1675,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 2.812}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8366883793619537033}
   m_Father: {fileID: 462428244685597093}

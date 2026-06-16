@@ -16,5 +16,11 @@ namespace FoolsBrand
             diceManager.ClearReserveSlot();
             yield return null;
         }
+
+        protected override void PlayVFX(ITargetable target, IActionSource source, Combatant user, GameObject effectPrefab)
+        {
+            Transform reservedDice = GameObject.Find("ReservePos").transform;
+            GameObject.Instantiate(effectPrefab, reservedDice.position, Quaternion.identity);
+        }
     }
 }

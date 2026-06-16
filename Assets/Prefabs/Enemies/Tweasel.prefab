@@ -56,6 +56,7 @@ MonoBehaviour:
   attackDice: {fileID: 8180461191078144821}
   customDescription: 
   limbAnimName: T_ACTION_2
+  limbDeathSound: LimbDestroyed
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -239,6 +240,7 @@ MonoBehaviour:
   attackDice: {fileID: 150678045897934776}
   customDescription: 
   limbAnimName: T_ACTION_4
+  limbDeathSound: LimbDestroyed
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -712,6 +714,7 @@ MonoBehaviour:
   attackDice: {fileID: 6884097244328271279}
   customDescription: 
   limbAnimName: T_ACTION_1
+  limbDeathSound: LimbDestroyed
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1087,6 +1090,7 @@ MonoBehaviour:
   customDescription: Reduces damage <sprite name="Defense">taken by the main body
     by <b>2</b>.
   limbAnimName: T_ACTION_3
+  limbDeathSound: ShellBreak
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []

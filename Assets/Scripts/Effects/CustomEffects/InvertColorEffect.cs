@@ -21,6 +21,7 @@ namespace FoolsBrand
             {
                 invertColorToggle.EnableInvert();
                 isInverted = true;
+                InfoBox.HideTooltips = true;
             }
         }
 
@@ -28,6 +29,7 @@ namespace FoolsBrand
         {
             invertColorToggle.DisableInvert();
             isInverted = false;
+            InfoBox.HideTooltips = false;
         }
     }
 }

@@ -6,6 +6,7 @@
 //
 // Brief Description : Deals continual damage to the applied target every turn.
 *****************************************************************************/
+using FoolsBrand.Audio;
 using System.Collections;
 using UnityEngine;
 
@@ -16,6 +17,7 @@ namespace FoolsBrand
     {
         [SerializeField] private float tickDelay;
         [SerializeField] private ParticleSystem poisonEffectBurst;
+        [SerializeField] private string poisonDamageSoundName;
 
         /// <summary>
         /// Deals damage to the main enemy health.
@@ -29,6 +31,7 @@ namespace FoolsBrand
             }
             SpawnEffectToMeshRenderer(poisonEffectBurst, combatant.transform);
             combatant.Health.Value -= instance.Potency;
+            AudioManager.Instance.PlayOneShot(poisonDamageSoundName);
             combatant.CheckForDeath();
 
             yield return new WaitForSeconds(tickDelay);

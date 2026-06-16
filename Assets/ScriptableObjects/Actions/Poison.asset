@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.ApplyEffectAction
   animationName: T_ATTACK
   actionVFX: {fileID: 11400000, guid: b09f03b2c86623f4c8904007971683b2, type: 2}
+  soundName: PoisonApply
   effect: {fileID: 11400000, guid: 4268e432d311cb544a2905e043fb918a, type: 2}
   targetSelf: 0
   priority: 101

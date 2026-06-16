@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9001272001991474699}
   - component: {fileID: 2967838817283814243}
   - component: {fileID: 4402598427631629567}
+  - component: {fileID: 5070053910222466952}
   m_Layer: 0
   m_Name: EnemyBase
   m_TagString: Untagged
@@ -54,7 +55,19 @@ MonoBehaviour:
   <Animator>k__BackingField: {fileID: 4402598427631629567}
   onDeathEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5070053910222466952}
+        m_TargetAssemblyTypeName: FoolsBrand.Audio.AudioRelay, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: KO
+          m_BoolArgument: 0
+        m_CallState: 2
   <EnemyName>k__BackingField: 
   <BaseActionValue>k__BackingField: 1
 --- !u!114 &4402598427631629567
@@ -71,6 +84,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.CombatantAnimator
   animator: {fileID: 7568053090975227658}
   combatant: {fileID: 2967838817283814243}
+--- !u!114 &5070053910222466952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2579717307541681774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f956f767637dd7c4aac091bacf3c3a3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Audio.AudioRelay
 --- !u!1 &3137491274917537592
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,7 +272,8 @@ MonoBehaviour:
   attackWeight: 1
   attackDice: {fileID: 5866222425643466904}
   customDescription: 
-  limbAnimNameSuffix: 
+  limbAnimName: 
+  limbDeathSound: LimbDestroyed
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -389,6 +415,8 @@ MonoBehaviour:
   _tick: 0.01
   _hurtColor: {r: 1, g: 0, b: 0, a: 1}
   _toHurtFlashDuration: 0.1
+  _castColor: {r: 1, g: 1, b: 1, a: 1}
+  _toCastFlashDuration: 0.1
 --- !u!1001 &7190148356446236393
 PrefabInstance:
   m_ObjectHideFlags: 0

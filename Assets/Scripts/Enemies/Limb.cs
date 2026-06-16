@@ -6,6 +6,7 @@
 //
 // Brief Description : Controls an enemy's limbs and their relevant stats.
 *****************************************************************************/
+using FoolsBrand.Audio;
 using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
@@ -30,6 +31,7 @@ namespace FoolsBrand.Enemies
         [SerializeField, Tooltip("Adds this string to the end of an animation name for actions perfomed by this limb.  " +
             "Only needs to be set if the limb has a custom animation.")]
         private string limbAnimName;
+        [SerializeField] private string limbDeathSound = "LimbDestroyed";
         [Header("Events")]
         [SerializeField] private UnityEvent<int> onDamageEvent;
         [SerializeField] private UnityEvent onDestroyEvent;
@@ -120,6 +122,7 @@ namespace FoolsBrand.Enemies
                 {
                     // If the limb dies to damage, disable it.
                     gameObject.SetActive(false);
+                    AudioManager.Instance.PlayOneShot(limbDeathSound);
                     OnLimbDeath();
                 }
 

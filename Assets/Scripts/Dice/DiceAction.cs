@@ -61,17 +61,14 @@ public abstract class DiceAction : ScriptableObject
         }
 
         // Wait the corresponding times.
-        yield return new WaitForSeconds(Mathf.Max(impactTime - effectPreloadTime, effectPreloadTime));
+        yield return new WaitForSeconds(Mathf.Max(impactTime - effectPreloadTime, 0));
         // Play visual effects.
         if (actionVFX != null)
         {
             PlayVFX(target, source, user, actionVFX.EffectObj);
         }
         yield return new WaitForSeconds(effectPreloadTime);
-        if (soundName != "")
-        {
-            AudioManager.Instance.PlayOneShot(soundName);
-        }
+        AudioManager.Instance.PlayOneShot(soundName);
         // Perform the actual action.
         yield return PerformAction(target, source, user, value, sourceFace);
         // Wait for the animation to finish.

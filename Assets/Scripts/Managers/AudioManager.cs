@@ -68,6 +68,7 @@ namespace FoolsBrand.Audio
 
         public EventReference GetEvent(string key)
         {
+            if (key == null) { return default; }
             if (soundDict.ContainsKey(key))
             {
                 return soundDict[key];
@@ -78,16 +79,19 @@ namespace FoolsBrand.Audio
         #region Playing Sounds
         public void PlayOneShot(string soundName)
         {
+            if (soundName == null || soundName == "") { return; }
             RuntimeManager.PlayOneShot(GetEvent(soundName));
         }
 
         public void PlayOneShot(string soundName, Vector3 worldPos)
         {
+            if (soundName == null || soundName == "") { return; }
             RuntimeManager.PlayOneShot(GetEvent(soundName), worldPos);
         }
 
         public void StartSound(string soundName)
         {
+            if (soundName == null || soundName == "") { return; }
             try
             {
                 EventInstance inst = RuntimeManager.CreateInstance(GetEvent(soundName));
@@ -103,6 +107,7 @@ namespace FoolsBrand.Audio
 
         public void StopSound(string soundName)
         {
+            if (soundName == null || soundName == "") { return; }
             if (runningInstances.ContainsKey(soundName))
             {
                 EventInstance inst = runningInstances[soundName];

@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.AddDiceAction
   animationName: T_CAST
   actionVFX: {fileID: 0}
+  soundName: CursedDice
   diceString: CursedWeakenedDie
   maxAddNum: 5

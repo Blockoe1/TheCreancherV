@@ -59,7 +59,11 @@ namespace FoolsBrand.Audio
             {
                 soundDict.Add(e.key, e.eventRef);
             }
-            musicInstance = RuntimeManager.CreateInstance(musicEvent);
+            if (!musicEvent.IsNull)
+            {
+                musicInstance = RuntimeManager.CreateInstance(musicEvent);
+            }
+            
         }
 
         public EventReference GetEvent(string key)

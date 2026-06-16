@@ -45,6 +45,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Audio.AudioManager
   events:
+  - key: AddDice
+    eventRef:
+      Guid:
+        Data1: -1205410175
+        Data2: 1303581472
+        Data3: 854168198
+        Data4: -818012344
+      Path: event:/SFX/AddDice
   - key: Attack
     eventRef:
       Guid:
@@ -76,7 +84,7 @@ MonoBehaviour:
         Data2: 1263531620
         Data3: 627931785
         Data4: 1568431016
-      Path: event:/SFX/Corruption
+      Path: event:/SFX/Dice/Corruption
   - key: CorruptionDeath
     eventRef:
       Guid:
@@ -84,7 +92,7 @@ MonoBehaviour:
         Data2: 1285327808
         Data3: -746337893
         Data4: 67484593
-      Path: event:/SFX/CorruptionDeath
+      Path: event:/SFX/Dice/CorruptionDeath
   - key: CursedDice
     eventRef:
       Guid:
@@ -92,7 +100,7 @@ MonoBehaviour:
         Data2: 1326709997
         Data3: -277129556
         Data4: 1460967102
-      Path: event:/SFX/CursedDice
+      Path: event:/SFX/Enemies/CursedDice
   - key: CylimeLaser
     eventRef:
       Guid:
@@ -100,7 +108,7 @@ MonoBehaviour:
         Data2: 1317956352
         Data3: 1028918681
         Data4: -922950589
-      Path: event:/SFX/CylimeLaser
+      Path: event:/SFX/Enemies/CylimeLaser
   - key: KO
     eventRef:
       Guid:
@@ -109,6 +117,14 @@ MonoBehaviour:
         Data3: 1097680275
         Data4: -1597457640
       Path: event:/SFX/KO
+  - key: LimbDestroyed
+    eventRef:
+      Guid:
+        Data1: 2037155677
+        Data2: 1297653939
+        Data3: 624116609
+        Data4: 2098803840
+      Path: event:/SFX/LimbDestroyed
   - key: Lose
     eventRef:
       Guid:
@@ -124,7 +140,7 @@ MonoBehaviour:
         Data2: 1117160335
         Data3: 1532745889
         Data4: -738372291
-      Path: event:/SFX/PoisonApply
+      Path: event:/SFX/Dice/PoisonApply
   - key: PoisonDamage
     eventRef:
       Guid:
@@ -132,7 +148,7 @@ MonoBehaviour:
         Data2: 1230632883
         Data3: -173020537
         Data4: 1204763610
-      Path: event:/SFX/PoisonDamage
+      Path: event:/SFX/Dice/PoisonDamage
   - key: Rage
     eventRef:
       Guid:
@@ -140,7 +156,7 @@ MonoBehaviour:
         Data2: 1218024794
         Data3: -786884715
         Data4: 172284909
-      Path: event:/SFX/Rage
+      Path: event:/SFX/Dice/Rage
   - key: RollDice
     eventRef:
       Guid:
@@ -156,7 +172,7 @@ MonoBehaviour:
         Data2: 1315818252
         Data3: -2130170727
         Data4: 2018286749
-      Path: event:/SFX/ShrolmEat
+      Path: event:/SFX/Enemies/ShrolmEat
   - key: UIClick
     eventRef:
       Guid:
@@ -164,7 +180,23 @@ MonoBehaviour:
         Data2: 1153608044
         Data3: 1516082327
         Data4: -1177191326
-      Path: event:/SFX/UIClick
+      Path: event:/SFX/UI/UIClick
+  - key: ShrolmEyes
+    eventRef:
+      Guid:
+        Data1: 376376251
+        Data2: 1166652578
+        Data3: -1626665550
+        Data4: 14761930
+      Path: event:/SFX/Enemies/ShrolmEyes
+  - key: ShellBreak
+    eventRef:
+      Guid:
+        Data1: 274329551
+        Data2: 1179602988
+        Data3: 492934299
+        Data4: 1015763288
+      Path: event:/SFX/Enemies/TweaselShellBreak
   musicEvent:
     Guid:
       Data1: 0

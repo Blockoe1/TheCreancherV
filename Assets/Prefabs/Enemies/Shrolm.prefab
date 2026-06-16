@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4827303349966865765}
   - component: {fileID: 3228334127417555230}
   - component: {fileID: 4170622330632973415}
+  - component: {fileID: 8988072071572121193}
   m_Layer: 0
   m_Name: Shrolm
   m_TagString: Untagged
@@ -137,7 +138,19 @@ MonoBehaviour:
   <Animator>k__BackingField: {fileID: 4170622330632973415}
   onDeathEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8988072071572121193}
+        m_TargetAssemblyTypeName: FoolsBrand.Audio.AudioRelay, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: KO
+          m_BoolArgument: 0
+        m_CallState: 2
   <EnemyName>k__BackingField: Hunter Shrolm
   <BaseActionValue>k__BackingField: 1
 --- !u!114 &4170622330632973415
@@ -154,6 +167,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.CombatantAnimator
   animator: {fileID: 2398837441177270996}
   combatant: {fileID: 3228334127417555230}
+--- !u!114 &8988072071572121193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12832507243923747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f956f767637dd7c4aac091bacf3c3a3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Audio.AudioRelay
 --- !u!1 &295691927947478276
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,6 +482,7 @@ MonoBehaviour:
   attackDice: {fileID: 9215964055632037927}
   customDescription: 
   limbAnimName: T_ACTION_5
+  limbDeathSound: LimbDestroyed
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -677,6 +703,7 @@ MonoBehaviour:
   attackDice: {fileID: 755269475158816666}
   customDescription: 
   limbAnimName: 
+  limbDeathSound: LimbDestroyed
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1210,6 +1237,7 @@ MonoBehaviour:
   attackDice: {fileID: 7403563786225050731}
   customDescription: 
   limbAnimName: T_ACTION_3
+  limbDeathSound: LimbDestroyed
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1439,6 +1467,7 @@ MonoBehaviour:
   attackDice: {fileID: 753924102905241776}
   customDescription: 
   limbAnimName: T_ACTION_1
+  limbDeathSound: LimbDestroyed
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1501,6 +1530,7 @@ MonoBehaviour:
   attackDice: {fileID: 6187090870116024368}
   customDescription: 
   limbAnimName: T_ACTION_4
+  limbDeathSound: LimbDestroyed
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1631,6 +1661,7 @@ MonoBehaviour:
   attackDice: {fileID: 5244673443929920525}
   customDescription: 
   limbAnimName: T_ACTION_2
+  limbDeathSound: LimbDestroyed
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []

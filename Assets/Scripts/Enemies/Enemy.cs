@@ -63,7 +63,10 @@ namespace FoolsBrand.Enemies
             // Kill All Limbs
             foreach (Limb limb in limbs)
             {
-                limb.OnLimbDeath();
+                if (!limb.IsDead)
+                {
+                    limb.OnLimbDeath();
+                }
             }
             base.OnDeath();
         }

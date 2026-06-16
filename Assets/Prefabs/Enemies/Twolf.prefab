@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4827303349966865765}
   - component: {fileID: 3228334127417555230}
   - component: {fileID: 4170622330632973415}
+  - component: {fileID: 7595803124897342856}
   m_Layer: 0
   m_Name: Twolf
   m_TagString: Untagged
@@ -137,7 +138,19 @@ MonoBehaviour:
   <Animator>k__BackingField: {fileID: 4170622330632973415}
   onDeathEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7595803124897342856}
+        m_TargetAssemblyTypeName: FoolsBrand.Audio.AudioRelay, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: KO
+          m_BoolArgument: 0
+        m_CallState: 2
   <EnemyName>k__BackingField: Twolf
   <BaseActionValue>k__BackingField: 1
 --- !u!114 &4170622330632973415
@@ -154,6 +167,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.CombatantAnimator
   animator: {fileID: 5150539514345344745}
   combatant: {fileID: 3228334127417555230}
+--- !u!114 &7595803124897342856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12832507243923747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f956f767637dd7c4aac091bacf3c3a3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Audio.AudioRelay
 --- !u!1 &71788268195839183
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,6 +848,7 @@ MonoBehaviour:
   attackDice: {fileID: 92538933030797158}
   customDescription: 
   limbAnimName: T_ACTION_3
+  limbDeathSound: LimbDestroyed
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -883,6 +909,7 @@ MonoBehaviour:
   attackDice: {fileID: 6455914676996752947}
   customDescription: 
   limbAnimName: 
+  limbDeathSound: LimbDestroyed
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1129,6 +1156,7 @@ MonoBehaviour:
   attackDice: {fileID: 1685373729666274294}
   customDescription: 
   limbAnimName: T_ACTION_1
+  limbDeathSound: LimbDestroyed
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1402,6 +1430,7 @@ MonoBehaviour:
   attackDice: {fileID: 9025569531312439319}
   customDescription: 
   limbAnimName: T_ACTION_4
+  limbDeathSound: LimbDestroyed
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1811,6 +1840,7 @@ MonoBehaviour:
   attackDice: {fileID: 9054244784925847532}
   customDescription: 
   limbAnimName: T_ACTION_2
+  limbDeathSound: LimbDestroyed
   onDamageEvent:
     m_PersistentCalls:
       m_Calls: []

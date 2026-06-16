@@ -1,4 +1,5 @@
 using FoolsBrand;
+using FoolsBrand.Audio;
 using System;
 using System.Collections;
 using Unity.VisualScripting;
@@ -13,6 +14,7 @@ public abstract class DiceAction : ScriptableObject
 
     [SerializeField] private string animationName;
     [SerializeField] private ActionVFX actionVFX;
+    [SerializeField] private string soundName;
 
     public abstract int PriorityValue { get; }
 
@@ -66,6 +68,10 @@ public abstract class DiceAction : ScriptableObject
             PlayVFX(target, source, user, actionVFX.EffectObj);
         }
         yield return new WaitForSeconds(effectPreloadTime);
+        if (soundName != "")
+        {
+            AudioManager.Instance.PlayOneShot(soundName);
+        }
         // Perform the actual action.
         yield return PerformAction(target, source, user, value, sourceFace);
         // Wait for the animation to finish.

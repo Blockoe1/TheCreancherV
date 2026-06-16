@@ -795,6 +795,7 @@ GameObject:
   - component: {fileID: 1306432985345615613}
   - component: {fileID: 6947329468268125047}
   - component: {fileID: 6633463882948058675}
+  - component: {fileID: 3165474777365052683}
   m_Layer: 5
   m_Name: Return To Main Menu
   m_TagString: Untagged
@@ -916,6 +917,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3165474777365052683}
+        m_TargetAssemblyTypeName: FoolsBrand.Audio.AudioRelay, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: U
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3165474777365052683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4322386161336815809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f956f767637dd7c4aac091bacf3c3a3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Audio.AudioRelay
 --- !u!1 &5033888717409629812
 GameObject:
   m_ObjectHideFlags: 0
@@ -928,6 +953,7 @@ GameObject:
   - component: {fileID: 7163451925795406877}
   - component: {fileID: 2038532267230398185}
   - component: {fileID: 5565145342444471522}
+  - component: {fileID: 4619086764020732161}
   m_Layer: 5
   m_Name: ResumeButton
   m_TagString: Untagged
@@ -1049,6 +1075,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3165474777365052683}
+        m_TargetAssemblyTypeName: FoolsBrand.Audio.AudioRelay, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: U
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4619086764020732161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5033888717409629812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f956f767637dd7c4aac091bacf3c3a3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Audio.AudioRelay
 --- !u!1 &5265746050275383801
 GameObject:
   m_ObjectHideFlags: 0
@@ -1431,6 +1481,7 @@ GameObject:
   - component: {fileID: 5822926938158319185}
   - component: {fileID: 696444546025098380}
   - component: {fileID: 4790271365822412861}
+  - component: {fileID: 8111799284002476914}
   m_Layer: 5
   m_Name: Settings
   m_TagString: Untagged
@@ -1552,6 +1603,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 3165474777365052683}
+        m_TargetAssemblyTypeName: FoolsBrand.Audio.AudioRelay, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: U
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &8111799284002476914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6198088606875960711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f956f767637dd7c4aac091bacf3c3a3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Audio.AudioRelay
 --- !u!1 &6729501647625329441
 GameObject:
   m_ObjectHideFlags: 0

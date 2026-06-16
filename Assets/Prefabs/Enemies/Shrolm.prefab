@@ -728,7 +728,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
   _dieName: Club Die
-  _dieDescription: '#faces
+  _dieDescription: '<sprite name="Damage">#faces
 
     Deals high damage.'
   rewardSelectable: 1
@@ -898,7 +898,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
   _dieName: Spear Die
-  _dieDescription: '#faces
+  _dieDescription: '<sprite name="Damage">#faces
 
     Deals high damage.'
   rewardSelectable: 1
@@ -1552,7 +1552,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
   _dieName: Tail Die
-  _dieDescription: Reduces damage dealt by your next attack by <b>#faces</b>.
+  _dieDescription: Reduces damage dealt<sprite name="Weakon"> by your next attack
+    by <b>#faces</b>.
   rewardSelectable: 1
   dieRenderer: {fileID: 0}
   borderRenderer: {fileID: 0}
@@ -1725,7 +1726,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
   _dieName: Eyes Die
-  _dieDescription: Inverts the colors on your screen for <b>3</b> turns.
+  _dieDescription: Inverts the colors <sprite name="InvertedColors"> on your screen
+    for <b>3</b> turns.
   rewardSelectable: 1
   dieRenderer: {fileID: 0}
   borderRenderer: {fileID: 0}

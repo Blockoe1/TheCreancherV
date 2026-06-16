@@ -38,10 +38,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: _dieDescription
-      value: '#faces
+      value: '<sprite name="Poison">#faces
 
-        Poisons a limb, which deals damage to the main enemy,
-        but not the limb, every turn.  Cannot be applied to the same limb twice.'
+        Poisons <sprite name="Poison">
+        a limb, which deals damage to the main enemy, but not the limb, every turn. 
+        Cannot be applied to the same limb twice.'
       objectReference: {fileID: 0}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: 'managedReferences[-2]'

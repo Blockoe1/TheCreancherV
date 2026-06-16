@@ -293,7 +293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
   _dieName: Basic Die 1-6
-  _dieDescription: '#faces
+  _dieDescription: '<sprite name="Damage">#faces
 
     Deals damage.'
   rewardSelectable: 1
@@ -563,7 +563,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3648350979713068657, guid: 03345b9459578e341b0d81fb177f1fc4, type: 3}
       propertyPath: _dieDescription
-      value: '#faces
+      value: '<sprite name="Damage">#faces
 
         Deals high damage.'
       objectReference: {fileID: 0}

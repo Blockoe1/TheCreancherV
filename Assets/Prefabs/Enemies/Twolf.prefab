@@ -553,9 +553,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
   _dieName: Basic Die 1-6
-  _dieDescription: '#faces
+  _dieDescription: '<sprite name="Damage">#faces
 
-    Deals damage and corrupts one of your dice.'
+    Deals damage and corrupts <sprite
+    name="Corruption"><b>1</b> of your dice.'
   rewardSelectable: 1
   dieRenderer: {fileID: 0}
   borderRenderer: {fileID: 0}
@@ -933,7 +934,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
   _dieName: Basic Die 1-6
-  _dieDescription: '#faces
+  _dieDescription: '<sprite name="Healing">#faces
 
     Heals this enemy.'
   rewardSelectable: 1
@@ -1211,9 +1212,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
   _dieName: Basic Die 1-6
-  _dieDescription: '#faces
+  _dieDescription: '<sprite name="Damage"><sprite name="Healing">#faces
 
-    Deals damage and heals this enemy.'
+    Deals
+    damage and heals this enemy.'
   rewardSelectable: 1
   dieRenderer: {fileID: 0}
   borderRenderer: {fileID: 0}
@@ -1576,7 +1578,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
   _dieName: Basic Die 1-6
-  _dieDescription: Corrupts <b>2</b> of your dice.
+  _dieDescription: Corrupts <sprite name="Corruption"> <b>2</b> of your dice.
   rewardSelectable: 1
   dieRenderer: {fileID: 0}
   borderRenderer: {fileID: 0}

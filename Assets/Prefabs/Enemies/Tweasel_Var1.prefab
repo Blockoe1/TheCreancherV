@@ -84,9 +84,10 @@ PrefabInstance:
         Cursed Weakened
         Dice
 
-        0, 0, 0, 1, 1, 2
+        <sprite name="Damage">0, 0, 0, 1, 1, 2
 
-        Deals low damage to the enemy.
+        Deals low damage
+        to the enemy.
 
 '
       objectReference: {fileID: 0}

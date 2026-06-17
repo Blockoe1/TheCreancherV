@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: c172e1b04b24a1b4699df887a4383d83, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -924,6 +924,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 290152977}
     m_Modifications:
+    - target: {fileID: 1394212957310239108, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1658083445731131531, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1658083445731131531, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1658083445731131531, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2499904299377526802, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -938,6 +954,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2814044401908618146, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2953112445609564707, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000446644019968708, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518089802463028669, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518089802463028669, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4540749860324223171, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
@@ -980,6 +1012,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6815101241116913354, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7147906335947114100, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
       propertyPath: infoBox
       value: 
@@ -996,6 +1032,14 @@ PrefabInstance:
       propertyPath: offsetCanvas
       value: 
       objectReference: {fileID: 370286438}
+    - target: {fileID: 7371734823564213507, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8630396472464019409, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8900819589536811428, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

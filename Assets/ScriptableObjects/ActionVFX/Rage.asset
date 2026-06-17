@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 336bbc44be5844c4fadc838fe66eb5ef, type: 3}
   m_Name: Rage
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.ActionVFX
-  <PreloadTime>k__BackingField: 0.1
+  <PreloadTime>k__BackingField: 0
   <EffectObj>k__BackingField: {fileID: 15689598167656695, guid: 32688d05f0976964aafd8123099fc6e0, type: 3}

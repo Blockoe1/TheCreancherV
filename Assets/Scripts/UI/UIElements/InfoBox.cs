@@ -14,6 +14,8 @@ namespace FoolsBrand
 
         private IDiceInfo currentDice;
 
+        public static bool HideTooltips { get; set; }
+
         void Update()
         {
             RectTransformUtility.ScreenPointToLocalPointInRectangle(_myCanvas.transform as RectTransform, Mouse.current.position.ReadValue(),
@@ -33,9 +35,16 @@ namespace FoolsBrand
             currentDice = die;
             if (currentDice != null)
             {
-                gameObject.SetActive(true);
-                _dieNameText.text = currentDice.DieName;
-                _dieDescText.text = currentDice.DieDescription + suffix;
+                if (HideTooltips)
+                {
+                    gameObject.SetActive(false);
+                }
+                else
+                {
+                    gameObject.SetActive(true);
+                    _dieNameText.text = currentDice.DieName;
+                    _dieDescText.text = currentDice.DieDescription + suffix;
+                }
                 currentDice.ShowHoverOutline();
             }
             else

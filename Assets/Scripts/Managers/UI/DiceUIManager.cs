@@ -101,12 +101,13 @@ namespace FoolsBrand
                 {
                     _hoveredObject = hitObj;
 
-                    InvertColorEffect invertColorEffect = UnityEngine.Object.FindFirstObjectByType<InvertColorEffect>();
-                    if (!(invertColorEffect != null && invertColorEffect.isInverted))
-                    {
+                    //InvertColorEffect invertColorEffect = UnityEngine.Object.FindFirstObjectByType<InvertColorEffect>();
+                    //if (!(invertColorEffect != null && invertColorEffect.isInverted))
+                    //{
 
-                        _infoBox.SetDisplayDice(diceInfo, (canReserve && !diceInfo.IsReserved && diceInfo is DieBase ? "\n\n<i>Click to reserve.</i>" : ""));
-                    }
+                    //    _infoBox.SetDisplayDice(diceInfo, (canReserve && !diceInfo.IsReserved && diceInfo is DieBase ? "\n\n<i>Click to reserve.</i>" : ""));
+                    //}
+                    _infoBox.SetDisplayDice(diceInfo, (canReserve && !diceInfo.IsReserved && diceInfo is DieBase ? "\n\n<i>Click to reserve.</i>" : ""));
                 }
                 
             }

@@ -12,6 +12,7 @@ namespace FoolsBrand
     {
         [SerializeField] private PlayerCombatant player;
         [SerializeField] private float selectLimbWaitTime = 0.25f;
+        [SerializeField] private float playerDeathDelay;
 
         private DiceManager diceManager;
         private LimbUIManager limbUIManager;
@@ -96,6 +97,7 @@ namespace FoolsBrand
             yield return null;
             float animationDuration = player.Animator.GetAnimationDuration();
             yield return new WaitForSeconds(animationDuration);
+            yield return new WaitForSeconds(playerDeathDelay);
             RunManager.CombatLose();
         }
 

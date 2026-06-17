@@ -1,4 +1,5 @@
 using FoolsBrand;
+using FoolsBrand.Audio;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,6 +14,8 @@ public class MainMenu : MonoBehaviour
         {
             Instantiate(_diceDatabaseReference);
         }
+
+        AudioManager.Instance.SetMusic(MusicType.MainMenu);
     }
     public void StartGame()
     {
@@ -25,10 +28,5 @@ public class MainMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

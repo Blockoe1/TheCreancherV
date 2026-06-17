@@ -14,6 +14,7 @@ namespace FoolsBrand
     {
         MainMenu,
         InCombat,
-        OutOfCombat
+        OutOfCombat,
+        Nothing
     }
 }

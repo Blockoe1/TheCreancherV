@@ -16,7 +16,8 @@ namespace FoolsBrand.Audio
     public class AudioManager : MonoBehaviour
     {
         [SerializeField] private EventKey[] events;
-        [SerializeField] private EventReference musicEvent;
+        [SerializeField] private EventReference combatMusicEvent;
+        [SerializeField] private EventReference menuMusicEvent;
 
         private EventInstance musicInstance;
 
@@ -59,10 +60,10 @@ namespace FoolsBrand.Audio
             {
                 soundDict.Add(e.key, e.eventRef);
             }
-            if (!musicEvent.IsNull)
-            {
-                musicInstance = RuntimeManager.CreateInstance(musicEvent);
-            }
+            //if (!musicEvent.IsNull)
+            //{
+            //    musicInstance = RuntimeManager.CreateInstance(musicEvent);
+            //}
             
         }
 
@@ -121,7 +122,27 @@ namespace FoolsBrand.Audio
         #region Music
         public void SetMusic(MusicType music)
         {
+            musicInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            
+            switch (music)
+            {
+                case MusicType.MainMenu:
+                    if (!menuMusicEvent.IsNull)
+                    {
+                        musicInstance = RuntimeManager.CreateInstance(menuMusicEvent);
+                    }
+                    break;
+                case MusicType.InCombat:
+                    if (!combatMusicEvent.IsNull)
+                    {
+                        musicInstance = RuntimeManager.CreateInstance(combatMusicEvent);
+                    }
+                    break;
+                case MusicType.Nothing:
+                    return;
+            }
 
+            musicInstance.start();
         }
 
         public void StopMusic(bool allowFadeout = false)

@@ -48,159 +48,166 @@ MonoBehaviour:
   - key: AddDice
     eventRef:
       Guid:
-        Data1: -1205410175
-        Data2: 1303581472
-        Data3: 854168198
-        Data4: -818012344
+        Data1: 221304274
+        Data2: 1332330664
+        Data3: -1602092886
+        Data4: -1021658568
       Path: event:/SFX/AddDice
   - key: Attack
     eventRef:
       Guid:
-        Data1: 1818464656
-        Data2: 1203600998
-        Data3: -1316905825
-        Data4: -158887893
+        Data1: -200428493
+        Data2: 1263930703
+        Data3: -1947020365
+        Data4: -276140021
       Path: event:/SFX/Attack
   - key: Heal
     eventRef:
       Guid:
-        Data1: 1323372681
-        Data2: 1113060530
-        Data3: -1922698855
-        Data4: 421057622
+        Data1: -555394489
+        Data2: 1232690235
+        Data3: -1878533956
+        Data4: -419533024
       Path: event:/SFX/Heal
   - key: Debuff
     eventRef:
       Guid:
-        Data1: 236995842
-        Data2: 1128778589
-        Data3: -1763546203
-        Data4: 396213281
+        Data1: -164111152
+        Data2: 1232093497
+        Data3: 194002615
+        Data4: 130716896
       Path: event:/SFX/Debuff
   - key: Corruption
     eventRef:
       Guid:
-        Data1: 1057307554
-        Data2: 1263531620
-        Data3: 627931785
-        Data4: 1568431016
+        Data1: 996563745
+        Data2: 1335148460
+        Data3: -396408643
+        Data4: -1111757735
       Path: event:/SFX/Dice/Corruption
   - key: CorruptionDeath
     eventRef:
       Guid:
-        Data1: -1397264583
-        Data2: 1285327808
-        Data3: -746337893
-        Data4: 67484593
+        Data1: 734976241
+        Data2: 1159182057
+        Data3: 996525465
+        Data4: 1654744121
       Path: event:/SFX/Dice/CorruptionDeath
   - key: CursedDice
     eventRef:
       Guid:
-        Data1: -1113761656
-        Data2: 1326709997
-        Data3: -277129556
-        Data4: 1460967102
+        Data1: -1819097791
+        Data2: 1097503728
+        Data3: 1837020333
+        Data4: -344116989
       Path: event:/SFX/Enemies/CursedDice
   - key: CylimeLaser
     eventRef:
       Guid:
-        Data1: 1121946463
-        Data2: 1317956352
-        Data3: 1028918681
-        Data4: -922950589
+        Data1: -667964224
+        Data2: 1316131621
+        Data3: -2131518031
+        Data4: -1015626096
       Path: event:/SFX/Enemies/CylimeLaser
   - key: KO
     eventRef:
       Guid:
-        Data1: -155419098
-        Data2: 1311967296
-        Data3: 1097680275
-        Data4: -1597457640
+        Data1: -1571722985
+        Data2: 1139682229
+        Data3: 1991095730
+        Data4: 725317003
       Path: event:/SFX/KO
   - key: LimbDestroyed
     eventRef:
       Guid:
-        Data1: 2037155677
-        Data2: 1297653939
-        Data3: 624116609
-        Data4: 2098803840
+        Data1: 723476349
+        Data2: 1283457593
+        Data3: 955582619
+        Data4: -91234173
       Path: event:/SFX/LimbDestroyed
   - key: Lose
     eventRef:
       Guid:
-        Data1: -1922675707
-        Data2: 1122606191
-        Data3: -186417514
-        Data4: -394851177
+        Data1: 1362324499
+        Data2: 1200874949
+        Data3: 1458453940
+        Data4: 581800055
       Path: event:/SFX/LoseGame
   - key: PoisonApply
     eventRef:
       Guid:
-        Data1: 1427339061
-        Data2: 1117160335
-        Data3: 1532745889
-        Data4: -738372291
+        Data1: 1185280512
+        Data2: 1247406598
+        Data3: -1848685947
+        Data4: -2053638582
       Path: event:/SFX/Dice/PoisonApply
   - key: PoisonDamage
     eventRef:
       Guid:
-        Data1: -1802230561
-        Data2: 1230632883
-        Data3: -173020537
-        Data4: 1204763610
+        Data1: 991983407
+        Data2: 1311839666
+        Data3: 1809761458
+        Data4: -1170815655
       Path: event:/SFX/Dice/PoisonDamage
   - key: Rage
     eventRef:
       Guid:
-        Data1: -1949164026
-        Data2: 1218024794
-        Data3: -786884715
-        Data4: 172284909
+        Data1: -698956397
+        Data2: 1142115203
+        Data3: 208619450
+        Data4: -1428716040
       Path: event:/SFX/Dice/Rage
   - key: RollDice
     eventRef:
       Guid:
-        Data1: -1421039059
-        Data2: 1195482081
-        Data3: 1445807527
-        Data4: -1809140893
+        Data1: -1310097307
+        Data2: 1260392807
+        Data3: 257077693
+        Data4: -172593962
       Path: event:/SFX/RollDice
   - key: ShrolmEat
     eventRef:
       Guid:
-        Data1: 1457872155
-        Data2: 1315818252
-        Data3: -2130170727
-        Data4: 2018286749
+        Data1: -2144585349
+        Data2: 1163151933
+        Data3: 631560599
+        Data4: -845280826
       Path: event:/SFX/Enemies/ShrolmEat
   - key: UIClick
     eventRef:
       Guid:
-        Data1: 777207108
-        Data2: 1153608044
-        Data3: 1516082327
-        Data4: -1177191326
+        Data1: 1032795500
+        Data2: 1271453569
+        Data3: 24699789
+        Data4: 1536363930
       Path: event:/SFX/UI/UIClick
   - key: ShrolmEyes
     eventRef:
       Guid:
-        Data1: 376376251
-        Data2: 1166652578
-        Data3: -1626665550
-        Data4: 14761930
+        Data1: -942314370
+        Data2: 1285073003
+        Data3: -1604498771
+        Data4: 1703846832
       Path: event:/SFX/Enemies/ShrolmEyes
   - key: ShellBreak
     eventRef:
       Guid:
-        Data1: 274329551
-        Data2: 1179602988
-        Data3: 492934299
-        Data4: 1015763288
+        Data1: 536767687
+        Data2: 1107395144
+        Data3: 1858896793
+        Data4: 326611612
       Path: event:/SFX/Enemies/TweaselShellBreak
-  musicEvent:
+  combatMusicEvent:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1332833944
+      Data2: 1142001488
+      Data3: -2059917947
+      Data4: -2089925599
+    Path: event:/Music/DebtorsGambit
+  menuMusicEvent:
+    Guid:
+      Data1: 1073266854
+      Data2: 1321370384
+      Data3: 2018890929
+      Data4: -826090154
+    Path: event:/Music/A Fool

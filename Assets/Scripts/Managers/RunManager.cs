@@ -1,3 +1,4 @@
+using FoolsBrand.Audio;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -18,6 +19,7 @@ namespace FoolsBrand
         {
             //Debug.Log("Combat Start");
             SceneManager.LoadScene("MainCombat");
+            AudioManager.Instance.SetMusic(MusicType.InCombat);
         }
 
         /// <summary>

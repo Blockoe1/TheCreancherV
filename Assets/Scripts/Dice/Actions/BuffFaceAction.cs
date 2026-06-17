@@ -24,5 +24,11 @@ namespace FoolsBrand
             Debug.Log(value);
             yield return null;
         }
+    
+
+        protected override void PlayVFX(ITargetable target, IActionSource source, Combatant user, GameObject effectPrefab)
+        {
+            GameObject.Instantiate(effectPrefab, user.GetEffectTransform().position, Quaternion.identity);
+        }
     }
 }

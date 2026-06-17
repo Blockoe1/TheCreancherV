@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3be7e098c70206d45a9bbfd6dae871db, type: 3}
   m_Name: Poison
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.PoisonEffect
+  icon: {fileID: 0}
+  description: 
   valueUsage: 1
   hasDuration: 0
   baseDuration: 0
@@ -20,3 +22,4 @@ MonoBehaviour:
   visualEffect: {fileID: 7474686967035214249, guid: 6fe5c9ffebec1334aa3c8458b6c4bf82, type: 3}
   tickDelay: 1.5
   poisonEffectBurst: {fileID: 3510531163261658276, guid: 64ccc00c4ec7cf244a008226545a907d, type: 3}
+  poisonDamageSoundName: PoisonDamage

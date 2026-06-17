@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.ApplyEffectAction
   animationName: T_CAST
   actionVFX: {fileID: 0}
+  soundName: ShrolmEyes
   effect: {fileID: 11400000, guid: 8d37bc02224332c4fa2fb0732401bdde, type: 2}
   targetSelf: 0
   priority: 90

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: BuffFace
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.BuffFaceAction
   animationName: T_CAST
-  actionVFX: {fileID: 11400000, guid: 4d68bc7bc40edc34ca9e270cd39a7fb5, type: 2}
+  actionVFX: {fileID: 11400000, guid: bfd2e66301677954188e8dd9805860aa, type: 2}
+  soundName: Rage
   faceBuff: 2

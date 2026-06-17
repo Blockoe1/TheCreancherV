@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.ShrolmHeadAction
   animationName: T_CAST
   actionVFX: {fileID: 11400000, guid: f4900481c87371441b9db6e5a7da0d74, type: 2}
-  soundName: 
+  soundName: ShrolmEat

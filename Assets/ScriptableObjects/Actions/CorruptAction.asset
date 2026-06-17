@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.CorruptionAction
   animationName: T_CAST
   actionVFX: {fileID: 11400000, guid: 859d52baba8bb79439ddf1f510701f9a, type: 2}
+  soundName: Corruption
+  corruptionDeathSound: CorruptionDeath
+  corruptionDeathEffects: {fileID: 2299521470495869982, guid: 551587486fd9f5f44a1e4904e167d41d, type: 3}

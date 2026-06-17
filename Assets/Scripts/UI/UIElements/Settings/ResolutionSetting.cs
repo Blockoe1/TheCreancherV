@@ -33,6 +33,11 @@ namespace FoolsBrand.UI
                 currentResolution =  PlayerPrefs.GetInt(PlayerPrefsKey);
             }
 
+            if (currentResolution >= resolutions.Length)
+            {
+                currentResolution = -1;
+            }
+
             // Load the valid resolutions to the dropdown as options.
             resolutionDropdown.ClearOptions();
             List<string> resolutionOptions = new List<string>();

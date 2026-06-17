@@ -197,10 +197,17 @@ MonoBehaviour:
         Data3: 492934299
         Data4: 1015763288
       Path: event:/SFX/Enemies/TweaselShellBreak
-  musicEvent:
+  combatMusicEvent:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1332833944
+      Data2: 1142001488
+      Data3: -2059917947
+      Data4: -2089925599
+    Path: event:/Music/DebtorsGambit
+  menuMusicEvent:
+    Guid:
+      Data1: 1073266854
+      Data2: 1321370384
+      Data3: 2018890929
+      Data4: -826090154
+    Path: event:/Music/A Fool

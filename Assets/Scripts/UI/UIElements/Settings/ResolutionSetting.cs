@@ -7,6 +7,7 @@
 // Brief Description : Manages a setting that controls the game resolution with a dropdown.
 *****************************************************************************/
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -16,24 +17,45 @@ namespace FoolsBrand.UI
     {
         [SerializeField] private TMP_Dropdown resolutionDropdown;
 
-        private Resolution[] resolutions;
+        private static Resolution[] resolutions;
 
         protected override string PlayerPrefsKey => "Resolution";
+
+        private static Resolution[] Resolutions
+        {
+            get
+            {
+                if (resolutions == null)
+                {
+                    resolutions = Screen.resolutions;
+
+                    // manually filter out duplicates.
+                    List<Resolution> resList = new List<Resolution>();
+                    foreach (Resolution resolution in resolutions)
+                    {
+                        if (!resList.Any(x => CompareResolutions(x, resolution)))
+                        {
+                            resList.Add(resolution);
+                        }
+                    }
+                    resolutions = resList.ToArray();
+                }
+                return resolutions;
+            }
+        }
 
         /// <summary>
         /// Loads all
         /// </summary>
         public override void Init()
         {
-            resolutions = Screen.resolutions;
-
             int currentResolution = -1;
             if (PlayerPrefs.HasKey(PlayerPrefsKey))
             {
                 currentResolution =  PlayerPrefs.GetInt(PlayerPrefsKey);
             }
 
-            if (currentResolution >= resolutions.Length)
+            if (currentResolution >= Resolutions.Length)
             {
                 currentResolution = -1;
             }
@@ -41,11 +63,11 @@ namespace FoolsBrand.UI
             // Load the valid resolutions to the dropdown as options.
             resolutionDropdown.ClearOptions();
             List<string> resolutionOptions = new List<string>();
-            for(int i = 0; i < resolutions.Length; i++)
+            for(int i = 0; i < Resolutions.Length; i++)
             {
-                resolutionOptions.Add(resolutions[i].width + " x " + resolutions[i].height);
+                resolutionOptions.Add(Resolutions[i].width + " x " + Resolutions[i].height);
 
-                if (currentResolution == -1 && CompareResolutions(resolutions[i], Screen.currentResolution))
+                if (currentResolution == -1 && CompareResolutions(Resolutions[i], Screen.currentResolution))
                 {
                     currentResolution = i;
                 }
@@ -64,7 +86,7 @@ namespace FoolsBrand.UI
 
         public void SetResolution(int index)
         {
-            Resolution resolution = resolutions[index];
+            Resolution resolution = Resolutions[index];
             Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
             PlayerPrefs.SetInt(PlayerPrefsKey, index);
         }

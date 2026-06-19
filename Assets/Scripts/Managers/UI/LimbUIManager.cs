@@ -9,6 +9,7 @@
 using FoolsBrand.Enemies;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace FoolsBrand.UI
 {
@@ -33,6 +34,29 @@ namespace FoolsBrand.UI
         public override void Deinit()
         {
             EnemyManager.EnemySpawnEvent -= SetDisplays;
+        }
+
+        /// <summary>
+        /// Refresh the position of displays after the canvas scaler updates.
+        /// </summary>
+        private void Start()
+        {
+            RefreshDisplays();
+        }
+
+        /// <summary>
+        /// For the first half second after init, refresh the position of all limb displays so they update after canvas scaling.
+        /// </summary>
+        /// <returns></returns>
+        //private IEnumerator ResetTransformCoroutine()
+        //{
+
+        //}
+
+        private void OnRectTransformDimensionsChange()
+        {
+            Debug.Log("Dimensions Changed");
+            RefreshDisplays();
         }
 
         /// <summary>
@@ -67,6 +91,7 @@ namespace FoolsBrand.UI
         {
             foreach(LimbDisplay display in limbDisplays)
             {
+                display.RefreshPosition();
                 display.RefreshDisplay();
             }
         }

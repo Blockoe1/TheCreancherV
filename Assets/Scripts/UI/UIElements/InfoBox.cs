@@ -16,13 +16,32 @@ namespace FoolsBrand
 
         public static bool HideTooltips { get; set; }
 
+        //private void Awake()
+        //{
+        //    UpdateBoxPosition();
+        //    Debug.LogError($"Screen: {Screen.width}.  Position: {transform.position}.  Rect:{panel.rect.width}");
+        //}
+
         void Update()
+        {
+            UpdateBoxPosition();
+        }
+
+        private void UpdateBoxPosition()
         {
             RectTransformUtility.ScreenPointToLocalPointInRectangle(_myCanvas.transform as RectTransform, Mouse.current.position.ReadValue(),
                 _myCanvas.worldCamera, out Vector2 pos);
-            panel.pivot = new Vector2(pos.x > _myCanvas.pixelRect.width / 2 - (panel.rect.width + infoPadding.x) ? 1 : 0, 
-                pos.y > _myCanvas.pixelRect.height / 2 - (panel.rect.height + infoPadding.y) ? 1 : 0);
-            transform.position = _myCanvas.transform.TransformPoint(pos);
+            pos = _myCanvas.transform.TransformPoint(pos);
+
+            // This needs to be here for some reason.
+            Debug.Log("");
+
+            Vector2 canvasDimensions = _myCanvas.renderMode == RenderMode.ScreenSpaceOverlay ? 
+                new Vector2(_myCanvas.pixelRect.width, _myCanvas.pixelRect.height) : 
+                new Vector2(_myCanvas.pixelRect.width / 2, _myCanvas.pixelRect.height / 2);
+            panel.pivot = new Vector2(pos.x > canvasDimensions.x - (panel.rect.width + infoPadding.x) ? 1 : 0,
+                pos.y > canvasDimensions.y - (panel.rect.height + infoPadding.y) ? 1 : 0);
+            transform.position = pos;
         }
 
         public void SetDisplayDice(IDiceInfo die, string suffix = "")

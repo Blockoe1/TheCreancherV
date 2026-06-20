@@ -19,7 +19,14 @@ namespace FoolsBrand
         {
             foreach (Manager manager in managers)
             {
-                manager.Init(gm, this);
+                try
+                {
+                    manager.Init(gm, this);
+                }
+                catch (Exception e)
+                {
+                    Debug.LogException(e);
+                }
             }
         }
 
@@ -27,7 +34,14 @@ namespace FoolsBrand
         {
             foreach (Manager manager in managers)
             {
-                manager.GameStart();
+                try
+                {
+                    manager.GameStart();
+                }
+                catch (Exception e)
+                {
+                    Debug.LogException(e);
+                }
             }
         }
 
@@ -45,7 +59,14 @@ namespace FoolsBrand
         {
             foreach (Manager manager in managers)
             {
-                manager.Deinit();
+                try
+                {
+                    manager.Deinit();
+                }
+                catch (Exception e)
+                {
+                    Debug.LogException(e);
+                }
             }
         }
     }

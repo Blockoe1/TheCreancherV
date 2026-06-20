@@ -13,7 +13,7 @@ namespace FoolsBrand
         public void PlayCameraClip(string triggerName)
         {
             cameraAnimator.SetTrigger(triggerName);
-            Debug.Log(triggerName);
+            //Debug.Log(triggerName);
         }
     }
 }

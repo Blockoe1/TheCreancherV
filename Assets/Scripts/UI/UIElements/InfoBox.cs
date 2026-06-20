@@ -1,3 +1,4 @@
+using FoolsBrand.UI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -34,13 +35,15 @@ namespace FoolsBrand
             pos = _myCanvas.transform.TransformPoint(pos);
 
             // This needs to be here for some reason.
-            Debug.Log("");
+            Debug.Log(null);
 
             Vector2 canvasDimensions = _myCanvas.renderMode == RenderMode.ScreenSpaceOverlay ? 
                 new Vector2(_myCanvas.pixelRect.width, _myCanvas.pixelRect.height) : 
                 new Vector2(_myCanvas.pixelRect.width / 2, _myCanvas.pixelRect.height / 2);
-            panel.pivot = new Vector2(pos.x > canvasDimensions.x - (panel.rect.width + infoPadding.x) ? 1 : 0,
-                pos.y > canvasDimensions.y - (panel.rect.height + infoPadding.y) ? 1 : 0);
+            Rect trueRect = new Rect(panel.rect.min, panel.rect.size * _myCanvas.scaleFactor);
+            Debug.Log($"Screen: {_myCanvas.pixelRect.width}.  Canvas Dimensions: {canvasDimensions}.  Rect: {trueRect}.  Position: {pos}.  Canvas Type: {_myCanvas.renderMode}");
+            panel.pivot = new Vector2(pos.x > canvasDimensions.x - (trueRect.width + infoPadding.x) ? 1 : 0,
+                pos.y > canvasDimensions.y - (trueRect.height + infoPadding.y) ? 1 : 0);
             transform.position = pos;
         }
 

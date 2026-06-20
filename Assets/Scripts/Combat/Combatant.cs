@@ -22,6 +22,16 @@ namespace FoolsBrand
         public HealthData Health => health;
         public UnityEvent OnDeathEvent => onDeathEvent;
         public bool IsDead => health.IsDead;
+
+        public virtual void Init()
+        {
+            ICombatantInitialized[] initComponents = GetComponents<ICombatantInitialized>();
+            foreach (ICombatantInitialized component in initComponents)
+            {
+                if (component == null) { continue; }
+                component.Init(this);
+            }
+        }
         
         /// <summary>
         /// Makes this combatant attack a target.
@@ -95,6 +105,13 @@ namespace FoolsBrand
 
         private void OnDestroy()
         {
+            ICombatantInitialized[] initComponents = GetComponents<ICombatantInitialized>();
+            foreach (ICombatantInitialized component in initComponents)
+            {
+                if (component == null) { continue; }
+                component.Deinit();
+            }
+
             onDeathEvent.RemoveAllListeners();
             OnDeath();
         }

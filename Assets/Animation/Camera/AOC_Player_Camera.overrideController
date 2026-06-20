@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AOC_Player_Camera
+  m_Controller: {fileID: 9100000, guid: b515a4f44d464964db40d59ddaa20b16, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 2322a9a7b77eaac4f9ef8897795d93d6, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 76614503b98aeea4cad50e5252412517, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 4af206dcbe28bd84297d0714089445df, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d1da570d459aec54793f15ab3064a3e7, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: bb0c3549434887b4ebbcf16d37509f7e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 174d64971455c14469217aab174d0f2b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 4b94e19511dcb954a91c9fa30d6abb1a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2f19068904f1cc547b5b111b2031d772, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 8a5f56e120d12be4881b66f9b831c7e2, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 5d9dafedcda972f4e9739c5127f38e6a, type: 2}

@@ -34,7 +34,7 @@ namespace FoolsBrand
             pos = _myCanvas.transform.TransformPoint(pos);
 
             // This needs to be here for some reason.
-            Debug.Log("");
+            Debug.Log(null);
 
             Vector2 canvasDimensions = _myCanvas.renderMode == RenderMode.ScreenSpaceOverlay ? 
                 new Vector2(_myCanvas.pixelRect.width, _myCanvas.pixelRect.height) : 

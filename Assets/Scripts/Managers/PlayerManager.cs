@@ -45,11 +45,10 @@ namespace FoolsBrand
 
             player.OnDeathEvent.AddListener(PlayerDead);
             player.Health.HealthChangedEvent += UpdateSavedPlayerHealth;
+
+            player.Init();
         }
-
-
-
-        private void OnDestroy()
+        public override void Deinit()
         {
             PlayerInputManager.OnLimbSelectedInput -= PlayerInputManager_OnLimbSelectedInput;
             PlayerInputManager.OnRollButtonPressed -= PlayerInputManager_OnRollButtonPressed;

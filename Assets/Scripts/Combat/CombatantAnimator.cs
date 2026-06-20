@@ -13,7 +13,7 @@ using UnityEngine;
 namespace FoolsBrand
 {
     [RequireComponent(typeof(Combatant))]
-    public class CombatantAnimator : MonoBehaviour
+    public class CombatantAnimator : MonoBehaviour, ICombatantInitialized
     {
         private const string HURT_ANIM_NAME = "T_HURT";
         private const string DEATH_ANIM_NAME = "T_DEAD";
@@ -26,13 +26,13 @@ namespace FoolsBrand
             combatant = GetComponent<Combatant>();
         }
 
-        private void Awake()
+        public void Init(Combatant combatant)
         {
             combatant.Health.HealthChangedEvent += PlayDamageAnimation;
             combatant.OnDeathEvent.AddListener(PlayDeathAnimation);
         }
 
-        private void OnDestroy()
+        public void Deinit()
         {
             combatant.Health.HealthChangedEvent -= PlayDamageAnimation;
             combatant.OnDeathEvent.RemoveListener(PlayDeathAnimation);
@@ -43,6 +43,7 @@ namespace FoolsBrand
         {
             if (healthChange < 0)
             {
+                Debug.Log("Played damage animation for " + name);
                 PlayAnimation(HURT_ANIM_NAME);
             }
         }

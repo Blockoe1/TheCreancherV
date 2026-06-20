@@ -55,7 +55,7 @@ namespace FoolsBrand.UI
 
         private void OnRectTransformDimensionsChange()
         {
-            Debug.Log("Dimensions Changed");
+            //Debug.Log("Dimensions Changed");
             RefreshDisplays();
         }
 

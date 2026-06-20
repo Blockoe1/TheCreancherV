@@ -336,6 +336,9 @@ PrefabInstance:
       addedObject: {fileID: 3979628733608573814}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ffb7079bfec6b7a43a5cfe1eca1ce06e, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 6146896291209788851}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ffb7079bfec6b7a43a5cfe1eca1ce06e, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 6641066451335700617}
   m_SourcePrefab: {fileID: 100100000, guid: ffb7079bfec6b7a43a5cfe1eca1ce06e, type: 3}
 --- !u!4 &8363919465755393721 stripped
@@ -375,6 +378,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6146896291209788851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9176450224407929859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cd82f3337e1b554da17596a7585521d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.CameraAnimator
+  cameraAnimator: {fileID: 0}
 --- !u!114 &6641066451335700617
 MonoBehaviour:
   m_ObjectHideFlags: 0

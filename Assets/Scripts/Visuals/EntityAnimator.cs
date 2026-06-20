@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace FoolsBrand
 {
-    public class EnemyAnimatorEvents : AnimatorEvents
+    public class EntityAnimator : AnimatorEvents
     {
         [Header("Hurt")]
         [SerializeField] private Color _hurtColor = Color.red;

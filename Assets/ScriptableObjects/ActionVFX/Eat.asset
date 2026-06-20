@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 336bbc44be5844c4fadc838fe66eb5ef, type: 3}
   m_Name: Eat
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.ActionVFX
-  <PreloadTime>k__BackingField: 0.1
+  <PreloadTime>k__BackingField: 0.25
   <EffectObj>k__BackingField: {fileID: 2150824695317900824, guid: edbbb32b6efa4a040b71e85c8118e9dc, type: 3}

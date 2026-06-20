@@ -7,6 +7,7 @@
 // Brief Description : Base script for displaying info about a limb on the HUD.
 *****************************************************************************/
 using FoolsBrand.Enemies;
+using NaughtyAttributes;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -124,8 +125,7 @@ namespace FoolsBrand.UI
                 }
                 dnm.RegisterDamageNumber(currentLimb.Health, currentLimb.transform);
 
-                transform.position = UIManager.GameCamera.WorldToScreenPoint(currentLimb.gameObject.transform.position);
-                SetAlignment(CheckScreenSide());
+                RefreshPosition();
                 RefreshDisplay();
             }
             else
@@ -138,13 +138,20 @@ namespace FoolsBrand.UI
             }
         }
 
+        [Button]
+        public void RefreshPosition()
+        {
+            transform.position = UIManager.GameCamera.WorldToScreenPoint(currentLimb.gameObject.transform.position);
+            SetAlignment(CheckScreenSide());
+        }
+
         /// <summary>
         /// Checks which side of the screen the display is on.
         /// </summary>
         /// <returns>True if the display is on the right side.</returns>
         public bool CheckScreenSide()
-        {
-            return transform.position.x >= Screen.width / 2;
+        { 
+            return transform.position.x >= UIManager.GameCanvas.pixelRect.width / 2;
         }
 
         /// <summary>

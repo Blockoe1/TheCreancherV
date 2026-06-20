@@ -30,8 +30,9 @@ namespace FoolsBrand.Enemies
 
         public ReadOnlyArray<Limb> Limbs => limbs;   
         
-        public void Init()
+        public override void Init()
         {
+            base.Init();
             limbs = GetComponentsInChildren<Limb>();
             foreach (Limb limb in limbs)
             {

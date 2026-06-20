@@ -150,8 +150,7 @@ namespace FoolsBrand.UI
         /// </summary>
         /// <returns>True if the display is on the right side.</returns>
         public bool CheckScreenSide()
-        {
-            Debug.Log($"Screen: {UIManager.GameCanvas.pixelRect.width}.  Position: {transform.position}.");
+        { 
             return transform.position.x >= UIManager.GameCanvas.pixelRect.width / 2;
         }
 

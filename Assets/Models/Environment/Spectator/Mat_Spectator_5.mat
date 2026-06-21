@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mat_Spectator
+  m_Name: Mat_Spectator_5
   m_Shader: {fileID: -6465566751694194690, guid: 39254d89b11f24a4c825288da185b142, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -137,12 +137,12 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissiveRegion: {r: 0, g: 0, b: 0, a: 1}
-    - _REGION_0: {r: 0.5773585, g: 0.31700245, b: 0.31700245, a: 1}
-    - _REGION_1: {r: 0.5420742, g: 0, b: 1, a: 1}
-    - _REGION_2: {r: 0.79622644, g: 0.38309005, b: 0.4086402, a: 1}
-    - _REGION_3: {r: 0.09468848, g: 0.3509434, b: 0.3509434, a: 1}
-    - _REGION_4: {r: 0.6754716, g: 0.22813092, b: 0.25164607, a: 1}
-    - _REGION_5: {r: 0.5396226, g: 0.23926662, b: 0.5396226, a: 1}
+    - _REGION_0: {r: 1, g: 0.7814241, b: 0.50377357, a: 1}
+    - _REGION_1: {r: 0.14820209, g: 0.6830188, b: 0.36260086, a: 1}
+    - _REGION_2: {r: 0.7056604, g: 0.323718, b: 0.14778925, a: 1}
+    - _REGION_3: {r: 0.4113207, g: 0.29755616, b: 0.28171584, a: 1}
+    - _REGION_4: {r: 0, g: 0, b: 0, a: 1}
+    - _REGION_5: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

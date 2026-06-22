@@ -20,6 +20,7 @@ namespace FoolsBrand
         [SerializeField] private float postActDelay;
         [field: SerializeField] public Transform DamageNumberPoint { get; private set; }
         [SerializeField] private Transform effectPoint;
+        [SerializeField] private GameObject lowHealthEffect;
 
         private List<EffectInstance> Effects = new List<EffectInstance>();
 
@@ -77,6 +78,16 @@ namespace FoolsBrand
                     Effects[i].OnTakeDamage(this, this, source, damageTaken);
                 }
             }
+
+            if (Health.IsLowHealth)
+            {
+                lowHealthEffect.SetActive(true);
+            }
+            else
+            {
+                lowHealthEffect.SetActive(false);
+            }
+
             return damageTaken;
         }
 

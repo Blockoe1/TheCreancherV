@@ -572,6 +572,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 793477687}
+  - component: {fileID: 793477688}
   m_Layer: 0
   m_Name: Spectators
   m_TagString: Untagged
@@ -600,6 +601,18 @@ Transform:
   - {fileID: 1080796355}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &793477688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793477686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33202ec465ee7c64785b31703343611c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Spectator
 --- !u!1 &801900956 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 275027925439886625, guid: 4afc8fdc18c0c6645bebc9f3ab0e002a, type: 3}
@@ -1908,6 +1921,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2464578056025293647, guid: 33302e20b5c44154797f95a77cdb7fbe, type: 3}
+      propertyPath: spectator
+      value: 
+      objectReference: {fileID: 793477688}
     - target: {fileID: 2464578056025293647, guid: 33302e20b5c44154797f95a77cdb7fbe, type: 3}
       propertyPath: lowHealthEffect
       value: 

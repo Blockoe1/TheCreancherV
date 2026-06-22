@@ -21,6 +21,7 @@ namespace FoolsBrand
         [field: SerializeField] public Transform DamageNumberPoint { get; private set; }
         [SerializeField] private Transform effectPoint;
         [SerializeField] private GameObject lowHealthEffect;
+        [SerializeField] private Spectator spectator;
 
         private List<EffectInstance> Effects = new List<EffectInstance>();
 
@@ -48,6 +49,7 @@ namespace FoolsBrand
                 if (IsDead) { break; }
                 Effects[i].OnDealDamage(this, this, target, damageDealt);
             }
+            spectator.ExciteSpectators();
             return damageDealt;
         }
 
@@ -88,6 +90,7 @@ namespace FoolsBrand
                 lowHealthEffect.SetActive(false);
             }
 
+            spectator.ShockSpectators();
             return damageTaken;
         }
 

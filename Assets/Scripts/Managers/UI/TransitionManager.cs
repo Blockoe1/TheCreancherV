@@ -21,11 +21,13 @@ namespace FoolsBrand
     }
     public class TransitionManager : MonoBehaviour
     {
+        [SerializeField] private Image raycastBlocker;
         [SerializeField] private CrossAnimation crossAnimation;
         [SerializeField] private FadeAnimation fadeAnimation;
 
         private static TransitionManager instance;
-        private bool isTransitioning;
+
+        public static bool IsTransitioning { get; private set; }
 
         public static event Action OnTransitionFinish;
 
@@ -127,9 +129,9 @@ namespace FoolsBrand
         /// <param name="transitionType"></param>
         public static void LoadScene(string sceneName, Color color, TransitionType transitionType = TransitionType.Cross)
         {
+            if (IsTransitioning) { return; }
             if (instance != null)
             {
-                if (instance.isTransitioning) { return; }
                 instance.PlayTransition(sceneName, color, transitionType);
             }
             else
@@ -159,7 +161,8 @@ namespace FoolsBrand
 
         private IEnumerator TransitionRoutine(string sceneName, TransitionAnimation anim)
         {
-            isTransitioning = true;
+            IsTransitioning = true;
+            raycastBlocker.raycastTarget = true;
             anim.ToggleTransition(true);
 
             yield return AnimateValue(0, 1, anim);
@@ -172,7 +175,8 @@ namespace FoolsBrand
             yield return AnimateValue(1, 0, anim);
 
             anim.ToggleTransition(false);
-            isTransitioning = false;
+            IsTransitioning = false;
+            raycastBlocker.raycastTarget = false;
 
             OnTransitionFinish?.Invoke();
         }

@@ -136,6 +136,7 @@ namespace FoolsBrand
             {
                 // Load the scene with no transition if the transition manager isntance doesnt exist.
                 SceneManager.LoadScene(sceneName);
+                OnTransitionFinish?.Invoke();
             }
         }
 

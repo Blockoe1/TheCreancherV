@@ -19,6 +19,7 @@ namespace FoolsBrand
         [SerializeField] private float rotationSpeed;
         [SerializeField] private DieSelectionInfo[] _diceSelectionInfoBoxes;
         [SerializeField] private SelectionOverride[] overrides;
+        private bool hasSelected;
 
         [System.Serializable]
         private class SelectionOverride
@@ -30,6 +31,7 @@ namespace FoolsBrand
 
         public void Awake()
         {
+            hasSelected = false;
             if (DiceDatabaseSetup.Instance == null)
             {
                 GameObject ddRef = Instantiate(_diceDatabaseReference);
@@ -85,13 +87,18 @@ namespace FoolsBrand
 
         public void SelectDie(int selectionIndex)
         {
-            DiceManager.DiceGoingToCombat.Add(diceRewards[selectionIndex]);
-            //foreach(string die in DiceManager.DiceGoingToCombat)
-            //{
-            //    Debug.Log(die);
-            //}
+            if (!hasSelected)
+            {
+                DiceManager.DiceGoingToCombat.Add(diceRewards[selectionIndex]);
+                //foreach(string die in DiceManager.DiceGoingToCombat)
+                //{
+                //    Debug.Log(die);
+                //}
 
-            RunManager.StartNewCombat();
+                RunManager.StartNewCombat();
+                hasSelected = true;
+            }
+            
         }
 
         public void SkipDie()

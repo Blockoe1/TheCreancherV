@@ -41,7 +41,8 @@ namespace FoolsBrand
                 new Vector2(_myCanvas.pixelRect.width, _myCanvas.pixelRect.height) : 
                 new Vector2(_myCanvas.pixelRect.width / 2, _myCanvas.pixelRect.height / 2);
             Rect trueRect = new Rect(panel.rect.min, panel.rect.size * _myCanvas.scaleFactor);
-            Debug.Log($"Screen: {_myCanvas.pixelRect.width}.  Canvas Dimensions: {canvasDimensions}.  Rect: {trueRect}.  Position: {pos}.  Canvas Type: {_myCanvas.renderMode}");
+            //Debug.Log($"Screen: {_myCanvas.pixelRect.width}.  Canvas Dimensions: {canvasDimensions}.
+            //Rect: {trueRect}.  Position: {pos}.  Canvas Type: {_myCanvas.renderMode}");
             panel.pivot = new Vector2(pos.x > canvasDimensions.x - (trueRect.width + infoPadding.x) ? 1 : 0,
                 pos.y > canvasDimensions.y - (trueRect.height + infoPadding.y) ? 1 : 0);
             transform.position = pos;

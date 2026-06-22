@@ -16,21 +16,23 @@ namespace FoolsBrand
         public static event Action OnRollButtonPressed;
         public static event Action<int> OnReserveInput;
 
+        public static bool StopInput => PauseMenu.IsGamePaused || TransitionManager.IsTransitioning;
+
         public static void LimbSelected(int limbIndex)
         {
-            if (PauseMenu.IsGamePaused) { return;  }
+            if (StopInput) { return;  }
             OnLimbSelectedInput?.Invoke(limbIndex);
         }
 
         public static void OnRollPressed()
         {
-            if (PauseMenu.IsGamePaused) { return; }
+            if (StopInput) { return; }
             OnRollButtonPressed?.Invoke();
         }
 
         public static void ReservePressed(int diceIndex)
         {
-            if (PauseMenu.IsGamePaused) { return; }
+            if (StopInput) { return; }
             OnReserveInput?.Invoke(diceIndex);
         }
     }

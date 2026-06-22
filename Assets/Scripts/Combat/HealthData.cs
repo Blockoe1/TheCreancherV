@@ -21,10 +21,12 @@ namespace FoolsBrand
         public event Action<int> HealthChangedEvent;
 
         private bool isDead;
+        private bool isLowHealth;
 
         public int Max => maxHealth;
         public float HealthProportion => health / (float)maxHealth;
         public bool IsDead => isDead;
+        public bool IsLowHealth => isLowHealth;
 
         public int Value
         {
@@ -40,6 +42,13 @@ namespace FoolsBrand
                 if (health <= 0)
                 {
                     isDead = true;
+                }
+                if (health < maxHealth / 3)
+                {                     isLowHealth = true;
+                }
+                else
+                {
+                    isLowHealth = false;
                 }
             }
         }

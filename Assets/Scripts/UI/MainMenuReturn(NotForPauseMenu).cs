@@ -15,7 +15,7 @@ namespace FoolsBrand
 
         public void ReturnToMainMenu()
         {
-            SceneManager.LoadScene("Main Menu");
+            TransitionManager.LoadScene("Main Menu");
         }
     }
 }

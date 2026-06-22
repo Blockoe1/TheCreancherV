@@ -30,7 +30,8 @@ namespace FoolsBrand.UI
                 encounterTutorialData = tutorialSequences[RunManager.CurrentEncounterNum];
 
                 advanceTextAction.Enable();
-                advanceTextAction.performed += HandleClickInput;
+                //advanceTextAction.performed += HandleClickInput;
+                TransitionManager.OnTransitionFinish += HandleTransitionFinish;
 
                 PlayerInputManager.OnReserveInput += HandleReserveInput;
                 PlayerInputManager.OnRollButtonPressed += HandleRollInput;
@@ -43,6 +44,12 @@ namespace FoolsBrand.UI
                 tutorialTextGroup.alpha = 0;
             }
             
+        }
+
+        private void HandleTransitionFinish()
+        {
+            // Only enable click input reading once the transition finishes.
+            advanceTextAction.performed += HandleClickInput;
         }
 
         public override void Deinit()

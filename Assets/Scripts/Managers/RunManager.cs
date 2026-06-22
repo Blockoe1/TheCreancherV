@@ -18,7 +18,7 @@ namespace FoolsBrand
         public static void StartNewCombat()
         {
             //Debug.Log("Combat Start");
-            SceneManager.LoadScene("MainCombat");
+            TransitionManager.LoadScene("MainCombat");
             AudioManager.Instance.SetMusic(MusicType.InCombat);
         }
 
@@ -29,7 +29,7 @@ namespace FoolsBrand
         {
             //Debug.Log("Combat Win");
             CurrentEncounterNum++;
-            SceneManager.LoadScene("OutOfCombat");
+            TransitionManager.LoadScene("OutOfCombat");
         }
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace FoolsBrand
             // TODO: Implement winning.
             win = true;
             CleanUpRun();
-            SceneManager.LoadScene("EndScreen");
+            TransitionManager.LoadScene("EndScreen", Color.black, TransitionType.Fade);
         }
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace FoolsBrand
             //Debug.Log("Combat Lose");
             win = false;
             CleanUpRun();
-            SceneManager.LoadScene("EndScreen");
+            TransitionManager.LoadScene("EndScreen", Color.black, TransitionType.Fade);
         }
 
         /// <summary>

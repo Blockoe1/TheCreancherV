@@ -21,17 +21,85 @@ namespace FoolsBrand
     }
     public class TransitionManager : MonoBehaviour
     {
-        [SerializeField] private CanvasGroup transitionGroup;
-        [SerializeField] private RectTransform transitionImageL;
-        [SerializeField] private RectTransform transitionImageR;
-        [SerializeField] private float transitionTime;
+        [SerializeField] private CrossAnimation crossAnimation;
+        [SerializeField] private FadeAnimation fadeAnimation;
 
         private static TransitionManager instance;
         private bool isTransitioning;
 
-        private Image[] images;
-
         public static event Action OnTransitionFinish;
+
+        #region Nested
+        [System.Serializable]
+        private abstract class TransitionAnimation
+        {
+            [SerializeField] private CanvasGroup transitionGroup;
+            [SerializeField] private float transitionTime;
+            [SerializeField] private AnimationCurve curve;
+
+            internal float TransitionTime => transitionTime;
+
+            internal void Animate(float startVal, float endVal, float normalizedTime)
+            {
+                SetValue(Mathf.Lerp(startVal, endVal, curve.Evaluate(normalizedTime)));
+            }
+
+            internal abstract void SetValue(float value);
+
+            internal abstract void SetColor(Color col);
+
+            internal void ToggleTransition(bool isTransitioning)
+            {
+                transitionGroup.alpha = isTransitioning ? 1 : 0;
+                transitionGroup.blocksRaycasts = isTransitioning;
+            }
+        }
+
+        [System.Serializable]
+        private class CrossAnimation : TransitionAnimation
+        {
+            [SerializeField] private Image transitionImageL;
+            [SerializeField] private Image transitionImageR;
+
+            internal override void SetColor(Color col)
+            {
+                transitionImageL.color = col;
+                transitionImageR.color = col;
+            }
+
+            internal override void SetValue(float value)
+            {
+                Vector2 lAnchor = transitionImageL.rectTransform.anchorMax;
+                Vector2 rAnchor = transitionImageR.rectTransform.anchorMin;
+
+                value = Mathf.Clamp01(value);
+
+                lAnchor.x = Mathf.Lerp(0, 0.505f, value);
+                rAnchor.x = Mathf.Lerp(1, 0.495f, value);
+
+                transitionImageL.rectTransform.anchorMax = lAnchor;
+                transitionImageR.rectTransform.anchorMin = rAnchor;
+            }
+        }
+
+        [System.Serializable]
+        private class FadeAnimation : TransitionAnimation
+        {
+            [SerializeField] private Image fadeImage;
+            internal override void SetColor(Color col)
+            {
+                fadeImage.color = col;
+            }
+
+            internal override void SetValue(float value)
+            {
+                Color col = fadeImage.color;
+                col.a = value;
+                fadeImage.color = col;
+            }
+        }
+
+        #endregion
 
         private void Awake()
         {
@@ -45,13 +113,11 @@ namespace FoolsBrand
                 instance = this;
                 DontDestroyOnLoad(gameObject);
             }
-
-            images = GetComponentsInChildren<Image>();
         }
 
         public static void LoadScene(string sceneName, TransitionType transitionType = TransitionType.Cross)
         {
-            LoadScene(sceneName, Color.white, transitionType);
+            LoadScene(sceneName, Color.black, transitionType);
         }
         /// <summary>
         /// Loads a scene with a specific scene transition.
@@ -64,19 +130,7 @@ namespace FoolsBrand
             if (instance != null)
             {
                 if (instance.isTransitioning) { return; }
-                Action<float> animatedAction = null;
-                switch (transitionType)
-                {
-                    case TransitionType.Fade:
-                        animatedAction = instance.SetAlpha;
-                        break;
-                    case TransitionType.Cross:
-                        animatedAction = instance.SetCrossValue;
-                        break;
-                }
-
-                instance.StartCoroutine(instance.TransitionRoutine(sceneName, color, 
-                    instance.AnimateValue(0, 1, animatedAction), instance.AnimateValue(1, 0, animatedAction)));
+                instance.PlayTransition(sceneName, color, transitionType);
             }
             else
             {
@@ -85,72 +139,57 @@ namespace FoolsBrand
             }
         }
 
-        private IEnumerator TransitionRoutine(string sceneName, Color transitionColor, IEnumerator transitionToRoutine, IEnumerator transitionFromRoutine)
+        private void PlayTransition(string sceneName, Color color, TransitionType transitionType)
+        {
+            TransitionAnimation animation = null;
+            switch (transitionType)
+            {
+                case TransitionType.Fade:
+                    animation = fadeAnimation;
+                    break;
+                case TransitionType.Cross:
+                    animation = crossAnimation;
+                    break;
+            }
+
+            animation.SetColor(color);
+            StartCoroutine(TransitionRoutine(sceneName, animation));
+        }
+
+        private IEnumerator TransitionRoutine(string sceneName, TransitionAnimation anim)
         {
             isTransitioning = true;
-            ToggleTransition(true);
-            SetColor(transitionColor);
+            anim.ToggleTransition(true);
 
-            yield return transitionToRoutine;
+            yield return AnimateValue(0, 1, anim);
 
             // Load the scene asyncronously and wait until it's loaded.
             AsyncOperation loadingOp = SceneManager.LoadSceneAsync(sceneName);
             // Wait until we've loaded the scene.
             yield return new WaitWhile(() => !loadingOp.isDone);
 
-            yield return transitionFromRoutine;
+            yield return AnimateValue(1, 0, anim);
 
-            ToggleTransition(false);
+            anim.ToggleTransition(false);
             isTransitioning = false;
+
+            OnTransitionFinish?.Invoke();
         }
 
-        private IEnumerator AnimateValue(float startVal, float endVal, Action<float> setter)
+        private IEnumerator AnimateValue(float startVal, float endVal, TransitionAnimation animation)
         {
-            setter(startVal);
+            animation.SetValue(startVal);
 
             float timer = 0;
-            while (timer < transitionTime)
+            while (timer < animation.TransitionTime)
             {
-                float normalizedTime = timer / transitionTime;
+                float normalizedTime = timer / animation.TransitionTime;
 
-                setter(Mathf.Lerp(startVal, endVal, normalizedTime));
+                animation.Animate(startVal, endVal, normalizedTime);
 
                 timer += Time.unscaledDeltaTime;
                 yield return null;
             }
-        }
-
-        private void SetCrossValue(float value)
-        {
-            Vector2 lAnchor = transitionImageL.anchorMax;
-            Vector2 rAnchor = transitionImageR.anchorMin;
-
-            value = Mathf.Clamp01(value);
-
-            lAnchor.x = Mathf.Lerp(0, 0.5f, value);
-            rAnchor.x = Mathf.Lerp(1, 0.5f, value);
-
-            transitionImageL.anchorMax = lAnchor;
-            transitionImageR.anchorMin = rAnchor;
-        }
-
-        private void SetAlpha(float alpha)
-        {
-            transitionGroup.alpha = alpha;
-        }
-
-        private void SetColor(Color col)
-        {
-            foreach(Image img in images)
-            {
-                img.color = col;
-            }
-        }
-
-        private void ToggleTransition(bool isTransitioning)
-        {
-            transitionGroup.alpha = isTransitioning ? 1 : 0;
-            transitionGroup.blocksRaycasts = isTransitioning;
         }
     }
 }

@@ -6,6 +6,7 @@
 //
 // Brief Description : Set of input controls for manipulating the game without UI.
 *****************************************************************************/
+using FoolsBrand.Audio;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -45,6 +46,7 @@ namespace FoolsBrand
         }
         private void RollAction_performed(InputAction.CallbackContext obj)
         {
+            AudioManager.Instance.PlayOneShot("RollDice");
             PlayerInputManager.RollPressed();
         }
 

@@ -75,7 +75,7 @@ namespace FoolsBrand
         /// </summary>
         public void OnRollPressed()
         {
-            PlayerInputManager.OnRollPressed();
+            PlayerInputManager.RollPressed();
         }
 
         public void OnReservePressed(int index)

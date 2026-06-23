@@ -552,64 +552,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.ReserveDiceUpdater
   reserveSelectionInfo: {fileID: 410093366}
---- !u!1 &495376988 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2422329881525701407, guid: 33302e20b5c44154797f95a77cdb7fbe, type: 3}
-  m_PrefabInstance: {fileID: 2984211772716764235}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &532085168 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2464578056025293647, guid: 33302e20b5c44154797f95a77cdb7fbe, type: 3}
   m_PrefabInstance: {fileID: 2984211772716764235}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 495376988}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1341622c3a76b242a6bbe4934dc09df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.PlayerCombatant
---- !u!114 &532085169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 495376988}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55f72319c4a22cb4c90722774fcff074, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.TrailerDebugControls
---- !u!114 &532085174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 495376988}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
-  m_Actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Keyboard&Mouse
-  m_DefaultActionMap: 1aee4dbf-6be6-4554-b7a8-a82637ecf71b
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!1 &793477686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1665,10 +1618,6 @@ PrefabInstance:
       propertyPath: overlayCamera
       value: 
       objectReference: {fileID: 1099459663}
-    - target: {fileID: 6495533709985400535, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
-      propertyPath: debugStartEncounter
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 6558335021527034578, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2195,13 +2144,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2422329881525701407, guid: 33302e20b5c44154797f95a77cdb7fbe, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 532085169}
-    - targetCorrespondingSourceObject: {fileID: 2422329881525701407, guid: 33302e20b5c44154797f95a77cdb7fbe, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 532085174}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33302e20b5c44154797f95a77cdb7fbe, type: 3}
 --- !u!1001 &5251904988557887128
 PrefabInstance:

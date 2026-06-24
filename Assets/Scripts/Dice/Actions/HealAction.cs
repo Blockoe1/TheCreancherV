@@ -19,6 +19,13 @@ namespace FoolsBrand
         public override IEnumerator PerformAction(ITargetable target, IActionSource source, Combatant user, int value, DieFace sourceFace)
         {
             user.Health.Value += value;
+            if (!user.Health.IsLowHealth)
+            {
+                if (user is PlayerCombatant player)
+                {
+                    player.lowHealthEffect.SetActive(false);
+                }
+            }
             yield return null;
         }
 

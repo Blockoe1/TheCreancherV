@@ -619,6 +619,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  dice: {fileID: 2299449444861537981}
 --- !u!1 &2881102808344166740
 GameObject:
   m_ObjectHideFlags: 0

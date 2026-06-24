@@ -97,7 +97,7 @@ namespace FoolsBrand
                 GameObject hitObj = hit.collider.gameObject;
                 IDiceInfo diceInfo = hit.collider.GetComponent<IDiceInfo>();
 
-                if (hitObj != _hoveredObject && !diceInfo.IsReserved)
+                if (hitObj != _hoveredObject && diceInfo.IsClickable)
                 {
                     _hoveredObject = hitObj;
 

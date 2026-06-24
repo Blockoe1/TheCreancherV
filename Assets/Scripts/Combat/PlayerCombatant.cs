@@ -22,7 +22,6 @@ namespace FoolsBrand
         [SerializeField] private Transform effectPoint;
         [SerializeField] private Spectator spectator;
 
-        [HideInInspector]
         public GameObject lowHealthEffect;
 
         private List<EffectInstance> Effects = new List<EffectInstance>();

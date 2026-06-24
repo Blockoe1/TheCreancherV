@@ -50,6 +50,7 @@ namespace FoolsBrand
                 if (IsDead) { break; }
                 Effects[i].OnDealDamage(this, this, target, damageDealt);
             }
+            spectator.ExciteSpectators();
             return damageDealt;
         }
 
@@ -86,6 +87,7 @@ namespace FoolsBrand
                 lowHealthEffect.SetActive(true);
             }
 
+            spectator.ShockSpectators();
             return damageTaken;
         }
 

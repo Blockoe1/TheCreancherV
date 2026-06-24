@@ -21,10 +21,6 @@ public class MainMenu : MonoBehaviour
     {
         RunManager.BeginNewGame(DiceDatabaseSetup.Instance.StartingDice, startingEncounter);
     }
-    public void Credit()
-    {
-        SceneManager.LoadScene("Credits");
-    }
     public void QuitGame()
     {
         Application.Quit();

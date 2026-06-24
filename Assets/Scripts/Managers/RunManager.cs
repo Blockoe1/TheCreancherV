@@ -7,6 +7,9 @@ namespace FoolsBrand
 {
     public static class RunManager
     {
+        private static readonly Color WIN_FADE_COLOR = Color.black;//new Color();
+        private static readonly Color LOSE_FADE_COLOR = Color.black;
+
         private static bool win = false;
         public static int CurrentEncounterNum { get; internal set; }
         public static int PlayerHealth { get; set; } = -1;
@@ -18,7 +21,7 @@ namespace FoolsBrand
         public static void StartNewCombat()
         {
             //Debug.Log("Combat Start");
-            SceneManager.LoadScene("MainCombat");
+            TransitionManager.LoadScene("MainCombat");
             AudioManager.Instance.SetMusic(MusicType.InCombat);
         }
 
@@ -29,7 +32,7 @@ namespace FoolsBrand
         {
             //Debug.Log("Combat Win");
             CurrentEncounterNum++;
-            SceneManager.LoadScene("OutOfCombat");
+            TransitionManager.LoadScene("OutOfCombat");
         }
 
         /// <summary>
@@ -40,7 +43,7 @@ namespace FoolsBrand
             // TODO: Implement winning.
             win = true;
             CleanUpRun();
-            SceneManager.LoadScene("EndScreen");
+            TransitionManager.LoadScene("EndScreen", WIN_FADE_COLOR, TransitionType.Fade);
         }
 
         /// <summary>
@@ -51,7 +54,7 @@ namespace FoolsBrand
             //Debug.Log("Combat Lose");
             win = false;
             CleanUpRun();
-            SceneManager.LoadScene("EndScreen");
+            TransitionManager.LoadScene("EndScreen", LOSE_FADE_COLOR, TransitionType.Fade);
         }
 
         /// <summary>

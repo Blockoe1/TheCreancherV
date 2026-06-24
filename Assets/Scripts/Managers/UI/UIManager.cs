@@ -8,12 +8,14 @@
 *****************************************************************************/
 using NaughtyAttributes;
 using System;
+using UnityEditor.ShaderGraph.Legacy;
 using UnityEngine;
 
 namespace FoolsBrand.UI
 {
     public class UIManager : HierarchyManager
     {
+        [SerializeField] private CanvasGroup[] masterUiGroups;
         [SerializeField] private Camera gameCamera;
         [SerializeField] private Canvas gameCanvas;
 
@@ -24,7 +26,29 @@ namespace FoolsBrand.UI
         {
             GameCamera = gameCamera;
             GameCanvas = gameCanvas;
+            if (masterUiGroups != null)
+            {
+                foreach(var group in masterUiGroups)
+                {
+                    if (group == null) { continue; }
+                    group.alpha = 1.0f;
+                }
+            }
             base.Init(gm, parentManager);
+
+            gm.GetManager<PlayerManager>().Player.OnDeathEvent.AddListener(HideUIOnDeath);
+        }
+
+        private void HideUIOnDeath()
+        {
+            if (masterUiGroups != null)
+            {
+                foreach (var group in masterUiGroups)
+                {
+                    if (group == null) { continue; }
+                    group.alpha = 0;
+                }
+            }
         }
     }
 }

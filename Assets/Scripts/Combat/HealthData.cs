@@ -44,7 +44,8 @@ namespace FoolsBrand
                     isDead = true;
                 }
                 if (health < maxHealth / 3)
-                {                     isLowHealth = true;
+                {                     
+                    isLowHealth = true;
                 }
                 else
                 {

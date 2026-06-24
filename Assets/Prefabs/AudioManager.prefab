@@ -211,3 +211,17 @@ MonoBehaviour:
       Data3: 2018890929
       Data4: -826090154
     Path: event:/Music/A Fool
+  outOfCombatEvent:
+    Guid:
+      Data1: -1683695152
+      Data2: 1316728452
+      Data3: -1776739182
+      Data4: 578925093
+    Path: event:/Music/DontDieGetADie
+  bossEvent:
+    Guid:
+      Data1: -1683695152
+      Data2: 1316728452
+      Data3: -1776739182
+      Data4: 578925093
+    Path: event:/Music/DontDieGetADie

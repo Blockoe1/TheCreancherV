@@ -1302,7 +1302,7 @@ PrefabInstance:
       objectReference: {fileID: 22100000, guid: edee889ded109664da763ed40a52bb03, type: 2}
     - target: {fileID: 7803467855228213725, guid: 6d3dc2775201b964b81aa7d26b761b73, type: 3}
       propertyPath: m_Name
-      value: ModelRoation
+      value: ModelRotation
       objectReference: {fileID: 0}
     - target: {fileID: 7886605385319000836, guid: 6d3dc2775201b964b81aa7d26b761b73, type: 3}
       propertyPath: m_Mesh

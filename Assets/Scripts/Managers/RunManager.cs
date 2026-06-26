@@ -1,12 +1,13 @@
 using FoolsBrand.Audio;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace FoolsBrand
 {
     public static class RunManager
     {
+        private const int BOSS_ENCOUNTER = 8;
+
         private static readonly Color WIN_FADE_COLOR = Color.black;//new Color();
         private static readonly Color LOSE_FADE_COLOR = Color.black;
 
@@ -22,7 +23,14 @@ namespace FoolsBrand
         {
             //Debug.Log("Combat Start");
             TransitionManager.LoadScene("MainCombat");
-            AudioManager.Instance.SetMusic(MusicType.InCombat);
+            if(CurrentEncounterNum == BOSS_ENCOUNTER)
+            {
+                AudioManager.Instance.SetMusic(MusicType.BossMusic);
+            }
+            else
+            {
+                AudioManager.Instance.SetMusic(MusicType.InCombat);
+            }
         }
 
         /// <summary>
@@ -33,6 +41,7 @@ namespace FoolsBrand
             //Debug.Log("Combat Win");
             CurrentEncounterNum++;
             TransitionManager.LoadScene("OutOfCombat");
+            AudioManager.Instance.SetMusic(MusicType.OutOfCombat);
         }
 
         /// <summary>

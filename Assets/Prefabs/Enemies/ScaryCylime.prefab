@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScaryCylime
       objectReference: {fileID: 0}
+    - target: {fileID: 753808745950908370, guid: dcb52a953bd09ec43b83af5694ccc3bc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1035320067076961884, guid: dcb52a953bd09ec43b83af5694ccc3bc, type: 3}
       propertyPath: defense
       value: 1
@@ -35,6 +39,10 @@ PrefabInstance:
     - target: {fileID: 1053761355486870616, guid: dcb52a953bd09ec43b83af5694ccc3bc, type: 3}
       propertyPath: <EnemyName>k__BackingField
       value: Scary Cylime
+      objectReference: {fileID: 0}
+    - target: {fileID: 1156047804923981985, guid: dcb52a953bd09ec43b83af5694ccc3bc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1476473548921179842, guid: dcb52a953bd09ec43b83af5694ccc3bc, type: 3}
       propertyPath: m_LocalScale.x
@@ -72,10 +80,26 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 3130553774070235250, guid: dcb52a953bd09ec43b83af5694ccc3bc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3559027349488463756, guid: dcb52a953bd09ec43b83af5694ccc3bc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4340275644595791302, guid: dcb52a953bd09ec43b83af5694ccc3bc, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 3b204e9b7daa8f5468c89a1026d0597d, type: 2}
+    - target: {fileID: 4506844105423481599, guid: dcb52a953bd09ec43b83af5694ccc3bc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4973089818288642411, guid: dcb52a953bd09ec43b83af5694ccc3bc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5386220046209217381, guid: dcb52a953bd09ec43b83af5694ccc3bc, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -124,12 +148,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7127275623779545646, guid: dcb52a953bd09ec43b83af5694ccc3bc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7330784877024013194, guid: dcb52a953bd09ec43b83af5694ccc3bc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9186010314977166584, guid: dcb52a953bd09ec43b83af5694ccc3bc, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6388558304898279036, guid: dcb52a953bd09ec43b83af5694ccc3bc, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcb52a953bd09ec43b83af5694ccc3bc, type: 3}

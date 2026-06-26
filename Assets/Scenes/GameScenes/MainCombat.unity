@@ -1434,11 +1434,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 410093367}
   m_SourcePrefab: {fileID: 100100000, guid: 4afc8fdc18c0c6645bebc9f3ab0e002a, type: 3}
---- !u!225 &1317733603090449447 stripped
-CanvasGroup:
-  m_CorrespondingSourceObject: {fileID: 4618136557271801435, guid: 4afc8fdc18c0c6645bebc9f3ab0e002a, type: 3}
-  m_PrefabInstance: {fileID: 1317733603090449446}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1720034303772323422
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1571,10 +1566,6 @@ PrefabInstance:
       propertyPath: gameCamera
       value: 
       objectReference: {fileID: 330585545}
-    - target: {fileID: 3317608462264096799, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
-      propertyPath: 'masterUiGroups.Array.data[1]'
-      value: 
-      objectReference: {fileID: 1317733603090449447}
     - target: {fileID: 3600498993147574641, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1615,10 +1606,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4799773905198693457, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
-      propertyPath: hideTutorials
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4934823604475791925, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1658,10 +1645,6 @@ PrefabInstance:
     - target: {fileID: 6558335021527034578, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7564222892383213704, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
-      propertyPath: m_Size
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7564222892383213704, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: m_Value

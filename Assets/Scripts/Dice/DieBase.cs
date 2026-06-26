@@ -54,6 +54,8 @@ public class DieBase : MonoBehaviour, IDiceInfo
     [SerializeField] private Material outlineMaterial;
     [SerializeField] private MeshRenderer[] outlinedMeshes;
 
+    private bool isClickable = true;
+
     public bool RewardSelectable => rewardSelectable;
     public string DieName { get => _dieName; }
     public string DieDescription
@@ -75,6 +77,17 @@ public class DieBase : MonoBehaviour, IDiceInfo
     public ReadOnlyArray<DieFace> Faces => dieFaces;
 
     public bool IsReserved { get => isReserved; set => isReserved = value; }
+    public bool IsClickable
+    {
+        get
+        {
+            return !IsReserved && isClickable;
+        }
+        set
+        {
+            isClickable = value;
+        }
+    }
     public bool Corrupted { get => corrupted; }
 
     public static event Action<DieBase, bool> DiceCorruptedEvent;

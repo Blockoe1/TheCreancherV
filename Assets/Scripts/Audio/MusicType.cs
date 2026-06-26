@@ -15,6 +15,7 @@ namespace FoolsBrand
         MainMenu,
         InCombat,
         OutOfCombat,
+        BossMusic,
         Nothing
     }
 }

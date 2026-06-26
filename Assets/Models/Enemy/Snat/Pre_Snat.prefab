@@ -204,10 +204,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6514685011993626574, guid: 6a996b2161157c34ca45e997a39a3afa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.12
+      objectReference: {fileID: 0}
+    - target: {fileID: -6107823717725494422, guid: 6a996b2161157c34ca45e997a39a3afa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.54
+      objectReference: {fileID: 0}
     - target: {fileID: -4684600263410887734, guid: 6a996b2161157c34ca45e997a39a3afa, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: ce522f0a465e6b5429aa7d8aef3e6a0b, type: 2}
+    - target: {fileID: -4142163866892333697, guid: 6a996b2161157c34ca45e997a39a3afa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.12
+      objectReference: {fileID: 0}
+    - target: {fileID: -4124726360251019772, guid: 6a996b2161157c34ca45e997a39a3afa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.54
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6a996b2161157c34ca45e997a39a3afa, type: 3}
       propertyPath: m_Name
       value: Mo_Snat_Body
@@ -301,6 +317,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 149ce42cb8851394985d83b6de8c1a25, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 149ce42cb8851394985d83b6de8c1a25, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 149ce42cb8851394985d83b6de8c1a25, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'

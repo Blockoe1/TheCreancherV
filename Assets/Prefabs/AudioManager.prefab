@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 3596925101619786877}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.97486, y: -0, z: 8.96335}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -220,8 +220,8 @@ MonoBehaviour:
     Path: event:/Music/DontDieGetADie
   bossEvent:
     Guid:
-      Data1: -1683695152
-      Data2: 1316728452
-      Data3: -1776739182
-      Data4: 578925093
-    Path: event:/Music/DontDieGetADie
+      Data1: 1872316863
+      Data2: 1188152372
+      Data3: 1052329874
+      Data4: 81508310
+    Path: event:/Music/Cerberdie

@@ -11,16 +11,34 @@ namespace FoolsBrand
         private static readonly Color WIN_FADE_COLOR = Color.black;//new Color();
         private static readonly Color LOSE_FADE_COLOR = Color.black;
 
+        private static RunStats runStats;
+
         private static bool win = false;
         public static int CurrentEncounterNum { get; internal set; }
         public static int PlayerHealth { get; set; } = -1;
         public static bool Win { get => win; set => win = value; }
+        public static RunStats RunStats
+        {
+            get { return runStats; }
+            set
+            {
+                if (runStats != null)
+                {
+                    runStats.CleanUp();
+                }
+                runStats = value;
+            }
+        }
 
         /// <summary>
         /// Called when a new combat is started. Switches the scene and selects the new enemy
         /// </summary>
         public static void StartNewCombat()
         {
+            if (RunStats != null)
+            {
+                RunStats.OnNewCombat();
+            }
             //Debug.Log("Combat Start");
             TransitionManager.LoadScene("MainCombat");
             if(CurrentEncounterNum == BOSS_ENCOUNTER)
@@ -87,6 +105,7 @@ namespace FoolsBrand
             {
                 DiceManager.DiceGoingToCombat.Add(die);
             }
+            RunStats = new RunStats();
             StartNewCombat();
         }
     }

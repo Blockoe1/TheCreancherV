@@ -197,6 +197,7 @@ MonoBehaviour:
         Data3: 1858896793
         Data4: 326611612
       Path: event:/SFX/Enemies/TweaselShellBreak
+  disableMusic: 0
   combatMusicEvent:
     Guid:
       Data1: -1332833944

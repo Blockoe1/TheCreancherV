@@ -19,8 +19,12 @@ namespace FoolsBrand
 
         protected override void PlayVFX(ITargetable target, IActionSource source, Combatant user, GameObject effectPrefab)
         {
-            Transform reservedDice = GameObject.Find("ReservePos").transform;
-            GameObject.Instantiate(effectPrefab, reservedDice.position, Quaternion.identity);
+            GameObject reservedDice = GameObject.Find("ReservePos");
+            if (reservedDice != null)
+            {
+                GameObject.Instantiate(effectPrefab, reservedDice.transform.position, Quaternion.identity);
+            }
+            
         }
     }
 }

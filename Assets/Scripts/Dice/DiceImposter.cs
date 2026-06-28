@@ -28,6 +28,7 @@ namespace FoolsBrand
         public string DieDescription => referenceDie != null ? referenceDie.DieDescription : "ERROR: No Dice Set.";
 
         public bool IsReserved => referenceDie != null ? referenceDie.IsReserved : false;
+        public bool IsClickable => referenceDie != null ? referenceDie.IsClickable : false;
 
         private void Awake()
         {

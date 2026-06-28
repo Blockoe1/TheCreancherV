@@ -6,18 +6,26 @@
 //
 // Brief Description : Aniamtes dice movements between designated points.
 *****************************************************************************/
+using CustomAttributes;
 using System.Collections;
-using UnityEditor.Experimental;
 using UnityEngine;
 
 namespace FoolsBrand
 {
+    [RequireComponent(typeof(DieBase))]
     public class DiceMovement : MonoBehaviour
     {
         [SerializeField] private AnimationCurve movementCurve;
         [SerializeField] private AnimationCurve scaleCurve;
 
+        [SerializeField, ShowIfNull] private DieBase dice;
+
         private SingletonCoroutine moveRoutine;
+
+        private void Reset()
+        {
+            dice = GetComponent<DieBase>();
+        }
 
         private void Awake()
         {
@@ -41,6 +49,7 @@ namespace FoolsBrand
         }
         private IEnumerator MoveRoutine(Transform targetTransform, float moveTime)
         {
+            dice.IsClickable = false;
             Vector3 startPos = transform.position;
             Vector3 startScale = transform.localScale;
             float timer = 0;
@@ -55,6 +64,7 @@ namespace FoolsBrand
                 yield return null;
             }
 
+            dice.IsClickable = true;
             MoveImmediate(targetTransform);
         }
     }

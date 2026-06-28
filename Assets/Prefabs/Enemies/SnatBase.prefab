@@ -86,7 +86,7 @@ MonoBehaviour:
   attackWeight: 1
   attackDice: {fileID: 0}
   customDescription: 
-  limbAnimName: 
+  limbAnimName: T_ACTION_2
   limbDeathSound: LimbDestroyed
   onDamageEvent:
     m_PersistentCalls:
@@ -216,7 +216,7 @@ MonoBehaviour:
   attackWeight: 1
   attackDice: {fileID: 0}
   customDescription: 
-  limbAnimName: 
+  limbAnimName: T_ACTION_1
   limbDeathSound: LimbDestroyed
   onDamageEvent:
     m_PersistentCalls:
@@ -459,7 +459,7 @@ MonoBehaviour:
   attackWeight: 1
   attackDice: {fileID: 0}
   customDescription: 
-  limbAnimName: 
+  limbAnimName: T_ACTION_4
   limbDeathSound: LimbDestroyed
   onDamageEvent:
     m_PersistentCalls:
@@ -780,7 +780,7 @@ MonoBehaviour:
   attackWeight: 1
   attackDice: {fileID: 0}
   customDescription: 
-  limbAnimName: 
+  limbAnimName: T_ACTION_3
   limbDeathSound: LimbDestroyed
   onDamageEvent:
     m_PersistentCalls:

@@ -51,11 +51,13 @@ namespace FoolsBrand.UI
         {
             // Only enable click input reading once the transition finishes.
             advanceTextAction.performed += HandleClickInput;
+            TransitionManager.OnTransitionFinish -= HandleTransitionFinish;
         }
 
         public override void Deinit()
         {
             advanceTextAction.performed -= HandleClickInput;
+            TransitionManager.OnTransitionFinish -= HandleTransitionFinish;
 
             PlayerInputManager.OnReserveInput -= HandleReserveInput;
             PlayerInputManager.OnRollButtonPressed -= HandleRollInput;

@@ -91,6 +91,7 @@ public class DieBase : MonoBehaviour, IDiceInfo
     public bool Corrupted { get => corrupted; }
 
     public static event Action<DieBase, bool> DiceCorruptedEvent;
+    public static event Action<DieBase> DiceRolledEvent;
 
     /// <summary>
     /// Starts the dice's rolling animation.
@@ -171,6 +172,7 @@ public class DieBase : MonoBehaviour, IDiceInfo
 
         // Stop the rolling animation.
 
+        DiceRolledEvent?.Invoke(this);
         return dieFaces[dieIndex].GetActions();
     }
 

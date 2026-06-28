@@ -6,9 +6,6 @@
 //
 // Brief Description : Parent manager that controls all child UI scripts.
 *****************************************************************************/
-using NaughtyAttributes;
-using System;
-using UnityEditor.ShaderGraph.Legacy;
 using UnityEngine;
 
 namespace FoolsBrand.UI

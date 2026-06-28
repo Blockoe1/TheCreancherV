@@ -7,10 +7,7 @@
 // Brief Description : Aniamtes dice movements between designated points.
 *****************************************************************************/
 using CustomAttributes;
-using NaughtyAttributes;
 using System.Collections;
-using UnityEditor.Experimental;
-using UnityEditor.Rendering;
 using UnityEngine;
 
 namespace FoolsBrand

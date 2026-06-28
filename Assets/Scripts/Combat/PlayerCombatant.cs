@@ -22,7 +22,7 @@ namespace FoolsBrand
         [SerializeField] private Transform effectPoint;
         [SerializeField] private Spectator spectator;
 
-        public GameObject lowHealthEffect;
+        [SerializeField] private GameObject lowHealthEffect;
 
         private List<EffectInstance> Effects = new List<EffectInstance>();
 
@@ -31,6 +31,12 @@ namespace FoolsBrand
 
         public event Action<EffectInstance> EffectAppliedEvent;
         public event Action PlayerActEvent;
+
+        public override void Init()
+        {
+            base.Init();
+            UpdateLowHealthEffect();
+        }
 
         /// <summary>
         /// Player queries any effects for modifying or triggering on damage.
@@ -82,13 +88,23 @@ namespace FoolsBrand
                 }
             }
 
+            UpdateLowHealthEffect();
+
+            spectator.ShockSpectators();
+            return damageTaken;
+        }
+
+        public void UpdateLowHealthEffect()
+        {
+            if (lowHealthEffect == null) { return; }
             if (Health.IsLowHealth)
             {
                 lowHealthEffect.SetActive(true);
             }
-
-            spectator.ShockSpectators();
-            return damageTaken;
+            else
+            {
+                lowHealthEffect.SetActive(false);
+            }
         }
 
         protected override void OnDeath()

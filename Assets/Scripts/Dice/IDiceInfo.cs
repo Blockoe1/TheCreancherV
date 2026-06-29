@@ -15,7 +15,7 @@ namespace FoolsBrand
         string DieName { get; }
         string DieDescription { get; }
         bool IsReserved { get; }
-        bool IsClickable { get; }
+        bool IsClickable { get; set; }
 
         void ShowHoverOutline();
         void HideHoverOutline();

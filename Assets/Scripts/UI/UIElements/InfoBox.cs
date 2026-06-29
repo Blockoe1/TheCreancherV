@@ -55,6 +55,7 @@ namespace FoolsBrand
                 currentDice.HideHoverOutline();
             }
 
+            UpdateBoxPosition();
             currentDice = die;
             if (currentDice != null)
             {

@@ -19,5 +19,5 @@ MonoBehaviour:
   baseDuration: 1
   basePotency: 1
   allowStacking: 1
-  visualEffect: {fileID: 0}
+  visualEffect: {fileID: 6354842147285684386, guid: f409ae0602e553547ad82db836de1068, type: 3}
   multiplier: 2

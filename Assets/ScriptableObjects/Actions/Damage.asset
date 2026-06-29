@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3e55ca9360aa7143a07bf77ae1842b6, type: 3}
-  m_Name: DamageAction
+  m_Name: Damage
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.DamageAction
   animationName: T_ATTACK
   actionVFX: {fileID: 11400000, guid: 4d68bc7bc40edc34ca9e270cd39a7fb5, type: 2}

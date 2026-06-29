@@ -13,6 +13,9 @@ namespace FoolsBrand
         [SerializeField] private Color _castColor = Color.white;
         [SerializeField] private float _toCastFlashDuration = 0.1f;
 
+        [SerializeField]
+        private ParticleSystem _particles;
+
         public void ToHurtColorFlash()
         {
             try { ColorChangeAllRegions(_hurtColor, _toHurtFlashDuration); }
@@ -23,6 +26,11 @@ namespace FoolsBrand
         {
             try { ColorChangeAllRegions(_castColor, _toCastFlashDuration); }
             catch (NullReferenceException) { }
+        }
+
+        public void PlayParticles()
+        {
+            _particles.Play();
         }
     }
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Poison
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.PoisonEffect
   icon: {fileID: 990476119, guid: 288c164a8b517ba49bcc5738c64c174b, type: 3}
-  description: You take #potency damage at the beginning of each turn.
+  description: Reduces your health by the poisons potency
   valueUsage: 1
   hasDuration: 0
   baseDuration: 0

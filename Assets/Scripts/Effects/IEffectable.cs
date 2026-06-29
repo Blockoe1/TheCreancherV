@@ -17,5 +17,7 @@ namespace FoolsBrand
         void RemoveAllEffects();
         void FlushEffects();
         Transform GetEffectTransform();
+        MeshRenderer GetEffectMesh();
+
     }
 }

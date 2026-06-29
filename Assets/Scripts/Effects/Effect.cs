@@ -61,7 +61,7 @@ namespace FoolsBrand
         /// </summary>
         /// <param name="parentTransform"></param>
         /// <returns></returns>
-        public virtual ParticleSystem SpawnVFX(Transform parentTransform)
+        public virtual ParticleSystem SpawnVFX(Transform parentTransform, IEffectable effectable)
         {
             if (visualEffect == null) { return null; }
             return GameObject.Instantiate(visualEffect, parentTransform);

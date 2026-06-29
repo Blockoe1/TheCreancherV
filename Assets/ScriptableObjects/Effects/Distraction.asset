@@ -19,5 +19,5 @@ MonoBehaviour:
   baseDuration: 3
   basePotency: 3
   allowStacking: 1
-  visualEffect: {fileID: 0}
+  visualEffect: {fileID: 1315348541469715181, guid: 8bd9ca28a2e30324fb625061a7ca6c24, type: 3}
   dodgeChance: 30

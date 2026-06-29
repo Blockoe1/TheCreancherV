@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Distract
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.ApplyEffectAction
   animationName: 
-  actionVFX: {fileID: 11400000, guid: 859d52baba8bb79439ddf1f510701f9a, type: 2}
-  soundName: 
+  actionVFX: {fileID: 11400000, guid: 0056a83c726492f478086e20fb662f95, type: 2}
+  soundName: ShrolmEyes
   effect: {fileID: 11400000, guid: d2dab7d0c7e57d9409eb8786b99663ac, type: 2}
   targetSelf: 0
   priority: 90

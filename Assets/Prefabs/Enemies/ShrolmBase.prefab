@@ -393,6 +393,7 @@ MonoBehaviour:
   _toHurtFlashDuration: 0.1
   _castColor: {r: 1, g: 1, b: 1, a: 1}
   _toCastFlashDuration: 0.1
+  _particles: {fileID: 0}
 --- !u!95 &8163236242485737137
 Animator:
   serializedVersion: 7
@@ -479,6 +480,7 @@ MonoBehaviour:
     faceTextObj: {fileID: 0}
     faceActions:
     - {fileID: 11400000, guid: b8f8e062243270544b936c526fe87148, type: 2}
+  refreshSelectedFace: 0
   corrupted: 0
   corruptedParticles: {fileID: 0}
   outlineMaterial: {fileID: 0}
@@ -926,7 +928,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
   _dieName: Tail Die
-  _dieDescription: Reduces damage dealt<sprite name="Weakon"> by your next attack
+  _dieDescription: Reduces damage dealt<sprite name="Weaken"> by your next attack
     by <b>#faces</b>.
   rewardSelectable: 1
   dieRenderer: {fileID: 0}
@@ -946,6 +948,7 @@ MonoBehaviour:
     faceTextObj: {fileID: 0}
     faceActions:
     - {fileID: 11400000, guid: 975d3bb7c0a55da479b01e47d6a490e5, type: 2}
+  refreshSelectedFace: 0
   corrupted: 0
   corruptedParticles: {fileID: 0}
   outlineMaterial: {fileID: 0}
@@ -1036,6 +1039,7 @@ MonoBehaviour:
     faceTextObj: {fileID: 0}
     faceActions:
     - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
+  refreshSelectedFace: 0
   corrupted: 0
   corruptedParticles: {fileID: 0}
   outlineMaterial: {fileID: 0}
@@ -1116,6 +1120,7 @@ MonoBehaviour:
     faceTextObj: {fileID: 0}
     faceActions:
     - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
+  refreshSelectedFace: 0
   corrupted: 0
   corruptedParticles: {fileID: 0}
   outlineMaterial: {fileID: 0}
@@ -1541,7 +1546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
   _dieName: Eyes Die
-  _dieDescription: Inverts the colors <sprite name="InvertedColors"> on your screen
+  _dieDescription: Inverts the colors <sprite name="Invert Colors"> on your screen
     for <b>3</b> turns.
   rewardSelectable: 1
   dieRenderer: {fileID: 0}
@@ -1561,6 +1566,7 @@ MonoBehaviour:
     faceTextObj: {fileID: 0}
     faceActions:
     - {fileID: 11400000, guid: 5c9cf12766b10154ba70d57363a58242, type: 2}
+  refreshSelectedFace: 0
   corrupted: 0
   corruptedParticles: {fileID: 0}
   outlineMaterial: {fileID: 0}

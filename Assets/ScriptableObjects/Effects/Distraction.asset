@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fad0c74846663b74f9ea4f22042f251e, type: 3}
   m_Name: Distraction
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.StealthEffect
-  icon: {fileID: 0}
+  icon: {fileID: 287991611, guid: 843ab3073fd92e949b4d67af5fd1f896, type: 3}
   description: Gives your attacks a <color=#FF5E5E>30%</color> chance to miss.
   valueUsage: 2
   hasDuration: 1

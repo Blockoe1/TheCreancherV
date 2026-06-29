@@ -6,7 +6,7 @@ namespace FoolsBrand
 {
     public static class RunManager
     {
-        private const int BOSS_ENCOUNTER = 8;
+        private const int BOSS_ENCOUNTER = 10;
 
         private static readonly Color WIN_FADE_COLOR = Color.black;//new Color();
         private static readonly Color LOSE_FADE_COLOR = Color.black;

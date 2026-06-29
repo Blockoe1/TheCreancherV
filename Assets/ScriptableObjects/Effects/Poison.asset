@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3be7e098c70206d45a9bbfd6dae871db, type: 3}
   m_Name: Poison
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.PoisonEffect
-  icon: {fileID: 0}
-  description: 
+  icon: {fileID: 990476119, guid: 288c164a8b517ba49bcc5738c64c174b, type: 3}
+  description: Reduces your health by #potency at the beginning of each turn.
   valueUsage: 1
   hasDuration: 0
   baseDuration: 0

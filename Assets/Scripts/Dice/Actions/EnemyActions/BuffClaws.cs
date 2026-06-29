@@ -17,6 +17,11 @@ namespace FoolsBrand
         public override IEnumerator PerformAction(ITargetable target, IActionSource source, Combatant user, int value, DieFace sourceFace)
         {
             target = GameObject.Find("Claws").GetComponent<ITargetable>();
+            if (target == null)
+            {
+                Debug.Log("Claws not found");
+                yield break;
+            }
             if (!targetSelf && target is IEffectable targetEffectable)
             {
                 targetEffectable.ApplyEffect(effect, value);

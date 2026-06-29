@@ -9,8 +9,8 @@ namespace FoolsBrand
 
         public override int ModifyAttack(EffectInstance instance, int dealtDamage)
         {
-            Random.Range(0f, 100f);
-            if (Random.value < dodgeChance)
+            float value = Random.Range(0f, 100f);
+            if (value < dodgeChance)
             {
                 return 0;
             }

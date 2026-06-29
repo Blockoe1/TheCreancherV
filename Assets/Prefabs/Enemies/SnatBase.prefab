@@ -597,6 +597,7 @@ GameObject:
   - component: {fileID: 6261555033511299318}
   - component: {fileID: 119799547966343807}
   - component: {fileID: 3039270739121931461}
+  - component: {fileID: 4665412596957286904}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -660,6 +661,18 @@ MonoBehaviour:
   _castColor: {r: 1, g: 1, b: 1, a: 1}
   _toCastFlashDuration: 0.1
   _particles: {fileID: 3737425567502614447}
+--- !u!114 &4665412596957286904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6832710973759936947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f956f767637dd7c4aac091bacf3c3a3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.Audio.AudioRelay
 --- !u!1 &6951674075585585185
 GameObject:
   m_ObjectHideFlags: 0
@@ -1182,19 +1195,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3845410238227250107, guid: 36f7f1cc7727887409bdf9012ce9e93d, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.5714871
       objectReference: {fileID: 0}
     - target: {fileID: 3845410238227250107, guid: 36f7f1cc7727887409bdf9012ce9e93d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.25835222
       objectReference: {fileID: 0}
     - target: {fileID: 3845410238227250107, guid: 36f7f1cc7727887409bdf9012ce9e93d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.77309287
       objectReference: {fileID: 0}
     - target: {fileID: 3845410238227250107, guid: 36f7f1cc7727887409bdf9012ce9e93d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.09478441
       objectReference: {fileID: 0}
     - target: {fileID: 3845410238227250107, guid: 36f7f1cc7727887409bdf9012ce9e93d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

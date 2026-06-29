@@ -135,7 +135,7 @@ public class DieBase : MonoBehaviour, IDiceInfo
         }
 
         Quaternion rollRot = transform.rotation;
-        Quaternion targetRot = Quaternion.LookRotation(FACE_AXES[dieIndex], Vector3.up);
+        Quaternion targetRot = Quaternion.LookRotation(FACE_AXES[dieIndex % 6], Vector3.up);
 
         float timer = 0;
         while (timer < slerpTime)

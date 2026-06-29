@@ -138,8 +138,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b264e17d8aa6d5459bc864dd3c692f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
-  _dieName: Basic Die 1-6
-  _dieDescription: To be revealed in a future milestone...
+  _dieName: Head Die
+  _dieDescription: Poisons <sprite name="Poison"> the player for <b>3</b> turns.
   rewardSelectable: 1
   dieRenderer: {fileID: 0}
   borderRenderer: {fileID: 0}
@@ -268,8 +268,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b264e17d8aa6d5459bc864dd3c692f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
-  _dieName: Basic Die 1-6
-  _dieDescription: To be revealed in a future milestone...
+  _dieName: Tail Die
+  _dieDescription: Multiplies <sprite name="Multiplier"> the enemie's claw attack.
   rewardSelectable: 1
   dieRenderer: {fileID: 0}
   borderRenderer: {fileID: 0}
@@ -492,8 +492,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b264e17d8aa6d5459bc864dd3c692f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
-  _dieName: Basic Die 1-6
-  _dieDescription: To be revealed in a future milestone...
+  _dieName: Hood Die
+  _dieDescription: Gives the player a <b>30%</b> chance to miss for <b>3</b> turns.
   rewardSelectable: 1
   dieRenderer: {fileID: 0}
   borderRenderer: {fileID: 0}
@@ -920,8 +920,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b264e17d8aa6d5459bc864dd3c692f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
-  _dieName: Basic Die 1-6
-  _dieDescription: To be revealed in a future milestone...
+  _dieName: Claws Die
+  _dieDescription: '<sprite name="Damage">#faces
+
+    Deals high damage.'
   rewardSelectable: 1
   dieRenderer: {fileID: 0}
   borderRenderer: {fileID: 0}
@@ -936,7 +938,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   dieFaces:
   - faceText: '#'
-    faceValue: 3
+    faceValue: 4
     faceTextObj: {fileID: 0}
     faceActions:
     - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}

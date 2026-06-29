@@ -1476,7 +1476,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1022829902865959319, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: encounterableEnemies.Array.size
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1022829902865959319, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: 'encounterableEnemies.Array.data[0]'
@@ -1497,21 +1497,29 @@ PrefabInstance:
     - target: {fileID: 1022829902865959319, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: 'encounterableEnemies.Array.data[4]'
       value: 
+      objectReference: {fileID: 7513955198441271978, guid: 25d30dae655926147a9b2576c78eb20b, type: 3}
+    - target: {fileID: 1022829902865959319, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+      propertyPath: 'encounterableEnemies.Array.data[5]'
+      value: 
       objectReference: {fileID: 8665610191780288077, guid: a032171da8305644880803f8621f8586, type: 3}
     - target: {fileID: 1022829902865959319, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: 'encounterableEnemies.Array.data[6]'
       value: 
-      objectReference: {fileID: 7801227504811331601, guid: af841987ef69ce14bbf30868bdcb686a, type: 3}
+      objectReference: {fileID: 2924902763641733304, guid: 1c288b52b6893de40bd14aa83caf6bae, type: 3}
     - target: {fileID: 1022829902865959319, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: 'encounterableEnemies.Array.data[7]'
       value: 
-      objectReference: {fileID: 2548360809282276096, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+      objectReference: {fileID: 7801227504811331601, guid: af841987ef69ce14bbf30868bdcb686a, type: 3}
     - target: {fileID: 1022829902865959319, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: 'encounterableEnemies.Array.data[8]'
       value: 
-      objectReference: {fileID: 7288215923898136561, guid: cfd62d17428793b4c97863bdd72d6a13, type: 3}
+      objectReference: {fileID: 2548360809282276096, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
     - target: {fileID: 1022829902865959319, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: 'encounterableEnemies.Array.data[9]'
+      value: 
+      objectReference: {fileID: 7288215923898136561, guid: cfd62d17428793b4c97863bdd72d6a13, type: 3}
+    - target: {fileID: 1022829902865959319, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+      propertyPath: 'encounterableEnemies.Array.data[10]'
       value: 
       objectReference: {fileID: 3650478507077520994, guid: 8b9531435373d3742ad685258108563d, type: 3}
     - target: {fileID: 1326467615441105993, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
@@ -1614,9 +1622,13 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4107175193665694187, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4414532441173357147, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.0000076293945
+      value: -0.0000019073486
       objectReference: {fileID: 0}
     - target: {fileID: 4934823604475791925, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: m_AnchorMax.y

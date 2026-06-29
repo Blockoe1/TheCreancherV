@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnatKing
       objectReference: {fileID: 0}
+    - target: {fileID: 841089904440852677, guid: 3fb962c6e4f77194d8feb1a531642b43, type: 3}
+      propertyPath: <EnemyName>k__BackingField
+      value: King Snat
+      objectReference: {fileID: 0}
     - target: {fileID: 1591044124620844962, guid: 3fb962c6e4f77194d8feb1a531642b43, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 

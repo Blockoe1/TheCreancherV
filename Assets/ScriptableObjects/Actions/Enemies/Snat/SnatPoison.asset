@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SnatPoison
   m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.ApplyEffectAction
   animationName: T_ATTACK
-  actionVFX: {fileID: 11400000, guid: 19bd668be80935348bac4cf42827713f, type: 2}
+  actionVFX: {fileID: 0}
   soundName: PoisonApply
   effect: {fileID: 11400000, guid: b6432802eab7d934081d6d6d4a80fdc6, type: 2}
   targetSelf: 0

@@ -2,6 +2,7 @@ using FoolsBrand;
 using NaughtyAttributes;
 using System;
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem.Utilities;
 
@@ -22,15 +23,6 @@ public class DieBase : MonoBehaviour, IDiceInfo
         Vector3.back, 
         Vector3.down
     };
-    private static readonly Vector3[] ROTATIONS =
-    {
-        new Vector3(90, 0, 0),
-        new Vector3(-90, 0, 0),
-        new Vector3(0, 90, 0),
-        new Vector3(0, -90, 0),
-        new Vector3(0, 0, 90),
-        new Vector3(0, 0, -90)
-    };
 
     [SerializeField] private string _dieName = "Basic Die 1-6";
     [SerializeField, TextArea] private string _dieDescription = "To be revealed in a future milestone...";
@@ -44,6 +36,8 @@ public class DieBase : MonoBehaviour, IDiceInfo
     [SerializeField] private AnimationCurve slerpCurve;
     [Header("Faces")]
     [SerializeField, Tooltip("DO NOT CHANGE THE NUMBER OF FACES. The effects of each face")] private DieFace[] dieFaces = new DieFace[6];
+
+    [SerializeField] private bool refreshSelectedFace = false;
 
     private int dieIndex = 0;
     private bool isRolling;
@@ -98,6 +92,7 @@ public class DieBase : MonoBehaviour, IDiceInfo
     /// </summary>
     public void StartRolling()
     {
+        RefreshText();
         if (!isRolling)
         {
             dieIndex = -1;
@@ -168,6 +163,23 @@ public class DieBase : MonoBehaviour, IDiceInfo
         if (!dieFaces[dieIndex].IsInitialized)
         {
             dieFaces[dieIndex].Initialize(this);
+            if (refreshSelectedFace)
+            {
+                string icon = "";
+                string[] iconNames = {
+                    "Poison",
+                    "Corruption",
+                    "Healing"
+                };
+
+                if (iconNames.Contains(dieFaces[dieIndex].GetActions()[0].Action.name))
+                {
+                    icon = $" <sprite name=\"{dieFaces[dieIndex].GetActions()[0].Action.name}\">";
+                    dieFaces[dieIndex].FaceTextObj.fontSize = 4;
+                }
+
+                dieFaces[dieIndex].FaceTextObj.text = dieFaces[dieIndex].FaceValue.ToString() + icon;
+            }
         }
 
         // Stop the rolling animation.

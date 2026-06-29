@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad0c74846663b74f9ea4f22042f251e, type: 3}
+  m_Name: Distraction
+  m_EditorClassIdentifier: Assembly-CSharp::FoolsBrand.StealthEffect
+  icon: {fileID: 0}
+  description: 
+  valueUsage: 2
+  hasDuration: 1
+  baseDuration: 3
+  basePotency: 3
+  allowStacking: 1
+  visualEffect: {fileID: 0}
+  dodgeChance: 30

@@ -26,12 +26,16 @@ public class CorruptionInfo : MonoBehaviour
             Mouse.current.position.ReadValue(),
             canvas.worldCamera,
             out Vector2 pos);
+        pos = canvas.transform.TransformPoint(pos);
 
-        panel.pivot = new Vector2(
-            pos.x > canvas.pixelRect.width / 2 - panel.rect.width ? 1 : 0,
-            pos.y < -canvas.pixelRect.height / 2 + panel.rect.height ? 0 : 1);
+        Vector2 canvasDimensions = canvas.renderMode == RenderMode.ScreenSpaceOverlay ?
+                new Vector2(canvas.pixelRect.width, canvas.pixelRect.height) :
+                new Vector2(canvas.pixelRect.width / 2, canvas.pixelRect.height / 2);
+        Rect trueRect = new Rect(panel.rect.min, panel.rect.size * canvas.scaleFactor);
+        panel.pivot = new Vector2(pos.x > canvasDimensions.x - (trueRect.width + infoPadding.x) ? 1 : 0,
+            pos.y > canvasDimensions.y - (trueRect.height + infoPadding.y) ? 1 : 0);
 
-        transform.position = canvas.transform.TransformPoint(pos);
+        transform.position = pos;
     }
 
     public void Show(string title, string description)

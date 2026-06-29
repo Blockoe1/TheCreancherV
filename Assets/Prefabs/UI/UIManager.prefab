@@ -33,10 +33,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8443646541965960219}
   - {fileID: 1310654843317354546}
   - {fileID: 5495808254237431204}
   - {fileID: 7992057981568554626}
-  - {fileID: 8443646541965960219}
   - {fileID: 7684214779967904027}
   - {fileID: 7864188726717496444}
   - {fileID: 3439620115450820379}
@@ -590,9 +590,33 @@ PrefabInstance:
       propertyPath: canvas
       value: 
       objectReference: {fileID: 7102012968691476179}
+    - target: {fileID: 2636931411633149737, guid: a929d9be08ec8c74a98ef646ef5d3c94, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2636931411633149737, guid: a929d9be08ec8c74a98ef646ef5d3c94, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2636931411633149737, guid: a929d9be08ec8c74a98ef646ef5d3c94, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2636931411633149737, guid: a929d9be08ec8c74a98ef646ef5d3c94, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2636931411633149737, guid: a929d9be08ec8c74a98ef646ef5d3c94, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3692069775547242496, guid: a929d9be08ec8c74a98ef646ef5d3c94, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5226148420527009609, guid: a929d9be08ec8c74a98ef646ef5d3c94, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 5817388994974615334, guid: a929d9be08ec8c74a98ef646ef5d3c94, type: 3}
       propertyPath: m_Pivot.x
@@ -850,7 +874,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 323721888294029470, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
       propertyPath: m_Size
-      value: 1
+      value: 0.81333333
       objectReference: {fileID: 0}
     - target: {fileID: 1394212957310239108, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
       propertyPath: m_AnchorMax.y

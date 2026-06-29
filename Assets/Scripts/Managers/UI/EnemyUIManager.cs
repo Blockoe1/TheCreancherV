@@ -69,7 +69,7 @@ namespace FoolsBrand.UI
             currentEnemy.OnDeathEvent.RemoveListener(OnEnemyDeath);
             dnm.UnregisterDamageNumber(currentEnemy.Health);
             currentEnemy = null;
-            ToggleEnemyUI(false);
+            //ToggleEnemyUI(false);
         }
 
         public void ToggleEnemyUI(bool shown)

@@ -84,7 +84,7 @@ MonoBehaviour:
   defense: 1
   multiplier: 1
   attackWeight: 1
-  attackDice: {fileID: 0}
+  attackDice: {fileID: 6179213419947459242}
   customDescription: 
   limbAnimName: T_ACTION_2
   limbDeathSound: LimbDestroyed
@@ -138,8 +138,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b264e17d8aa6d5459bc864dd3c692f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
-  _dieName: Basic Die 1-6
-  _dieDescription: To be revealed in a future milestone...
+  _dieName: Head Die
+  _dieDescription: Poisons <sprite name="Poison"> the player for <b>3</b> turns.
   rewardSelectable: 1
   dieRenderer: {fileID: 0}
   borderRenderer: {fileID: 0}
@@ -214,7 +214,7 @@ MonoBehaviour:
   defense: 0
   multiplier: 1
   attackWeight: 1
-  attackDice: {fileID: 0}
+  attackDice: {fileID: 6689069802856493332}
   customDescription: 
   limbAnimName: T_ACTION_1
   limbDeathSound: LimbDestroyed
@@ -268,8 +268,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b264e17d8aa6d5459bc864dd3c692f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
-  _dieName: Basic Die 1-6
-  _dieDescription: To be revealed in a future milestone...
+  _dieName: Tail Die
+  _dieDescription: Multiplies <sprite name="Multiplier"> the enemie's claw attack.
   rewardSelectable: 1
   dieRenderer: {fileID: 0}
   borderRenderer: {fileID: 0}
@@ -286,27 +286,8 @@ MonoBehaviour:
   - faceText: '#'
     faceValue: 0
     faceTextObj: {fileID: 0}
-    faceActions: []
-  - faceText: '#'
-    faceValue: 0
-    faceTextObj: {fileID: 0}
-    faceActions: []
-  - faceText: '#'
-    faceValue: 0
-    faceTextObj: {fileID: 0}
-    faceActions: []
-  - faceText: '#'
-    faceValue: 0
-    faceTextObj: {fileID: 0}
-    faceActions: []
-  - faceText: '#'
-    faceValue: 0
-    faceTextObj: {fileID: 0}
-    faceActions: []
-  - faceText: '#'
-    faceValue: 0
-    faceTextObj: {fileID: 0}
-    faceActions: []
+    faceActions:
+    - {fileID: 11400000, guid: abec6a5c20c42b442a9998d7f1d05a1c, type: 2}
   corrupted: 0
   corruptedParticles: {fileID: 0}
   outlineMaterial: {fileID: 0}
@@ -457,7 +438,7 @@ MonoBehaviour:
   defense: 0
   multiplier: 1.25
   attackWeight: 1
-  attackDice: {fileID: 0}
+  attackDice: {fileID: 1814502752311400780}
   customDescription: 
   limbAnimName: T_ACTION_4
   limbDeathSound: LimbDestroyed
@@ -511,8 +492,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b264e17d8aa6d5459bc864dd3c692f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
-  _dieName: Basic Die 1-6
-  _dieDescription: To be revealed in a future milestone...
+  _dieName: Hood Die
+  _dieDescription: Gives the player a <b>30%</b> chance to miss for <b>3</b> turns.
   rewardSelectable: 1
   dieRenderer: {fileID: 0}
   borderRenderer: {fileID: 0}
@@ -529,27 +510,8 @@ MonoBehaviour:
   - faceText: '#'
     faceValue: 0
     faceTextObj: {fileID: 0}
-    faceActions: []
-  - faceText: '#'
-    faceValue: 0
-    faceTextObj: {fileID: 0}
-    faceActions: []
-  - faceText: '#'
-    faceValue: 0
-    faceTextObj: {fileID: 0}
-    faceActions: []
-  - faceText: '#'
-    faceValue: 0
-    faceTextObj: {fileID: 0}
-    faceActions: []
-  - faceText: '#'
-    faceValue: 0
-    faceTextObj: {fileID: 0}
-    faceActions: []
-  - faceText: '#'
-    faceValue: 0
-    faceTextObj: {fileID: 0}
-    faceActions: []
+    faceActions:
+    - {fileID: 11400000, guid: 81c3c5898bab46e43b29e9b329ee4078, type: 2}
   corrupted: 0
   corruptedParticles: {fileID: 0}
   outlineMaterial: {fileID: 0}
@@ -778,7 +740,7 @@ MonoBehaviour:
   defense: 1
   multiplier: 1
   attackWeight: 1
-  attackDice: {fileID: 0}
+  attackDice: {fileID: 5690173394531952306}
   customDescription: 
   limbAnimName: T_ACTION_3
   limbDeathSound: LimbDestroyed
@@ -958,8 +920,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b264e17d8aa6d5459bc864dd3c692f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
-  _dieName: Basic Die 1-6
-  _dieDescription: To be revealed in a future milestone...
+  _dieName: Claws Die
+  _dieDescription: '<sprite name="Damage">#faces
+
+    Deals high damage.'
   rewardSelectable: 1
   dieRenderer: {fileID: 0}
   borderRenderer: {fileID: 0}
@@ -974,7 +938,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   dieFaces:
   - faceText: '#'
-    faceValue: 3
+    faceValue: 4
     faceTextObj: {fileID: 0}
     faceActions:
     - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}

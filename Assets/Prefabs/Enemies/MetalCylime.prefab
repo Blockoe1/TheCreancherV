@@ -32,6 +32,10 @@ PrefabInstance:
       propertyPath: defense
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 5874389511800535063, guid: dcb52a953bd09ec43b83af5694ccc3bc, type: 3}
+      propertyPath: customDescription
+      value: Made of metal, and cannot be damaged.
+      objectReference: {fileID: 0}
     - target: {fileID: 6582757154763829552, guid: dcb52a953bd09ec43b83af5694ccc3bc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

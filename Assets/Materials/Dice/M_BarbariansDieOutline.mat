@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_BarbarianDie 1
+  m_Name: M_BarbariansDieOutline
   m_Shader: {fileID: -6465566751694194690, guid: a129c89920e414941bec79e8f7aa8d8b, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -82,7 +82,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture:
-        m_Texture: {fileID: 2800000, guid: 0f9a86d34f8ab5a40965f54b203dff9a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 51ae4919ddc3423498dd756797a94529, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -138,13 +138,13 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissiveRegion: {r: 0, g: 0, b: 0, a: 1}
-    - _REGION_0: {r: 1, g: 0.35791588, b: 0.009433806, a: 1}
-    - _REGION_1: {r: 1, g: 1, b: 0, a: 1}
+    - _REGION_0: {r: 0.3333333, g: 0.022147777, b: 0.017819682, a: 1}
+    - _REGION_1: {r: 0.99215686, g: 1, b: 0.43529412, a: 1}
     - _REGION_2: {r: 0, g: 1, b: 0, a: 1}
     - _REGION_3: {r: 0, g: 1, b: 1, a: 1}
     - _REGION_4: {r: 0, g: 0, b: 1, a: 1}
     - _REGION_5: {r: 1, g: 0, b: 1, a: 1}
-    - _Region1: {r: 1, g: 0.85849047, b: 0.85849047, a: 1}
+    - _Region1: {r: 0, g: 0, b: 0, a: 1}
     - _Region2: {r: 1, g: 1, b: 0, a: 1}
     - _Region3: {r: 0, g: 1, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}

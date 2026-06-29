@@ -12,20 +12,26 @@ using UnityEngine;
 
 namespace FoolsBrand
 {
-    [RequireComponent(typeof(DieBase))]
     public class DiceMovement : MonoBehaviour
     {
         [SerializeField] private AnimationCurve movementCurve;
         [SerializeField] private AnimationCurve scaleCurve;
 
-        [SerializeField, ShowIfNull] private DieBase dice;
+        private IDiceInfo dice;
+
+        private IDiceInfo Dice
+        {
+            get
+            {
+                if (dice == null)
+                {
+                    dice = GetComponent<IDiceInfo>();
+                }
+                return dice;
+            }
+        }
 
         private SingletonCoroutine moveRoutine;
-
-        private void Reset()
-        {
-            dice = GetComponent<DieBase>();
-        }
 
         private void Awake()
         {
@@ -49,7 +55,7 @@ namespace FoolsBrand
         }
         private IEnumerator MoveRoutine(Transform targetTransform, float moveTime)
         {
-            dice.IsClickable = false;
+            Dice.IsClickable = false;
             Vector3 startPos = transform.position;
             Vector3 startScale = transform.localScale;
             float timer = 0;
@@ -64,7 +70,7 @@ namespace FoolsBrand
                 yield return null;
             }
 
-            dice.IsClickable = true;
+            Dice.IsClickable = true;
             MoveImmediate(targetTransform);
         }
     }

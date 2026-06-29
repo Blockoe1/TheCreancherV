@@ -270,8 +270,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieBase
   _dieName: Tail Die
-  _dieDescription: Multiplies <sprite name="Multiplier"> damage dealt by the claw's
-    attack.
+  _dieDescription: Doubles <sprite name="Multiplier"> damage dealt by the claw's
+    next attack.
   rewardSelectable: 1
   dieRenderer: {fileID: 0}
   borderRenderer: {fileID: 0}

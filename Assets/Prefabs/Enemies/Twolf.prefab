@@ -139,7 +139,7 @@ MonoBehaviour:
   health:
     maxHealth: 10
     health: 10
-  defense: 0
+  defense: 1
   multiplier: 1
   attackWeight: 1
   attackDice: {fileID: 7430174870097562239}
@@ -201,7 +201,7 @@ MonoBehaviour:
   health:
     maxHealth: 10
     health: 10
-  defense: 1
+  defense: 2
   multiplier: 1
   attackWeight: 1
   attackDice: {fileID: 9177951693487693571}
@@ -395,6 +395,7 @@ MonoBehaviour:
     faceTextObj: {fileID: 0}
     faceActions:
     - {fileID: 11400000, guid: 65251d99c3a92934ead76ebda2082b1a, type: 2}
+  refreshSelectedFace: 0
   corrupted: 0
   corruptedParticles: {fileID: 0}
   outlineMaterial: {fileID: 0}
@@ -448,7 +449,7 @@ MonoBehaviour:
   health:
     maxHealth: 10
     health: 10
-  defense: 0
+  defense: 1
   multiplier: 1
   attackWeight: 1
   attackDice: {fileID: 4407124212100198057}
@@ -548,6 +549,7 @@ MonoBehaviour:
   _toHurtFlashDuration: 0.1
   _castColor: {r: 1, g: 1, b: 1, a: 1}
   _toCastFlashDuration: 0.1
+  _particles: {fileID: 0}
 --- !u!95 &2912635220649302257
 Animator:
   serializedVersion: 7
@@ -729,12 +731,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   dieFaces:
   - faceText: '#'
-    faceValue: 1
-    faceTextObj: {fileID: 0}
-    faceActions:
-    - {fileID: 11400000, guid: 65251d99c3a92934ead76ebda2082b1a, type: 2}
-    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
-  - faceText: '#'
     faceValue: 2
     faceTextObj: {fileID: 0}
     faceActions:
@@ -752,6 +748,13 @@ MonoBehaviour:
     faceActions:
     - {fileID: 11400000, guid: 65251d99c3a92934ead76ebda2082b1a, type: 2}
     - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
+  - faceText: '#'
+    faceValue: 5
+    faceTextObj: {fileID: 0}
+    faceActions:
+    - {fileID: 11400000, guid: 65251d99c3a92934ead76ebda2082b1a, type: 2}
+    - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
+  refreshSelectedFace: 0
   corrupted: 0
   corruptedParticles: {fileID: 0}
   outlineMaterial: {fileID: 0}
@@ -927,7 +930,7 @@ MonoBehaviour:
   health:
     maxHealth: 10
     health: 10
-  defense: 1
+  defense: 2
   multiplier: 1
   attackWeight: 1
   attackDice: {fileID: 2974415944479167877}
@@ -1285,6 +1288,7 @@ MonoBehaviour:
     faceActions:
     - {fileID: 11400000, guid: c0dc0ffe599e2e545b9dc150bbd13db0, type: 2}
     - {fileID: 11400000, guid: aeff90a0b929abf4f8b76ce968bfd4fd, type: 2}
+  refreshSelectedFace: 0
   corrupted: 0
   corruptedParticles: {fileID: 0}
   outlineMaterial: {fileID: 0}
@@ -1538,6 +1542,7 @@ MonoBehaviour:
     faceActions:
     - {fileID: 11400000, guid: aeff90a0b929abf4f8b76ce968bfd4fd, type: 2}
     - {fileID: 11400000, guid: aeff90a0b929abf4f8b76ce968bfd4fd, type: 2}
+  refreshSelectedFace: 0
   corrupted: 0
   corruptedParticles: {fileID: 0}
   outlineMaterial: {fileID: 0}

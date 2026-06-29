@@ -35,7 +35,7 @@ namespace FoolsBrand
 
         public void OnEffectAdded(Combatant combatant, IEffectable effectSource, GameObject appliedObj)
         {
-            vfxInstance = effect.SpawnVFX(effectSource.GetEffectTransform());
+            vfxInstance = effect.SpawnVFX(effectSource.GetEffectTransform(), effectSource);
 
             effect.OnEffectAdded(this, combatant, effectSource, appliedObj);
         }

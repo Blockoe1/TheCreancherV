@@ -21,6 +21,7 @@ namespace FoolsBrand
         [field: SerializeField] public Transform DamageNumberPoint { get; private set; }
         [SerializeField] private Transform effectPoint;
         [SerializeField] private Spectator spectator;
+        [SerializeField] private MeshRenderer mesh;
 
         [SerializeField] private GameObject lowHealthEffect;
 
@@ -225,6 +226,11 @@ namespace FoolsBrand
                     i--;
                 }
             }
+        }
+
+        public MeshRenderer GetEffectMesh()
+        {
+            return mesh;
         }
         #endregion
     }

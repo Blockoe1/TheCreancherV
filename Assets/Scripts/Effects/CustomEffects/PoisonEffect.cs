@@ -29,17 +29,16 @@ namespace FoolsBrand
             {
                 yield break;
             }
-            SpawnEffectToMeshRenderer(poisonEffectBurst, combatant.transform);
+            SpawnEffectToMeshRenderer(poisonEffectBurst, combatant.transform, effectSource.GetEffectMesh());
             combatant.Health.Value -= instance.Potency;
             AudioManager.Instance.PlayOneShot(poisonDamageSoundName);
             combatant.CheckForDeath();
-
             yield return new WaitForSeconds(tickDelay);
         }
 
-        public override ParticleSystem SpawnVFX(Transform parentTransform)
+        public override ParticleSystem SpawnVFX(Transform parentTransform, IEffectable effectSource)
         {
-            return SpawnEffectToMeshRenderer(visualEffect, parentTransform);
+            return SpawnEffectToMeshRenderer(visualEffect, parentTransform, effectSource.GetEffectMesh());
         }
 
         /// <summary>
@@ -48,10 +47,10 @@ namespace FoolsBrand
         /// <param name="particleSystem"></param>
         /// <param name="parentTransform"></param>
         /// <returns></returns>
-        private static ParticleSystem SpawnEffectToMeshRenderer(ParticleSystem particleSystem, Transform parentTransform)
+        private static ParticleSystem SpawnEffectToMeshRenderer(ParticleSystem particleSystem, 
+            Transform parentTransform, MeshRenderer meshRenderer)
         {
             ParticleSystem effectInstance = GameObject.Instantiate(particleSystem, parentTransform);
-            MeshRenderer meshRenderer = parentTransform.GetComponentInChildren<MeshRenderer>();
             //Debug.LogError(meshRenderer);
             if (meshRenderer != null)
             {

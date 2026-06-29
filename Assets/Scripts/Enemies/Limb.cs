@@ -286,6 +286,11 @@ namespace FoolsBrand.Enemies
         protected virtual void LimbStart() { }
 
         protected virtual void LimbDestroyed() { }
+
+        public MeshRenderer GetEffectMesh()
+        {
+            return GetComponentInChildren<MeshRenderer>();
+        }
         #endregion
     }
 }

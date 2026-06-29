@@ -32,7 +32,15 @@ namespace FoolsBrand.UI
 
                 advanceTextAction.Enable();
                 //advanceTextAction.performed += HandleClickInput;
-                TransitionManager.OnTransitionFinish += HandleTransitionFinish;
+                if (TransitionManager.IsTransitioning)
+                {
+                    TransitionManager.OnTransitionFinish += HandleTransitionFinish;
+                }
+                else
+                {
+                    advanceTextAction.performed += HandleClickInput;
+                }
+                
 
                 PlayerInputManager.OnReserveInput += HandleReserveInput;
                 PlayerInputManager.OnRollButtonPressed += HandleRollInput;

@@ -83,13 +83,45 @@ PrefabInstance:
       propertyPath: m_Name
       value: Snat
       objectReference: {fileID: 0}
-    - target: {fileID: 3039270739121931461, guid: 3fb962c6e4f77194d8feb1a531642b43, type: 3}
-      propertyPath: _particles
-      value: 
-      objectReference: {fileID: 2130932547173509990}
-    - target: {fileID: 6764240129961409367, guid: 3fb962c6e4f77194d8feb1a531642b43, type: 3}
-      propertyPath: m_LocalPosition.x
+    - target: {fileID: 841089904440852677, guid: 3fb962c6e4f77194d8feb1a531642b43, type: 3}
+      propertyPath: health.health
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 841089904440852677, guid: 3fb962c6e4f77194d8feb1a531642b43, type: 3}
+      propertyPath: health.maxHealth
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480947900968676177, guid: 3fb962c6e4f77194d8feb1a531642b43, type: 3}
+      propertyPath: multiplier
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480947900968676177, guid: 3fb962c6e4f77194d8feb1a531642b43, type: 3}
+      propertyPath: health.health
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480947900968676177, guid: 3fb962c6e4f77194d8feb1a531642b43, type: 3}
+      propertyPath: health.maxHealth
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5064734508792660518, guid: 3fb962c6e4f77194d8feb1a531642b43, type: 3}
+      propertyPath: health.health
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5064734508792660518, guid: 3fb962c6e4f77194d8feb1a531642b43, type: 3}
+      propertyPath: health.maxHealth
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6276953966042789489, guid: 3fb962c6e4f77194d8feb1a531642b43, type: 3}
+      propertyPath: health.health
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6276953966042789489, guid: 3fb962c6e4f77194d8feb1a531642b43, type: 3}
+      propertyPath: health.maxHealth
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6689069802856493332, guid: 3fb962c6e4f77194d8feb1a531642b43, type: 3}
+      propertyPath: dieFaces.Array.data[0].faceValue
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6803028430046793133, guid: 3fb962c6e4f77194d8feb1a531642b43, type: 3}
       propertyPath: m_LocalPosition.x
@@ -136,7 +168,9 @@ PrefabInstance:
       value: -0.7500005
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 456611369104398138, guid: 3fb962c6e4f77194d8feb1a531642b43, type: 3}
+    - {fileID: 5055622165614608567, guid: 3fb962c6e4f77194d8feb1a531642b43, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6158547873012001388, guid: 3fb962c6e4f77194d8feb1a531642b43, type: 3}
       insertIndex: -1

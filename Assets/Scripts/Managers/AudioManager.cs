@@ -16,8 +16,11 @@ namespace FoolsBrand.Audio
     public class AudioManager : MonoBehaviour
     {
         [SerializeField] private EventKey[] events;
+        [SerializeField] private bool disableMusic;
         [SerializeField] private EventReference combatMusicEvent;
         [SerializeField] private EventReference menuMusicEvent;
+        [SerializeField] private EventReference outOfCombatEvent;
+        [SerializeField] private EventReference bossEvent;
 
         private EventInstance musicInstance;
 
@@ -122,6 +125,7 @@ namespace FoolsBrand.Audio
         #region Music
         public void SetMusic(MusicType music)
         {
+            if (disableMusic) { return; }
             musicInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             
             switch (music)
@@ -136,6 +140,18 @@ namespace FoolsBrand.Audio
                     if (!combatMusicEvent.IsNull)
                     {
                         musicInstance = RuntimeManager.CreateInstance(combatMusicEvent);
+                    }
+                    break;
+                case MusicType.OutOfCombat:
+                    if (!outOfCombatEvent.IsNull)
+                    {
+                        musicInstance = RuntimeManager.CreateInstance(outOfCombatEvent);
+                    }
+                    break;
+                case MusicType.BossMusic:
+                    if (!bossEvent.IsNull)
+                    {
+                        musicInstance = RuntimeManager.CreateInstance(bossEvent);
                     }
                     break;
                 case MusicType.Nothing:

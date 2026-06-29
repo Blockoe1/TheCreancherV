@@ -62,11 +62,15 @@ namespace FoolsBrand.Enemies
         protected override void OnDeath()
         {
             // Kill All Limbs
-            foreach (Limb limb in limbs)
+            if (limbs != null)
             {
-                if (!limb.IsDead)
+                foreach (Limb limb in limbs)
                 {
-                    limb.OnLimbDeath();
+                    if (limb == null) { continue; }
+                    if (!limb.IsDead)
+                    {
+                        limb.OnLimbDeath();
+                    }
                 }
             }
             base.OnDeath();

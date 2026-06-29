@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7052390986771924818}
   - component: {fileID: 2772807476821029783}
   - component: {fileID: 1635084452502238902}
+  - component: {fileID: 7444427043551556670}
   m_Layer: 5
   m_Name: UIManager
   m_TagString: Untagged
@@ -129,8 +130,23 @@ MonoBehaviour:
   - {fileID: 8949570215330355610}
   - {fileID: 7822678872053316033}
   - {fileID: 8801800705543410424}
+  masterUiGroups:
+  - {fileID: 7444427043551556670}
+  - {fileID: 7444427043551556670}
   gameCamera: {fileID: 0}
   gameCanvas: {fileID: 7102012968691476179}
+--- !u!225 &7444427043551556670
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2530216855312522027}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &734841767809119779
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -834,7 +850,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 323721888294029470, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
       propertyPath: m_Size
-      value: 0.81333333
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1394212957310239108, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
       propertyPath: m_AnchorMax.y
@@ -883,10 +899,6 @@ PrefabInstance:
     - target: {fileID: 5265746050275383801, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
       propertyPath: m_Name
       value: PauseMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 5891836613096022605, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.0000019073486
       objectReference: {fileID: 0}
     - target: {fileID: 6086630154985323005, guid: 1d7089df88d2c504d8f7c7ea3052b1c4, type: 3}
       propertyPath: m_AnchorMax.x

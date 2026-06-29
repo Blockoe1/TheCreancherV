@@ -24,7 +24,7 @@ namespace FoolsBrand
             OnLimbSelectedInput?.Invoke(limbIndex);
         }
 
-        public static void OnRollPressed()
+        public static void RollPressed()
         {
             if (StopInput) { return; }
             OnRollButtonPressed?.Invoke();

@@ -18,6 +18,7 @@ namespace FoolsBrand.UI
         [SerializeField] private CanvasGroup tutorialTextGroup;
         [SerializeField] private InputAction advanceTextAction;
         [SerializeField] private TutorialSequence[] tutorialSequences;
+        [SerializeField] private bool hideTutorials;
 
         private TutorialSequence encounterTutorialData;
         private int currentTutorialIndex;
@@ -25,7 +26,7 @@ namespace FoolsBrand.UI
 
         public override void Init(GameManager gm, HierarchyManager parentManager)
         {
-            if (RunManager.CurrentEncounterNum < tutorialSequences.Length && tutorialSequences[RunManager.CurrentEncounterNum] != null)
+            if (!hideTutorials && RunManager.CurrentEncounterNum < tutorialSequences.Length && tutorialSequences[RunManager.CurrentEncounterNum] != null)
             {
                 encounterTutorialData = tutorialSequences[RunManager.CurrentEncounterNum];
 
@@ -50,11 +51,13 @@ namespace FoolsBrand.UI
         {
             // Only enable click input reading once the transition finishes.
             advanceTextAction.performed += HandleClickInput;
+            TransitionManager.OnTransitionFinish -= HandleTransitionFinish;
         }
 
         public override void Deinit()
         {
             advanceTextAction.performed -= HandleClickInput;
+            TransitionManager.OnTransitionFinish -= HandleTransitionFinish;
 
             PlayerInputManager.OnReserveInput -= HandleReserveInput;
             PlayerInputManager.OnRollButtonPressed -= HandleRollInput;

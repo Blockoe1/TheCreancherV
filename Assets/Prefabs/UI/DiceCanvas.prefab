@@ -79,6 +79,7 @@ GameObject:
   - component: {fileID: 3997060961335216076}
   - component: {fileID: 4107151095930736843}
   - component: {fileID: 5443911590806065125}
+  - component: {fileID: 4618136557271801435}
   m_Layer: 5
   m_Name: DiceCanvas
   m_TagString: Untagged
@@ -169,6 +170,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!225 &4618136557271801435
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7022508824781810046}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &7429629915735110694
 GameObject:
   m_ObjectHideFlags: 0

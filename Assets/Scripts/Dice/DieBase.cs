@@ -54,6 +54,8 @@ public class DieBase : MonoBehaviour, IDiceInfo
     [SerializeField] private Material outlineMaterial;
     [SerializeField] private MeshRenderer[] outlinedMeshes;
 
+    private bool isClickable = true;
+
     public bool RewardSelectable => rewardSelectable;
     public string DieName { get => _dieName; }
     public string DieDescription
@@ -75,9 +77,21 @@ public class DieBase : MonoBehaviour, IDiceInfo
     public ReadOnlyArray<DieFace> Faces => dieFaces;
 
     public bool IsReserved { get => isReserved; set => isReserved = value; }
+    public bool IsClickable
+    {
+        get
+        {
+            return !IsReserved && isClickable;
+        }
+        set
+        {
+            isClickable = value;
+        }
+    }
     public bool Corrupted { get => corrupted; }
 
     public static event Action<DieBase, bool> DiceCorruptedEvent;
+    public static event Action<DieBase> DiceRolledEvent;
 
     /// <summary>
     /// Starts the dice's rolling animation.
@@ -121,7 +135,7 @@ public class DieBase : MonoBehaviour, IDiceInfo
         }
 
         Quaternion rollRot = transform.rotation;
-        Quaternion targetRot = Quaternion.LookRotation(FACE_AXES[dieIndex], Vector3.up);
+        Quaternion targetRot = Quaternion.LookRotation(FACE_AXES[dieIndex % 6], Vector3.up);
 
         float timer = 0;
         while (timer < slerpTime)
@@ -158,6 +172,7 @@ public class DieBase : MonoBehaviour, IDiceInfo
 
         // Stop the rolling animation.
 
+        DiceRolledEvent?.Invoke(this);
         return dieFaces[dieIndex].GetActions();
     }
 

@@ -25,6 +25,7 @@ public class DieFace
     public Color FaceColor => faceTextObj == null ? Color.black : faceTextObj.color;
 
     public bool IsInitialized { get; private set; }
+    public TMP_Text FaceTextObj { get => faceTextObj; set => faceTextObj = value; }
 
     /// <summary>
     /// Initializes this face with a reference to the parent dice and initializes all actions with a reference to 
@@ -58,6 +59,7 @@ public class DieFace
     {
         if (faceTextObj == null) { return; }
         faceTextObj.text = GetFaceText();
+        faceTextObj.fontSize = 8;
     }
 
     public void AddValue(int valueIncrease = 1)

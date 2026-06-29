@@ -1475,9 +1475,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1022829902865959319, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+      propertyPath: encounterableEnemies.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1022829902865959319, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: 'encounterableEnemies.Array.data[0]'
       value: 
-      objectReference: {fileID: 841089904440852677, guid: 3fb962c6e4f77194d8feb1a531642b43, type: 3}
+      objectReference: {fileID: 3467171591015837028, guid: 65655f80903a13941afc848ef57f1fde, type: 3}
     - target: {fileID: 1022829902865959319, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: 'encounterableEnemies.Array.data[1]'
       value: 
@@ -1495,11 +1499,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8665610191780288077, guid: a032171da8305644880803f8621f8586, type: 3}
     - target: {fileID: 1022829902865959319, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+      propertyPath: 'encounterableEnemies.Array.data[6]'
+      value: 
+      objectReference: {fileID: 7801227504811331601, guid: af841987ef69ce14bbf30868bdcb686a, type: 3}
+    - target: {fileID: 1022829902865959319, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: 'encounterableEnemies.Array.data[7]'
+      value: 
+      objectReference: {fileID: 2548360809282276096, guid: bfbfe673839c1a442a2d898172ecfb52, type: 3}
+    - target: {fileID: 1022829902865959319, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
+      propertyPath: 'encounterableEnemies.Array.data[8]'
       value: 
       objectReference: {fileID: 7288215923898136561, guid: cfd62d17428793b4c97863bdd72d6a13, type: 3}
     - target: {fileID: 1022829902865959319, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
-      propertyPath: 'encounterableEnemies.Array.data[8]'
+      propertyPath: 'encounterableEnemies.Array.data[9]'
       value: 
       objectReference: {fileID: 3650478507077520994, guid: 8b9531435373d3742ad685258108563d, type: 3}
     - target: {fileID: 1326467615441105993, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
@@ -1604,7 +1616,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4414532441173357147, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.0000038146973
+      value: 0.0000076293945
       objectReference: {fileID: 0}
     - target: {fileID: 4934823604475791925, guid: 4bff03563f181e948a987f8e556b8a18, type: 3}
       propertyPath: m_AnchorMax.y

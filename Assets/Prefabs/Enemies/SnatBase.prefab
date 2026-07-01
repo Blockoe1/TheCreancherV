@@ -213,7 +213,7 @@ MonoBehaviour:
     maxHealth: 7
     health: 7
   defense: 0
-  multiplier: 1
+  multiplier: 0
   attackWeight: 1
   attackDice: {fileID: 6689069802856493332}
   customDescription: 

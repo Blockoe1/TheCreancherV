@@ -203,7 +203,9 @@ namespace FoolsBrand
         public void DiscardDice(int index)
         {
             Instantiate(dicePoofEffect, _rollingDice[index].transform.position, Quaternion.identity);
-            diceGrid.ReturnDice(_rollingDice[index].GetComponent<DieBase>());
+            DieBase dice = _rollingDice[index].GetComponent<DieBase>();
+            diceGrid.ReturnDice(dice);
+            dice.OnDiscard();
             _discardBag.Add(_rollingDice[index]);
             _rollingDice.RemoveAt(index);
         }

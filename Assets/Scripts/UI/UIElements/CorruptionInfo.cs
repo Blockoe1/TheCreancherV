@@ -20,12 +20,16 @@ public class CorruptionInfo : MonoBehaviour
     private void Update()
     {
         if (!isVisible) return;
+        UpdatePosition();
+    }
 
+    private void UpdatePosition()
+    {
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            canvas.transform as RectTransform,
-            Mouse.current.position.ReadValue(),
-            canvas.worldCamera,
-            out Vector2 pos);
+                    canvas.transform as RectTransform,
+                    Mouse.current.position.ReadValue(),
+                    canvas.worldCamera,
+                    out Vector2 pos);
         pos = canvas.transform.TransformPoint(pos);
 
         Vector2 canvasDimensions = canvas.renderMode == RenderMode.ScreenSpaceOverlay ?
@@ -40,6 +44,7 @@ public class CorruptionInfo : MonoBehaviour
 
     public void Show(string title, string description)
     {
+        UpdatePosition();
         titleText.text = title;
         descText.text = description;
 

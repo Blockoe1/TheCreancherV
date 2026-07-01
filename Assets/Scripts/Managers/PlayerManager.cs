@@ -1,5 +1,6 @@
 using FoolsBrand.Enemies;
 using FoolsBrand.UI;
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -25,6 +26,8 @@ namespace FoolsBrand
         public PlayerCombatant Player => player;
 
         public bool IsDead => player.Health.IsDead;
+
+        public static event Action<DieBase> DiceRolledEvent;
 
         public override void Init(GameManager gm, HierarchyManager parentManager)
         {
@@ -74,7 +77,9 @@ namespace FoolsBrand
                 {
                     continue;
                 }
+                
                 DiceActionInfo[] actions = die.RollDie();
+                DiceRolledEvent?.Invoke(die);
                 foreach (DiceActionInfo actionInfo in actions)
                 {
                     actionQueue.Enqueue(actionInfo, actionInfo.Action.PriorityValue);

@@ -85,14 +85,12 @@ public class DieBase : MonoBehaviour, IDiceInfo
     public bool Corrupted { get => corrupted; }
 
     public static event Action<DieBase, bool> DiceCorruptedEvent;
-    public static event Action<DieBase> DiceRolledEvent;
 
     /// <summary>
     /// Starts the dice's rolling animation.
     /// </summary>
     public void StartRolling()
     {
-        RefreshText();
         if (!isRolling)
         {
             dieIndex = -1;
@@ -183,9 +181,12 @@ public class DieBase : MonoBehaviour, IDiceInfo
         }
 
         // Stop the rolling animation.
-
-        DiceRolledEvent?.Invoke(this);
         return dieFaces[dieIndex].GetActions();
+    }
+
+    public void OnDiscard()
+    {
+        RefreshText();
     }
 
     /// <summary>

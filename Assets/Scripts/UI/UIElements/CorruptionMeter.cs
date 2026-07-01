@@ -53,6 +53,8 @@ namespace FoolsBrand
             if (corruptedDiceCount > 0)
             {
                 corruptionGroup.alpha = 1;
+                corruptionGroup.blocksRaycasts = true;
+                corruptionGroup.interactable = true;
                 int corruptionThreshold = DiceManager.Instance.NumDiceHeld / 2 + 1;
                 corruptedText.text = corruptedDiceCount + "/" + corruptionThreshold;
                 float normalizedProgress = (float)corruptedDiceCount / corruptionThreshold;
@@ -62,6 +64,8 @@ namespace FoolsBrand
             else
             {
                 corruptionGroup.alpha = 0;
+                corruptionGroup.blocksRaycasts = false;
+                corruptionGroup.interactable = false;
             }
 
         }

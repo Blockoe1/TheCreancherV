@@ -31,6 +31,10 @@ namespace FoolsBrand
             }
             SpawnEffectToMeshRenderer(poisonEffectBurst, combatant.transform, effectSource.GetEffectMesh());
             combatant.Health.Value -= instance.Potency;
+            if (combatant is PlayerCombatant player)
+            {
+                player.UpdateLowHealthEffect();
+            }
             AudioManager.Instance.PlayOneShot(poisonDamageSoundName);
             combatant.CheckForDeath();
             yield return new WaitForSeconds(tickDelay);

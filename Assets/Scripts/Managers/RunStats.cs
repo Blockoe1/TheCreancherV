@@ -51,13 +51,13 @@ namespace FoolsBrand
         public RunStats()
         {
             EnemyManager.EnemySpawnEvent += HandleEnemySpawned;
-            DieBase.DiceRolledEvent += HandleDiceRoll;
+            PlayerManager.DiceRolledEvent += HandleDiceRoll;
         }
 
         public void CleanUp()
         {
             EnemyManager.EnemySpawnEvent -= HandleEnemySpawned;
-            DieBase.DiceRolledEvent -= HandleDiceRoll;
+            PlayerManager.DiceRolledEvent -= HandleDiceRoll;
         }
 
         /// <summary>

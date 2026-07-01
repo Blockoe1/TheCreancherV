@@ -42,7 +42,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2480947900968676177, guid: 3fb962c6e4f77194d8feb1a531642b43, type: 3}
       propertyPath: multiplier
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2480947900968676177, guid: 3fb962c6e4f77194d8feb1a531642b43, type: 3}
       propertyPath: health.health

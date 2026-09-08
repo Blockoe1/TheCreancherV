@@ -35,7 +35,7 @@ namespace FoolsBrand
 
         private void Awake()
         {
-            moveRoutine = new SingletonCoroutine(SingletonCoroutine.InterruptMode.Cancel, this);
+            moveRoutine = new SingletonCoroutine(this);
         }
 
         public void MoveImmediate(Transform targetTransform)
@@ -51,7 +51,7 @@ namespace FoolsBrand
         /// <param name="moveTime"></param>
         public void MoveToPoint(Transform targetTransform, float moveTime)
         {
-            moveRoutine.StartCoroutine(MoveRoutine(targetTransform, moveTime));
+            moveRoutine.StartCoroutineCancel(MoveRoutine(targetTransform, moveTime));
         }
         private IEnumerator MoveRoutine(Transform targetTransform, float moveTime)
         {

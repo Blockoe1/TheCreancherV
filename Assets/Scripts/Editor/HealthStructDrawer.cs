@@ -17,8 +17,6 @@ namespace FoolsBrand.Editor
         private SerializedProperty maxHealth;
         private SerializedProperty health;
 
-        
-
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
             maxHealth = property.FindPropertyRelative(nameof(maxHealth));

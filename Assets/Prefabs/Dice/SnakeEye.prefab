@@ -41,8 +41,10 @@ PrefabInstance:
       value: '<sprite name="Poison">#faces
 
         Poisons a limb, which deals damage
-        to the main enemy, but not the limb, every turn.  Cannot be applied to the
-        same limb twice.'
+        to the body every turn.  Only applies while the limb is alive.
+
+        Cannot
+        be applied to the same limb twice.'
       objectReference: {fileID: 0}
     - target: {fileID: 2299449444861537981, guid: fc919e3a196a6c14c9b264574c6080d9, type: 3}
       propertyPath: 'managedReferences[-2]'

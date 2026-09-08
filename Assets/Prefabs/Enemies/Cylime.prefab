@@ -10,7 +10,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 323318857088891221, guid: dcb52a953bd09ec43b83af5694ccc3bc, type: 3}
       propertyPath: m_Name
-      value: CylimeBase
+      value: Cylime
+      objectReference: {fileID: 0}
+    - target: {fileID: 1035320067076961884, guid: dcb52a953bd09ec43b83af5694ccc3bc, type: 3}
+      propertyPath: defense
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1035320067076961884, guid: dcb52a953bd09ec43b83af5694ccc3bc, type: 3}
+      propertyPath: health.health
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1035320067076961884, guid: dcb52a953bd09ec43b83af5694ccc3bc, type: 3}
+      propertyPath: health.maxHealth
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6582757154763829552, guid: dcb52a953bd09ec43b83af5694ccc3bc, type: 3}
       propertyPath: m_LocalPosition.x

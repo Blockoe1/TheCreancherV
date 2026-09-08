@@ -13,7 +13,6 @@ namespace FoolsBrand
 {
     public class SingletonCoroutine
     {
-        private readonly InterruptMode interruptMode;
         private readonly MonoBehaviour source;
 
         private Coroutine singletonRoutine;
@@ -24,37 +23,36 @@ namespace FoolsBrand
             Ignore
         }
 
-        public SingletonCoroutine(InterruptMode interruptMode, MonoBehaviour source)
+        public SingletonCoroutine(MonoBehaviour source)
         {
-            this.interruptMode = interruptMode;
             this.source = source;
         }
 
         /// <summary>
-        /// Starts a coroutine, following the singleton rule.
+        /// Starts a coroutine and cancels the existing routine.
         /// </summary>
         /// <param name="coroutine"></param>
-        public void StartCoroutine(IEnumerator coroutine)
+        public void StartCoroutineCancel(IEnumerator coroutine)
         {
-            switch (interruptMode)
+            if (singletonRoutine != null)
             {
-                case InterruptMode.Cancel:
-                    if (singletonRoutine != null)
-                    {
-                        source.StopCoroutine(singletonRoutine);
-                        singletonRoutine = null;
-                    }
-                    singletonRoutine = source.StartCoroutine(CoroutineWrapper(coroutine));
-                    break;
-                case InterruptMode.Ignore:
-                    // Only start the coroutine if the singleton routine ref is null.
-                    if (singletonRoutine == null)
-                    {
-                        singletonRoutine = source.StartCoroutine(CoroutineWrapper(coroutine));
-                    }
-                    break;
+                source.StopCoroutine(singletonRoutine);
+                singletonRoutine = null;
             }
+            singletonRoutine = source.StartCoroutine(CoroutineWrapper(coroutine));
+        }
 
+        /// <summary>
+        /// Starts a coroutine only if no coroutine is running.
+        /// </summary>
+        /// <param name="coroutine"></param>
+        public void StartCoroutineIgnore(IEnumerator coroutine)
+        {
+            // Only start the coroutine if the singleton routine ref is null.
+            if (singletonRoutine == null)
+            {
+                singletonRoutine = source.StartCoroutine(CoroutineWrapper(coroutine));
+            }
         }
 
         private IEnumerator CoroutineWrapper(IEnumerator coroutine)
